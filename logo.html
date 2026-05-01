@@ -1,0 +1,922 @@
+<!doctype html>
+<html lang="nl">
+<head>
+<meta charset="utf-8"/>
+<title>WerkGeluk Recruitment — Logo</title>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700;800&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet"/>
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --navy:   #0F1F3D;
+    --gold:   #C8A96A;
+    --cloud:  #F5F7FA;
+    --canvas: #D8DCE6;
+    --sub:    #5A6678;
+    --border: #DDE0E8;
+  }
+
+  html, body {
+    background: var(--canvas);
+    font-family: 'Inter', system-ui, sans-serif;
+    color: var(--navy);
+    min-height: 100vh;
+  }
+
+  /* ── Page header ── */
+  .page-header {
+    padding: 64px 72px 48px;
+    max-width: 1160px;
+    margin: 0 auto;
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    gap: 24px;
+  }
+  .page-header-left h1 {
+    font-family: 'Manrope', sans-serif;
+    font-weight: 800;
+    font-size: 13px;
+    letter-spacing: 3.5px;
+    text-transform: uppercase;
+    color: var(--sub);
+  }
+  .page-header-left p {
+    margin-top: 8px;
+    font-family: 'Manrope', sans-serif;
+    font-weight: 700;
+    font-size: 32px;
+    letter-spacing: -0.5px;
+    color: var(--navy);
+    line-height: 1.1;
+  }
+  .page-header-badge {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 10px;
+    color: var(--sub);
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    padding: 8px 14px;
+    border: 1px solid var(--border);
+    border-radius: 4px;
+    background: rgba(255,255,255,0.5);
+    white-space: nowrap;
+  }
+
+  /* ── Content wrapper ── */
+  .page-content {
+    max-width: 1160px;
+    margin: 0 auto;
+    padding: 0 72px 96px;
+    display: flex;
+    flex-direction: column;
+    gap: 64px;
+  }
+
+  /* ── Section ── */
+  .section-label {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 9.5px;
+    letter-spacing: 2.5px;
+    color: var(--sub);
+    text-transform: uppercase;
+    margin-bottom: 16px;
+  }
+
+  /* ── Card ── */
+  .card {
+    background: #fff;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 1px 2px rgba(15,31,61,.06), 0 4px 14px rgba(15,31,61,.05);
+  }
+  .card-label {
+    padding: 10px 18px;
+    border-bottom: 1px solid var(--border);
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 9px;
+    letter-spacing: 1.8px;
+    color: var(--sub);
+    text-transform: uppercase;
+  }
+  .card-body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 52px 48px;
+  }
+  .card-body.cloud { background: var(--cloud); }
+  .card-body.navy  { background: var(--navy); }
+  .card-body.flush { padding: 0; }
+  .card-body.canvas { background: var(--canvas); padding: 40px; }
+
+  /* ── Grid helpers ── */
+  .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+  .grid-3 { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 16px; }
+  .grid-auto { display: grid; grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); gap: 16px; }
+
+  /* ── Logo lockup pieces ── */
+  .lockup-h {
+    display: flex;
+    align-items: center;
+    gap: 18px;
+  }
+  .lockup-v {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    text-align: center;
+  }
+  .wm-name {
+    font-family: 'Manrope', sans-serif;
+    font-weight: 700;
+    font-size: 28px;
+    letter-spacing: -0.6px;
+    line-height: 1;
+    color: var(--navy);
+  }
+  .wm-sub {
+    font-family: 'Manrope', sans-serif;
+    font-weight: 300;
+    font-size: 11px;
+    letter-spacing: 0.5px;
+    color: var(--gold);
+    margin-top: 6px;
+    line-height: 1;
+  }
+  /* Dark variant overrides */
+  .on-dark .wm-name { color: #F5F7FA; }
+  .on-dark .wm-sub  { color: var(--gold); }
+
+  /* ── Horizontal split (white | cloud) ── */
+  .split {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    min-height: 240px;
+  }
+  .split-panel {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 52px 44px;
+  }
+
+  /* ── Hero mark ── */
+  .hero-card {
+    background: var(--cloud);
+    min-height: 380px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 44px;
+    padding: 64px;
+  }
+  .hero-mark {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 32px;
+  }
+  .hero-desc {
+    font-family: 'Inter', sans-serif;
+    font-size: 12px;
+    color: var(--sub);
+    letter-spacing: 0.3px;
+    max-width: 460px;
+    text-align: center;
+    line-height: 1.7;
+  }
+  .mark-anatomy {
+    display: flex;
+    gap: 32px;
+    align-items: center;
+    margin-top: 8px;
+  }
+  .anatomy-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 9px;
+    color: var(--sub);
+    letter-spacing: 1px;
+  }
+  .anatomy-swatch {
+    width: 12px;
+    height: 12px;
+    border-radius: 2px;
+    flex-shrink: 0;
+  }
+
+  /* ── Favicon ── */
+  .fav-set {
+    display: flex;
+    flex-direction: column;
+    gap: 22px;
+    align-items: flex-start;
+    padding: 40px;
+    background: var(--cloud);
+    width: 100%;
+    height: 100%;
+  }
+  .fav-row { display: flex; gap: 20px; align-items: flex-end; }
+  .fav-item { display: flex; flex-direction: column; align-items: center; gap: 8px; }
+  .fav-box {
+    background: #fff;
+    border: 1px solid var(--border);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+  }
+  .fav-px {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 9px;
+    color: #9AA0AD;
+  }
+  .tab-mock { display: flex; }
+  .tab-inner {
+    background: #fff;
+    border-radius: 6px 6px 0 0;
+    padding: 6px 14px 6px 10px;
+    display: flex;
+    align-items: center;
+    gap: 9px;
+    border: 1px solid var(--border);
+    border-bottom: none;
+  }
+  .tab-title { font-family: 'Inter', sans-serif; font-size: 11px; color: #3A4150; }
+  .tab-x     { font-family: 'Inter', sans-serif; font-size: 13px; color: #9BA1AB; margin-left: 2px; line-height: 0.7; }
+
+  /* ── Business card ── */
+  .bizcards {
+    display: flex;
+    gap: 28px;
+    padding: 44px;
+    background: var(--canvas);
+    justify-content: center;
+  }
+  .bizcard {
+    width: 340px;
+    height: 204px;
+    border-radius: 6px;
+    flex-shrink: 0;
+    box-shadow: 0 8px 28px rgba(15,31,61,.14), 0 1px 2px rgba(15,31,61,.06);
+    overflow: hidden;
+  }
+  .bc-front {
+    background: #fff;
+    padding: 28px;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  .bc-logo-wrap {
+    transform: scale(0.72);
+    transform-origin: top left;
+    margin-left: -8px;
+    margin-top: -6px;
+  }
+  .bc-contact {
+    font-family: 'Inter', sans-serif;
+    font-size: 10px;
+    color: var(--sub);
+    line-height: 1.55;
+  }
+  .bc-name { font-weight: 600; color: var(--navy); font-size: 12px; margin-bottom: 2px; }
+  .bc-row  { display: flex; gap: 16px; margin-top: 7px; }
+  .bc-back {
+    background: var(--navy);
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    overflow: hidden;
+  }
+  .bc-accent {
+    position: absolute;
+    right: -24px;
+    top: -24px;
+    width: 96px;
+    height: 96px;
+    border-radius: 50%;
+    background: var(--gold);
+    opacity: 0.12;
+  }
+
+  /* ── Letterhead ── */
+  .letterhead {
+    width: 420px;
+    background: #fff;
+    border-radius: 4px;
+    box-shadow: 0 10px 30px rgba(15,31,61,.10);
+    padding: 32px 40px 28px;
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+  }
+  .lh-logo-wrap {
+    transform: scale(0.68);
+    transform-origin: top left;
+    margin-left: -6px;
+    margin-top: -5px;
+  }
+  .lh-rule {
+    display: flex;
+    align-items: center;
+    gap: 0;
+    padding-top: 2px;
+  }
+  .lh-rule-navy { height: 1.5px; background: var(--navy); flex: 3; }
+  .lh-rule-gold { height: 1.5px; background: var(--gold); flex: 1; }
+  .lh-address {
+    display: flex;
+    justify-content: space-between;
+    font-family: 'Inter', sans-serif;
+    font-size: 7.5px;
+    color: var(--sub);
+    letter-spacing: 1px;
+    margin-top: -10px;
+  }
+  .lh-body {
+    font-family: 'Inter', sans-serif;
+    font-size: 9px;
+    color: var(--navy);
+    line-height: 1.7;
+  }
+  .lh-date { color: var(--sub); margin-bottom: 12px; }
+  .lh-salut { font-weight: 600; margin-bottom: 8px; }
+  .lh-lines {
+    background: repeating-linear-gradient(
+      0deg, transparent 0, transparent 11px, #E6E8EE 11px, #E6E8EE 12px
+    );
+    height: 154px;
+    margin-bottom: 10px;
+  }
+  .lh-sign { font-weight: 600; margin-top: 14px; }
+  .lh-footer {
+    position: absolute;
+    bottom: 14px;
+    left: 40px;
+    right: 40px;
+    display: flex;
+    justify-content: space-between;
+    font-family: 'Inter', sans-serif;
+    font-size: 7px;
+    color: #9BA1AB;
+    letter-spacing: 1.4px;
+  }
+
+  /* ── LinkedIn banner ── */
+  .li-banner {
+    width: 680px;
+    height: 170px;
+    border-radius: 8px;
+    overflow: hidden;
+    display: flex;
+    align-items: stretch;
+    box-shadow: 0 4px 18px rgba(15,31,61,.12);
+    border: 1px solid var(--border);
+  }
+  .li-left {
+    width: 200px;
+    background: var(--navy);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    flex-shrink: 0;
+  }
+  .li-glow {
+    position: absolute;
+    right: -28px;
+    bottom: -28px;
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    background: var(--gold);
+    opacity: 0.13;
+  }
+  .li-right {
+    flex: 1;
+    padding: 0 38px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 10px;
+    background: #fff;
+  }
+  .li-headline {
+    font-family: 'Manrope', sans-serif;
+    font-size: 19px;
+    font-weight: 700;
+    color: var(--navy);
+    line-height: 1.25;
+    letter-spacing: -0.3px;
+  }
+  .li-tags { display: flex; align-items: center; gap: 10px; }
+  .li-dot { width: 5px; height: 5px; border-radius: 50%; }
+  .li-tag {
+    font-family: 'Inter', sans-serif;
+    font-size: 9.5px;
+    color: var(--sub);
+    letter-spacing: 2px;
+    font-weight: 500;
+  }
+
+  /* ── Spec panel ── */
+  .spec-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1px; background: var(--border); }
+  .spec-cell {
+    background: #fff;
+    padding: 24px 28px;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+  }
+  .spec-label {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 9px;
+    letter-spacing: 2px;
+    color: var(--sub);
+    text-transform: uppercase;
+  }
+  .spec-value {
+    font-family: 'Manrope', sans-serif;
+    font-weight: 600;
+    font-size: 14px;
+    color: var(--navy);
+  }
+  .spec-detail {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 10px;
+    color: var(--sub);
+    margin-top: 2px;
+  }
+  .palette-row { display: flex; gap: 10px; margin-top: 4px; }
+  .pal-chip {
+    flex: 1;
+    height: 40px;
+    border-radius: 4px;
+    display: flex;
+    align-items: flex-end;
+    padding: 6px 8px;
+  }
+  .pal-chip-label {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 8.5px;
+    letter-spacing: 0.5px;
+  }
+
+  /* ── Divider ── */
+  .divider { height: 1px; background: var(--border); }
+</style>
+</head>
+<body>
+
+<header class="page-header">
+  <div class="page-header-left">
+    <h1>WerkGeluk Recruitment</h1>
+    <p>Merkidentiteit</p>
+  </div>
+  <div class="page-header-badge">Logo · Definitief ontwerp</div>
+</header>
+
+<main class="page-content">
+
+  <!-- ══════════════════════════════════════════
+       HERO — MARK CLOSE-UP
+  ══════════════════════════════════════════ -->
+  <section>
+    <div class="section-label">01 — Het symbool</div>
+    <div class="card">
+      <div class="card-label">Mark — full scale</div>
+      <div class="hero-card">
+        <div class="hero-mark">
+          <!-- Mark at 200px -->
+          <svg viewBox="0 0 64 64" width="180" height="180" aria-label="WerkGeluk mark">
+            <circle cx="32" cy="11" r="9" fill="#C8A96A"/>
+            <polygon points="32,21 13,58 51,58" fill="#0F1F3D"/>
+          </svg>
+          <p class="hero-desc">
+            Een gouden cirkel — het hoofd, de mens — boven een precieze marineblauw
+            driehoek. De vorm wijst omhoog: ambitie, groei, de juiste richting.
+            Samen lezen ze als een figuur én als een aanwijzer. Geometrisch en
+            technisch, maar door de gouden bol onmiddellijk menselijk en warm.
+          </p>
+          <div class="mark-anatomy">
+            <div class="anatomy-item">
+              <div class="anatomy-swatch" style="background:#C8A96A;"></div>
+              HOOFD · #C8A96A · Goud
+            </div>
+            <div class="anatomy-item">
+              <div class="anatomy-swatch" style="background:#0F1F3D;"></div>
+              BODY · #0F1F3D · Navy
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════════════════
+       LOGO LOCKUP — HORIZONTAAL
+  ══════════════════════════════════════════ -->
+  <section>
+    <div class="section-label">02 — Logo lockup · horizontaal</div>
+    <div class="card">
+      <div class="card-label">Horizontaal — wit + cloud</div>
+      <div class="card-body flush">
+        <div class="split">
+          <!-- WHITE -->
+          <div class="split-panel" style="background:#fff;">
+            <div class="lockup-h">
+              <svg viewBox="0 0 64 64" width="56" height="56">
+                <circle cx="32" cy="11" r="9" fill="#C8A96A"/>
+                <polygon points="32,21 13,58 51,58" fill="#0F1F3D"/>
+              </svg>
+              <div>
+                <div class="wm-name">WerkGeluk</div>
+                <div class="wm-sub">Recruitment</div>
+              </div>
+            </div>
+          </div>
+          <!-- CLOUD -->
+          <div class="split-panel" style="background:#F5F7FA; border-left: 1px solid #DDE0E8;">
+            <div class="lockup-h">
+              <svg viewBox="0 0 64 64" width="56" height="56">
+                <circle cx="32" cy="11" r="9" fill="#C8A96A"/>
+                <polygon points="32,21 13,58 51,58" fill="#0F1F3D"/>
+              </svg>
+              <div>
+                <div class="wm-name">WerkGeluk</div>
+                <div class="wm-sub">Recruitment</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════════════════
+       GESTAPELD + DONKER
+  ══════════════════════════════════════════ -->
+  <section>
+    <div class="section-label">03 — Gestapeld + donker</div>
+    <div class="grid-2">
+      <!-- Stacked -->
+      <div class="card">
+        <div class="card-label">Gestapeld — wit</div>
+        <div class="card-body" style="padding: 56px 48px;">
+          <div class="lockup-v">
+            <svg viewBox="0 0 64 64" width="88" height="88">
+              <circle cx="32" cy="11" r="9" fill="#C8A96A"/>
+              <polygon points="32,21 13,58 51,58" fill="#0F1F3D"/>
+            </svg>
+            <div>
+              <div class="wm-name" style="font-size:26px; text-align:center;">WerkGeluk</div>
+              <div class="wm-sub" style="text-align:center; margin-top:7px;">Recruitment</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Dark -->
+      <div class="card">
+        <div class="card-label">Op donker — navy</div>
+        <div class="card-body navy">
+          <div class="lockup-h on-dark">
+            <svg viewBox="0 0 64 64" width="56" height="56">
+              <circle cx="32" cy="11" r="9" fill="#C8A96A"/>
+              <polygon points="32,21 13,58 51,58" fill="#F5F7FA"/>
+            </svg>
+            <div>
+              <div class="wm-name" style="color:#F5F7FA;">WerkGeluk</div>
+              <div class="wm-sub">Recruitment</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Dark stacked -->
+    <div class="card" style="margin-top: 16px;">
+      <div class="card-label">Gestapeld op donker</div>
+      <div class="card-body navy" style="padding: 56px;">
+        <div class="lockup-v on-dark">
+          <svg viewBox="0 0 64 64" width="88" height="88">
+            <circle cx="32" cy="11" r="9" fill="#C8A96A"/>
+            <polygon points="32,21 13,58 51,58" fill="#F5F7FA"/>
+          </svg>
+          <div>
+            <div class="wm-name" style="color:#F5F7FA; font-size:26px; text-align:center;">WerkGeluk</div>
+            <div class="wm-sub" style="text-align:center; margin-top:7px;">Recruitment</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════════════════
+       FAVICON SET
+  ══════════════════════════════════════════ -->
+  <section>
+    <div class="section-label">04 — Favicon &amp; app icon</div>
+    <div class="card">
+      <div class="card-label">Favicon set — getest op 16px</div>
+      <div class="card-body flush">
+        <div class="fav-set">
+          <div class="fav-row">
+            <!-- 64px -->
+            <div class="fav-item">
+              <div class="fav-box" style="width:64px;height:64px;border-radius:14px;">
+                <svg viewBox="0 0 64 64" width="50" height="50">
+                  <circle cx="32" cy="11" r="9" fill="#C8A96A"/>
+                  <polygon points="32,21 13,58 51,58" fill="#0F1F3D"/>
+                </svg>
+              </div>
+              <span class="fav-px">64px</span>
+            </div>
+            <!-- 32px -->
+            <div class="fav-item">
+              <div class="fav-box" style="width:32px;height:32px;border-radius:7px;">
+                <svg viewBox="0 0 64 64" width="25" height="25">
+                  <circle cx="32" cy="11" r="9" fill="#C8A96A"/>
+                  <polygon points="32,21 13,58 51,58" fill="#0F1F3D"/>
+                </svg>
+              </div>
+              <span class="fav-px">32px</span>
+            </div>
+            <!-- 16px -->
+            <div class="fav-item">
+              <div class="fav-box" style="width:16px;height:16px;border-radius:3px;">
+                <svg viewBox="0 0 64 64" width="12" height="12">
+                  <circle cx="32" cy="11" r="9" fill="#C8A96A"/>
+                  <polygon points="32,21 13,58 51,58" fill="#0F1F3D"/>
+                </svg>
+              </div>
+              <span class="fav-px">16px</span>
+            </div>
+
+            <!-- Divider -->
+            <div style="width:1px; height:70px; background: var(--border); margin: 0 8px; align-self:center;"></div>
+
+            <!-- Dark favicons -->
+            <div class="fav-item">
+              <div class="fav-box" style="width:64px;height:64px;border-radius:14px; background:#0F1F3D; border-color:#0F1F3D;">
+                <svg viewBox="0 0 64 64" width="50" height="50">
+                  <circle cx="32" cy="11" r="9" fill="#C8A96A"/>
+                  <polygon points="32,21 13,58 51,58" fill="#F5F7FA"/>
+                </svg>
+              </div>
+              <span class="fav-px">dark 64</span>
+            </div>
+            <div class="fav-item">
+              <div class="fav-box" style="width:32px;height:32px;border-radius:7px; background:#0F1F3D; border-color:#0F1F3D;">
+                <svg viewBox="0 0 64 64" width="25" height="25">
+                  <circle cx="32" cy="11" r="9" fill="#C8A96A"/>
+                  <polygon points="32,21 13,58 51,58" fill="#F5F7FA"/>
+                </svg>
+              </div>
+              <span class="fav-px">dark 32</span>
+            </div>
+            <div class="fav-item">
+              <div class="fav-box" style="width:16px;height:16px;border-radius:3px; background:#0F1F3D; border-color:#0F1F3D;">
+                <svg viewBox="0 0 64 64" width="12" height="12">
+                  <circle cx="32" cy="11" r="9" fill="#C8A96A"/>
+                  <polygon points="32,21 13,58 51,58" fill="#F5F7FA"/>
+                </svg>
+              </div>
+              <span class="fav-px">dark 16</span>
+            </div>
+          </div>
+
+          <!-- Browser tab mock -->
+          <div class="tab-mock">
+            <div class="tab-inner">
+              <svg viewBox="0 0 64 64" width="14" height="14">
+                <circle cx="32" cy="11" r="9" fill="#C8A96A"/>
+                <polygon points="32,21 13,58 51,58" fill="#0F1F3D"/>
+              </svg>
+              <span class="tab-title">WerkGeluk Recruitment</span>
+              <span class="tab-x">×</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════════════════
+       VISITEKAARTJE
+  ══════════════════════════════════════════ -->
+  <section>
+    <div class="section-label">05 — Visitekaartje</div>
+    <div class="card">
+      <div class="card-label">85 × 55mm — voorzijde + achterzijde</div>
+      <div class="card-body flush">
+        <div class="bizcards">
+          <!-- Front -->
+          <div class="bizcard">
+            <div class="bc-front">
+              <div class="bc-logo-wrap">
+                <div class="lockup-h">
+                  <svg viewBox="0 0 64 64" width="52" height="52">
+                    <circle cx="32" cy="11" r="9" fill="#C8A96A"/>
+                    <polygon points="32,21 13,58 51,58" fill="#0F1F3D"/>
+                  </svg>
+                  <div>
+                    <div class="wm-name" style="font-size:22px;">WerkGeluk</div>
+                    <div class="wm-sub" style="font-size:9px; margin-top:5px;">Recruitment</div>
+                  </div>
+                </div>
+              </div>
+              <div class="bc-contact">
+                <div class="bc-name">Sanne van der Berg</div>
+                <div>Senior Recruitment Consultant</div>
+                <div class="bc-row">
+                  <span>06 18 23 69 93</span>
+                  <span>sanne@werkgeluk-recruitment.nl</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Back -->
+          <div class="bizcard">
+            <div class="bc-back">
+              <div class="bc-accent"></div>
+              <svg viewBox="0 0 64 64" width="90" height="90" style="position:relative;z-index:1;">
+                <circle cx="32" cy="11" r="9" fill="#C8A96A"/>
+                <polygon points="32,21 13,58 51,58" fill="#F5F7FA"/>
+              </svg>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════════════════
+       BRIEFHOOFD + LINKEDIN
+  ══════════════════════════════════════════ -->
+  <section>
+    <div class="section-label">06 — Briefhoofd &amp; LinkedIn banner</div>
+    <div class="grid-2">
+
+      <!-- Letterhead -->
+      <div class="card">
+        <div class="card-label">Briefhoofd</div>
+        <div class="card-body canvas">
+          <div class="letterhead">
+            <div class="lh-logo-wrap">
+              <div class="lockup-h">
+                <svg viewBox="0 0 64 64" width="52" height="52">
+                  <circle cx="32" cy="11" r="9" fill="#C8A96A"/>
+                  <polygon points="32,21 13,58 51,58" fill="#0F1F3D"/>
+                </svg>
+                <div>
+                  <div class="wm-name" style="font-size:21px;">WerkGeluk</div>
+                  <div class="wm-sub" style="font-size:9px; margin-top:5px;">Recruitment</div>
+                </div>
+              </div>
+            </div>
+            <div class="lh-rule">
+              <div class="lh-rule-navy"></div>
+              <div class="lh-rule-gold"></div>
+            </div>
+            <div class="lh-address">
+              <span>OTTO REUCHLINWEG · 3072 MD ROTTERDAM</span>
+              <span>WERKGELUK-RECRUITMENT.NL</span>
+            </div>
+            <div class="lh-body">
+              <div class="lh-date">Rotterdam, 30 april 2026</div>
+              <div class="lh-salut">Beste mevrouw De Vries,</div>
+              <div class="lh-lines"></div>
+              <div>Met vriendelijke groet,</div>
+              <div class="lh-sign">WerkGeluk Recruitment</div>
+            </div>
+            <div class="lh-footer">
+              <span>KVK 70841640</span>
+              <span>BTW NL001178713B61</span>
+              <span>06 18 23 69 93</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- LinkedIn banner -->
+      <div class="card">
+        <div class="card-label">LinkedIn banner — 1584 × 396px</div>
+        <div class="card-body canvas">
+          <div class="li-banner">
+            <div class="li-left">
+              <div class="li-glow"></div>
+              <svg viewBox="0 0 64 64" width="116" height="116" style="position:relative;z-index:1;">
+                <circle cx="32" cy="11" r="9" fill="#C8A96A"/>
+                <polygon points="32,21 13,58 51,58" fill="#F5F7FA"/>
+              </svg>
+            </div>
+            <div class="li-right">
+              <div class="li-headline">Het juiste werk.<br>De juiste mens.</div>
+              <div class="li-tags">
+                <div class="li-dot" style="background:#0F1F3D;"></div>
+                <span class="li-tag">WERVING &amp; SELECTIE</span>
+                <div class="li-dot" style="background:#C8A96A;"></div>
+                <span class="li-tag">TECHNISCHE SALES</span>
+                <div class="li-dot" style="background:#0F1F3D; opacity:.35;"></div>
+                <span class="li-tag">ROTTERDAM</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════════════════
+       SPECIFICATIES
+  ══════════════════════════════════════════ -->
+  <section>
+    <div class="section-label">07 — Merk­specificaties</div>
+    <div class="card">
+      <div class="card-label">Kleur · Typografie · Gebruik</div>
+      <div class="spec-grid">
+
+        <!-- Palette -->
+        <div class="spec-cell" style="grid-column: 1 / -1; border-bottom: 1px solid var(--border);">
+          <div class="spec-label">Kleurpalet</div>
+          <div class="palette-row">
+            <div class="pal-chip" style="background:#0F1F3D; flex:2;">
+              <span class="pal-chip-label" style="color:rgba(255,255,255,0.7);">#0F1F3D · Navy · Primair</span>
+            </div>
+            <div class="pal-chip" style="background:#C8A96A;">
+              <span class="pal-chip-label" style="color:rgba(15,31,61,0.75);">#C8A96A · Goud · Accent</span>
+            </div>
+            <div class="pal-chip" style="background:#F5F7FA; border:1px solid var(--border);">
+              <span class="pal-chip-label" style="color:var(--sub);">#F5F7FA · Cloud · Achtergrond</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Typography WerkGeluk -->
+        <div class="spec-cell" style="border-right:1px solid var(--border);">
+          <div class="spec-label">Wordmark — WerkGeluk</div>
+          <div class="spec-value" style="font-family:'Manrope',sans-serif; font-weight:700; font-size:22px; letter-spacing:-0.5px; margin-top:6px;">WerkGeluk</div>
+          <div class="spec-detail">Manrope · 700 · −0.6px tracking</div>
+        </div>
+
+        <!-- Typography Recruitment -->
+        <div class="spec-cell">
+          <div class="spec-label">Subtitel — Recruitment</div>
+          <div class="spec-value" style="font-family:'Manrope',sans-serif; font-weight:300; font-size:13px; color:#C8A96A; letter-spacing:0.5px; margin-top:6px;">Recruitment</div>
+          <div class="spec-detail">Manrope · 300 · +0.5px tracking · Gold</div>
+        </div>
+
+        <!-- Mark rules -->
+        <div class="spec-cell" style="border-right:1px solid var(--border); border-top:1px solid var(--border);">
+          <div class="spec-label">Symbool — gebruik</div>
+          <div style="display:flex; gap:14px; align-items:center; margin-top:8px;">
+            <svg viewBox="0 0 64 64" width="44" height="44">
+              <circle cx="32" cy="11" r="9" fill="#C8A96A"/>
+              <polygon points="32,21 13,58 51,58" fill="#0F1F3D"/>
+            </svg>
+            <svg viewBox="0 0 64 64" width="44" height="44" style="background:#0F1F3D; border-radius:6px; padding:2px;">
+              <circle cx="32" cy="11" r="9" fill="#C8A96A"/>
+              <polygon points="32,21 13,58 51,58" fill="#F5F7FA"/>
+            </svg>
+          </div>
+          <div class="spec-detail" style="margin-top:10px;">Cirkel (goud) · Driehoek (navy of cloud op donker)</div>
+        </div>
+
+        <!-- Do / Don't -->
+        <div class="spec-cell" style="border-top:1px solid var(--border);">
+          <div class="spec-label">Richtlijnen</div>
+          <div style="font-family:'Inter',sans-serif; font-size:10px; line-height:1.7; color:var(--sub); margin-top:6px;">
+            <div style="color:#0F1F3D; font-weight:500; margin-bottom:2px;">Gebruik</div>
+            <div>· Altijd vector (SVG) — nooit opgerekt</div>
+            <div>· Minimum breedte logo: 120px · Favicon: 16px</div>
+            <div>· Vrije ruimte = hoogte van de cirkel rondom</div>
+            <div style="color:#0F1F3D; font-weight:500; margin-top:8px; margin-bottom:2px;">Niet</div>
+            <div>· Kleur aanpassen · Schaduwen toevoegen</div>
+            <div>· Vervormen · Losse elementen hercombineren</div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+</main>
+
+</body>
+</html>
