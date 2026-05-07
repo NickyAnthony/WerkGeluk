@@ -1,0 +1,447 @@
+<!doctype html>
+<html lang="nl">
+<head>
+<meta charset="utf-8"/>
+<title>Diensten — WerkGeluk Recruitment</title>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<meta name="description" content="Ontdek de diensten van WerkGeluk Recruitment: werving & selectie, technische sales en executive search in de Rotterdamse regio."/>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet"/>
+<style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  --navy:   #0F1F3D;
+  --gold:   #C8A96A;
+  --cloud:  #F5F7FA;
+  --white:  #FFFFFF;
+  --sub:    #5A6678;
+  --border: #E4E7EF;
+  --text:   #1A2B4A;
+}
+
+html { scroll-behavior: smooth; }
+body { font-family: 'Inter', system-ui, sans-serif; color: var(--text); background: var(--white); line-height: 1.6; }
+
+/* NAV */
+nav { position: sticky; top: 0; z-index: 100; background: rgba(255,255,255,0.95); backdrop-filter: blur(8px); border-bottom: 1px solid var(--border); }
+.nav-inner { max-width: 1160px; margin: 0 auto; padding: 0 32px; display: flex; align-items: center; justify-content: space-between; height: 72px; }
+.nav-logo { display: flex; align-items: center; gap: 14px; text-decoration: none; }
+.nav-logo-name { font-family: 'Manrope', sans-serif; font-weight: 700; font-size: 22px; letter-spacing: -0.5px; color: var(--navy); line-height: 1; }
+.nav-logo-sub { font-family: 'Manrope', sans-serif; font-weight: 300; font-size: 10px; letter-spacing: 0.5px; color: var(--gold); margin-top: 4px; }
+.nav-links { display: flex; align-items: center; gap: 8px; list-style: none; }
+.nav-links a { text-decoration: none; font-size: 14px; font-weight: 500; color: var(--sub); padding: 8px 16px; border-radius: 8px; transition: color .2s, background .2s; }
+.nav-links a:hover { color: var(--navy); background: var(--cloud); }
+.nav-links a.active { color: var(--navy); }
+.nav-cta { background: var(--navy); color: var(--white) !important; border-radius: 8px; padding: 10px 20px !important; transition: background .2s !important; }
+.nav-cta:hover { background: #162d52 !important; }
+
+/* PAGE HEADER */
+.page-header { background: linear-gradient(160deg, var(--navy) 0%, #1a3560 100%); padding: 80px 32px 100px; position: relative; overflow: hidden; text-align: center; }
+.page-header::before { content: ''; position: absolute; top: -100px; right: -100px; width: 400px; height: 400px; border-radius: 50%; background: var(--gold); opacity: 0.06; }
+.page-header-inner { max-width: 680px; margin: 0 auto; position: relative; z-index: 1; }
+.page-tag { font-size: 11px; font-weight: 600; letter-spacing: 3px; text-transform: uppercase; color: var(--gold); margin-bottom: 20px; }
+.page-header h1 { font-family: 'Manrope', sans-serif; font-weight: 800; font-size: 48px; line-height: 1.1; letter-spacing: -1.5px; color: var(--white); margin-bottom: 20px; }
+.page-header p { font-size: 17px; color: rgba(255,255,255,0.68); line-height: 1.7; }
+
+/* SECTIONS */
+.section { padding: 96px 32px; }
+.section.alt { background: var(--cloud); }
+.section-inner { max-width: 1160px; margin: 0 auto; }
+.section-tag { font-size: 11px; font-weight: 600; letter-spacing: 3px; text-transform: uppercase; color: var(--gold); margin-bottom: 12px; }
+.section-title { font-family: 'Manrope', sans-serif; font-weight: 800; font-size: 38px; letter-spacing: -1px; color: var(--navy); line-height: 1.15; margin-bottom: 16px; }
+.section-sub { font-size: 16px; color: var(--sub); max-width: 540px; line-height: 1.7; }
+
+/* DIENST BLOKKEN */
+.dienst-block {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 80px;
+  align-items: center;
+  padding: 80px 0;
+  border-bottom: 1px solid var(--border);
+}
+.dienst-block:last-of-type { border-bottom: none; }
+.dienst-block.reverse { direction: rtl; }
+.dienst-block.reverse > * { direction: ltr; }
+.dienst-visual {
+  border-radius: 20px;
+  padding: 56px 48px;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  position: relative;
+  overflow: hidden;
+}
+.dienst-visual.navy { background: var(--navy); }
+.dienst-visual.gold { background: linear-gradient(135deg, #C8A96A, #b8934a); }
+.dienst-visual.light { background: var(--cloud); border: 1px solid var(--border); }
+.dienst-visual::after { content: ''; position: absolute; bottom: -40px; right: -40px; width: 160px; height: 160px; border-radius: 50%; background: rgba(255,255,255,.08); }
+.dienst-icon-wrap {
+  width: 64px; height: 64px;
+  border-radius: 16px;
+  background: rgba(200,169,106,.15);
+  display: flex; align-items: center; justify-content: center;
+}
+.dienst-visual.navy .dienst-icon-wrap { background: rgba(200,169,106,.2); }
+.dienst-visual-title { font-family: 'Manrope', sans-serif; font-weight: 800; font-size: 26px; color: var(--white); letter-spacing: -0.5px; line-height: 1.2; }
+.dienst-visual.light .dienst-visual-title { color: var(--navy); }
+.dienst-visual.gold .dienst-visual-title { color: var(--navy); }
+.dienst-visual-desc { font-size: 14px; color: rgba(255,255,255,.65); line-height: 1.7; }
+.dienst-visual.light .dienst-visual-desc { color: var(--sub); }
+.dienst-visual.gold .dienst-visual-desc { color: rgba(15,31,61,.7); }
+
+.dienst-text .dienst-tag { font-size: 11px; font-weight: 600; letter-spacing: 3px; text-transform: uppercase; color: var(--gold); margin-bottom: 16px; }
+.dienst-text h2 { font-family: 'Manrope', sans-serif; font-weight: 800; font-size: 34px; color: var(--navy); letter-spacing: -0.8px; line-height: 1.2; margin-bottom: 18px; }
+.dienst-text p { font-size: 15px; color: var(--sub); line-height: 1.85; margin-bottom: 16px; }
+.dienst-list { list-style: none; display: flex; flex-direction: column; gap: 12px; margin-top: 24px; margin-bottom: 32px; }
+.dienst-list li { display: flex; align-items: flex-start; gap: 12px; font-size: 14px; color: var(--sub); }
+.dienst-list li::before { content: ''; width: 6px; height: 6px; border-radius: 50%; background: var(--gold); flex-shrink: 0; margin-top: 8px; }
+
+.btn-primary { display: inline-flex; align-items: center; gap: 8px; background: var(--gold); color: var(--navy); font-family: 'Manrope', sans-serif; font-weight: 700; font-size: 15px; padding: 14px 28px; border-radius: 10px; text-decoration: none; transition: transform .2s, box-shadow .2s; }
+.btn-primary:hover { transform: translateY(-2px); box-shadow: 0 8px 24px rgba(200,169,106,.35); }
+.btn-navy { display: inline-flex; align-items: center; gap: 8px; background: var(--navy); color: var(--white); font-family: 'Manrope', sans-serif; font-weight: 700; font-size: 15px; padding: 14px 28px; border-radius: 10px; text-decoration: none; transition: transform .2s, background .2s; }
+.btn-navy:hover { transform: translateY(-2px); background: #162d52; }
+
+/* SECTOREN */
+.sectoren-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; margin-top: 48px; }
+.sector-chip {
+  background: var(--white);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 20px;
+  text-align: center;
+  transition: box-shadow .2s, transform .2s;
+}
+.sector-chip:hover { box-shadow: 0 6px 20px rgba(15,31,61,.08); transform: translateY(-2px); }
+.sector-chip-icon { font-size: 28px; margin-bottom: 10px; }
+.sector-chip h4 { font-family: 'Manrope', sans-serif; font-weight: 700; font-size: 14px; color: var(--navy); margin-bottom: 4px; }
+.sector-chip p { font-size: 12px; color: var(--sub); }
+
+/* PROCESS */
+.process-steps { display: grid; grid-template-columns: repeat(5, 1fr); gap: 0; margin-top: 48px; position: relative; }
+.process-steps::before {
+  content: '';
+  position: absolute;
+  top: 28px;
+  left: 10%;
+  right: 10%;
+  height: 2px;
+  background: var(--border);
+  z-index: 0;
+}
+.process-step { display: flex; flex-direction: column; align-items: center; gap: 16px; text-align: center; position: relative; z-index: 1; }
+.process-num {
+  width: 56px; height: 56px;
+  border-radius: 50%;
+  background: var(--white);
+  border: 2px solid var(--border);
+  display: flex; align-items: center; justify-content: center;
+  font-family: 'Manrope', sans-serif;
+  font-weight: 800;
+  font-size: 16px;
+  color: var(--navy);
+  transition: background .2s, border-color .2s;
+}
+.process-step.active .process-num { background: var(--navy); border-color: var(--navy); color: var(--white); }
+.process-step h4 { font-family: 'Manrope', sans-serif; font-weight: 700; font-size: 13px; color: var(--navy); }
+.process-step p { font-size: 12px; color: var(--sub); line-height: 1.6; max-width: 160px; }
+
+/* CTA BANNER */
+.cta-banner { background: linear-gradient(135deg, var(--navy) 0%, #1a3560 100%); padding: 80px 32px; text-align: center; position: relative; overflow: hidden; }
+.cta-banner::before { content: ''; position: absolute; top: 50%; left: 50%; transform: translate(-50%,-50%); width: 600px; height: 600px; border-radius: 50%; background: var(--gold); opacity: 0.05; }
+.cta-banner-inner { max-width: 600px; margin: 0 auto; position: relative; z-index: 1; }
+.cta-banner h2 { font-family: 'Manrope', sans-serif; font-weight: 800; font-size: 38px; color: var(--white); letter-spacing: -1px; margin-bottom: 16px; line-height: 1.15; }
+.cta-banner p { font-size: 16px; color: rgba(255,255,255,.65); margin-bottom: 36px; line-height: 1.7; }
+.cta-actions { display: flex; gap: 14px; justify-content: center; flex-wrap: wrap; }
+.btn-outline { display: inline-flex; align-items: center; gap: 8px; background: transparent; color: var(--white); font-family: 'Manrope', sans-serif; font-weight: 600; font-size: 15px; padding: 14px 28px; border-radius: 10px; border: 1.5px solid rgba(255,255,255,.25); text-decoration: none; transition: background .2s, border-color .2s; }
+.btn-outline:hover { background: rgba(255,255,255,.08); border-color: rgba(255,255,255,.5); }
+
+/* FOOTER */
+footer { background: var(--navy); padding: 64px 32px 40px; color: rgba(255,255,255,.55); }
+.footer-inner { max-width: 1160px; margin: 0 auto; }
+.footer-top { display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 48px; padding-bottom: 48px; border-bottom: 1px solid rgba(255,255,255,.08); margin-bottom: 40px; }
+.footer-brand p { font-size: 14px; line-height: 1.7; margin-top: 16px; max-width: 260px; }
+.footer-col h4 { font-family: 'Manrope', sans-serif; font-weight: 600; font-size: 13px; color: var(--white); margin-bottom: 16px; }
+.footer-col ul { list-style: none; display: flex; flex-direction: column; gap: 10px; }
+.footer-col a { color: rgba(255,255,255,.5); text-decoration: none; font-size: 14px; transition: color .2s; }
+.footer-col a:hover { color: var(--gold); }
+.footer-bottom { display: flex; justify-content: space-between; align-items: center; font-size: 13px; flex-wrap: wrap; gap: 12px; }
+.footer-bottom a { color: rgba(255,255,255,.4); text-decoration: none; }
+.footer-bottom a:hover { color: var(--gold); }
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-inner">
+    <a href="index.html" class="nav-logo">
+      <svg viewBox="0 0 64 64" width="40" height="40" aria-hidden="true">
+        <circle cx="32" cy="11" r="9" fill="#C8A96A"/>
+        <polygon points="32,21 13,58 51,58" fill="#0F1F3D"/>
+      </svg>
+      <div>
+        <div class="nav-logo-name">WerkGeluk</div>
+        <div class="nav-logo-sub">Recruitment</div>
+      </div>
+    </a>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="over-ons.html">Over ons</a></li>
+      <li><a href="diensten.html" class="active">Diensten</a></li>
+      <li><a href="contact.html" class="nav-cta">Neem contact op</a></li>
+    </ul>
+  </div>
+</nav>
+
+<header class="page-header">
+  <div class="page-header-inner">
+    <p class="page-tag">Onze diensten</p>
+    <h1>Wat wij voor u kunnen doen</h1>
+    <p>Van vaste plaatsing tot discreet executive search — wij bieden gerichte recruitment oplossingen voor kandidaten en opdrachtgevers.</p>
+  </div>
+</header>
+
+<!-- DIENSTEN DETAIL -->
+<section class="section">
+  <div class="section-inner">
+
+    <!-- Dienst 1 -->
+    <div class="dienst-block">
+      <div class="dienst-visual navy">
+        <div class="dienst-icon-wrap">
+          <svg viewBox="0 0 24 24" width="30" height="30" fill="none" stroke="#C8A96A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/>
+          </svg>
+        </div>
+        <div class="dienst-visual-title">Werving &amp;<br>Selectie</div>
+        <div class="dienst-visual-desc">De complete recruitmentoplossing voor bedrijven die de beste kandidaat zoeken voor een vaste positie.</div>
+      </div>
+      <div class="dienst-text">
+        <div class="dienst-tag">Dienst 01</div>
+        <h2>Werving &amp; Selectie</h2>
+        <p>Wij begeleiden het volledige wervingsproces — van het opstellen van een scherp functieprofiel tot het begeleiden van de eerste werkdag. Persoonlijk, grondig en gericht op een match die écht werkt.</p>
+        <p>Geen grote databaseslagen, maar gerichte search. Wij spreken kandidaten persoonlijk en toetsen op zowel vakkennis als persoonlijkheid en cultuurfit.</p>
+        <ul class="dienst-list">
+          <li>Opstellen functieprofiel en zoekstrategie</li>
+          <li>Actieve en passieve kandidaatbenadering</li>
+          <li>Persoonlijke interviews en competentieanalyse</li>
+          <li>Presentatie van een shortlist met persoonlijk advies</li>
+          <li>Begeleiding bij arbeidsvoorwaardengesprekken</li>
+          <li>Nazorg na plaatsing</li>
+        </ul>
+        <a href="contact.html" class="btn-navy">Vraag een kennismaking aan</a>
+      </div>
+    </div>
+
+    <!-- Dienst 2 -->
+    <div class="dienst-block reverse">
+      <div class="dienst-visual light">
+        <div class="dienst-icon-wrap" style="background: rgba(15,31,61,.08);">
+          <svg viewBox="0 0 24 24" width="30" height="30" fill="none" stroke="#0F1F3D" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/>
+          </svg>
+        </div>
+        <div class="dienst-visual-title">Technische Sales</div>
+        <div class="dienst-visual-desc">Salestalent vinden voor technische en industriële omgevingen is een vak apart — wij kennen dit vak als geen ander.</div>
+      </div>
+      <div class="dienst-text">
+        <div class="dienst-tag">Dienst 02</div>
+        <h2>Technische Sales Recruitment</h2>
+        <p>Technische salesfuncties vragen om een zeldzame combinatie van technisch begrip en commercieel talent. Wij weten waar deze professionals te vinden zijn en hoe wij ze aanspreken.</p>
+        <p>Met ons netwerk in de industriële en technologische sector in Rotterdam en omgeving bereiken wij kandidaten die niet actief op zoek zijn, maar wél open staan voor de juiste kans.</p>
+        <ul class="dienst-list">
+          <li>Account Manager Techniek</li>
+          <li>Sales Engineer</li>
+          <li>Business Development Manager</li>
+          <li>Technical Sales Representative</li>
+          <li>Regiomanager Technische Dienstverlening</li>
+        </ul>
+        <a href="contact.html" class="btn-navy">Bespreek uw vacature</a>
+      </div>
+    </div>
+
+    <!-- Dienst 3 -->
+    <div class="dienst-block">
+      <div class="dienst-visual gold">
+        <div class="dienst-icon-wrap" style="background: rgba(15,31,61,.1);">
+          <svg viewBox="0 0 24 24" width="30" height="30" fill="none" stroke="#0F1F3D" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="12" cy="12" r="3"/><path d="M19.07 4.93l-1.41 1.41M5.34 18.66l-1.41 1.41M20 12h2M2 12h2M19.07 19.07l-1.41-1.41M5.34 5.34 3.93 3.93M12 20v2M12 2v2"/>
+          </svg>
+        </div>
+        <div class="dienst-visual-title" style="color:var(--navy);">Executive<br>Search</div>
+        <div class="dienst-visual-desc" style="color:rgba(15,31,61,.65);">Voor leidinggevende functies waarbij discretie, diepgang en een breed netwerk onmisbaar zijn.</div>
+      </div>
+      <div class="dienst-text">
+        <div class="dienst-tag">Dienst 03</div>
+        <h2>Executive Search</h2>
+        <p>Voor directie- en managementfuncties hanteren wij een gerichte, vertrouwelijke aanpak. Wij spreken kandidaten direct aan op basis van ons uitgebreide netwerk en diepgaand marktonderzoek.</p>
+        <p>Onze executive search is volledig op maat: we starten met een grondige intake, bouwen een longlist van passende professionals en begeleiden alle gesprekken tot aan het moment van aanstelling.</p>
+        <ul class="dienst-list">
+          <li>Directeur / General Manager</li>
+          <li>Operations Manager</li>
+          <li>Commercieel Directeur</li>
+          <li>HR Manager / Director</li>
+          <li>Plant Manager / Vestigingsmanager</li>
+        </ul>
+        <a href="contact.html" class="btn-navy">Vertrouwelijk contact</a>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- SECTOREN -->
+<section class="section alt">
+  <div class="section-inner">
+    <p class="section-tag">Sectoren</p>
+    <h2 class="section-title">Branches waar wij actief zijn</h2>
+    <p class="section-sub">Onze expertise reikt van de haven en industrie tot technologie en zakelijke dienstverlening in de Rotterdamse regio.</p>
+    <div class="sectoren-grid">
+      <div class="sector-chip">
+        <div class="sector-chip-icon">⚓</div>
+        <h4>Haven &amp; Logistiek</h4>
+        <p>Port of Rotterdam en supply chain</p>
+      </div>
+      <div class="sector-chip">
+        <div class="sector-chip-icon">⚙️</div>
+        <h4>Industrie &amp; Techniek</h4>
+        <p>Productie, engineering en onderhoud</p>
+      </div>
+      <div class="sector-chip">
+        <div class="sector-chip-icon">💡</div>
+        <h4>Energie &amp; Duurzaamheid</h4>
+        <p>Energietransitie en renewables</p>
+      </div>
+      <div class="sector-chip">
+        <div class="sector-chip-icon">📊</div>
+        <h4>Zakelijke Dienstverlening</h4>
+        <p>Finance, IT en consultancy</p>
+      </div>
+      <div class="sector-chip">
+        <div class="sector-chip-icon">🏗️</div>
+        <h4>Bouw &amp; Infra</h4>
+        <p>Projectmanagement en uitvoering</p>
+      </div>
+      <div class="sector-chip">
+        <div class="sector-chip-icon">🔬</div>
+        <h4>Life Sciences</h4>
+        <p>Pharma, chemie en research</p>
+      </div>
+      <div class="sector-chip">
+        <div class="sector-chip-icon">🚛</div>
+        <h4>Transport &amp; Distributie</h4>
+        <p>Fleet management en operations</p>
+      </div>
+      <div class="sector-chip">
+        <div class="sector-chip-icon">💼</div>
+        <h4>Sales &amp; Commercie</h4>
+        <p>B2B sales in alle branches</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PROCES -->
+<section class="section">
+  <div class="section-inner">
+    <p class="section-tag">Ons proces</p>
+    <h2 class="section-title">Van vraag tot match — in 5 stappen</h2>
+    <p class="section-sub">Een transparant en persoonlijk proces, zodat u altijd weet waar we staan.</p>
+    <div class="process-steps">
+      <div class="process-step active">
+        <div class="process-num">1</div>
+        <h4>Kennismaking</h4>
+        <p>Intake gesprek om wensen en cultuur te begrijpen</p>
+      </div>
+      <div class="process-step active">
+        <div class="process-num">2</div>
+        <h4>Zoekstrategie</h4>
+        <p>Functieprofiel opstellen en aanpak bepalen</p>
+      </div>
+      <div class="process-step active">
+        <div class="process-num">3</div>
+        <h4>Search &amp; Screen</h4>
+        <p>Actieve benadering en grondige selectie</p>
+      </div>
+      <div class="process-step">
+        <div class="process-num">4</div>
+        <h4>Presentatie</h4>
+        <p>Shortlist met persoonlijk advies per kandidaat</p>
+      </div>
+      <div class="process-step">
+        <div class="process-num">5</div>
+        <h4>Plaatsing &amp; Nazorg</h4>
+        <p>Begeleiding tot en na de eerste werkdag</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta-banner">
+  <div class="cta-banner-inner">
+    <h2>Klaar om te beginnen?</h2>
+    <p>Neem vrijblijvend contact op voor een kennismaking. Wij denken graag met u mee over de beste aanpak.</p>
+    <div class="cta-actions">
+      <a href="contact.html" class="btn-primary">Neem contact op</a>
+      <a href="over-ons.html" class="btn-outline">Over ons team</a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="footer-inner">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <a href="index.html" class="nav-logo" style="display:inline-flex;">
+          <svg viewBox="0 0 64 64" width="36" height="36" aria-hidden="true">
+            <circle cx="32" cy="11" r="9" fill="#C8A96A"/>
+            <polygon points="32,21 13,58 51,58" fill="#F5F7FA"/>
+          </svg>
+          <div style="margin-left:12px;">
+            <div class="nav-logo-name" style="color:#F5F7FA; font-size:18px;">WerkGeluk</div>
+            <div class="nav-logo-sub">Recruitment</div>
+          </div>
+        </a>
+        <p>Het juiste werk. De juiste mens. Gevestigd in Rotterdam, actief in de hele regio.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Navigatie</h4>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="over-ons.html">Over ons</a></li>
+          <li><a href="diensten.html">Diensten</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Diensten</h4>
+        <ul>
+          <li><a href="diensten.html">Werving &amp; Selectie</a></li>
+          <li><a href="diensten.html">Technische Sales</a></li>
+          <li><a href="diensten.html">Executive Search</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Contact</h4>
+        <ul>
+          <li><a href="mailto:info@werkgeluk-recruitment.nl">info@werkgeluk-recruitment.nl</a></li>
+          <li><a href="tel:+31618236993">06 18 23 69 93</a></li>
+          <li><a href="#">Otto Reuchlinweg, Rotterdam</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>&copy; 2026 WerkGeluk Recruitment · KVK 70841640</span>
+      <div style="display:flex;gap:20px;">
+        <a href="#">Privacy</a>
+        <a href="#">Algemene voorwaarden</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>

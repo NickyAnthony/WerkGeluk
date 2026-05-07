@@ -2,2196 +2,941 @@
 <html lang="nl">
 <head>
 <meta charset="utf-8"/>
-<title>WerkGeluk — Logo Designs v3</title>
+<title>WerkGeluk Recruitment — Het juiste werk. De juiste mens.</title>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
+<meta name="description" content="WerkGeluk Recruitment verbindt ambitieuze professionals met de juiste werkgever. Persoonlijk, betrokken en gericht op duurzame plaatsingen."/>
 <link rel="preconnect" href="https://fonts.googleapis.com"/>
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Manrope:wght@500;600;700&family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=DM+Sans:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet"/>
 <style>
-  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
-  :root {
-    --navy:  #0D1B2A;
-    --gold:  #C9A25B;
-    --cloud: #F4F6F8;
-    --canvas: #E1E5EC;
-    --sub:   #5A6470;
-    --border: #E2E5EA;
-  }
+:root {
+  --navy:   #0F1F3D;
+  --gold:   #C8A96A;
+  --cloud:  #F5F7FA;
+  --white:  #FFFFFF;
+  --sub:    #5A6678;
+  --border: #E4E7EF;
+  --text:   #1A2B4A;
+}
 
-  html, body {
-    background: var(--canvas);
-    font-family: 'Inter', system-ui, sans-serif;
-    color: var(--navy);
-    min-height: 100vh;
-  }
+html { scroll-behavior: smooth; }
 
-  /* ── Page header ── */
-  .page-header {
-    padding: 56px 64px 40px;
-    max-width: 1200px;
-    margin: 0 auto;
-  }
-  .page-header h1 {
-    font-family: 'Fraunces', serif;
-    font-weight: 500;
-    font-size: 36px;
-    letter-spacing: -0.5px;
-    line-height: 1.1;
-    color: var(--navy);
-  }
-  .page-header p {
-    margin-top: 10px;
-    font-size: 14px;
-    color: var(--sub);
-    letter-spacing: 0.2px;
-  }
+body {
+  font-family: 'Inter', system-ui, sans-serif;
+  color: var(--text);
+  background: var(--white);
+  line-height: 1.6;
+}
 
-  /* ── Layout ── */
-  .page-content {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 64px 80px;
-    display: flex;
-    flex-direction: column;
-    gap: 80px;
-  }
+/* ── NAV ── */
+nav {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: rgba(255,255,255,0.95);
+  backdrop-filter: blur(8px);
+  border-bottom: 1px solid var(--border);
+}
+.nav-inner {
+  max-width: 1160px;
+  margin: 0 auto;
+  padding: 0 32px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 72px;
+}
+.nav-logo {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  text-decoration: none;
+}
+.nav-logo-name {
+  font-family: 'Manrope', sans-serif;
+  font-weight: 700;
+  font-size: 22px;
+  letter-spacing: -0.5px;
+  color: var(--navy);
+  line-height: 1;
+}
+.nav-logo-sub {
+  font-family: 'Manrope', sans-serif;
+  font-weight: 300;
+  font-size: 10px;
+  letter-spacing: 0.5px;
+  color: var(--gold);
+  margin-top: 4px;
+}
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  list-style: none;
+}
+.nav-links a {
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--sub);
+  padding: 8px 16px;
+  border-radius: 8px;
+  transition: color .2s, background .2s;
+}
+.nav-links a:hover { color: var(--navy); background: var(--cloud); }
+.nav-links a.active { color: var(--navy); }
+.nav-cta {
+  background: var(--navy);
+  color: var(--white) !important;
+  border-radius: 8px;
+  padding: 10px 20px !important;
+  transition: background .2s !important;
+}
+.nav-cta:hover { background: #162d52 !important; color: var(--white) !important; }
 
-  /* ── Section ── */
-  .section-title {
-    font-family: 'JetBrains Mono', monospace;
-    font-size: 10px;
-    letter-spacing: 3px;
-    color: var(--sub);
-    text-transform: uppercase;
-    margin-bottom: 6px;
-  }
-  .section-heading {
-    font-family: 'Fraunces', serif;
-    font-weight: 500;
-    font-size: 26px;
-    letter-spacing: -0.3px;
-    color: var(--navy);
-  }
-  .section-sub {
-    margin-top: 4px;
-    font-size: 13px;
-    color: var(--sub);
-  }
-  .section-header {
-    margin-bottom: 28px;
-    padding-bottom: 20px;
-    border-bottom: 1px solid var(--border);
-  }
+/* ── HERO ── */
+.hero {
+  background: linear-gradient(160deg, var(--navy) 0%, #1a3560 100%);
+  padding: 100px 32px 120px;
+  position: relative;
+  overflow: hidden;
+}
+.hero::before {
+  content: '';
+  position: absolute;
+  top: -120px;
+  right: -80px;
+  width: 500px;
+  height: 500px;
+  border-radius: 50%;
+  background: var(--gold);
+  opacity: 0.06;
+}
+.hero::after {
+  content: '';
+  position: absolute;
+  bottom: -60px;
+  left: 10%;
+  width: 300px;
+  height: 300px;
+  border-radius: 50%;
+  background: var(--gold);
+  opacity: 0.04;
+}
+.hero-inner {
+  max-width: 1160px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 80px;
+  align-items: center;
+  position: relative;
+  z-index: 1;
+}
+.hero-label {
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin-bottom: 20px;
+}
+.hero h1 {
+  font-family: 'Manrope', sans-serif;
+  font-weight: 800;
+  font-size: 52px;
+  line-height: 1.1;
+  letter-spacing: -1.5px;
+  color: var(--white);
+  margin-bottom: 24px;
+}
+.hero h1 span { color: var(--gold); }
+.hero-desc {
+  font-size: 17px;
+  color: rgba(255,255,255,0.72);
+  line-height: 1.7;
+  max-width: 460px;
+  margin-bottom: 40px;
+}
+.hero-actions {
+  display: flex;
+  gap: 14px;
+  flex-wrap: wrap;
+}
+.btn-primary {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: var(--gold);
+  color: var(--navy);
+  font-family: 'Manrope', sans-serif;
+  font-weight: 700;
+  font-size: 15px;
+  padding: 14px 28px;
+  border-radius: 10px;
+  text-decoration: none;
+  transition: transform .2s, box-shadow .2s;
+}
+.btn-primary:hover { transform: translateY(-2px); box-shadow: 0 8px 24px rgba(200,169,106,.35); }
+.btn-outline {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: transparent;
+  color: var(--white);
+  font-family: 'Manrope', sans-serif;
+  font-weight: 600;
+  font-size: 15px;
+  padding: 14px 28px;
+  border-radius: 10px;
+  border: 1.5px solid rgba(255,255,255,0.25);
+  text-decoration: none;
+  transition: background .2s, border-color .2s;
+}
+.btn-outline:hover { background: rgba(255,255,255,0.08); border-color: rgba(255,255,255,0.5); }
 
-  /* ── Artboard grid ── */
-  .artboard-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
-    gap: 16px;
-  }
-  .artboard-grid.full { grid-template-columns: 1fr; }
-  .artboard-grid.two  { grid-template-columns: 1fr 1fr; }
-  .artboard-grid.three { grid-template-columns: 1fr 1fr 1fr; }
+.hero-visual {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.hero-card {
+  background: rgba(255,255,255,0.06);
+  border: 1px solid rgba(255,255,255,0.12);
+  border-radius: 20px;
+  padding: 48px 40px;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  width: 100%;
+  max-width: 380px;
+}
+.hero-stat {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 16px 20px;
+  background: rgba(255,255,255,0.05);
+  border-radius: 12px;
+  border: 1px solid rgba(255,255,255,0.08);
+}
+.hero-stat-icon {
+  width: 44px;
+  height: 44px;
+  border-radius: 10px;
+  background: var(--gold);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+.hero-stat-num {
+  font-family: 'Manrope', sans-serif;
+  font-weight: 800;
+  font-size: 26px;
+  color: var(--white);
+  line-height: 1;
+}
+.hero-stat-label {
+  font-size: 12px;
+  color: rgba(255,255,255,0.55);
+  margin-top: 2px;
+}
 
-  /* ── Artboard card ── */
-  .artboard {
-    background: #fff;
-    border-radius: 10px;
-    overflow: hidden;
-    box-shadow: 0 1px 3px rgba(13,27,42,.07), 0 4px 16px rgba(13,27,42,.05);
-  }
-  .artboard-label {
-    padding: 10px 16px;
-    border-bottom: 1px solid var(--border);
-    font-family: 'JetBrains Mono', monospace;
-    font-size: 9px;
-    letter-spacing: 1.8px;
-    color: var(--sub);
-    text-transform: uppercase;
-  }
-  .artboard-body {
-    padding: 40px;
-    background: var(--canvas);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    min-height: 220px;
-  }
-  .artboard-body.white { background: #fff; }
-  .artboard-body.navy  { background: var(--navy); }
-  .artboard-body.cloud { background: var(--cloud); }
-  .artboard-body.plain { padding: 0; min-height: 0; }
+/* ── TRUST BAR ── */
+.trust-bar {
+  background: var(--cloud);
+  border-bottom: 1px solid var(--border);
+  padding: 20px 32px;
+}
+.trust-inner {
+  max-width: 1160px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  gap: 40px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+.trust-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 13px;
+  color: var(--sub);
+  font-weight: 500;
+}
+.trust-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--gold);
+  flex-shrink: 0;
+}
 
-  /* ── Palette cards ── */
-  .palette-grid {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 12px;
-    height: 200px;
-  }
-  .palette-card {
-    border-radius: 6px;
-    padding: 18px;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    border: 1px solid transparent;
-  }
-  .palette-card.light { border-color: var(--border); }
-  .palette-card-name {
-    font-family: 'Fraunces', serif;
-    font-weight: 500;
-    font-size: 20px;
-    line-height: 1;
-  }
-  .palette-card-role {
-    font-family: 'Inter', sans-serif;
-    font-size: 10px;
-    opacity: 0.7;
-    margin-top: 5px;
-    line-height: 1.4;
-  }
-  .palette-card-hex {
-    font-family: 'JetBrains Mono', monospace;
-    font-size: 10px;
-    opacity: 0.85;
-    margin-top: 14px;
-  }
+/* ── SECTION ── */
+.section {
+  padding: 96px 32px;
+}
+.section.alt { background: var(--cloud); }
+.section-inner { max-width: 1160px; margin: 0 auto; }
+.section-tag {
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin-bottom: 12px;
+}
+.section-title {
+  font-family: 'Manrope', sans-serif;
+  font-weight: 800;
+  font-size: 38px;
+  letter-spacing: -1px;
+  color: var(--navy);
+  line-height: 1.15;
+  margin-bottom: 16px;
+}
+.section-sub {
+  font-size: 16px;
+  color: var(--sub);
+  max-width: 540px;
+  line-height: 1.7;
+}
 
-  /* ── Logo showcase split (white | cloud) ── */
-  .logo-split {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    min-height: 220px;
-  }
-  .logo-split-panel {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 48px 40px;
-  }
+/* ── DIENSTEN CARDS ── */
+.cards-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+  margin-top: 56px;
+}
+.service-card {
+  background: var(--white);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  padding: 36px 32px;
+  transition: box-shadow .25s, transform .25s;
+  text-decoration: none;
+  color: inherit;
+  display: block;
+}
+.service-card:hover {
+  box-shadow: 0 12px 40px rgba(15,31,61,.1);
+  transform: translateY(-4px);
+}
+.section.alt .service-card { background: var(--white); }
+.card-icon {
+  width: 52px;
+  height: 52px;
+  border-radius: 12px;
+  background: var(--cloud);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 24px;
+}
+.service-card h3 {
+  font-family: 'Manrope', sans-serif;
+  font-weight: 700;
+  font-size: 19px;
+  color: var(--navy);
+  margin-bottom: 12px;
+  letter-spacing: -0.3px;
+}
+.service-card p {
+  font-size: 14px;
+  color: var(--sub);
+  line-height: 1.7;
+}
+.card-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  margin-top: 20px;
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--navy);
+  text-decoration: none;
+}
+.card-link::after {
+  content: '→';
+  transition: transform .2s;
+}
+.service-card:hover .card-link::after { transform: translateX(4px); }
 
-  /* ── Logo wordmark ── */
-  .wordmark {
-    line-height: 1;
-  }
-  .wordmark-text {
-    font-weight: 500;
-    font-size: 28px;
-    letter-spacing: -0.4px;
-    color: var(--navy);
-  }
-  .wordmark-sub {
-    font-family: 'Inter', sans-serif;
-    font-weight: 500;
-    font-size: 9px;
-    letter-spacing: 4.5px;
-    color: var(--sub);
-    margin-top: 5px;
-  }
+/* ── HOE WE WERKEN ── */
+.steps {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 32px;
+  margin-top: 56px;
+}
+.step {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+.step-num {
+  font-family: 'Manrope', sans-serif;
+  font-weight: 800;
+  font-size: 40px;
+  color: var(--border);
+  line-height: 1;
+}
+.step h3 {
+  font-family: 'Manrope', sans-serif;
+  font-weight: 700;
+  font-size: 17px;
+  color: var(--navy);
+}
+.step p {
+  font-size: 14px;
+  color: var(--sub);
+  line-height: 1.7;
+}
 
-  /* logo horizontal layout */
-  .logo-h {
-    display: flex;
-    align-items: center;
-    gap: 16px;
-  }
-  .logo-v {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 16px;
-    text-align: center;
-  }
+/* ── ABOUT PREVIEW ── */
+.about-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 80px;
+  align-items: center;
+  margin-top: 0;
+}
+.about-visual {
+  background: var(--navy);
+  border-radius: 20px;
+  padding: 56px 48px;
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+  position: relative;
+  overflow: hidden;
+}
+.about-visual::after {
+  content: '';
+  position: absolute;
+  top: -40px;
+  right: -40px;
+  width: 180px;
+  height: 180px;
+  border-radius: 50%;
+  background: var(--gold);
+  opacity: 0.1;
+}
+.about-quote {
+  font-family: 'Manrope', sans-serif;
+  font-weight: 600;
+  font-size: 22px;
+  color: var(--white);
+  line-height: 1.4;
+  letter-spacing: -0.3px;
+  position: relative;
+  z-index: 1;
+}
+.about-quote::before {
+  content: '"';
+  font-size: 64px;
+  color: var(--gold);
+  line-height: 0.5;
+  display: block;
+  margin-bottom: 16px;
+  font-family: 'Manrope', sans-serif;
+}
+.about-author {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  position: relative;
+  z-index: 1;
+}
+.author-avatar {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background: var(--gold);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Manrope', sans-serif;
+  font-weight: 700;
+  font-size: 18px;
+  color: var(--navy);
+  flex-shrink: 0;
+}
+.author-name {
+  font-family: 'Manrope', sans-serif;
+  font-weight: 600;
+  font-size: 14px;
+  color: var(--white);
+}
+.author-role {
+  font-size: 12px;
+  color: rgba(255,255,255,0.55);
+  margin-top: 2px;
+}
+.about-text .section-tag { margin-top: 0; }
+.about-text .section-title { font-size: 34px; }
+.about-text p {
+  font-size: 15px;
+  color: var(--sub);
+  line-height: 1.8;
+  margin-bottom: 16px;
+}
+.about-text .btn-primary { color: var(--navy); }
 
-  /* ── Favicon set ── */
-  .favicon-set {
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
-    align-items: flex-start;
-    padding: 36px;
-    background: var(--cloud);
-    min-height: 240px;
-  }
-  .favicon-row {
-    display: flex;
-    gap: 18px;
-    align-items: flex-end;
-  }
-  .favicon-item {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 8px;
-  }
-  .favicon-box {
-    background: #fff;
-    border: 1px solid var(--border);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
-  .favicon-label {
-    font-family: 'JetBrains Mono', monospace;
-    font-size: 9px;
-    color: #888;
-  }
-  .tab-mock {
-    display: flex;
-    align-items: center;
-  }
-  .tab-inner {
-    background: #fff;
-    border-radius: 6px 6px 0 0;
-    padding: 6px 12px 6px 10px;
-    display: flex;
-    align-items: center;
-    gap: 8px;
-    border: 1px solid var(--border);
-    border-bottom: none;
-  }
-  .tab-title {
-    font-family: 'Inter', sans-serif;
-    font-size: 11px;
-    color: #3A4150;
-  }
-  .tab-close {
-    font-family: 'Inter', sans-serif;
-    font-size: 13px;
-    color: #9BA1AB;
-    margin-left: 4px;
-    line-height: 0.7;
-  }
+/* ── TESTIMONIALS ── */
+.testimonials-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+  margin-top: 56px;
+}
+.testimonial {
+  background: var(--white);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  padding: 32px;
+}
+.testimonial-stars {
+  display: flex;
+  gap: 3px;
+  margin-bottom: 20px;
+}
+.star { color: var(--gold); font-size: 16px; }
+.testimonial p {
+  font-size: 14px;
+  color: var(--sub);
+  line-height: 1.75;
+  margin-bottom: 24px;
+  font-style: italic;
+}
+.testimonial-author {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+.t-avatar {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Manrope', sans-serif;
+  font-weight: 700;
+  font-size: 14px;
+  flex-shrink: 0;
+}
+.t-name {
+  font-weight: 600;
+  font-size: 13px;
+  color: var(--navy);
+}
+.t-role {
+  font-size: 12px;
+  color: var(--sub);
+  margin-top: 1px;
+}
 
-  /* ── Business card ── */
-  .bizcard-wrap {
-    display: flex;
-    gap: 24px;
-    padding: 36px;
-    background: var(--canvas);
-    border-radius: 0;
-  }
-  .bizcard {
-    width: 340px;
-    height: 200px;
-    border-radius: 6px;
-    box-shadow: 0 8px 24px rgba(13,27,42,.12), 0 1px 2px rgba(13,27,42,.06);
-    flex-shrink: 0;
-  }
-  .bizcard-front {
-    background: #fff;
-    padding: 26px;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    height: 100%;
-  }
-  .bizcard-logo-wrap {
-    transform: scale(0.75);
-    transform-origin: top left;
-    margin-left: -8px;
-    margin-top: -6px;
-  }
-  .bizcard-contact {
-    font-family: 'Inter', sans-serif;
-    font-size: 10px;
-    color: var(--sub);
-    line-height: 1.5;
-  }
-  .bizcard-name {
-    font-weight: 600;
-    color: var(--navy);
-    font-size: 12px;
-    margin-bottom: 2px;
-  }
-  .bizcard-info-row {
-    display: flex;
-    gap: 14px;
-    margin-top: 8px;
-  }
-  .bizcard-back {
-    background: var(--navy);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    position: relative;
-    overflow: hidden;
-    height: 100%;
-  }
-  .bizcard-glow {
-    position: absolute;
-    right: -20px;
-    top: -20px;
-    width: 100px;
-    height: 100px;
-    border-radius: 50%;
-    opacity: 0.22;
-  }
+/* ── CTA BANNER ── */
+.cta-banner {
+  background: linear-gradient(135deg, var(--navy) 0%, #1a3560 100%);
+  padding: 80px 32px;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+.cta-banner::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 600px;
+  height: 600px;
+  border-radius: 50%;
+  background: var(--gold);
+  opacity: 0.05;
+}
+.cta-banner-inner {
+  max-width: 600px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 1;
+}
+.cta-banner h2 {
+  font-family: 'Manrope', sans-serif;
+  font-weight: 800;
+  font-size: 38px;
+  color: var(--white);
+  letter-spacing: -1px;
+  margin-bottom: 16px;
+  line-height: 1.15;
+}
+.cta-banner p {
+  font-size: 16px;
+  color: rgba(255,255,255,0.65);
+  margin-bottom: 36px;
+  line-height: 1.7;
+}
+.cta-actions { display: flex; gap: 14px; justify-content: center; flex-wrap: wrap; }
 
-  /* ── Letterhead ── */
-  .letterhead {
-    width: 420px;
-    background: #fff;
-    border-radius: 4px;
-    box-shadow: 0 12px 32px rgba(13,27,42,.10);
-    padding: 32px 40px;
-    position: relative;
-    overflow: hidden;
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
-  }
-  .letterhead-logo-wrap {
-    transform: scale(0.68);
-    transform-origin: top left;
-    margin-left: -6px;
-    margin-top: -5px;
-  }
-  .letterhead-rule {
-    display: flex;
-    align-items: center;
-    gap: 8px;
-    padding-top: 4px;
-  }
-  .letterhead-rule-navy { height: 2px; background: var(--navy); flex: 3; }
-  .letterhead-rule-gold {
-    height: 2px;
-    background: linear-gradient(135deg, #8B6A2E 0%, #C9A25B 35%, #F0D89A 55%, #C9A25B 75%, #8B6A2E 100%);
-    flex: 1;
-  }
-  .letterhead-address {
-    display: flex;
-    justify-content: space-between;
-    font-family: 'Inter', sans-serif;
-    font-size: 7.5px;
-    color: var(--sub);
-    letter-spacing: 1.2px;
-    margin-top: -12px;
-  }
-  .letterhead-body {
-    font-family: 'Inter', sans-serif;
-    font-size: 9px;
-    color: var(--navy);
-    line-height: 1.7;
-  }
-  .letterhead-date { color: var(--sub); margin-bottom: 12px; }
-  .letterhead-salutation { font-weight: 600; margin-bottom: 8px; }
-  .letterhead-lines {
-    background: repeating-linear-gradient(
-      0deg,
-      transparent 0,
-      transparent 11px,
-      #E2E5EA 11px,
-      #E2E5EA 12px
-    );
-    height: 160px;
-    margin-bottom: 10px;
-  }
-  .letterhead-footer {
-    position: absolute;
-    bottom: 14px;
-    left: 40px;
-    right: 40px;
-    display: flex;
-    justify-content: space-between;
-    font-family: 'Inter', sans-serif;
-    font-size: 7px;
-    color: #9BA1AB;
-    letter-spacing: 1.5px;
-  }
-
-  /* ── LinkedIn banner ── */
-  .linkedin-banner {
-    width: 680px;
-    height: 170px;
-    border-radius: 8px;
-    overflow: hidden;
-    display: flex;
-    align-items: stretch;
-    box-shadow: 0 6px 20px rgba(13,27,42,.10);
-    border: 1px solid var(--border);
-  }
-  .linkedin-left {
-    width: 200px;
-    background: var(--navy);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    position: relative;
-    flex-shrink: 0;
-  }
-  .linkedin-glow {
-    position: absolute;
-    right: -30px;
-    bottom: -30px;
-    width: 110px;
-    height: 110px;
-    border-radius: 55px;
-    opacity: 0.18;
-  }
-  .linkedin-right {
-    flex: 1;
-    padding: 0 36px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    gap: 10px;
-    background: #fff;
-  }
-  .linkedin-headline {
-    font-family: 'Fraunces', serif;
-    font-size: 20px;
-    color: var(--navy);
-    font-weight: 400;
-    line-height: 1.2;
-    letter-spacing: -0.3px;
-  }
-  .linkedin-tags {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-  }
-  .linkedin-dot {
-    width: 6px;
-    height: 6px;
-    border-radius: 3px;
-  }
-  .linkedin-tag {
-    font-family: 'Inter', sans-serif;
-    font-size: 9.5px;
-    color: var(--sub);
-    letter-spacing: 2px;
-    font-weight: 500;
-  }
-
-  /* ── Divider ── */
-  .divider {
-    height: 1px;
-    background: var(--border);
-    margin: 0;
-  }
+/* ── FOOTER ── */
+footer {
+  background: var(--navy);
+  padding: 64px 32px 40px;
+  color: rgba(255,255,255,0.55);
+}
+.footer-inner {
+  max-width: 1160px;
+  margin: 0 auto;
+}
+.footer-top {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr 1fr;
+  gap: 48px;
+  padding-bottom: 48px;
+  border-bottom: 1px solid rgba(255,255,255,0.08);
+  margin-bottom: 40px;
+}
+.footer-brand p {
+  font-size: 14px;
+  line-height: 1.7;
+  margin-top: 16px;
+  max-width: 260px;
+}
+.footer-col h4 {
+  font-family: 'Manrope', sans-serif;
+  font-weight: 600;
+  font-size: 13px;
+  color: var(--white);
+  margin-bottom: 16px;
+  letter-spacing: 0.3px;
+}
+.footer-col ul { list-style: none; display: flex; flex-direction: column; gap: 10px; }
+.footer-col a {
+  color: rgba(255,255,255,0.5);
+  text-decoration: none;
+  font-size: 14px;
+  transition: color .2s;
+}
+.footer-col a:hover { color: var(--gold); }
+.footer-bottom {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 13px;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+.footer-bottom a { color: rgba(255,255,255,0.4); text-decoration: none; }
+.footer-bottom a:hover { color: var(--gold); }
 </style>
 </head>
 <body>
 
-<header class="page-header">
-  <h1>WerkGeluk · Logo Designs v3</h1>
-  <p>Twee Souls · Check Match · Twin Drops — uitgewerkt in navy + goud</p>
-</header>
+<!-- NAV -->
+<nav>
+  <div class="nav-inner">
+    <a href="index.html" class="nav-logo">
+      <svg viewBox="0 0 64 64" width="40" height="40" aria-hidden="true">
+        <circle cx="32" cy="11" r="9" fill="#C8A96A"/>
+        <polygon points="32,21 13,58 51,58" fill="#0F1F3D"/>
+      </svg>
+      <div>
+        <div class="nav-logo-name">WerkGeluk</div>
+        <div class="nav-logo-sub">Recruitment</div>
+      </div>
+    </a>
+    <ul class="nav-links">
+      <li><a href="index.html" class="active">Home</a></li>
+      <li><a href="over-ons.html">Over ons</a></li>
+      <li><a href="diensten.html">Diensten</a></li>
+      <li><a href="contact.html" class="nav-cta">Neem contact op</a></li>
+    </ul>
+  </div>
+</nav>
 
-<main class="page-content">
-
-  <!-- PALETTE SECTION -->
-  <section>
-    <div class="section-header">
-      <div class="section-title">01 — Palet</div>
-      <div class="section-heading">Het palet</div>
-      <div class="section-sub">Premium navy met warm goud accent op koel off-white</div>
-    </div>
-
-    <div class="artboard">
-      <div class="artboard-label">Kleurpalet</div>
-      <div class="artboard-body white" style="padding: 36px;">
-        <div class="palette-grid" style="width: 100%;">
-          <div class="palette-card" style="background:#0D1B2A; color:#fff;">
-            <div>
-              <div class="palette-card-name">Navy</div>
-              <div class="palette-card-role">Primary · headlines</div>
-            </div>
-            <div class="palette-card-hex">#0D1B2A</div>
-          </div>
-          <div class="palette-card" style="background: linear-gradient(135deg,#8B6A2E 0%,#C9A25B 35%,#F0D89A 55%,#C9A25B 75%,#8B6A2E 100%); color:#0D1B2A;">
-            <div>
-              <div class="palette-card-name">Gold</div>
-              <div class="palette-card-role">Accent · highlights</div>
-            </div>
-            <div class="palette-card-hex">metallic gradient</div>
-          </div>
-          <div class="palette-card light" style="background:#F4F6F8; color:#0D1B2A;">
-            <div>
-              <div class="palette-card-name">Cloud</div>
-              <div class="palette-card-role">Surface · backgrounds</div>
-            </div>
-            <div class="palette-card-hex">#F4F6F8</div>
-          </div>
-          <div class="palette-card light" style="background:#fff; color:#0D1B2A;">
-            <div>
-              <div class="palette-card-name">White</div>
-              <div class="palette-card-role">Base · cards</div>
-            </div>
-            <div class="palette-card-hex">#FFFFFF</div>
-          </div>
-        </div>
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-inner">
+    <div class="hero-content">
+      <p class="hero-label">Werving &amp; Selectie · Rotterdam</p>
+      <h1>Het juiste werk.<br><span>De juiste mens.</span></h1>
+      <p class="hero-desc">WerkGeluk Recruitment verbindt ambitieuze professionals met werkgevers die hen laten groeien. Persoonlijk, betrokken en gericht op een match die écht werkt.</p>
+      <div class="hero-actions">
+        <a href="contact.html" class="btn-primary">Neem contact op</a>
+        <a href="diensten.html" class="btn-outline">Bekijk onze diensten</a>
       </div>
     </div>
-  </section>
-
-  <!-- TWO SOULS -->
-  <section id="twosouls">
-    <div class="section-header">
-      <div class="section-title">02 — Two Souls</div>
-      <div class="section-heading">Two Souls</div>
-      <div class="section-sub">Twee mens-vormen die samen één geheel maken — verbinding &amp; match</div>
-    </div>
-
-    <!-- Horizontal (white + cloud) -->
-    <div class="artboard" style="margin-bottom: 16px;">
-      <div class="artboard-label">Horizontaal — wit + cloud</div>
-      <div class="artboard-body plain">
-        <div class="logo-split">
-          <div class="logo-split-panel" style="background:#fff;">
-            <!-- Two Souls horizontal -->
-            <div class="logo-h">
-              <svg viewBox="0 0 64 64" width="60" height="60">
-                <defs>
-                  <linearGradient id="gTS-h-main" x1="0%" y1="0%" x2="100%" y2="100%">
-                    <stop offset="0%"  stop-color="#8B6A2E"/>
-                    <stop offset="35%" stop-color="#C9A25B"/>
-                    <stop offset="55%" stop-color="#F0D89A"/>
-                    <stop offset="75%" stop-color="#C9A25B"/>
-                    <stop offset="100%" stop-color="#8B6A2E"/>
-                  </linearGradient>
-                  <linearGradient id="gTS-h-v" x1="0%" y1="0%" x2="0%" y2="100%">
-                    <stop offset="0%"  stop-color="#F0D89A"/>
-                    <stop offset="50%" stop-color="#C9A25B"/>
-                    <stop offset="100%" stop-color="#8B6A2E"/>
-                  </linearGradient>
-                </defs>
-                <circle cx="22" cy="20" r="6" fill="#0D1B2A"/>
-                <path d="M 8 50 Q 8 30 22 30 Q 32 30 32 44 L 32 50 Z" fill="#0D1B2A"/>
-                <circle cx="42" cy="20" r="6" fill="url(#gTS-h-v)"/>
-                <path d="M 56 50 Q 56 30 42 30 Q 32 30 32 44 L 32 50 Z" fill="url(#gTS-h-main)"/>
-              </svg>
-              <div class="wordmark">
-                <div class="wordmark-text" style="font-family:'DM Sans',sans-serif;">WerkGeluk</div>
-                <div class="wordmark-sub">RECRUITMENT</div>
-              </div>
-            </div>
-          </div>
-          <div class="logo-split-panel" style="background:#F4F6F8;">
-            <div class="logo-h">
-              <svg viewBox="0 0 64 64" width="60" height="60">
-                <defs>
-                  <linearGradient id="gTS-h2-main" x1="0%" y1="0%" x2="100%" y2="100%">
-                    <stop offset="0%"  stop-color="#8B6A2E"/>
-                    <stop offset="35%" stop-color="#C9A25B"/>
-                    <stop offset="55%" stop-color="#F0D89A"/>
-                    <stop offset="75%" stop-color="#C9A25B"/>
-                    <stop offset="100%" stop-color="#8B6A2E"/>
-                  </linearGradient>
-                  <linearGradient id="gTS-h2-v" x1="0%" y1="0%" x2="0%" y2="100%">
-                    <stop offset="0%"  stop-color="#F0D89A"/>
-                    <stop offset="50%" stop-color="#C9A25B"/>
-                    <stop offset="100%" stop-color="#8B6A2E"/>
-                  </linearGradient>
-                </defs>
-                <circle cx="22" cy="20" r="6" fill="#0D1B2A"/>
-                <path d="M 8 50 Q 8 30 22 30 Q 32 30 32 44 L 32 50 Z" fill="#0D1B2A"/>
-                <circle cx="42" cy="20" r="6" fill="url(#gTS-h2-v)"/>
-                <path d="M 56 50 Q 56 30 42 30 Q 32 30 32 44 L 32 50 Z" fill="url(#gTS-h2-main)"/>
-              </svg>
-              <div class="wordmark">
-                <div class="wordmark-text" style="font-family:'DM Sans',sans-serif;">WerkGeluk</div>
-                <div class="wordmark-sub">RECRUITMENT</div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <div class="artboard-grid three" style="margin-bottom: 16px;">
-      <!-- Gestapeld -->
-      <div class="artboard">
-        <div class="artboard-label">Gestapeld</div>
-        <div class="artboard-body white">
-          <div class="logo-v">
-            <svg viewBox="0 0 64 64" width="88" height="88">
-              <defs>
-                <linearGradient id="gTS-s-main" x1="0%" y1="0%" x2="100%" y2="100%">
-                  <stop offset="0%"  stop-color="#8B6A2E"/>
-                  <stop offset="35%" stop-color="#C9A25B"/>
-                  <stop offset="55%" stop-color="#F0D89A"/>
-                  <stop offset="75%" stop-color="#C9A25B"/>
-                  <stop offset="100%" stop-color="#8B6A2E"/>
-                </linearGradient>
-                <linearGradient id="gTS-s-v" x1="0%" y1="0%" x2="0%" y2="100%">
-                  <stop offset="0%"  stop-color="#F0D89A"/>
-                  <stop offset="50%" stop-color="#C9A25B"/>
-                  <stop offset="100%" stop-color="#8B6A2E"/>
-                </linearGradient>
-              </defs>
-              <circle cx="22" cy="20" r="6" fill="#0D1B2A"/>
-              <path d="M 8 50 Q 8 30 22 30 Q 32 30 32 44 L 32 50 Z" fill="#0D1B2A"/>
-              <circle cx="42" cy="20" r="6" fill="url(#gTS-s-v)"/>
-              <path d="M 56 50 Q 56 30 42 30 Q 32 30 32 44 L 32 50 Z" fill="url(#gTS-s-main)"/>
+    <div class="hero-visual">
+      <div class="hero-card">
+        <div class="hero-stat">
+          <div class="hero-stat-icon">
+            <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="#0F1F3D" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/>
             </svg>
-            <div class="wordmark" style="text-align:center;">
-              <div class="wordmark-text" style="font-family:'DM Sans',sans-serif; font-size:26px;">WerkGeluk</div>
-              <div class="wordmark-sub">RECRUITMENT</div>
-            </div>
+          </div>
+          <div>
+            <div class="hero-stat-num">250+</div>
+            <div class="hero-stat-label">Succesvolle plaatsingen</div>
           </div>
         </div>
-      </div>
-
-      <!-- Favicon -->
-      <div class="artboard">
-        <div class="artboard-label">Favicon — getest tot 16px</div>
-        <div class="artboard-body plain">
-          <div class="favicon-set">
-            <div class="favicon-label" style="font-family:'JetBrains Mono',monospace; font-size:10px; color:#5A6470; letter-spacing:1.5px;">FAVICON / APP ICON</div>
-            <div class="favicon-row">
-              <!-- 64px -->
-              <div class="favicon-item">
-                <div class="favicon-box" style="width:64px;height:64px;border-radius:14px;">
-                  <svg viewBox="0 0 64 64" width="50" height="50">
-                    <defs>
-                      <linearGradient id="gTS-fav64-m" x1="0%" y1="0%" x2="100%" y2="100%">
-                        <stop offset="0%"  stop-color="#8B6A2E"/>
-                        <stop offset="35%" stop-color="#C9A25B"/>
-                        <stop offset="55%" stop-color="#F0D89A"/>
-                        <stop offset="75%" stop-color="#C9A25B"/>
-                        <stop offset="100%" stop-color="#8B6A2E"/>
-                      </linearGradient>
-                      <linearGradient id="gTS-fav64-v" x1="0%" y1="0%" x2="0%" y2="100%">
-                        <stop offset="0%"  stop-color="#F0D89A"/>
-                        <stop offset="50%" stop-color="#C9A25B"/>
-                        <stop offset="100%" stop-color="#8B6A2E"/>
-                      </linearGradient>
-                    </defs>
-                    <circle cx="22" cy="20" r="6" fill="#0D1B2A"/>
-                    <path d="M 8 50 Q 8 30 22 30 Q 32 30 32 44 L 32 50 Z" fill="#0D1B2A"/>
-                    <circle cx="42" cy="20" r="6" fill="url(#gTS-fav64-v)"/>
-                    <path d="M 56 50 Q 56 30 42 30 Q 32 30 32 44 L 32 50 Z" fill="url(#gTS-fav64-m)"/>
-                  </svg>
-                </div>
-                <span class="favicon-label">64px</span>
-              </div>
-              <!-- 32px -->
-              <div class="favicon-item">
-                <div class="favicon-box" style="width:32px;height:32px;border-radius:7px;">
-                  <svg viewBox="0 0 64 64" width="25" height="25">
-                    <defs>
-                      <linearGradient id="gTS-fav32-m" x1="0%" y1="0%" x2="100%" y2="100%">
-                        <stop offset="0%"  stop-color="#8B6A2E"/>
-                        <stop offset="35%" stop-color="#C9A25B"/>
-                        <stop offset="55%" stop-color="#F0D89A"/>
-                        <stop offset="75%" stop-color="#C9A25B"/>
-                        <stop offset="100%" stop-color="#8B6A2E"/>
-                      </linearGradient>
-                      <linearGradient id="gTS-fav32-v" x1="0%" y1="0%" x2="0%" y2="100%">
-                        <stop offset="0%"  stop-color="#F0D89A"/>
-                        <stop offset="50%" stop-color="#C9A25B"/>
-                        <stop offset="100%" stop-color="#8B6A2E"/>
-                      </linearGradient>
-                    </defs>
-                    <circle cx="22" cy="20" r="6" fill="#0D1B2A"/>
-                    <path d="M 8 50 Q 8 30 22 30 Q 32 30 32 44 L 32 50 Z" fill="#0D1B2A"/>
-                    <circle cx="42" cy="20" r="6" fill="url(#gTS-fav32-v)"/>
-                    <path d="M 56 50 Q 56 30 42 30 Q 32 30 32 44 L 32 50 Z" fill="url(#gTS-fav32-m)"/>
-                  </svg>
-                </div>
-                <span class="favicon-label">32px</span>
-              </div>
-              <!-- 16px -->
-              <div class="favicon-item">
-                <div class="favicon-box" style="width:16px;height:16px;border-radius:3px;">
-                  <svg viewBox="0 0 64 64" width="12" height="12">
-                    <defs>
-                      <linearGradient id="gTS-fav16-m" x1="0%" y1="0%" x2="100%" y2="100%">
-                        <stop offset="0%"  stop-color="#8B6A2E"/>
-                        <stop offset="35%" stop-color="#C9A25B"/>
-                        <stop offset="55%" stop-color="#F0D89A"/>
-                        <stop offset="75%" stop-color="#C9A25B"/>
-                        <stop offset="100%" stop-color="#8B6A2E"/>
-                      </linearGradient>
-                      <linearGradient id="gTS-fav16-v" x1="0%" y1="0%" x2="0%" y2="100%">
-                        <stop offset="0%"  stop-color="#F0D89A"/>
-                        <stop offset="50%" stop-color="#C9A25B"/>
-                        <stop offset="100%" stop-color="#8B6A2E"/>
-                      </linearGradient>
-                    </defs>
-                    <circle cx="22" cy="20" r="6" fill="#0D1B2A"/>
-                    <path d="M 8 50 Q 8 30 22 30 Q 32 30 32 44 L 32 50 Z" fill="#0D1B2A"/>
-                    <circle cx="42" cy="20" r="6" fill="url(#gTS-fav16-v)"/>
-                    <path d="M 56 50 Q 56 30 42 30 Q 32 30 32 44 L 32 50 Z" fill="url(#gTS-fav16-m)"/>
-                  </svg>
-                </div>
-                <span class="favicon-label">16px</span>
-              </div>
-            </div>
-            <!-- Browser tab mock -->
-            <div class="tab-mock">
-              <div class="tab-inner">
-                <svg viewBox="0 0 64 64" width="14" height="14">
-                  <defs>
-                    <linearGradient id="gTS-tab-m" x1="0%" y1="0%" x2="100%" y2="100%">
-                      <stop offset="0%"  stop-color="#8B6A2E"/>
-                      <stop offset="35%" stop-color="#C9A25B"/>
-                      <stop offset="55%" stop-color="#F0D89A"/>
-                      <stop offset="75%" stop-color="#C9A25B"/>
-                      <stop offset="100%" stop-color="#8B6A2E"/>
-                    </linearGradient>
-                    <linearGradient id="gTS-tab-v" x1="0%" y1="0%" x2="0%" y2="100%">
-                      <stop offset="0%"  stop-color="#F0D89A"/>
-                      <stop offset="50%" stop-color="#C9A25B"/>
-                      <stop offset="100%" stop-color="#8B6A2E"/>
-                    </linearGradient>
-                  </defs>
-                  <circle cx="22" cy="20" r="6" fill="#0D1B2A"/>
-                  <path d="M 8 50 Q 8 30 22 30 Q 32 30 32 44 L 32 50 Z" fill="#0D1B2A"/>
-                  <circle cx="42" cy="20" r="6" fill="url(#gTS-tab-v)"/>
-                  <path d="M 56 50 Q 56 30 42 30 Q 32 30 32 44 L 32 50 Z" fill="url(#gTS-tab-m)"/>
-                </svg>
-                <span class="tab-title">WerkGeluk Recruitment</span>
-                <span class="tab-close">×</span>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <!-- Dark variant -->
-      <div class="artboard">
-        <div class="artboard-label">Op donker</div>
-        <div class="artboard-body navy">
-          <div class="logo-h">
-            <svg viewBox="0 0 64 64" width="60" height="60">
-              <defs>
-                <linearGradient id="gTS-dk-main" x1="0%" y1="0%" x2="100%" y2="100%">
-                  <stop offset="0%"  stop-color="#8B6A2E"/>
-                  <stop offset="35%" stop-color="#C9A25B"/>
-                  <stop offset="55%" stop-color="#F0D89A"/>
-                  <stop offset="75%" stop-color="#C9A25B"/>
-                  <stop offset="100%" stop-color="#8B6A2E"/>
-                </linearGradient>
-                <linearGradient id="gTS-dk-v" x1="0%" y1="0%" x2="0%" y2="100%">
-                  <stop offset="0%"  stop-color="#F0D89A"/>
-                  <stop offset="50%" stop-color="#C9A25B"/>
-                  <stop offset="100%" stop-color="#8B6A2E"/>
-                </linearGradient>
-              </defs>
-              <circle cx="22" cy="20" r="6" fill="#F4F6F8"/>
-              <path d="M 8 50 Q 8 30 22 30 Q 32 30 32 44 L 32 50 Z" fill="#F4F6F8"/>
-              <circle cx="42" cy="20" r="6" fill="url(#gTS-dk-v)"/>
-              <path d="M 56 50 Q 56 30 42 30 Q 32 30 32 44 L 32 50 Z" fill="url(#gTS-dk-main)"/>
+        <div class="hero-stat">
+          <div class="hero-stat-icon">
+            <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="#0F1F3D" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+              <polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/>
             </svg>
-            <div class="wordmark">
-              <div class="wordmark-text" style="font-family:'DM Sans',sans-serif; color:#fff;">WerkGeluk</div>
-              <div class="wordmark-sub" style="color:rgba(255,255,255,0.5);">RECRUITMENT</div>
-            </div>
+          </div>
+          <div>
+            <div class="hero-stat-num">93%</div>
+            <div class="hero-stat-label">Tevredenheidscore kandidaten</div>
           </div>
         </div>
-      </div>
-    </div>
-
-    <!-- Business card -->
-    <div class="artboard" style="margin-bottom: 16px;">
-      <div class="artboard-label">Visitekaartje</div>
-      <div class="artboard-body plain">
-        <div class="bizcard-wrap" style="justify-content:center;">
-          <!-- Front -->
-          <div class="bizcard" style="border-radius:6px;">
-            <div class="bizcard-front">
-              <div class="bizcard-logo-wrap">
-                <div class="logo-h">
-                  <svg viewBox="0 0 64 64" width="52" height="52">
-                    <defs>
-                      <linearGradient id="gTS-bc-main" x1="0%" y1="0%" x2="100%" y2="100%">
-                        <stop offset="0%"  stop-color="#8B6A2E"/>
-                        <stop offset="35%" stop-color="#C9A25B"/>
-                        <stop offset="55%" stop-color="#F0D89A"/>
-                        <stop offset="75%" stop-color="#C9A25B"/>
-                        <stop offset="100%" stop-color="#8B6A2E"/>
-                      </linearGradient>
-                      <linearGradient id="gTS-bc-v" x1="0%" y1="0%" x2="0%" y2="100%">
-                        <stop offset="0%"  stop-color="#F0D89A"/>
-                        <stop offset="50%" stop-color="#C9A25B"/>
-                        <stop offset="100%" stop-color="#8B6A2E"/>
-                      </linearGradient>
-                    </defs>
-                    <circle cx="22" cy="20" r="6" fill="#0D1B2A"/>
-                    <path d="M 8 50 Q 8 30 22 30 Q 32 30 32 44 L 32 50 Z" fill="#0D1B2A"/>
-                    <circle cx="42" cy="20" r="6" fill="url(#gTS-bc-v)"/>
-                    <path d="M 56 50 Q 56 30 42 30 Q 32 30 32 44 L 32 50 Z" fill="url(#gTS-bc-main)"/>
-                  </svg>
-                  <div class="wordmark">
-                    <div class="wordmark-text" style="font-family:'DM Sans',sans-serif; font-size:22px;">WerkGeluk</div>
-                    <div class="wordmark-sub" style="font-size:7.5px;">RECRUITMENT</div>
-                  </div>
-                </div>
-              </div>
-              <div class="bizcard-contact">
-                <div class="bizcard-name">Sanne van der Berg</div>
-                <div>Senior Recruitment Consultant</div>
-                <div class="bizcard-info-row">
-                  <span>06 18 23 69 93</span>
-                  <span>info@werkgeluk-recruitment.nl</span>
-                </div>
-              </div>
-            </div>
-          </div>
-          <!-- Back -->
-          <div class="bizcard" style="border-radius:6px;">
-            <div class="bizcard-back">
-              <div class="bizcard-glow" style="background:linear-gradient(135deg,#8B6A2E 0%,#C9A25B 35%,#F0D89A 55%,#C9A25B 75%,#8B6A2E 100%);"></div>
-              <svg viewBox="0 0 64 64" width="84" height="84" style="position:relative;z-index:1;">
-                <defs>
-                  <linearGradient id="gTS-bk-main" x1="0%" y1="0%" x2="100%" y2="100%">
-                    <stop offset="0%"  stop-color="#8B6A2E"/>
-                    <stop offset="35%" stop-color="#C9A25B"/>
-                    <stop offset="55%" stop-color="#F0D89A"/>
-                    <stop offset="75%" stop-color="#C9A25B"/>
-                    <stop offset="100%" stop-color="#8B6A2E"/>
-                  </linearGradient>
-                  <linearGradient id="gTS-bk-v" x1="0%" y1="0%" x2="0%" y2="100%">
-                    <stop offset="0%"  stop-color="#F0D89A"/>
-                    <stop offset="50%" stop-color="#C9A25B"/>
-                    <stop offset="100%" stop-color="#8B6A2E"/>
-                  </linearGradient>
-                </defs>
-                <circle cx="22" cy="20" r="6" fill="#F4F6F8"/>
-                <path d="M 8 50 Q 8 30 22 30 Q 32 30 32 44 L 32 50 Z" fill="#F4F6F8"/>
-                <circle cx="42" cy="20" r="6" fill="url(#gTS-bk-v)"/>
-                <path d="M 56 50 Q 56 30 42 30 Q 32 30 32 44 L 32 50 Z" fill="url(#gTS-bk-main)"/>
-              </svg>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <!-- Letterhead + LinkedIn -->
-    <div class="artboard-grid two">
-      <div class="artboard">
-        <div class="artboard-label">Briefhoofd</div>
-        <div class="artboard-body" style="padding: 40px;">
-          <div class="letterhead">
-            <div class="letterhead-logo-wrap">
-              <div class="logo-h">
-                <svg viewBox="0 0 64 64" width="52" height="52">
-                  <defs>
-                    <linearGradient id="gTS-lh-main" x1="0%" y1="0%" x2="100%" y2="100%">
-                      <stop offset="0%"  stop-color="#8B6A2E"/>
-                      <stop offset="35%" stop-color="#C9A25B"/>
-                      <stop offset="55%" stop-color="#F0D89A"/>
-                      <stop offset="75%" stop-color="#C9A25B"/>
-                      <stop offset="100%" stop-color="#8B6A2E"/>
-                    </linearGradient>
-                    <linearGradient id="gTS-lh-v" x1="0%" y1="0%" x2="0%" y2="100%">
-                      <stop offset="0%"  stop-color="#F0D89A"/>
-                      <stop offset="50%" stop-color="#C9A25B"/>
-                      <stop offset="100%" stop-color="#8B6A2E"/>
-                    </linearGradient>
-                  </defs>
-                  <circle cx="22" cy="20" r="6" fill="#0D1B2A"/>
-                  <path d="M 8 50 Q 8 30 22 30 Q 32 30 32 44 L 32 50 Z" fill="#0D1B2A"/>
-                  <circle cx="42" cy="20" r="6" fill="url(#gTS-lh-v)"/>
-                  <path d="M 56 50 Q 56 30 42 30 Q 32 30 32 44 L 32 50 Z" fill="url(#gTS-lh-main)"/>
-                </svg>
-                <div class="wordmark">
-                  <div class="wordmark-text" style="font-family:'DM Sans',sans-serif; font-size:22px;">WerkGeluk</div>
-                  <div class="wordmark-sub" style="font-size:7px;">RECRUITMENT</div>
-                </div>
-              </div>
-            </div>
-            <div class="letterhead-rule">
-              <div class="letterhead-rule-navy"></div>
-              <div class="letterhead-rule-gold"></div>
-            </div>
-            <div class="letterhead-address">
-              <span>OTTO REUCHLINWEG · 3072 MD ROTTERDAM</span>
-              <span>WERKGELUK-RECRUITMENT.NL</span>
-            </div>
-            <div class="letterhead-body">
-              <div class="letterhead-date">Rotterdam, 30 april 2026</div>
-              <div class="letterhead-salutation">Beste mevrouw De Vries,</div>
-              <div class="letterhead-lines"></div>
-              <div>Met vriendelijke groet,</div>
-              <div style="font-weight:600; margin-top:16px;">WerkGeluk Recruitment</div>
-            </div>
-            <div class="letterhead-footer">
-              <span>KVK 70841640</span>
-              <span>BTW NL001178713B61</span>
-              <span>06 18 23 69 93</span>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <div class="artboard">
-        <div class="artboard-label">LinkedIn banner</div>
-        <div class="artboard-body" style="padding: 40px;">
-          <div class="linkedin-banner">
-            <div class="linkedin-left">
-              <div class="linkedin-glow" style="background:linear-gradient(135deg,#8B6A2E 0%,#C9A25B 35%,#F0D89A 55%,#C9A25B 75%,#8B6A2E 100%);"></div>
-              <svg viewBox="0 0 64 64" width="110" height="110" style="position:relative;z-index:1;">
-                <defs>
-                  <linearGradient id="gTS-li-main" x1="0%" y1="0%" x2="100%" y2="100%">
-                    <stop offset="0%"  stop-color="#8B6A2E"/>
-                    <stop offset="35%" stop-color="#C9A25B"/>
-                    <stop offset="55%" stop-color="#F0D89A"/>
-                    <stop offset="75%" stop-color="#C9A25B"/>
-                    <stop offset="100%" stop-color="#8B6A2E"/>
-                  </linearGradient>
-                  <linearGradient id="gTS-li-v" x1="0%" y1="0%" x2="0%" y2="100%">
-                    <stop offset="0%"  stop-color="#F0D89A"/>
-                    <stop offset="50%" stop-color="#C9A25B"/>
-                    <stop offset="100%" stop-color="#8B6A2E"/>
-                  </linearGradient>
-                </defs>
-                <circle cx="22" cy="20" r="6" fill="#F4F6F8"/>
-                <path d="M 8 50 Q 8 30 22 30 Q 32 30 32 44 L 32 50 Z" fill="#F4F6F8"/>
-                <circle cx="42" cy="20" r="6" fill="url(#gTS-li-v)"/>
-                <path d="M 56 50 Q 56 30 42 30 Q 32 30 32 44 L 32 50 Z" fill="url(#gTS-li-main)"/>
-              </svg>
-            </div>
-            <div class="linkedin-right">
-              <div class="linkedin-headline">Het juiste werk.<br>De juiste mens.</div>
-              <div class="linkedin-tags">
-                <div class="linkedin-dot" style="background:#0D1B2A;"></div>
-                <span class="linkedin-tag">WERVING &amp; SELECTIE</span>
-                <div class="linkedin-dot" style="background:linear-gradient(135deg,#8B6A2E,#C9A25B,#F0D89A);"></div>
-                <span class="linkedin-tag">ROTTERDAM</span>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- CHECK MATCH -->
-  <section id="checkmatch">
-    <div class="section-header">
-      <div class="section-title">03 — Check Match</div>
-      <div class="section-heading">Check Match</div>
-      <div class="section-sub">Een vinkje uit twee strokes — bevestiging van de juiste match</div>
-    </div>
-
-    <!-- Horizontal -->
-    <div class="artboard" style="margin-bottom: 16px;">
-      <div class="artboard-label">Horizontaal — wit + cloud</div>
-      <div class="artboard-body plain">
-        <div class="logo-split">
-          <div class="logo-split-panel" style="background:#fff;">
-            <div class="logo-h">
-              <svg viewBox="0 0 64 64" width="60" height="60">
-                <defs>
-                  <linearGradient id="gCM-h-main" x1="0%" y1="0%" x2="100%" y2="100%">
-                    <stop offset="0%"  stop-color="#8B6A2E"/>
-                    <stop offset="35%" stop-color="#C9A25B"/>
-                    <stop offset="55%" stop-color="#F0D89A"/>
-                    <stop offset="75%" stop-color="#C9A25B"/>
-                    <stop offset="100%" stop-color="#8B6A2E"/>
-                  </linearGradient>
-                </defs>
-                <circle cx="32" cy="32" r="28" fill="none" stroke="#0D1B2A" stroke-width="2" opacity="0.15"/>
-                <path d="M 16 34 L 26 44" stroke="#0D1B2A" stroke-width="6" stroke-linecap="round" fill="none"/>
-                <path d="M 26 44 L 48 22" stroke="url(#gCM-h-main)" stroke-width="6" stroke-linecap="round" fill="none"/>
-              </svg>
-              <div class="wordmark">
-                <div class="wordmark-text" style="font-family:'Inter',sans-serif; font-weight:600; letter-spacing:-0.6px;">WerkGeluk</div>
-                <div class="wordmark-sub">RECRUITMENT</div>
-              </div>
-            </div>
-          </div>
-          <div class="logo-split-panel" style="background:#F4F6F8;">
-            <div class="logo-h">
-              <svg viewBox="0 0 64 64" width="60" height="60">
-                <defs>
-                  <linearGradient id="gCM-h2-main" x1="0%" y1="0%" x2="100%" y2="100%">
-                    <stop offset="0%"  stop-color="#8B6A2E"/>
-                    <stop offset="35%" stop-color="#C9A25B"/>
-                    <stop offset="55%" stop-color="#F0D89A"/>
-                    <stop offset="75%" stop-color="#C9A25B"/>
-                    <stop offset="100%" stop-color="#8B6A2E"/>
-                  </linearGradient>
-                </defs>
-                <circle cx="32" cy="32" r="28" fill="none" stroke="#0D1B2A" stroke-width="2" opacity="0.15"/>
-                <path d="M 16 34 L 26 44" stroke="#0D1B2A" stroke-width="6" stroke-linecap="round" fill="none"/>
-                <path d="M 26 44 L 48 22" stroke="url(#gCM-h2-main)" stroke-width="6" stroke-linecap="round" fill="none"/>
-              </svg>
-              <div class="wordmark">
-                <div class="wordmark-text" style="font-family:'Inter',sans-serif; font-weight:600; letter-spacing:-0.6px;">WerkGeluk</div>
-                <div class="wordmark-sub">RECRUITMENT</div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <div class="artboard-grid three" style="margin-bottom: 16px;">
-      <!-- Gestapeld -->
-      <div class="artboard">
-        <div class="artboard-label">Gestapeld</div>
-        <div class="artboard-body white">
-          <div class="logo-v">
-            <svg viewBox="0 0 64 64" width="88" height="88">
-              <defs>
-                <linearGradient id="gCM-s-main" x1="0%" y1="0%" x2="100%" y2="100%">
-                  <stop offset="0%"  stop-color="#8B6A2E"/>
-                  <stop offset="35%" stop-color="#C9A25B"/>
-                  <stop offset="55%" stop-color="#F0D89A"/>
-                  <stop offset="75%" stop-color="#C9A25B"/>
-                  <stop offset="100%" stop-color="#8B6A2E"/>
-                </linearGradient>
-              </defs>
-              <circle cx="32" cy="32" r="28" fill="none" stroke="#0D1B2A" stroke-width="2" opacity="0.15"/>
-              <path d="M 16 34 L 26 44" stroke="#0D1B2A" stroke-width="6" stroke-linecap="round" fill="none"/>
-              <path d="M 26 44 L 48 22" stroke="url(#gCM-s-main)" stroke-width="6" stroke-linecap="round" fill="none"/>
+        <div class="hero-stat">
+          <div class="hero-stat-icon">
+            <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="#0F1F3D" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/>
             </svg>
-            <div class="wordmark" style="text-align:center;">
-              <div class="wordmark-text" style="font-family:'Inter',sans-serif; font-weight:600; letter-spacing:-0.6px; font-size:26px;">WerkGeluk</div>
-              <div class="wordmark-sub">RECRUITMENT</div>
-            </div>
           </div>
-        </div>
-      </div>
-
-      <!-- Favicon -->
-      <div class="artboard">
-        <div class="artboard-label">Favicon — getest tot 16px</div>
-        <div class="artboard-body plain">
-          <div class="favicon-set">
-            <div class="favicon-label" style="font-family:'JetBrains Mono',monospace; font-size:10px; color:#5A6470; letter-spacing:1.5px;">FAVICON / APP ICON</div>
-            <div class="favicon-row">
-              <div class="favicon-item">
-                <div class="favicon-box" style="width:64px;height:64px;border-radius:14px;">
-                  <svg viewBox="0 0 64 64" width="50" height="50">
-                    <defs>
-                      <linearGradient id="gCM-fav64" x1="0%" y1="0%" x2="100%" y2="100%">
-                        <stop offset="0%"  stop-color="#8B6A2E"/>
-                        <stop offset="35%" stop-color="#C9A25B"/>
-                        <stop offset="55%" stop-color="#F0D89A"/>
-                        <stop offset="75%" stop-color="#C9A25B"/>
-                        <stop offset="100%" stop-color="#8B6A2E"/>
-                      </linearGradient>
-                    </defs>
-                    <path d="M 14 34 L 26 46" stroke="#0D1B2A" stroke-width="8" stroke-linecap="round" fill="none"/>
-                    <path d="M 26 46 L 50 18" stroke="url(#gCM-fav64)" stroke-width="8" stroke-linecap="round" fill="none"/>
-                  </svg>
-                </div>
-                <span class="favicon-label">64px</span>
-              </div>
-              <div class="favicon-item">
-                <div class="favicon-box" style="width:32px;height:32px;border-radius:7px;">
-                  <svg viewBox="0 0 64 64" width="25" height="25">
-                    <defs>
-                      <linearGradient id="gCM-fav32" x1="0%" y1="0%" x2="100%" y2="100%">
-                        <stop offset="0%"  stop-color="#8B6A2E"/>
-                        <stop offset="35%" stop-color="#C9A25B"/>
-                        <stop offset="55%" stop-color="#F0D89A"/>
-                        <stop offset="75%" stop-color="#C9A25B"/>
-                        <stop offset="100%" stop-color="#8B6A2E"/>
-                      </linearGradient>
-                    </defs>
-                    <path d="M 14 34 L 26 46" stroke="#0D1B2A" stroke-width="8" stroke-linecap="round" fill="none"/>
-                    <path d="M 26 46 L 50 18" stroke="url(#gCM-fav32)" stroke-width="8" stroke-linecap="round" fill="none"/>
-                  </svg>
-                </div>
-                <span class="favicon-label">32px</span>
-              </div>
-              <div class="favicon-item">
-                <div class="favicon-box" style="width:16px;height:16px;border-radius:3px;">
-                  <svg viewBox="0 0 64 64" width="12" height="12">
-                    <defs>
-                      <linearGradient id="gCM-fav16" x1="0%" y1="0%" x2="100%" y2="100%">
-                        <stop offset="0%"  stop-color="#8B6A2E"/>
-                        <stop offset="35%" stop-color="#C9A25B"/>
-                        <stop offset="55%" stop-color="#F0D89A"/>
-                        <stop offset="75%" stop-color="#C9A25B"/>
-                        <stop offset="100%" stop-color="#8B6A2E"/>
-                      </linearGradient>
-                    </defs>
-                    <path d="M 14 34 L 26 46" stroke="#0D1B2A" stroke-width="8" stroke-linecap="round" fill="none"/>
-                    <path d="M 26 46 L 50 18" stroke="url(#gCM-fav16)" stroke-width="8" stroke-linecap="round" fill="none"/>
-                  </svg>
-                </div>
-                <span class="favicon-label">16px</span>
-              </div>
-            </div>
-            <div class="tab-mock">
-              <div class="tab-inner">
-                <svg viewBox="0 0 64 64" width="14" height="14">
-                  <defs>
-                    <linearGradient id="gCM-tab" x1="0%" y1="0%" x2="100%" y2="100%">
-                      <stop offset="0%"  stop-color="#8B6A2E"/>
-                      <stop offset="35%" stop-color="#C9A25B"/>
-                      <stop offset="55%" stop-color="#F0D89A"/>
-                      <stop offset="75%" stop-color="#C9A25B"/>
-                      <stop offset="100%" stop-color="#8B6A2E"/>
-                    </linearGradient>
-                  </defs>
-                  <path d="M 14 34 L 26 46" stroke="#0D1B2A" stroke-width="8" stroke-linecap="round" fill="none"/>
-                  <path d="M 26 46 L 50 18" stroke="url(#gCM-tab)" stroke-width="8" stroke-linecap="round" fill="none"/>
-                </svg>
-                <span class="tab-title">WerkGeluk Recruitment</span>
-                <span class="tab-close">×</span>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <!-- Dark -->
-      <div class="artboard">
-        <div class="artboard-label">Op donker</div>
-        <div class="artboard-body navy">
-          <div class="logo-h">
-            <svg viewBox="0 0 64 64" width="60" height="60">
-              <defs>
-                <linearGradient id="gCM-dk-main" x1="0%" y1="0%" x2="100%" y2="100%">
-                  <stop offset="0%"  stop-color="#8B6A2E"/>
-                  <stop offset="35%" stop-color="#C9A25B"/>
-                  <stop offset="55%" stop-color="#F0D89A"/>
-                  <stop offset="75%" stop-color="#C9A25B"/>
-                  <stop offset="100%" stop-color="#8B6A2E"/>
-                </linearGradient>
-              </defs>
-              <path d="M 16 34 L 26 44" stroke="#F4F6F8" stroke-width="6" stroke-linecap="round" fill="none"/>
-              <path d="M 26 44 L 48 22" stroke="url(#gCM-dk-main)" stroke-width="6" stroke-linecap="round" fill="none"/>
-            </svg>
-            <div class="wordmark">
-              <div class="wordmark-text" style="font-family:'Inter',sans-serif; font-weight:600; letter-spacing:-0.6px; color:#fff;">WerkGeluk</div>
-              <div class="wordmark-sub" style="color:rgba(255,255,255,0.5);">RECRUITMENT</div>
-            </div>
+          <div>
+            <div class="hero-stat-num">5 weken</div>
+            <div class="hero-stat-label">Gemiddelde doorlooptijd</div>
           </div>
         </div>
       </div>
     </div>
+  </div>
+</section>
 
-    <!-- Business card -->
-    <div class="artboard" style="margin-bottom: 16px;">
-      <div class="artboard-label">Visitekaartje</div>
-      <div class="artboard-body plain">
-        <div class="bizcard-wrap" style="justify-content:center;">
-          <div class="bizcard" style="border-radius:6px;">
-            <div class="bizcard-front">
-              <div class="bizcard-logo-wrap">
-                <div class="logo-h">
-                  <svg viewBox="0 0 64 64" width="52" height="52">
-                    <defs>
-                      <linearGradient id="gCM-bc-main" x1="0%" y1="0%" x2="100%" y2="100%">
-                        <stop offset="0%"  stop-color="#8B6A2E"/>
-                        <stop offset="35%" stop-color="#C9A25B"/>
-                        <stop offset="55%" stop-color="#F0D89A"/>
-                        <stop offset="75%" stop-color="#C9A25B"/>
-                        <stop offset="100%" stop-color="#8B6A2E"/>
-                      </linearGradient>
-                    </defs>
-                    <circle cx="32" cy="32" r="28" fill="none" stroke="#0D1B2A" stroke-width="2" opacity="0.15"/>
-                    <path d="M 16 34 L 26 44" stroke="#0D1B2A" stroke-width="6" stroke-linecap="round" fill="none"/>
-                    <path d="M 26 44 L 48 22" stroke="url(#gCM-bc-main)" stroke-width="6" stroke-linecap="round" fill="none"/>
-                  </svg>
-                  <div class="wordmark">
-                    <div class="wordmark-text" style="font-family:'Inter',sans-serif; font-weight:600; letter-spacing:-0.6px; font-size:22px;">WerkGeluk</div>
-                    <div class="wordmark-sub" style="font-size:7.5px;">RECRUITMENT</div>
-                  </div>
-                </div>
-              </div>
-              <div class="bizcard-contact">
-                <div class="bizcard-name">Sanne van der Berg</div>
-                <div>Senior Recruitment Consultant</div>
-                <div class="bizcard-info-row">
-                  <span>06 18 23 69 93</span>
-                  <span>info@werkgeluk-recruitment.nl</span>
-                </div>
-              </div>
-            </div>
+<!-- TRUST BAR -->
+<div class="trust-bar">
+  <div class="trust-inner">
+    <div class="trust-item"><span class="trust-dot"></span>Werving &amp; Selectie</div>
+    <div class="trust-item"><span class="trust-dot"></span>Technische Sales</div>
+    <div class="trust-item"><span class="trust-dot"></span>Engineering &amp; Industrie</div>
+    <div class="trust-item"><span class="trust-dot"></span>Executive Search</div>
+    <div class="trust-item"><span class="trust-dot"></span>Rotterdam &amp; omgeving</div>
+  </div>
+</div>
+
+<!-- DIENSTEN -->
+<section class="section">
+  <div class="section-inner">
+    <p class="section-tag">Wat wij doen</p>
+    <h2 class="section-title">Onze diensten</h2>
+    <p class="section-sub">Van vaste plaatsing tot executive search — wij begeleiden kandidaten en opdrachtgevers door het hele wervingsproces.</p>
+    <div class="cards-grid">
+      <a href="diensten.html" class="service-card">
+        <div class="card-icon">
+          <svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="#C8A96A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/>
+          </svg>
+        </div>
+        <h3>Werving &amp; Selectie</h3>
+        <p>Wij vinden de juiste kandidaat voor uw organisatie. Van functieprofiel tot onboardingbegeleiding.</p>
+        <span class="card-link">Meer lezen</span>
+      </a>
+      <a href="diensten.html" class="service-card">
+        <div class="card-icon">
+          <svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="#C8A96A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/>
+          </svg>
+        </div>
+        <h3>Technische Sales</h3>
+        <p>Specialisten in het vinden van salestalent voor technische en industriële omgevingen.</p>
+        <span class="card-link">Meer lezen</span>
+      </a>
+      <a href="diensten.html" class="service-card">
+        <div class="card-icon">
+          <svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="#C8A96A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="12" cy="12" r="3"/><path d="M19.07 4.93l-1.41 1.41M5.34 18.66l-1.41 1.41M20 12h2M2 12h2M19.07 19.07l-1.41-1.41M5.34 5.34 3.93 3.93M12 20v2M12 2v2"/>
+          </svg>
+        </div>
+        <h3>Executive Search</h3>
+        <p>Voor leidinggevende en strategische functies — discreet, grondig en gericht op de lange termijn.</p>
+        <span class="card-link">Meer lezen</span>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- HOE WE WERKEN -->
+<section class="section alt">
+  <div class="section-inner">
+    <p class="section-tag">Onze aanpak</p>
+    <h2 class="section-title">Zo werken wij</h2>
+    <p class="section-sub">Een helder proces, open communicatie en persoonlijk contact — van eerste gesprek tot succesvolle plaatsing.</p>
+    <div class="steps">
+      <div class="step">
+        <div class="step-num">01</div>
+        <h3>Kennismaking</h3>
+        <p>We luisteren naar uw wensen, ambities en de cultuur van uw organisatie. Geen standaard template, maar écht begrip.</p>
+      </div>
+      <div class="step">
+        <div class="step-num">02</div>
+        <h3>Zoeken &amp; Screenen</h3>
+        <p>Ons netwerk en gerichte aanpak leveren gekwalificeerde kandidaten. We screenen grondig op kennis én karakter.</p>
+      </div>
+      <div class="step">
+        <div class="step-num">03</div>
+        <h3>Presentatie</h3>
+        <p>U ontvangt een selectie van passende profielen, inclusief onze persoonlijke beoordeling en motivatie.</p>
+      </div>
+      <div class="step">
+        <div class="step-num">04</div>
+        <h3>Begeleiding</h3>
+        <p>Van gesprekken tot aanbieding en onboarding — wij blijven betrokken totdat de match écht is gemaakt.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT PREVIEW -->
+<section class="section">
+  <div class="section-inner">
+    <div class="about-grid">
+      <div class="about-visual">
+        <div class="about-quote">
+          Werkgeluk begint niet met een vacature, maar met een eerlijk gesprek over wat mensen echt gelukkig maakt in hun werk.
+        </div>
+        <div class="about-author">
+          <div class="author-avatar">N</div>
+          <div>
+            <div class="author-name">Nicky Anthony</div>
+            <div class="author-role">Oprichter, WerkGeluk Recruitment</div>
           </div>
-          <div class="bizcard" style="border-radius:6px;">
-            <div class="bizcard-back">
-              <div class="bizcard-glow" style="background:linear-gradient(135deg,#8B6A2E 0%,#C9A25B 35%,#F0D89A 55%,#C9A25B 75%,#8B6A2E 100%);"></div>
-              <svg viewBox="0 0 64 64" width="84" height="84" style="position:relative;z-index:1;">
-                <defs>
-                  <linearGradient id="gCM-bk-main" x1="0%" y1="0%" x2="100%" y2="100%">
-                    <stop offset="0%"  stop-color="#8B6A2E"/>
-                    <stop offset="35%" stop-color="#C9A25B"/>
-                    <stop offset="55%" stop-color="#F0D89A"/>
-                    <stop offset="75%" stop-color="#C9A25B"/>
-                    <stop offset="100%" stop-color="#8B6A2E"/>
-                  </linearGradient>
-                </defs>
-                <path d="M 14 34 L 26 46" stroke="#F4F6F8" stroke-width="8" stroke-linecap="round" fill="none"/>
-                <path d="M 26 46 L 50 18" stroke="url(#gCM-bk-main)" stroke-width="8" stroke-linecap="round" fill="none"/>
-              </svg>
-            </div>
+        </div>
+      </div>
+      <div class="about-text">
+        <p class="section-tag">Over ons</p>
+        <h2 class="section-title">Recruitment met een menselijk hart</h2>
+        <p>WerkGeluk Recruitment is opgericht vanuit een eenvoudige overtuiging: de juiste baan verandert levens. Wij geloven dat een goede match verder gaat dan cv's en vacatureteksten.</p>
+        <p>Met jarenlange ervaring in werving voor technische en commerciële functies in de Rotterdamse regio kennen we de markt — en de mensen daarin.</p>
+        <a href="over-ons.html" class="btn-primary" style="margin-top:8px;">Leer ons kennen</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TESTIMONIALS -->
+<section class="section alt">
+  <div class="section-inner">
+    <p class="section-tag">Ervaringen</p>
+    <h2 class="section-title">Wat anderen zeggen</h2>
+    <p class="section-sub">Van kandidaten en opdrachtgevers die we met succes hebben begeleid.</p>
+    <div class="testimonials-grid">
+      <div class="testimonial">
+        <div class="testimonial-stars">
+          <span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span>
+        </div>
+        <p>"WerkGeluk heeft mij geholpen een stap te zetten die ik al jaren wilde zetten. Ze luisteren écht en stellen de juiste vragen."</p>
+        <div class="testimonial-author">
+          <div class="t-avatar" style="background:#e8f0ff;color:#0F1F3D;">MJ</div>
+          <div>
+            <div class="t-name">Mark Jansen</div>
+            <div class="t-role">Sales Engineer, Rotterdam</div>
+          </div>
+        </div>
+      </div>
+      <div class="testimonial">
+        <div class="testimonial-stars">
+          <span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span>
+        </div>
+        <p>"Binnen vijf weken hadden wij een uitstekende kandidaat. De communicatie was helder en persoonlijk — precies wat wij zochten."</p>
+        <div class="testimonial-author">
+          <div class="t-avatar" style="background:#fff3e0;color:#0F1F3D;">SV</div>
+          <div>
+            <div class="t-name">Sandra Vos</div>
+            <div class="t-role">HR Manager, TechIndustrie B.V.</div>
+          </div>
+        </div>
+      </div>
+      <div class="testimonial">
+        <div class="testimonial-stars">
+          <span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span>
+        </div>
+        <p>"Als kandidaat voelde ik me geen nummer maar een persoon. WerkGeluk denkt echt met je mee over je loopbaan."</p>
+        <div class="testimonial-author">
+          <div class="t-avatar" style="background:#e8ffe8;color:#0F1F3D;">LB</div>
+          <div>
+            <div class="t-name">Lisa Bakker</div>
+            <div class="t-role">Account Manager, Havenbedrijf</div>
           </div>
         </div>
       </div>
     </div>
+  </div>
+</section>
 
-    <!-- Letterhead + LinkedIn -->
-    <div class="artboard-grid two">
-      <div class="artboard">
-        <div class="artboard-label">Briefhoofd</div>
-        <div class="artboard-body" style="padding: 40px;">
-          <div class="letterhead">
-            <div class="letterhead-logo-wrap">
-              <div class="logo-h">
-                <svg viewBox="0 0 64 64" width="52" height="52">
-                  <defs>
-                    <linearGradient id="gCM-lh-main" x1="0%" y1="0%" x2="100%" y2="100%">
-                      <stop offset="0%"  stop-color="#8B6A2E"/>
-                      <stop offset="35%" stop-color="#C9A25B"/>
-                      <stop offset="55%" stop-color="#F0D89A"/>
-                      <stop offset="75%" stop-color="#C9A25B"/>
-                      <stop offset="100%" stop-color="#8B6A2E"/>
-                    </linearGradient>
-                  </defs>
-                  <circle cx="32" cy="32" r="28" fill="none" stroke="#0D1B2A" stroke-width="2" opacity="0.15"/>
-                  <path d="M 16 34 L 26 44" stroke="#0D1B2A" stroke-width="6" stroke-linecap="round" fill="none"/>
-                  <path d="M 26 44 L 48 22" stroke="url(#gCM-lh-main)" stroke-width="6" stroke-linecap="round" fill="none"/>
-                </svg>
-                <div class="wordmark">
-                  <div class="wordmark-text" style="font-family:'Inter',sans-serif; font-weight:600; letter-spacing:-0.6px; font-size:22px;">WerkGeluk</div>
-                  <div class="wordmark-sub" style="font-size:7px;">RECRUITMENT</div>
-                </div>
-              </div>
-            </div>
-            <div class="letterhead-rule">
-              <div class="letterhead-rule-navy"></div>
-              <div class="letterhead-rule-gold"></div>
-            </div>
-            <div class="letterhead-address">
-              <span>OTTO REUCHLINWEG · 3072 MD ROTTERDAM</span>
-              <span>WERKGELUK-RECRUITMENT.NL</span>
-            </div>
-            <div class="letterhead-body">
-              <div class="letterhead-date">Rotterdam, 30 april 2026</div>
-              <div class="letterhead-salutation">Beste mevrouw De Vries,</div>
-              <div class="letterhead-lines"></div>
-              <div>Met vriendelijke groet,</div>
-              <div style="font-weight:600; margin-top:16px;">WerkGeluk Recruitment</div>
-            </div>
-            <div class="letterhead-footer">
-              <span>KVK 70841640</span>
-              <span>BTW NL001178713B61</span>
-              <span>06 18 23 69 93</span>
-            </div>
+<!-- CTA BANNER -->
+<section class="cta-banner">
+  <div class="cta-banner-inner">
+    <h2>Klaar voor de volgende stap?</h2>
+    <p>Of u nu een nieuwe uitdaging zoekt of de perfecte kandidaat wilt vinden — wij staan voor u klaar.</p>
+    <div class="cta-actions">
+      <a href="contact.html" class="btn-primary">Neem contact op</a>
+      <a href="diensten.html" class="btn-outline">Onze diensten</a>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-inner">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <a href="index.html" class="nav-logo" style="display:inline-flex;">
+          <svg viewBox="0 0 64 64" width="36" height="36" aria-hidden="true">
+            <circle cx="32" cy="11" r="9" fill="#C8A96A"/>
+            <polygon points="32,21 13,58 51,58" fill="#F5F7FA"/>
+          </svg>
+          <div style="margin-left:12px;">
+            <div class="nav-logo-name" style="color:#F5F7FA; font-size:18px;">WerkGeluk</div>
+            <div class="nav-logo-sub">Recruitment</div>
           </div>
-        </div>
+        </a>
+        <p>Het juiste werk. De juiste mens. Gevestigd in Rotterdam, actief in de hele regio.</p>
       </div>
-
-      <div class="artboard">
-        <div class="artboard-label">LinkedIn banner</div>
-        <div class="artboard-body" style="padding: 40px;">
-          <div class="linkedin-banner">
-            <div class="linkedin-left">
-              <div class="linkedin-glow" style="background:linear-gradient(135deg,#8B6A2E 0%,#C9A25B 35%,#F0D89A 55%,#C9A25B 75%,#8B6A2E 100%);"></div>
-              <svg viewBox="0 0 64 64" width="110" height="110" style="position:relative;z-index:1;">
-                <defs>
-                  <linearGradient id="gCM-li-main" x1="0%" y1="0%" x2="100%" y2="100%">
-                    <stop offset="0%"  stop-color="#8B6A2E"/>
-                    <stop offset="35%" stop-color="#C9A25B"/>
-                    <stop offset="55%" stop-color="#F0D89A"/>
-                    <stop offset="75%" stop-color="#C9A25B"/>
-                    <stop offset="100%" stop-color="#8B6A2E"/>
-                  </linearGradient>
-                </defs>
-                <path d="M 14 34 L 26 46" stroke="#F4F6F8" stroke-width="8" stroke-linecap="round" fill="none"/>
-                <path d="M 26 46 L 50 18" stroke="url(#gCM-li-main)" stroke-width="8" stroke-linecap="round" fill="none"/>
-              </svg>
-            </div>
-            <div class="linkedin-right">
-              <div class="linkedin-headline">Elke match.<br>Een stap verder.</div>
-              <div class="linkedin-tags">
-                <div class="linkedin-dot" style="background:#0D1B2A;"></div>
-                <span class="linkedin-tag">WERVING &amp; SELECTIE</span>
-                <div class="linkedin-dot" style="background:linear-gradient(135deg,#8B6A2E,#C9A25B,#F0D89A);"></div>
-                <span class="linkedin-tag">ROTTERDAM</span>
-              </div>
-            </div>
-          </div>
-        </div>
+      <div class="footer-col">
+        <h4>Navigatie</h4>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="over-ons.html">Over ons</a></li>
+          <li><a href="diensten.html">Diensten</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Diensten</h4>
+        <ul>
+          <li><a href="diensten.html">Werving &amp; Selectie</a></li>
+          <li><a href="diensten.html">Technische Sales</a></li>
+          <li><a href="diensten.html">Executive Search</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Contact</h4>
+        <ul>
+          <li><a href="mailto:info@werkgeluk-recruitment.nl">info@werkgeluk-recruitment.nl</a></li>
+          <li><a href="tel:+31618236993">06 18 23 69 93</a></li>
+          <li><a href="over-ons.html">Otto Reuchlinweg, Rotterdam</a></li>
+        </ul>
       </div>
     </div>
-  </section>
-
-  <!-- TWIN DROPS -->
-  <section id="twindrops">
-    <div class="section-header">
-      <div class="section-title">05 — Twin Drops</div>
-      <div class="section-heading">Twin Drops</div>
-      <div class="section-sub">Twee druppels in elkaar — yin/yang van match en verbinding</div>
-    </div>
-
-    <!-- Horizontal -->
-    <div class="artboard" style="margin-bottom: 16px;">
-      <div class="artboard-label">Horizontaal — wit + cloud</div>
-      <div class="artboard-body plain">
-        <div class="logo-split">
-          <div class="logo-split-panel" style="background:#fff;">
-            <div class="logo-h">
-              <svg viewBox="0 0 64 64" width="60" height="60">
-                <defs>
-                  <linearGradient id="gTD-h-main" x1="0%" y1="0%" x2="100%" y2="100%">
-                    <stop offset="0%"  stop-color="#8B6A2E"/>
-                    <stop offset="35%" stop-color="#C9A25B"/>
-                    <stop offset="55%" stop-color="#F0D89A"/>
-                    <stop offset="75%" stop-color="#C9A25B"/>
-                    <stop offset="100%" stop-color="#8B6A2E"/>
-                  </linearGradient>
-                </defs>
-                <path d="M 32 8 A 12 12 0 0 1 32 32 A 12 12 0 0 0 32 56 A 24 24 0 0 1 32 8 Z" fill="#0D1B2A"/>
-                <path d="M 32 8 A 12 12 0 0 0 32 32 A 12 12 0 0 1 32 56 A 24 24 0 0 0 32 8 Z" fill="url(#gTD-h-main)"/>
-                <circle cx="32" cy="20" r="3" fill="#F4F6F8"/>
-                <circle cx="32" cy="44" r="3" fill="#F4F6F8"/>
-              </svg>
-              <div class="wordmark">
-                <div class="wordmark-text" style="font-family:'Manrope',sans-serif;">WerkGeluk</div>
-                <div class="wordmark-sub">RECRUITMENT</div>
-              </div>
-            </div>
-          </div>
-          <div class="logo-split-panel" style="background:#F4F6F8;">
-            <div class="logo-h">
-              <svg viewBox="0 0 64 64" width="60" height="60">
-                <defs>
-                  <linearGradient id="gTD-h2-main" x1="0%" y1="0%" x2="100%" y2="100%">
-                    <stop offset="0%"  stop-color="#8B6A2E"/>
-                    <stop offset="35%" stop-color="#C9A25B"/>
-                    <stop offset="55%" stop-color="#F0D89A"/>
-                    <stop offset="75%" stop-color="#C9A25B"/>
-                    <stop offset="100%" stop-color="#8B6A2E"/>
-                  </linearGradient>
-                </defs>
-                <path d="M 32 8 A 12 12 0 0 1 32 32 A 12 12 0 0 0 32 56 A 24 24 0 0 1 32 8 Z" fill="#0D1B2A"/>
-                <path d="M 32 8 A 12 12 0 0 0 32 32 A 12 12 0 0 1 32 56 A 24 24 0 0 0 32 8 Z" fill="url(#gTD-h2-main)"/>
-                <circle cx="32" cy="20" r="3" fill="#F4F6F8"/>
-                <circle cx="32" cy="44" r="3" fill="#F4F6F8"/>
-              </svg>
-              <div class="wordmark">
-                <div class="wordmark-text" style="font-family:'Manrope',sans-serif;">WerkGeluk</div>
-                <div class="wordmark-sub">RECRUITMENT</div>
-              </div>
-            </div>
-          </div>
-        </div>
+    <div class="footer-bottom">
+      <span>&copy; 2026 WerkGeluk Recruitment · KVK 70841640</span>
+      <div style="display:flex;gap:20px;">
+        <a href="#">Privacy</a>
+        <a href="#">Algemene voorwaarden</a>
       </div>
     </div>
-
-    <div class="artboard-grid three" style="margin-bottom: 16px;">
-      <!-- Gestapeld -->
-      <div class="artboard">
-        <div class="artboard-label">Gestapeld</div>
-        <div class="artboard-body white">
-          <div class="logo-v">
-            <svg viewBox="0 0 64 64" width="88" height="88">
-              <defs>
-                <linearGradient id="gTD-s-main" x1="0%" y1="0%" x2="100%" y2="100%">
-                  <stop offset="0%"  stop-color="#8B6A2E"/>
-                  <stop offset="35%" stop-color="#C9A25B"/>
-                  <stop offset="55%" stop-color="#F0D89A"/>
-                  <stop offset="75%" stop-color="#C9A25B"/>
-                  <stop offset="100%" stop-color="#8B6A2E"/>
-                </linearGradient>
-              </defs>
-              <path d="M 32 8 A 12 12 0 0 1 32 32 A 12 12 0 0 0 32 56 A 24 24 0 0 1 32 8 Z" fill="#0D1B2A"/>
-              <path d="M 32 8 A 12 12 0 0 0 32 32 A 12 12 0 0 1 32 56 A 24 24 0 0 0 32 8 Z" fill="url(#gTD-s-main)"/>
-              <circle cx="32" cy="20" r="3" fill="#F4F6F8"/>
-              <circle cx="32" cy="44" r="3" fill="#F4F6F8"/>
-            </svg>
-            <div class="wordmark" style="text-align:center;">
-              <div class="wordmark-text" style="font-family:'Manrope',sans-serif; font-size:26px;">WerkGeluk</div>
-              <div class="wordmark-sub">RECRUITMENT</div>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <!-- Favicon -->
-      <div class="artboard">
-        <div class="artboard-label">Favicon — getest tot 16px</div>
-        <div class="artboard-body plain">
-          <div class="favicon-set">
-            <div class="favicon-label" style="font-family:'JetBrains Mono',monospace; font-size:10px; color:#5A6470; letter-spacing:1.5px;">FAVICON / APP ICON</div>
-            <div class="favicon-row">
-              <div class="favicon-item">
-                <div class="favicon-box" style="width:64px;height:64px;border-radius:14px;">
-                  <svg viewBox="0 0 64 64" width="50" height="50">
-                    <defs>
-                      <linearGradient id="gTD-fav64" x1="0%" y1="0%" x2="100%" y2="100%">
-                        <stop offset="0%"  stop-color="#8B6A2E"/>
-                        <stop offset="35%" stop-color="#C9A25B"/>
-                        <stop offset="55%" stop-color="#F0D89A"/>
-                        <stop offset="75%" stop-color="#C9A25B"/>
-                        <stop offset="100%" stop-color="#8B6A2E"/>
-                      </linearGradient>
-                    </defs>
-                    <path d="M 32 8 A 12 12 0 0 1 32 32 A 12 12 0 0 0 32 56 A 24 24 0 0 1 32 8 Z" fill="#0D1B2A"/>
-                    <path d="M 32 8 A 12 12 0 0 0 32 32 A 12 12 0 0 1 32 56 A 24 24 0 0 0 32 8 Z" fill="url(#gTD-fav64)"/>
-                  </svg>
-                </div>
-                <span class="favicon-label">64px</span>
-              </div>
-              <div class="favicon-item">
-                <div class="favicon-box" style="width:32px;height:32px;border-radius:7px;">
-                  <svg viewBox="0 0 64 64" width="25" height="25">
-                    <defs>
-                      <linearGradient id="gTD-fav32" x1="0%" y1="0%" x2="100%" y2="100%">
-                        <stop offset="0%"  stop-color="#8B6A2E"/>
-                        <stop offset="35%" stop-color="#C9A25B"/>
-                        <stop offset="55%" stop-color="#F0D89A"/>
-                        <stop offset="75%" stop-color="#C9A25B"/>
-                        <stop offset="100%" stop-color="#8B6A2E"/>
-                      </linearGradient>
-                    </defs>
-                    <path d="M 32 8 A 12 12 0 0 1 32 32 A 12 12 0 0 0 32 56 A 24 24 0 0 1 32 8 Z" fill="#0D1B2A"/>
-                    <path d="M 32 8 A 12 12 0 0 0 32 32 A 12 12 0 0 1 32 56 A 24 24 0 0 0 32 8 Z" fill="url(#gTD-fav32)"/>
-                  </svg>
-                </div>
-                <span class="favicon-label">32px</span>
-              </div>
-              <div class="favicon-item">
-                <div class="favicon-box" style="width:16px;height:16px;border-radius:3px;">
-                  <svg viewBox="0 0 64 64" width="12" height="12">
-                    <defs>
-                      <linearGradient id="gTD-fav16" x1="0%" y1="0%" x2="100%" y2="100%">
-                        <stop offset="0%"  stop-color="#8B6A2E"/>
-                        <stop offset="35%" stop-color="#C9A25B"/>
-                        <stop offset="55%" stop-color="#F0D89A"/>
-                        <stop offset="75%" stop-color="#C9A25B"/>
-                        <stop offset="100%" stop-color="#8B6A2E"/>
-                      </linearGradient>
-                    </defs>
-                    <path d="M 32 8 A 12 12 0 0 1 32 32 A 12 12 0 0 0 32 56 A 24 24 0 0 1 32 8 Z" fill="#0D1B2A"/>
-                    <path d="M 32 8 A 12 12 0 0 0 32 32 A 12 12 0 0 1 32 56 A 24 24 0 0 0 32 8 Z" fill="url(#gTD-fav16)"/>
-                  </svg>
-                </div>
-                <span class="favicon-label">16px</span>
-              </div>
-            </div>
-            <div class="tab-mock">
-              <div class="tab-inner">
-                <svg viewBox="0 0 64 64" width="14" height="14">
-                  <defs>
-                    <linearGradient id="gTD-tab" x1="0%" y1="0%" x2="100%" y2="100%">
-                      <stop offset="0%"  stop-color="#8B6A2E"/>
-                      <stop offset="35%" stop-color="#C9A25B"/>
-                      <stop offset="55%" stop-color="#F0D89A"/>
-                      <stop offset="75%" stop-color="#C9A25B"/>
-                      <stop offset="100%" stop-color="#8B6A2E"/>
-                    </linearGradient>
-                  </defs>
-                  <path d="M 32 8 A 12 12 0 0 1 32 32 A 12 12 0 0 0 32 56 A 24 24 0 0 1 32 8 Z" fill="#0D1B2A"/>
-                  <path d="M 32 8 A 12 12 0 0 0 32 32 A 12 12 0 0 1 32 56 A 24 24 0 0 0 32 8 Z" fill="url(#gTD-tab)"/>
-                </svg>
-                <span class="tab-title">WerkGeluk Recruitment</span>
-                <span class="tab-close">×</span>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <!-- Dark -->
-      <div class="artboard">
-        <div class="artboard-label">Op donker</div>
-        <div class="artboard-body navy">
-          <div class="logo-h">
-            <svg viewBox="0 0 64 64" width="60" height="60">
-              <defs>
-                <linearGradient id="gTD-dk-main" x1="0%" y1="0%" x2="100%" y2="100%">
-                  <stop offset="0%"  stop-color="#8B6A2E"/>
-                  <stop offset="35%" stop-color="#C9A25B"/>
-                  <stop offset="55%" stop-color="#F0D89A"/>
-                  <stop offset="75%" stop-color="#C9A25B"/>
-                  <stop offset="100%" stop-color="#8B6A2E"/>
-                </linearGradient>
-              </defs>
-              <path d="M 32 8 A 12 12 0 0 1 32 32 A 12 12 0 0 0 32 56 A 24 24 0 0 1 32 8 Z" fill="#F4F6F8"/>
-              <path d="M 32 8 A 12 12 0 0 0 32 32 A 12 12 0 0 1 32 56 A 24 24 0 0 0 32 8 Z" fill="url(#gTD-dk-main)"/>
-            </svg>
-            <div class="wordmark">
-              <div class="wordmark-text" style="font-family:'Manrope',sans-serif; color:#fff;">WerkGeluk</div>
-              <div class="wordmark-sub" style="color:rgba(255,255,255,0.5);">RECRUITMENT</div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <!-- Business card -->
-    <div class="artboard" style="margin-bottom: 16px;">
-      <div class="artboard-label">Visitekaartje</div>
-      <div class="artboard-body plain">
-        <div class="bizcard-wrap" style="justify-content:center;">
-          <div class="bizcard" style="border-radius:6px;">
-            <div class="bizcard-front">
-              <div class="bizcard-logo-wrap">
-                <div class="logo-h">
-                  <svg viewBox="0 0 64 64" width="52" height="52">
-                    <defs>
-                      <linearGradient id="gTD-bc-main" x1="0%" y1="0%" x2="100%" y2="100%">
-                        <stop offset="0%"  stop-color="#8B6A2E"/>
-                        <stop offset="35%" stop-color="#C9A25B"/>
-                        <stop offset="55%" stop-color="#F0D89A"/>
-                        <stop offset="75%" stop-color="#C9A25B"/>
-                        <stop offset="100%" stop-color="#8B6A2E"/>
-                      </linearGradient>
-                    </defs>
-                    <path d="M 32 8 A 12 12 0 0 1 32 32 A 12 12 0 0 0 32 56 A 24 24 0 0 1 32 8 Z" fill="#0D1B2A"/>
-                    <path d="M 32 8 A 12 12 0 0 0 32 32 A 12 12 0 0 1 32 56 A 24 24 0 0 0 32 8 Z" fill="url(#gTD-bc-main)"/>
-                    <circle cx="32" cy="20" r="3" fill="#F4F6F8"/>
-                    <circle cx="32" cy="44" r="3" fill="#F4F6F8"/>
-                  </svg>
-                  <div class="wordmark">
-                    <div class="wordmark-text" style="font-family:'Manrope',sans-serif; font-size:22px;">WerkGeluk</div>
-                    <div class="wordmark-sub" style="font-size:7.5px;">RECRUITMENT</div>
-                  </div>
-                </div>
-              </div>
-              <div class="bizcard-contact">
-                <div class="bizcard-name">Sanne van der Berg</div>
-                <div>Senior Recruitment Consultant</div>
-                <div class="bizcard-info-row">
-                  <span>06 18 23 69 93</span>
-                  <span>info@werkgeluk-recruitment.nl</span>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="bizcard" style="border-radius:6px;">
-            <div class="bizcard-back">
-              <div class="bizcard-glow" style="background:linear-gradient(135deg,#8B6A2E 0%,#C9A25B 35%,#F0D89A 55%,#C9A25B 75%,#8B6A2E 100%);"></div>
-              <svg viewBox="0 0 64 64" width="84" height="84" style="position:relative;z-index:1;">
-                <defs>
-                  <linearGradient id="gTD-bk-main" x1="0%" y1="0%" x2="100%" y2="100%">
-                    <stop offset="0%"  stop-color="#8B6A2E"/>
-                    <stop offset="35%" stop-color="#C9A25B"/>
-                    <stop offset="55%" stop-color="#F0D89A"/>
-                    <stop offset="75%" stop-color="#C9A25B"/>
-                    <stop offset="100%" stop-color="#8B6A2E"/>
-                  </linearGradient>
-                </defs>
-                <path d="M 32 8 A 12 12 0 0 1 32 32 A 12 12 0 0 0 32 56 A 24 24 0 0 1 32 8 Z" fill="#F4F6F8"/>
-                <path d="M 32 8 A 12 12 0 0 0 32 32 A 12 12 0 0 1 32 56 A 24 24 0 0 0 32 8 Z" fill="url(#gTD-bk-main)"/>
-              </svg>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <!-- Letterhead + LinkedIn -->
-    <div class="artboard-grid two">
-      <div class="artboard">
-        <div class="artboard-label">Briefhoofd</div>
-        <div class="artboard-body" style="padding: 40px;">
-          <div class="letterhead">
-            <div class="letterhead-logo-wrap">
-              <div class="logo-h">
-                <svg viewBox="0 0 64 64" width="52" height="52">
-                  <defs>
-                    <linearGradient id="gTD-lh-main" x1="0%" y1="0%" x2="100%" y2="100%">
-                      <stop offset="0%"  stop-color="#8B6A2E"/>
-                      <stop offset="35%" stop-color="#C9A25B"/>
-                      <stop offset="55%" stop-color="#F0D89A"/>
-                      <stop offset="75%" stop-color="#C9A25B"/>
-                      <stop offset="100%" stop-color="#8B6A2E"/>
-                    </linearGradient>
-                  </defs>
-                  <path d="M 32 8 A 12 12 0 0 1 32 32 A 12 12 0 0 0 32 56 A 24 24 0 0 1 32 8 Z" fill="#0D1B2A"/>
-                  <path d="M 32 8 A 12 12 0 0 0 32 32 A 12 12 0 0 1 32 56 A 24 24 0 0 0 32 8 Z" fill="url(#gTD-lh-main)"/>
-                  <circle cx="32" cy="20" r="3" fill="#F4F6F8"/>
-                  <circle cx="32" cy="44" r="3" fill="#F4F6F8"/>
-                </svg>
-                <div class="wordmark">
-                  <div class="wordmark-text" style="font-family:'Manrope',sans-serif; font-size:22px;">WerkGeluk</div>
-                  <div class="wordmark-sub" style="font-size:7px;">RECRUITMENT</div>
-                </div>
-              </div>
-            </div>
-            <div class="letterhead-rule">
-              <div class="letterhead-rule-navy"></div>
-              <div class="letterhead-rule-gold"></div>
-            </div>
-            <div class="letterhead-address">
-              <span>OTTO REUCHLINWEG · 3072 MD ROTTERDAM</span>
-              <span>WERKGELUK-RECRUITMENT.NL</span>
-            </div>
-            <div class="letterhead-body">
-              <div class="letterhead-date">Rotterdam, 30 april 2026</div>
-              <div class="letterhead-salutation">Beste mevrouw De Vries,</div>
-              <div class="letterhead-lines"></div>
-              <div>Met vriendelijke groet,</div>
-              <div style="font-weight:600; margin-top:16px;">WerkGeluk Recruitment</div>
-            </div>
-            <div class="letterhead-footer">
-              <span>KVK 70841640</span>
-              <span>BTW NL001178713B61</span>
-              <span>06 18 23 69 93</span>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <div class="artboard">
-        <div class="artboard-label">LinkedIn banner</div>
-        <div class="artboard-body" style="padding: 40px;">
-          <div class="linkedin-banner">
-            <div class="linkedin-left">
-              <div class="linkedin-glow" style="background:linear-gradient(135deg,#8B6A2E 0%,#C9A25B 35%,#F0D89A 55%,#C9A25B 75%,#8B6A2E 100%);"></div>
-              <svg viewBox="0 0 64 64" width="110" height="110" style="position:relative;z-index:1;">
-                <defs>
-                  <linearGradient id="gTD-li-main" x1="0%" y1="0%" x2="100%" y2="100%">
-                    <stop offset="0%"  stop-color="#8B6A2E"/>
-                    <stop offset="35%" stop-color="#C9A25B"/>
-                    <stop offset="55%" stop-color="#F0D89A"/>
-                    <stop offset="75%" stop-color="#C9A25B"/>
-                    <stop offset="100%" stop-color="#8B6A2E"/>
-                  </linearGradient>
-                </defs>
-                <path d="M 32 8 A 12 12 0 0 1 32 32 A 12 12 0 0 0 32 56 A 24 24 0 0 1 32 8 Z" fill="#F4F6F8"/>
-                <path d="M 32 8 A 12 12 0 0 0 32 32 A 12 12 0 0 1 32 56 A 24 24 0 0 0 32 8 Z" fill="url(#gTD-li-main)"/>
-              </svg>
-            </div>
-            <div class="linkedin-right">
-              <div class="linkedin-headline">Jouw groei.<br>Onze passie.</div>
-              <div class="linkedin-tags">
-                <div class="linkedin-dot" style="background:#0D1B2A;"></div>
-                <span class="linkedin-tag">WERVING &amp; SELECTIE</span>
-                <div class="linkedin-dot" style="background:linear-gradient(135deg,#8B6A2E,#C9A25B,#F0D89A);"></div>
-                <span class="linkedin-tag">ROTTERDAM</span>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- SPARK -->
-  <section id="spark">
-    <div class="section-header">
-      <div class="section-title">06 — Spark</div>
-      <div class="section-heading">Spark</div>
-      <div class="section-sub">Twee strokes die samenkomen op één punt — ambitie en richting</div>
-    </div>
-
-    <div class="artboard" style="margin-bottom: 16px;">
-      <div class="artboard-label">Horizontaal — wit + cloud</div>
-      <div class="artboard-body plain">
-        <div class="logo-split">
-          <div class="logo-split-panel" style="background:#fff;">
-            <div class="logo-h">
-              <svg viewBox="0 0 64 64" width="60" height="60">
-                <defs><linearGradient id="gSP-h1" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#8B6A2E"/><stop offset="35%" stop-color="#C9A25B"/><stop offset="55%" stop-color="#F0D89A"/><stop offset="75%" stop-color="#C9A25B"/><stop offset="100%" stop-color="#8B6A2E"/></linearGradient></defs>
-                <path d="M 14 50 L 32 14" stroke="#0D1B2A" stroke-width="7" stroke-linecap="round" fill="none"/>
-                <path d="M 32 14 L 50 50" stroke="url(#gSP-h1)" stroke-width="7" stroke-linecap="round" fill="none"/>
-              </svg>
-              <div class="wordmark">
-                <div class="wordmark-text" style="font-family:'Manrope',sans-serif;">WerkGeluk</div>
-                <div class="wordmark-sub">RECRUITMENT</div>
-              </div>
-            </div>
-          </div>
-          <div class="logo-split-panel" style="background:#F4F6F8;">
-            <div class="logo-h">
-              <svg viewBox="0 0 64 64" width="60" height="60">
-                <defs><linearGradient id="gSP-h2" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#8B6A2E"/><stop offset="35%" stop-color="#C9A25B"/><stop offset="55%" stop-color="#F0D89A"/><stop offset="75%" stop-color="#C9A25B"/><stop offset="100%" stop-color="#8B6A2E"/></linearGradient></defs>
-                <path d="M 14 50 L 32 14" stroke="#0D1B2A" stroke-width="7" stroke-linecap="round" fill="none"/>
-                <path d="M 32 14 L 50 50" stroke="url(#gSP-h2)" stroke-width="7" stroke-linecap="round" fill="none"/>
-              </svg>
-              <div class="wordmark">
-                <div class="wordmark-text" style="font-family:'Manrope',sans-serif;">WerkGeluk</div>
-                <div class="wordmark-sub">RECRUITMENT</div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <div class="artboard-grid three" style="margin-bottom: 16px;">
-      <div class="artboard">
-        <div class="artboard-label">Gestapeld</div>
-        <div class="artboard-body white">
-          <div class="logo-v">
-            <svg viewBox="0 0 64 64" width="88" height="88">
-              <defs><linearGradient id="gSP-s" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#8B6A2E"/><stop offset="35%" stop-color="#C9A25B"/><stop offset="55%" stop-color="#F0D89A"/><stop offset="75%" stop-color="#C9A25B"/><stop offset="100%" stop-color="#8B6A2E"/></linearGradient></defs>
-              <path d="M 14 50 L 32 14" stroke="#0D1B2A" stroke-width="7" stroke-linecap="round" fill="none"/>
-              <path d="M 32 14 L 50 50" stroke="url(#gSP-s)" stroke-width="7" stroke-linecap="round" fill="none"/>
-            </svg>
-            <div class="wordmark" style="text-align:center;">
-              <div class="wordmark-text" style="font-family:'Manrope',sans-serif; font-size:26px;">WerkGeluk</div>
-              <div class="wordmark-sub">RECRUITMENT</div>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <div class="artboard">
-        <div class="artboard-label">Favicon — getest tot 16px</div>
-        <div class="artboard-body plain">
-          <div class="favicon-set">
-            <div class="favicon-label" style="font-family:'JetBrains Mono',monospace; font-size:10px; color:#5A6470; letter-spacing:1.5px;">FAVICON / APP ICON</div>
-            <div class="favicon-row">
-              <div class="favicon-item">
-                <div class="favicon-box" style="width:64px;height:64px;border-radius:14px;">
-                  <svg viewBox="0 0 64 64" width="50" height="50"><defs><linearGradient id="gSP-f64" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#8B6A2E"/><stop offset="35%" stop-color="#C9A25B"/><stop offset="55%" stop-color="#F0D89A"/><stop offset="75%" stop-color="#C9A25B"/><stop offset="100%" stop-color="#8B6A2E"/></linearGradient></defs><path d="M 14 50 L 32 14" stroke="#0D1B2A" stroke-width="8" stroke-linecap="round" fill="none"/><path d="M 32 14 L 50 50" stroke="url(#gSP-f64)" stroke-width="8" stroke-linecap="round" fill="none"/></svg>
-                </div>
-                <span class="favicon-label">64px</span>
-              </div>
-              <div class="favicon-item">
-                <div class="favicon-box" style="width:32px;height:32px;border-radius:7px;">
-                  <svg viewBox="0 0 64 64" width="25" height="25"><defs><linearGradient id="gSP-f32" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#8B6A2E"/><stop offset="35%" stop-color="#C9A25B"/><stop offset="55%" stop-color="#F0D89A"/><stop offset="75%" stop-color="#C9A25B"/><stop offset="100%" stop-color="#8B6A2E"/></linearGradient></defs><path d="M 14 50 L 32 14" stroke="#0D1B2A" stroke-width="8" stroke-linecap="round" fill="none"/><path d="M 32 14 L 50 50" stroke="url(#gSP-f32)" stroke-width="8" stroke-linecap="round" fill="none"/></svg>
-                </div>
-                <span class="favicon-label">32px</span>
-              </div>
-              <div class="favicon-item">
-                <div class="favicon-box" style="width:16px;height:16px;border-radius:3px;">
-                  <svg viewBox="0 0 64 64" width="12" height="12"><defs><linearGradient id="gSP-f16" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#8B6A2E"/><stop offset="35%" stop-color="#C9A25B"/><stop offset="55%" stop-color="#F0D89A"/><stop offset="75%" stop-color="#C9A25B"/><stop offset="100%" stop-color="#8B6A2E"/></linearGradient></defs><path d="M 14 50 L 32 14" stroke="#0D1B2A" stroke-width="8" stroke-linecap="round" fill="none"/><path d="M 32 14 L 50 50" stroke="url(#gSP-f16)" stroke-width="8" stroke-linecap="round" fill="none"/></svg>
-                </div>
-                <span class="favicon-label">16px</span>
-              </div>
-            </div>
-            <div class="tab-mock">
-              <div class="tab-inner">
-                <svg viewBox="0 0 64 64" width="14" height="14"><defs><linearGradient id="gSP-tab" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#8B6A2E"/><stop offset="35%" stop-color="#C9A25B"/><stop offset="55%" stop-color="#F0D89A"/><stop offset="75%" stop-color="#C9A25B"/><stop offset="100%" stop-color="#8B6A2E"/></linearGradient></defs><path d="M 14 50 L 32 14" stroke="#0D1B2A" stroke-width="8" stroke-linecap="round" fill="none"/><path d="M 32 14 L 50 50" stroke="url(#gSP-tab)" stroke-width="8" stroke-linecap="round" fill="none"/></svg>
-                <span class="tab-title">WerkGeluk Recruitment</span>
-                <span class="tab-close">×</span>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <div class="artboard">
-        <div class="artboard-label">Op donker</div>
-        <div class="artboard-body navy">
-          <div class="logo-h">
-            <svg viewBox="0 0 64 64" width="60" height="60">
-              <defs><linearGradient id="gSP-dk" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#8B6A2E"/><stop offset="35%" stop-color="#C9A25B"/><stop offset="55%" stop-color="#F0D89A"/><stop offset="75%" stop-color="#C9A25B"/><stop offset="100%" stop-color="#8B6A2E"/></linearGradient></defs>
-              <path d="M 14 50 L 32 14" stroke="#F4F6F8" stroke-width="7" stroke-linecap="round" fill="none"/>
-              <path d="M 32 14 L 50 50" stroke="url(#gSP-dk)" stroke-width="7" stroke-linecap="round" fill="none"/>
-            </svg>
-            <div class="wordmark">
-              <div class="wordmark-text" style="font-family:'Manrope',sans-serif; color:#fff;">WerkGeluk</div>
-              <div class="wordmark-sub" style="color:rgba(255,255,255,0.5);">RECRUITMENT</div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <div class="artboard" style="margin-bottom: 16px;">
-      <div class="artboard-label">Visitekaartje</div>
-      <div class="artboard-body plain">
-        <div class="bizcard-wrap" style="justify-content:center;">
-          <div class="bizcard" style="border-radius:6px;">
-            <div class="bizcard-front">
-              <div class="bizcard-logo-wrap">
-                <div class="logo-h">
-                  <svg viewBox="0 0 64 64" width="52" height="52"><defs><linearGradient id="gSP-bc" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#8B6A2E"/><stop offset="35%" stop-color="#C9A25B"/><stop offset="55%" stop-color="#F0D89A"/><stop offset="75%" stop-color="#C9A25B"/><stop offset="100%" stop-color="#8B6A2E"/></linearGradient></defs><path d="M 14 50 L 32 14" stroke="#0D1B2A" stroke-width="7" stroke-linecap="round" fill="none"/><path d="M 32 14 L 50 50" stroke="url(#gSP-bc)" stroke-width="7" stroke-linecap="round" fill="none"/></svg>
-                  <div class="wordmark"><div class="wordmark-text" style="font-family:'Manrope',sans-serif; font-size:22px;">WerkGeluk</div><div class="wordmark-sub" style="font-size:7.5px;">RECRUITMENT</div></div>
-                </div>
-              </div>
-              <div class="bizcard-contact"><div class="bizcard-name">Sanne van der Berg</div><div>Senior Recruitment Consultant</div><div class="bizcard-info-row"><span>06 18 23 69 93</span><span>info@werkgeluk-recruitment.nl</span></div></div>
-            </div>
-          </div>
-          <div class="bizcard" style="border-radius:6px;">
-            <div class="bizcard-back">
-              <div class="bizcard-glow" style="background:linear-gradient(135deg,#8B6A2E 0%,#C9A25B 35%,#F0D89A 55%,#C9A25B 75%,#8B6A2E 100%);"></div>
-              <svg viewBox="0 0 64 64" width="84" height="84" style="position:relative;z-index:1;"><defs><linearGradient id="gSP-bk" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#8B6A2E"/><stop offset="35%" stop-color="#C9A25B"/><stop offset="55%" stop-color="#F0D89A"/><stop offset="75%" stop-color="#C9A25B"/><stop offset="100%" stop-color="#8B6A2E"/></linearGradient></defs><path d="M 14 50 L 32 14" stroke="#F4F6F8" stroke-width="8" stroke-linecap="round" fill="none"/><path d="M 32 14 L 50 50" stroke="url(#gSP-bk)" stroke-width="8" stroke-linecap="round" fill="none"/></svg>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <div class="artboard-grid two">
-      <div class="artboard">
-        <div class="artboard-label">Briefhoofd</div>
-        <div class="artboard-body" style="padding:40px;">
-          <div class="letterhead">
-            <div class="letterhead-logo-wrap">
-              <div class="logo-h">
-                <svg viewBox="0 0 64 64" width="52" height="52"><defs><linearGradient id="gSP-lh" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#8B6A2E"/><stop offset="35%" stop-color="#C9A25B"/><stop offset="55%" stop-color="#F0D89A"/><stop offset="75%" stop-color="#C9A25B"/><stop offset="100%" stop-color="#8B6A2E"/></linearGradient></defs><path d="M 14 50 L 32 14" stroke="#0D1B2A" stroke-width="7" stroke-linecap="round" fill="none"/><path d="M 32 14 L 50 50" stroke="url(#gSP-lh)" stroke-width="7" stroke-linecap="round" fill="none"/></svg>
-                <div class="wordmark"><div class="wordmark-text" style="font-family:'Manrope',sans-serif; font-size:22px;">WerkGeluk</div><div class="wordmark-sub" style="font-size:7px;">RECRUITMENT</div></div>
-              </div>
-            </div>
-            <div class="letterhead-rule"><div class="letterhead-rule-navy"></div><div class="letterhead-rule-gold"></div></div>
-            <div class="letterhead-address"><span>OTTO REUCHLINWEG · 3072 MD ROTTERDAM</span><span>WERKGELUK-RECRUITMENT.NL</span></div>
-            <div class="letterhead-body"><div class="letterhead-date">Rotterdam, 30 april 2026</div><div class="letterhead-salutation">Beste mevrouw De Vries,</div><div class="letterhead-lines"></div><div>Met vriendelijke groet,</div><div style="font-weight:600; margin-top:16px;">WerkGeluk Recruitment</div></div>
-            <div class="letterhead-footer"><span>KVK 70841640</span><span>BTW NL001178713B61</span><span>06 18 23 69 93</span></div>
-          </div>
-        </div>
-      </div>
-      <div class="artboard">
-        <div class="artboard-label">LinkedIn banner</div>
-        <div class="artboard-body" style="padding:40px;">
-          <div class="linkedin-banner">
-            <div class="linkedin-left">
-              <div class="linkedin-glow" style="background:linear-gradient(135deg,#8B6A2E 0%,#C9A25B 35%,#F0D89A 55%,#C9A25B 75%,#8B6A2E 100%);"></div>
-              <svg viewBox="0 0 64 64" width="110" height="110" style="position:relative;z-index:1;"><defs><linearGradient id="gSP-li" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#8B6A2E"/><stop offset="35%" stop-color="#C9A25B"/><stop offset="55%" stop-color="#F0D89A"/><stop offset="75%" stop-color="#C9A25B"/><stop offset="100%" stop-color="#8B6A2E"/></linearGradient></defs><path d="M 14 50 L 32 14" stroke="#F4F6F8" stroke-width="8" stroke-linecap="round" fill="none"/><path d="M 32 14 L 50 50" stroke="url(#gSP-li)" stroke-width="8" stroke-linecap="round" fill="none"/></svg>
-            </div>
-            <div class="linkedin-right">
-              <div class="linkedin-headline">Ambitie in beweging.<br>Talent op koers.</div>
-              <div class="linkedin-tags"><div class="linkedin-dot" style="background:#0D1B2A;"></div><span class="linkedin-tag">WERVING &amp; SELECTIE</span><div class="linkedin-dot" style="background:linear-gradient(135deg,#8B6A2E,#C9A25B,#F0D89A);"></div><span class="linkedin-tag">ROTTERDAM</span></div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- DUO -->
-  <section id="duo">
-    <div class="section-header">
-      <div class="section-title">07 — Duo</div>
-      <div class="section-heading">Duo</div>
-      <div class="section-sub">Twee cirkels die overlappen — werkgever en kandidaat die elkaar vinden</div>
-    </div>
-
-    <div class="artboard" style="margin-bottom: 16px;">
-      <div class="artboard-label">Horizontaal — wit + cloud</div>
-      <div class="artboard-body plain">
-        <div class="logo-split">
-          <div class="logo-split-panel" style="background:#fff;">
-            <div class="logo-h">
-              <svg viewBox="0 0 64 64" width="60" height="60">
-                <defs><linearGradient id="gDU-h1" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#8B6A2E"/><stop offset="35%" stop-color="#C9A25B"/><stop offset="55%" stop-color="#F0D89A"/><stop offset="75%" stop-color="#C9A25B"/><stop offset="100%" stop-color="#8B6A2E"/></linearGradient></defs>
-                <circle cx="24" cy="32" r="16" fill="#0D1B2A"/>
-                <circle cx="40" cy="32" r="16" fill="url(#gDU-h1)"/>
-              </svg>
-              <div class="wordmark">
-                <div class="wordmark-text" style="font-family:'DM Sans',sans-serif; font-weight:500;">WerkGeluk</div>
-                <div class="wordmark-sub">RECRUITMENT</div>
-              </div>
-            </div>
-          </div>
-          <div class="logo-split-panel" style="background:#F4F6F8;">
-            <div class="logo-h">
-              <svg viewBox="0 0 64 64" width="60" height="60">
-                <defs><linearGradient id="gDU-h2" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#8B6A2E"/><stop offset="35%" stop-color="#C9A25B"/><stop offset="55%" stop-color="#F0D89A"/><stop offset="75%" stop-color="#C9A25B"/><stop offset="100%" stop-color="#8B6A2E"/></linearGradient></defs>
-                <circle cx="24" cy="32" r="16" fill="#0D1B2A"/>
-                <circle cx="40" cy="32" r="16" fill="url(#gDU-h2)"/>
-              </svg>
-              <div class="wordmark">
-                <div class="wordmark-text" style="font-family:'DM Sans',sans-serif; font-weight:500;">WerkGeluk</div>
-                <div class="wordmark-sub">RECRUITMENT</div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <div class="artboard-grid three" style="margin-bottom: 16px;">
-      <div class="artboard">
-        <div class="artboard-label">Gestapeld</div>
-        <div class="artboard-body white">
-          <div class="logo-v">
-            <svg viewBox="0 0 64 64" width="88" height="88">
-              <defs><linearGradient id="gDU-s" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#8B6A2E"/><stop offset="35%" stop-color="#C9A25B"/><stop offset="55%" stop-color="#F0D89A"/><stop offset="75%" stop-color="#C9A25B"/><stop offset="100%" stop-color="#8B6A2E"/></linearGradient></defs>
-              <circle cx="24" cy="32" r="16" fill="#0D1B2A"/>
-              <circle cx="40" cy="32" r="16" fill="url(#gDU-s)"/>
-            </svg>
-            <div class="wordmark" style="text-align:center;">
-              <div class="wordmark-text" style="font-family:'DM Sans',sans-serif; font-weight:500; font-size:26px;">WerkGeluk</div>
-              <div class="wordmark-sub">RECRUITMENT</div>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <div class="artboard">
-        <div class="artboard-label">Favicon — getest tot 16px</div>
-        <div class="artboard-body plain">
-          <div class="favicon-set">
-            <div class="favicon-label" style="font-family:'JetBrains Mono',monospace; font-size:10px; color:#5A6470; letter-spacing:1.5px;">FAVICON / APP ICON</div>
-            <div class="favicon-row">
-              <div class="favicon-item">
-                <div class="favicon-box" style="width:64px;height:64px;border-radius:14px;">
-                  <svg viewBox="0 0 64 64" width="50" height="50"><defs><linearGradient id="gDU-f64" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#8B6A2E"/><stop offset="35%" stop-color="#C9A25B"/><stop offset="55%" stop-color="#F0D89A"/><stop offset="75%" stop-color="#C9A25B"/><stop offset="100%" stop-color="#8B6A2E"/></linearGradient></defs><circle cx="24" cy="32" r="16" fill="#0D1B2A"/><circle cx="40" cy="32" r="16" fill="url(#gDU-f64)"/></svg>
-                </div>
-                <span class="favicon-label">64px</span>
-              </div>
-              <div class="favicon-item">
-                <div class="favicon-box" style="width:32px;height:32px;border-radius:7px;">
-                  <svg viewBox="0 0 64 64" width="25" height="25"><defs><linearGradient id="gDU-f32" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#8B6A2E"/><stop offset="35%" stop-color="#C9A25B"/><stop offset="55%" stop-color="#F0D89A"/><stop offset="75%" stop-color="#C9A25B"/><stop offset="100%" stop-color="#8B6A2E"/></linearGradient></defs><circle cx="24" cy="32" r="16" fill="#0D1B2A"/><circle cx="40" cy="32" r="16" fill="url(#gDU-f32)"/></svg>
-                </div>
-                <span class="favicon-label">32px</span>
-              </div>
-              <div class="favicon-item">
-                <div class="favicon-box" style="width:16px;height:16px;border-radius:3px;">
-                  <svg viewBox="0 0 64 64" width="12" height="12"><defs><linearGradient id="gDU-f16" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#8B6A2E"/><stop offset="35%" stop-color="#C9A25B"/><stop offset="55%" stop-color="#F0D89A"/><stop offset="75%" stop-color="#C9A25B"/><stop offset="100%" stop-color="#8B6A2E"/></linearGradient></defs><circle cx="24" cy="32" r="16" fill="#0D1B2A"/><circle cx="40" cy="32" r="16" fill="url(#gDU-f16)"/></svg>
-                </div>
-                <span class="favicon-label">16px</span>
-              </div>
-            </div>
-            <div class="tab-mock">
-              <div class="tab-inner">
-                <svg viewBox="0 0 64 64" width="14" height="14"><defs><linearGradient id="gDU-tab" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#8B6A2E"/><stop offset="35%" stop-color="#C9A25B"/><stop offset="55%" stop-color="#F0D89A"/><stop offset="75%" stop-color="#C9A25B"/><stop offset="100%" stop-color="#8B6A2E"/></linearGradient></defs><circle cx="24" cy="32" r="16" fill="#0D1B2A"/><circle cx="40" cy="32" r="16" fill="url(#gDU-tab)"/></svg>
-                <span class="tab-title">WerkGeluk Recruitment</span>
-                <span class="tab-close">×</span>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <div class="artboard">
-        <div class="artboard-label">Op donker</div>
-        <div class="artboard-body navy">
-          <div class="logo-h">
-            <svg viewBox="0 0 64 64" width="60" height="60">
-              <defs><linearGradient id="gDU-dk" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#8B6A2E"/><stop offset="35%" stop-color="#C9A25B"/><stop offset="55%" stop-color="#F0D89A"/><stop offset="75%" stop-color="#C9A25B"/><stop offset="100%" stop-color="#8B6A2E"/></linearGradient></defs>
-              <circle cx="24" cy="32" r="16" fill="#F4F6F8"/>
-              <circle cx="40" cy="32" r="16" fill="url(#gDU-dk)"/>
-            </svg>
-            <div class="wordmark">
-              <div class="wordmark-text" style="font-family:'DM Sans',sans-serif; font-weight:500; color:#fff;">WerkGeluk</div>
-              <div class="wordmark-sub" style="color:rgba(255,255,255,0.5);">RECRUITMENT</div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <div class="artboard" style="margin-bottom: 16px;">
-      <div class="artboard-label">Visitekaartje</div>
-      <div class="artboard-body plain">
-        <div class="bizcard-wrap" style="justify-content:center;">
-          <div class="bizcard" style="border-radius:6px;">
-            <div class="bizcard-front">
-              <div class="bizcard-logo-wrap">
-                <div class="logo-h">
-                  <svg viewBox="0 0 64 64" width="52" height="52"><defs><linearGradient id="gDU-bc" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#8B6A2E"/><stop offset="35%" stop-color="#C9A25B"/><stop offset="55%" stop-color="#F0D89A"/><stop offset="75%" stop-color="#C9A25B"/><stop offset="100%" stop-color="#8B6A2E"/></linearGradient></defs><circle cx="24" cy="32" r="16" fill="#0D1B2A"/><circle cx="40" cy="32" r="16" fill="url(#gDU-bc)"/></svg>
-                  <div class="wordmark"><div class="wordmark-text" style="font-family:'DM Sans',sans-serif; font-weight:500; font-size:22px;">WerkGeluk</div><div class="wordmark-sub" style="font-size:7.5px;">RECRUITMENT</div></div>
-                </div>
-              </div>
-              <div class="bizcard-contact"><div class="bizcard-name">Sanne van der Berg</div><div>Senior Recruitment Consultant</div><div class="bizcard-info-row"><span>06 18 23 69 93</span><span>info@werkgeluk-recruitment.nl</span></div></div>
-            </div>
-          </div>
-          <div class="bizcard" style="border-radius:6px;">
-            <div class="bizcard-back">
-              <div class="bizcard-glow" style="background:linear-gradient(135deg,#8B6A2E 0%,#C9A25B 35%,#F0D89A 55%,#C9A25B 75%,#8B6A2E 100%);"></div>
-              <svg viewBox="0 0 64 64" width="84" height="84" style="position:relative;z-index:1;"><defs><linearGradient id="gDU-bk" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#8B6A2E"/><stop offset="35%" stop-color="#C9A25B"/><stop offset="55%" stop-color="#F0D89A"/><stop offset="75%" stop-color="#C9A25B"/><stop offset="100%" stop-color="#8B6A2E"/></linearGradient></defs><circle cx="24" cy="32" r="16" fill="#F4F6F8"/><circle cx="40" cy="32" r="16" fill="url(#gDU-bk)"/></svg>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <div class="artboard-grid two">
-      <div class="artboard">
-        <div class="artboard-label">Briefhoofd</div>
-        <div class="artboard-body" style="padding:40px;">
-          <div class="letterhead">
-            <div class="letterhead-logo-wrap">
-              <div class="logo-h">
-                <svg viewBox="0 0 64 64" width="52" height="52"><defs><linearGradient id="gDU-lh" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#8B6A2E"/><stop offset="35%" stop-color="#C9A25B"/><stop offset="55%" stop-color="#F0D89A"/><stop offset="75%" stop-color="#C9A25B"/><stop offset="100%" stop-color="#8B6A2E"/></linearGradient></defs><circle cx="24" cy="32" r="16" fill="#0D1B2A"/><circle cx="40" cy="32" r="16" fill="url(#gDU-lh)"/></svg>
-                <div class="wordmark"><div class="wordmark-text" style="font-family:'DM Sans',sans-serif; font-weight:500; font-size:22px;">WerkGeluk</div><div class="wordmark-sub" style="font-size:7px;">RECRUITMENT</div></div>
-              </div>
-            </div>
-            <div class="letterhead-rule"><div class="letterhead-rule-navy"></div><div class="letterhead-rule-gold"></div></div>
-            <div class="letterhead-address"><span>OTTO REUCHLINWEG · 3072 MD ROTTERDAM</span><span>WERKGELUK-RECRUITMENT.NL</span></div>
-            <div class="letterhead-body"><div class="letterhead-date">Rotterdam, 30 april 2026</div><div class="letterhead-salutation">Beste mevrouw De Vries,</div><div class="letterhead-lines"></div><div>Met vriendelijke groet,</div><div style="font-weight:600; margin-top:16px;">WerkGeluk Recruitment</div></div>
-            <div class="letterhead-footer"><span>KVK 70841640</span><span>BTW NL001178713B61</span><span>06 18 23 69 93</span></div>
-          </div>
-        </div>
-      </div>
-      <div class="artboard">
-        <div class="artboard-label">LinkedIn banner</div>
-        <div class="artboard-body" style="padding:40px;">
-          <div class="linkedin-banner">
-            <div class="linkedin-left">
-              <div class="linkedin-glow" style="background:linear-gradient(135deg,#8B6A2E 0%,#C9A25B 35%,#F0D89A 55%,#C9A25B 75%,#8B6A2E 100%);"></div>
-              <svg viewBox="0 0 64 64" width="110" height="110" style="position:relative;z-index:1;"><defs><linearGradient id="gDU-li" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#8B6A2E"/><stop offset="35%" stop-color="#C9A25B"/><stop offset="55%" stop-color="#F0D89A"/><stop offset="75%" stop-color="#C9A25B"/><stop offset="100%" stop-color="#8B6A2E"/></linearGradient></defs><circle cx="24" cy="32" r="16" fill="#F4F6F8"/><circle cx="40" cy="32" r="16" fill="url(#gDU-li)"/></svg>
-            </div>
-            <div class="linkedin-right">
-              <div class="linkedin-headline">Twee werelden.<br>Één perfecte match.</div>
-              <div class="linkedin-tags"><div class="linkedin-dot" style="background:#0D1B2A;"></div><span class="linkedin-tag">WERVING &amp; SELECTIE</span><div class="linkedin-dot" style="background:linear-gradient(135deg,#8B6A2E,#C9A25B,#F0D89A);"></div><span class="linkedin-tag">ROTTERDAM</span></div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- COMPASS -->
-  <section id="compass">
-    <div class="section-header">
-      <div class="section-title">08 — Compass</div>
-      <div class="section-heading">Compass</div>
-      <div class="section-sub">Scherpe diamant gespitst in navy en goud — precisie en richting</div>
-    </div>
-
-    <div class="artboard" style="margin-bottom: 16px;">
-      <div class="artboard-label">Horizontaal — wit + cloud</div>
-      <div class="artboard-body plain">
-        <div class="logo-split">
-          <div class="logo-split-panel" style="background:#fff;">
-            <div class="logo-h">
-              <svg viewBox="0 0 64 64" width="60" height="60">
-                <defs><linearGradient id="gCP-h1" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#8B6A2E"/><stop offset="35%" stop-color="#C9A25B"/><stop offset="55%" stop-color="#F0D89A"/><stop offset="75%" stop-color="#C9A25B"/><stop offset="100%" stop-color="#8B6A2E"/></linearGradient></defs>
-                <polygon points="32,8 8,32 32,56" fill="#0D1B2A"/>
-                <polygon points="32,8 56,32 32,56" fill="url(#gCP-h1)"/>
-              </svg>
-              <div class="wordmark">
-                <div class="wordmark-text" style="font-family:'Inter',sans-serif; font-weight:600; letter-spacing:-0.5px;">WerkGeluk</div>
-                <div class="wordmark-sub">RECRUITMENT</div>
-              </div>
-            </div>
-          </div>
-          <div class="logo-split-panel" style="background:#F4F6F8;">
-            <div class="logo-h">
-              <svg viewBox="0 0 64 64" width="60" height="60">
-                <defs><linearGradient id="gCP-h2" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#8B6A2E"/><stop offset="35%" stop-color="#C9A25B"/><stop offset="55%" stop-color="#F0D89A"/><stop offset="75%" stop-color="#C9A25B"/><stop offset="100%" stop-color="#8B6A2E"/></linearGradient></defs>
-                <polygon points="32,8 8,32 32,56" fill="#0D1B2A"/>
-                <polygon points="32,8 56,32 32,56" fill="url(#gCP-h2)"/>
-              </svg>
-              <div class="wordmark">
-                <div class="wordmark-text" style="font-family:'Inter',sans-serif; font-weight:600; letter-spacing:-0.5px;">WerkGeluk</div>
-                <div class="wordmark-sub">RECRUITMENT</div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <div class="artboard-grid three" style="margin-bottom: 16px;">
-      <div class="artboard">
-        <div class="artboard-label">Gestapeld</div>
-        <div class="artboard-body white">
-          <div class="logo-v">
-            <svg viewBox="0 0 64 64" width="88" height="88">
-              <defs><linearGradient id="gCP-s" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#8B6A2E"/><stop offset="35%" stop-color="#C9A25B"/><stop offset="55%" stop-color="#F0D89A"/><stop offset="75%" stop-color="#C9A25B"/><stop offset="100%" stop-color="#8B6A2E"/></linearGradient></defs>
-              <polygon points="32,8 8,32 32,56" fill="#0D1B2A"/>
-              <polygon points="32,8 56,32 32,56" fill="url(#gCP-s)"/>
-            </svg>
-            <div class="wordmark" style="text-align:center;">
-              <div class="wordmark-text" style="font-family:'Inter',sans-serif; font-weight:600; letter-spacing:-0.5px; font-size:26px;">WerkGeluk</div>
-              <div class="wordmark-sub">RECRUITMENT</div>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <div class="artboard">
-        <div class="artboard-label">Favicon — getest tot 16px</div>
-        <div class="artboard-body plain">
-          <div class="favicon-set">
-            <div class="favicon-label" style="font-family:'JetBrains Mono',monospace; font-size:10px; color:#5A6470; letter-spacing:1.5px;">FAVICON / APP ICON</div>
-            <div class="favicon-row">
-              <div class="favicon-item">
-                <div class="favicon-box" style="width:64px;height:64px;border-radius:14px;">
-                  <svg viewBox="0 0 64 64" width="50" height="50"><defs><linearGradient id="gCP-f64" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#8B6A2E"/><stop offset="35%" stop-color="#C9A25B"/><stop offset="55%" stop-color="#F0D89A"/><stop offset="75%" stop-color="#C9A25B"/><stop offset="100%" stop-color="#8B6A2E"/></linearGradient></defs><polygon points="32,8 8,32 32,56" fill="#0D1B2A"/><polygon points="32,8 56,32 32,56" fill="url(#gCP-f64)"/></svg>
-                </div>
-                <span class="favicon-label">64px</span>
-              </div>
-              <div class="favicon-item">
-                <div class="favicon-box" style="width:32px;height:32px;border-radius:7px;">
-                  <svg viewBox="0 0 64 64" width="25" height="25"><defs><linearGradient id="gCP-f32" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#8B6A2E"/><stop offset="35%" stop-color="#C9A25B"/><stop offset="55%" stop-color="#F0D89A"/><stop offset="75%" stop-color="#C9A25B"/><stop offset="100%" stop-color="#8B6A2E"/></linearGradient></defs><polygon points="32,8 8,32 32,56" fill="#0D1B2A"/><polygon points="32,8 56,32 32,56" fill="url(#gCP-f32)"/></svg>
-                </div>
-                <span class="favicon-label">32px</span>
-              </div>
-              <div class="favicon-item">
-                <div class="favicon-box" style="width:16px;height:16px;border-radius:3px;">
-                  <svg viewBox="0 0 64 64" width="12" height="12"><defs><linearGradient id="gCP-f16" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#8B6A2E"/><stop offset="35%" stop-color="#C9A25B"/><stop offset="55%" stop-color="#F0D89A"/><stop offset="75%" stop-color="#C9A25B"/><stop offset="100%" stop-color="#8B6A2E"/></linearGradient></defs><polygon points="32,8 8,32 32,56" fill="#0D1B2A"/><polygon points="32,8 56,32 32,56" fill="url(#gCP-f16)"/></svg>
-                </div>
-                <span class="favicon-label">16px</span>
-              </div>
-            </div>
-            <div class="tab-mock">
-              <div class="tab-inner">
-                <svg viewBox="0 0 64 64" width="14" height="14"><defs><linearGradient id="gCP-tab" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#8B6A2E"/><stop offset="35%" stop-color="#C9A25B"/><stop offset="55%" stop-color="#F0D89A"/><stop offset="75%" stop-color="#C9A25B"/><stop offset="100%" stop-color="#8B6A2E"/></linearGradient></defs><polygon points="32,8 8,32 32,56" fill="#0D1B2A"/><polygon points="32,8 56,32 32,56" fill="url(#gCP-tab)"/></svg>
-                <span class="tab-title">WerkGeluk Recruitment</span>
-                <span class="tab-close">×</span>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <div class="artboard">
-        <div class="artboard-label">Op donker</div>
-        <div class="artboard-body navy">
-          <div class="logo-h">
-            <svg viewBox="0 0 64 64" width="60" height="60">
-              <defs><linearGradient id="gCP-dk" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#8B6A2E"/><stop offset="35%" stop-color="#C9A25B"/><stop offset="55%" stop-color="#F0D89A"/><stop offset="75%" stop-color="#C9A25B"/><stop offset="100%" stop-color="#8B6A2E"/></linearGradient></defs>
-              <polygon points="32,8 8,32 32,56" fill="#F4F6F8"/>
-              <polygon points="32,8 56,32 32,56" fill="url(#gCP-dk)"/>
-            </svg>
-            <div class="wordmark">
-              <div class="wordmark-text" style="font-family:'Inter',sans-serif; font-weight:600; letter-spacing:-0.5px; color:#fff;">WerkGeluk</div>
-              <div class="wordmark-sub" style="color:rgba(255,255,255,0.5);">RECRUITMENT</div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <div class="artboard" style="margin-bottom: 16px;">
-      <div class="artboard-label">Visitekaartje</div>
-      <div class="artboard-body plain">
-        <div class="bizcard-wrap" style="justify-content:center;">
-          <div class="bizcard" style="border-radius:6px;">
-            <div class="bizcard-front">
-              <div class="bizcard-logo-wrap">
-                <div class="logo-h">
-                  <svg viewBox="0 0 64 64" width="52" height="52"><defs><linearGradient id="gCP-bc" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#8B6A2E"/><stop offset="35%" stop-color="#C9A25B"/><stop offset="55%" stop-color="#F0D89A"/><stop offset="75%" stop-color="#C9A25B"/><stop offset="100%" stop-color="#8B6A2E"/></linearGradient></defs><polygon points="32,8 8,32 32,56" fill="#0D1B2A"/><polygon points="32,8 56,32 32,56" fill="url(#gCP-bc)"/></svg>
-                  <div class="wordmark"><div class="wordmark-text" style="font-family:'Inter',sans-serif; font-weight:600; letter-spacing:-0.5px; font-size:22px;">WerkGeluk</div><div class="wordmark-sub" style="font-size:7.5px;">RECRUITMENT</div></div>
-                </div>
-              </div>
-              <div class="bizcard-contact"><div class="bizcard-name">Sanne van der Berg</div><div>Senior Recruitment Consultant</div><div class="bizcard-info-row"><span>06 18 23 69 93</span><span>info@werkgeluk-recruitment.nl</span></div></div>
-            </div>
-          </div>
-          <div class="bizcard" style="border-radius:6px;">
-            <div class="bizcard-back">
-              <div class="bizcard-glow" style="background:linear-gradient(135deg,#8B6A2E 0%,#C9A25B 35%,#F0D89A 55%,#C9A25B 75%,#8B6A2E 100%);"></div>
-              <svg viewBox="0 0 64 64" width="84" height="84" style="position:relative;z-index:1;"><defs><linearGradient id="gCP-bk" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#8B6A2E"/><stop offset="35%" stop-color="#C9A25B"/><stop offset="55%" stop-color="#F0D89A"/><stop offset="75%" stop-color="#C9A25B"/><stop offset="100%" stop-color="#8B6A2E"/></linearGradient></defs><polygon points="32,8 8,32 32,56" fill="#F4F6F8"/><polygon points="32,8 56,32 32,56" fill="url(#gCP-bk)"/></svg>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <div class="artboard-grid two">
-      <div class="artboard">
-        <div class="artboard-label">Briefhoofd</div>
-        <div class="artboard-body" style="padding:40px;">
-          <div class="letterhead">
-            <div class="letterhead-logo-wrap">
-              <div class="logo-h">
-                <svg viewBox="0 0 64 64" width="52" height="52"><defs><linearGradient id="gCP-lh" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#8B6A2E"/><stop offset="35%" stop-color="#C9A25B"/><stop offset="55%" stop-color="#F0D89A"/><stop offset="75%" stop-color="#C9A25B"/><stop offset="100%" stop-color="#8B6A2E"/></linearGradient></defs><polygon points="32,8 8,32 32,56" fill="#0D1B2A"/><polygon points="32,8 56,32 32,56" fill="url(#gCP-lh)"/></svg>
-                <div class="wordmark"><div class="wordmark-text" style="font-family:'Inter',sans-serif; font-weight:600; letter-spacing:-0.5px; font-size:22px;">WerkGeluk</div><div class="wordmark-sub" style="font-size:7px;">RECRUITMENT</div></div>
-              </div>
-            </div>
-            <div class="letterhead-rule"><div class="letterhead-rule-navy"></div><div class="letterhead-rule-gold"></div></div>
-            <div class="letterhead-address"><span>OTTO REUCHLINWEG · 3072 MD ROTTERDAM</span><span>WERKGELUK-RECRUITMENT.NL</span></div>
-            <div class="letterhead-body"><div class="letterhead-date">Rotterdam, 30 april 2026</div><div class="letterhead-salutation">Beste mevrouw De Vries,</div><div class="letterhead-lines"></div><div>Met vriendelijke groet,</div><div style="font-weight:600; margin-top:16px;">WerkGeluk Recruitment</div></div>
-            <div class="letterhead-footer"><span>KVK 70841640</span><span>BTW NL001178713B61</span><span>06 18 23 69 93</span></div>
-          </div>
-        </div>
-      </div>
-      <div class="artboard">
-        <div class="artboard-label">LinkedIn banner</div>
-        <div class="artboard-body" style="padding:40px;">
-          <div class="linkedin-banner">
-            <div class="linkedin-left">
-              <div class="linkedin-glow" style="background:linear-gradient(135deg,#8B6A2E 0%,#C9A25B 35%,#F0D89A 55%,#C9A25B 75%,#8B6A2E 100%);"></div>
-              <svg viewBox="0 0 64 64" width="110" height="110" style="position:relative;z-index:1;"><defs><linearGradient id="gCP-li" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#8B6A2E"/><stop offset="35%" stop-color="#C9A25B"/><stop offset="55%" stop-color="#F0D89A"/><stop offset="75%" stop-color="#C9A25B"/><stop offset="100%" stop-color="#8B6A2E"/></linearGradient></defs><polygon points="32,8 8,32 32,56" fill="#F4F6F8"/><polygon points="32,8 56,32 32,56" fill="url(#gCP-li)"/></svg>
-            </div>
-            <div class="linkedin-right">
-              <div class="linkedin-headline">Scherp in talent.<br>Precies de juiste richting.</div>
-              <div class="linkedin-tags"><div class="linkedin-dot" style="background:#0D1B2A;"></div><span class="linkedin-tag">WERVING &amp; SELECTIE</span><div class="linkedin-dot" style="background:linear-gradient(135deg,#8B6A2E,#C9A25B,#F0D89A);"></div><span class="linkedin-tag">ROTTERDAM</span></div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-</main>
+  </div>
+</footer>
 
 </body>
 </html>
