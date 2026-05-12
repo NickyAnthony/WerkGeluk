@@ -146,8 +146,11 @@ button { font-family: inherit; }
    Nav
    ========================================================= */
 .nav {
-  position: sticky;
+  position: fixed;
   top: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
   z-index: 30;
   background: rgba(9,21,44,0.72);
   border-bottom: 1px solid rgba(250,248,244,0.06);
@@ -192,7 +195,7 @@ button { font-family: inherit; }
   position: relative;
   background: var(--wg-navy-900);
   color: var(--wg-paper);
-  padding: 56px 0 120px;
+  padding: 140px 0 120px;
   overflow: hidden;
   isolation: isolate;
 }
@@ -427,6 +430,7 @@ button { font-family: inherit; }
   position: relative;
 }
 .steps-5::before {
+  display: none;
   content: "";
   position: absolute;
   top: 88px;
@@ -630,13 +634,10 @@ button { font-family: inherit; }
   border-top: 1px solid rgba(250,248,244,0.06);
 }
 .footer__inner {
-  display: grid;
-  grid-template-columns: 1.4fr 1fr 1fr 1fr 1fr;
-  gap: 56px;
   padding-bottom: 64px;
   border-bottom: 1px solid rgba(250,248,244,0.1);
 }
-.footer__brand img { height: 64px; width: auto; margin-bottom: 26px; }
+.footer__brand img { height: 96px; width: auto; margin-bottom: 26px; }
 .footer__brand p { font-size: 14px; line-height: 1.7; max-width: 320px; margin: 0; }
 .footer__col h5 { font-size: 11px; letter-spacing: 0.22em; text-transform: uppercase; font-weight: 500; color: var(--wg-paper); margin: 0 0 16px; }
 .footer__col ul { list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 12px; }
@@ -1005,41 +1006,6 @@ function Footer() {
           <div className="footer__brand">
             <img src="assets/logo-horizontal-dark.png" alt="WerkGeluk Recruitment" />
             <p>Boutique recruitment voor commerciële en technische sales professionals. Persoonlijk. Eerlijk. Duurzaam.</p>
-          </div>
-          <div className="footer__col">
-            <h5>Expertise</h5>
-            <ul>
-              <li><a href="#expertise">Commerciële sales</a></li>
-              <li><a href="#expertise">Technische sales</a></li>
-              <li><a href="#expertise">Sales management</a></li>
-              <li><a href="#expertise">Business development</a></li>
-            </ul>
-          </div>
-          <div className="footer__col">
-            <h5>Bureau</h5>
-            <ul>
-              <li><a href="#about">Over Nicky</a></li>
-              <li><a href="#waarom">Waarom WerkGeluk</a></li>
-              <li><a href="#contact">Contact</a></li>
-              <li><a href="#locatie">Locatie</a></li>
-            </ul>
-          </div>
-          <div className="footer__col">
-            <h5>Contact</h5>
-            <ul>
-              <li><a href={`mailto:${CONTACT.email}`}>E-mail</a></li>
-              <li><a href={CONTACT.phoneHref}>Telefoon</a></li>
-              <li><a href={CONTACT.linkedinHref} target="_blank" rel="noreferrer">LinkedIn</a></li>
-            </ul>
-          </div>
-          <div className="footer__col">
-            <h5>Juridisch</h5>
-            <ul>
-              <li>KvK 70841640</li>
-              <li>BTW NL001178713B61</li>
-              <li><a href="assets/algemene-voorwaarden.pdf" target="_blank" rel="noreferrer">Algemene voorwaarden</a></li>
-              <li><a href="#">Privacyverklaring</a></li>
-            </ul>
           </div>
         </div>
         <div className="footer__base">
