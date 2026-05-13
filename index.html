@@ -1303,8 +1303,18 @@ const revealObserver = new IntersectionObserver(entries => {
   entries.forEach(e => {
     if (e.isIntersecting) { e.target.classList.add('is-in'); revealObserver.unobserve(e.target); }
   });
-}, { threshold: 0.10, rootMargin: '0px 0px -6% 0px' });
+}, { threshold: 0.05, rootMargin: '0px 0px -4% 0px' });
 document.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
+
+/* Immediately show elements already in viewport on page load */
+requestAnimationFrame(() => {
+  document.querySelectorAll('.reveal').forEach(el => {
+    const rect = el.getBoundingClientRect();
+    if (rect.top < window.innerHeight && rect.bottom > 0) {
+      el.classList.add('is-in');
+    }
+  });
+});
 
 /* ── 1. Scroll progress bar ── */
 const progressBar = document.getElementById('progress-bar');
