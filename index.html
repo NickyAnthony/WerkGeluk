@@ -828,9 +828,71 @@ button { font-family: inherit; }
   .v3-rolegrid { grid-template-columns: 1fr; }
   .footer__inner { grid-template-columns: 1fr; }
 }
+
+/* =========================================================
+   Scroll progress bar
+   ========================================================= */
+#progress-bar {
+  position: fixed;
+  top: 0; left: 0;
+  height: 3px;
+  width: 0%;
+  background: linear-gradient(90deg, var(--wg-gold-600), var(--wg-gold-300));
+  z-index: 100;
+  transition: width 60ms linear;
+  pointer-events: none;
+}
+
+/* =========================================================
+   Logo marquee (carrousel)
+   ========================================================= */
+.logo-marquee {
+  overflow: hidden;
+  border-top: 1px solid var(--wg-line);
+  border-bottom: 1px solid var(--wg-line);
+  -webkit-mask-image: linear-gradient(to right, transparent 0%, black 8%, black 92%, transparent 100%);
+  mask-image: linear-gradient(to right, transparent 0%, black 8%, black 92%, transparent 100%);
+}
+.logo-track {
+  display: flex;
+  width: max-content;
+  animation: marquee 32s linear infinite;
+}
+.logo-track:hover { animation-play-state: paused; }
+@keyframes marquee {
+  0%   { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+.logo-item {
+  padding: 32px 44px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 160px;
+  border-right: 1px solid var(--wg-line);
+  flex-shrink: 0;
+}
+.logo-item img {
+  max-height: 48px;
+  width: auto;
+  object-fit: contain;
+  filter: grayscale(1) contrast(0.9) brightness(0.95);
+  opacity: 0.65;
+  transition: filter 320ms var(--ease-out), opacity 320ms var(--ease-out), transform 320ms var(--ease-out);
+}
+.logo-item:hover img {
+  filter: grayscale(0) contrast(1) brightness(1);
+  opacity: 1;
+  transform: scale(1.06);
+}
+@media (prefers-reduced-motion: reduce) {
+  .logo-track { animation: none; }
+}
     </style>
 </head>
 <body>
+
+<div id="progress-bar"></div>
 
 <!-- Nav -->
 <nav class="nav">
@@ -875,15 +937,15 @@ button { font-family: inherit; }
     </div>
     <div class="hero__meta">
       <div class="hero__meta-item">
-        <span class="hero__meta-value">150+</span>
+        <span class="hero__meta-value" data-count="150" data-suffix="+">0+</span>
         <span class="hero__meta-label">Duurzame matches</span>
       </div>
       <div class="hero__meta-item">
-        <span class="hero__meta-value">92%</span>
+        <span class="hero__meta-value" data-count="92" data-suffix="%">0%</span>
         <span class="hero__meta-label">Retentie na 1 jaar</span>
       </div>
       <div class="hero__meta-item">
-        <span class="hero__meta-value">8 jr</span>
+        <span class="hero__meta-value" data-count="8" data-suffix=" jr">0 jr</span>
         <span class="hero__meta-label">Ervaring</span>
       </div>
     </div>
@@ -1003,19 +1065,34 @@ button { font-family: inherit; }
     <div class="reveal">
       <p class="trustbar-title">Vertrouwd door teams in sales, techniek en commerciële groei:</p>
     </div>
-    <div class="logos-grid">
-      <div class="logo-cell" title="Mean Well"><img src="assets/logos/mean-well.png" alt="Mean Well" loading="lazy" /></div>
-      <div class="logo-cell" title="Distrimex"><img src="assets/logos/distrimex.png" alt="Distrimex" loading="lazy" /></div>
-      <div class="logo-cell" title="Koenig &amp; Bauer"><img src="assets/logos/koenig-bauer.jpg" alt="Koenig &amp; Bauer" loading="lazy" /></div>
-      <div class="logo-cell" title="Geelen Counterflow"><img src="assets/logos/geelen-counterflow.png" alt="Geelen Counterflow" loading="lazy" /></div>
-      <div class="logo-cell" title="Advantech"><img src="assets/logos/advantech.png" alt="Advantech" loading="lazy" /></div>
-      <div class="logo-cell" title="OXBO"><img src="assets/logos/oxbo.png" alt="OXBO" loading="lazy" /></div>
-      <div class="logo-cell" title="Prowise"><img src="assets/logos/prowise.png" alt="Prowise" loading="lazy" /></div>
-      <div class="logo-cell" title="Kamadur"><img src="assets/logos/kamadur.png" alt="Kamadur" loading="lazy" /></div>
-      <div class="logo-cell" title="DeltaChem"><img src="assets/logos/deltachem.png" alt="DeltaChem" loading="lazy" /></div>
-      <div class="logo-cell" title="Parhelia"><img src="assets/logos/parhelia.png" alt="Parhelia" loading="lazy" /></div>
-      <div class="logo-cell" title="Ridder"><img src="assets/logos/ridder.png" alt="Ridder" loading="lazy" /></div>
-      <div class="logo-cell" title="Renishaw"><img src="assets/logos/renishaw.jpg" alt="Renishaw" loading="lazy" /></div>
+    <div class="logo-marquee" aria-label="Klanten">
+      <div class="logo-track">
+        <div class="logo-item"><img src="assets/logos/mean-well.png" alt="Mean Well" loading="lazy" /></div>
+        <div class="logo-item"><img src="assets/logos/distrimex.png" alt="Distrimex" loading="lazy" /></div>
+        <div class="logo-item"><img src="assets/logos/koenig-bauer.jpg" alt="Koenig &amp; Bauer" loading="lazy" /></div>
+        <div class="logo-item"><img src="assets/logos/geelen-counterflow.png" alt="Geelen Counterflow" loading="lazy" /></div>
+        <div class="logo-item"><img src="assets/logos/advantech.png" alt="Advantech" loading="lazy" /></div>
+        <div class="logo-item"><img src="assets/logos/oxbo.png" alt="OXBO" loading="lazy" /></div>
+        <div class="logo-item"><img src="assets/logos/prowise.png" alt="Prowise" loading="lazy" /></div>
+        <div class="logo-item"><img src="assets/logos/kamadur.png" alt="Kamadur" loading="lazy" /></div>
+        <div class="logo-item"><img src="assets/logos/deltachem.png" alt="DeltaChem" loading="lazy" /></div>
+        <div class="logo-item"><img src="assets/logos/parhelia.png" alt="Parhelia" loading="lazy" /></div>
+        <div class="logo-item"><img src="assets/logos/ridder.png" alt="Ridder" loading="lazy" /></div>
+        <div class="logo-item"><img src="assets/logos/renishaw.jpg" alt="Renishaw" loading="lazy" /></div>
+        <!-- duplicate set for seamless loop -->
+        <div class="logo-item" aria-hidden="true"><img src="assets/logos/mean-well.png" alt="" loading="lazy" /></div>
+        <div class="logo-item" aria-hidden="true"><img src="assets/logos/distrimex.png" alt="" loading="lazy" /></div>
+        <div class="logo-item" aria-hidden="true"><img src="assets/logos/koenig-bauer.jpg" alt="" loading="lazy" /></div>
+        <div class="logo-item" aria-hidden="true"><img src="assets/logos/geelen-counterflow.png" alt="" loading="lazy" /></div>
+        <div class="logo-item" aria-hidden="true"><img src="assets/logos/advantech.png" alt="" loading="lazy" /></div>
+        <div class="logo-item" aria-hidden="true"><img src="assets/logos/oxbo.png" alt="" loading="lazy" /></div>
+        <div class="logo-item" aria-hidden="true"><img src="assets/logos/prowise.png" alt="" loading="lazy" /></div>
+        <div class="logo-item" aria-hidden="true"><img src="assets/logos/kamadur.png" alt="" loading="lazy" /></div>
+        <div class="logo-item" aria-hidden="true"><img src="assets/logos/deltachem.png" alt="" loading="lazy" /></div>
+        <div class="logo-item" aria-hidden="true"><img src="assets/logos/parhelia.png" alt="" loading="lazy" /></div>
+        <div class="logo-item" aria-hidden="true"><img src="assets/logos/ridder.png" alt="" loading="lazy" /></div>
+        <div class="logo-item" aria-hidden="true"><img src="assets/logos/renishaw.jpg" alt="" loading="lazy" /></div>
+      </div>
     </div>
   </div>
 </section>
@@ -1140,9 +1217,9 @@ button { font-family: inherit; }
 </footer>
 
 <script>
+/* ── Mobile menu ── */
 const hamburger = document.querySelector('.nav__hamburger');
 const mobileMenu = document.querySelector('.nav__mobile');
-
 hamburger.addEventListener('click', () => {
   const open = hamburger.classList.toggle('is-open');
   mobileMenu.classList.toggle('is-open', open);
@@ -1151,7 +1228,6 @@ hamburger.addEventListener('click', () => {
   mobileMenu.setAttribute('aria-hidden', !open);
   document.body.style.overflow = open ? 'hidden' : '';
 });
-
 mobileMenu.querySelectorAll('a').forEach(a => {
   a.addEventListener('click', () => {
     hamburger.classList.remove('is-open');
@@ -1163,22 +1239,69 @@ mobileMenu.querySelectorAll('a').forEach(a => {
   });
 });
 
+/* ── Active nav on scroll ── */
 const navLinks = document.querySelectorAll('.nav__links a');
 const sectionObserver = new IntersectionObserver(entries => {
   entries.forEach(e => {
-    if (e.isIntersecting) {
+    if (e.isIntersecting)
       navLinks.forEach(a => a.classList.toggle('is-active', a.getAttribute('href') === '#' + e.target.id));
-    }
   });
 }, { rootMargin: '-25% 0px -65% 0px', threshold: 0 });
 document.querySelectorAll('[id]').forEach(s => sectionObserver.observe(s));
 
+/* ── Reveal on scroll ── */
 const revealObserver = new IntersectionObserver(entries => {
   entries.forEach(e => {
     if (e.isIntersecting) { e.target.classList.add('is-in'); revealObserver.unobserve(e.target); }
   });
 }, { threshold: 0.10, rootMargin: '0px 0px -6% 0px' });
 document.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
+
+/* ── 1. Scroll progress bar ── */
+const progressBar = document.getElementById('progress-bar');
+function updateProgress() {
+  const scrolled = window.scrollY;
+  const total = document.documentElement.scrollHeight - window.innerHeight;
+  progressBar.style.width = (total > 0 ? (scrolled / total) * 100 : 0) + '%';
+}
+window.addEventListener('scroll', updateProgress, { passive: true });
+
+/* ── 2. Counting numbers ── */
+function animateCounter(el) {
+  const target = parseInt(el.dataset.count, 10);
+  const suffix = el.dataset.suffix || '';
+  const duration = 1800;
+  const start = performance.now();
+  function step(now) {
+    const progress = Math.min((now - start) / duration, 1);
+    const ease = 1 - Math.pow(1 - progress, 3); // ease-out cubic
+    el.textContent = Math.floor(ease * target) + suffix;
+    if (progress < 1) requestAnimationFrame(step);
+    else el.textContent = target + suffix;
+  }
+  requestAnimationFrame(step);
+}
+const counterObserver = new IntersectionObserver(entries => {
+  entries.forEach(e => {
+    if (e.isIntersecting && e.target.dataset.count) {
+      animateCounter(e.target);
+      counterObserver.unobserve(e.target);
+    }
+  });
+}, { threshold: 0.5 });
+document.querySelectorAll('[data-count]').forEach(el => counterObserver.observe(el));
+
+/* ── 3. Parallax hero ── */
+const hero = document.querySelector('.hero');
+function updateParallax() {
+  const y = window.scrollY;
+  if (y < hero.offsetHeight * 1.5) {
+    hero.style.backgroundPositionY = (y * 0.35) + 'px';
+  }
+}
+if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+  window.addEventListener('scroll', updateParallax, { passive: true });
+}
 <\/script>
 </body>
 </html>
