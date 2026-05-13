@@ -5,7 +5,17 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>WerkGeluk Recruitment — Boutique recruitment voor commerciële en technische sales</title>
   <meta name="description" content="WerkGeluk Recruitment helpt organisaties bij het vinden van commerciële en technische sales professionals. Persoonlijk. Selectief. Gericht op duurzame matches." />
-  <link rel="icon" href="data:," />
+  <link rel="icon" href="favicon.svg" type="image/svg+xml" />
+  <meta property="og:title" content="WerkGeluk Recruitment — Boutique recruitment voor commerciële en technische sales" />
+  <meta property="og:description" content="WerkGeluk Recruitment helpt organisaties bij het vinden van commerciële en technische sales professionals. Persoonlijk. Selectief. Gericht op duurzame matches." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://nickyanthony.github.io/WerkGeluk/" />
+  <meta property="og:image" content="https://nickyanthony.github.io/WerkGeluk/assets/logo-horizontal-light.png" />
+  <meta property="og:locale" content="nl_NL" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="WerkGeluk Recruitment" />
+  <meta name="twitter:description" content="Boutique recruitment voor commerciële en technische sales professionals." />
+  <meta name="twitter:image" content="https://nickyanthony.github.io/WerkGeluk/assets/logo-horizontal-light.png" />
   <style>
 /* =========================================================
    Foundations — Colors + Type tokens
@@ -754,6 +764,9 @@ button { font-family: inherit; }
   border-top: 1px solid rgba(250,248,244,0.06);
 }
 .footer__inner {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr;
+  gap: 64px;
   padding-bottom: 64px;
   border-bottom: 1px solid rgba(250,248,244,0.1);
 }
@@ -815,420 +828,357 @@ button { font-family: inherit; }
   .v3-rolegrid { grid-template-columns: 1fr; }
   .footer__inner { grid-template-columns: 1fr; }
 }
-  </style>
+    </style>
 </head>
 <body>
-<div id="root"></div>
 
-<script src="https://unpkg.com/react@18.3.1/umd/react.development.js" integrity="sha384-hD6/rw4ppMLGNu3tX5cjIb+uRZ7UkRJ6BPkLpg4hAu/6onKUg4lLsHAs9EBPT82L" crossorigin="anonymous"></script>
-<script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.development.js" integrity="sha384-u6aeetuaXnQ38mYT8rp6sbXaQe3NL9t+IBXmnYxwkUI2Hw4bsp2Wvmx4yRQF1uAm" crossorigin="anonymous"></script>
-<script src="https://unpkg.com/@babel/standalone@7.29.0/babel.min.js" integrity="sha384-m08KidiNqLdpJqLq95G/LEi8Qvjl/xUYll3QILypMoQ65QorJ9Lvtp2RXYGBFj1y" crossorigin="anonymous"></script>
-
-<script type="text/babel" data-presets="env,react">
-const { useState, useEffect, useRef } = React;
-
-/* ---- Site data ---- */
-const CONTACT = {
-  email: "Nicky@werkgeluk-recruitment.nl",
-  phone: "+31 6 18 23 69 93",
-  phoneHref: "tel:+31618236993",
-  linkedin: "linkedin.com/in/nicky-roggeveen",
-  linkedinHref: "https://www.linkedin.com/in/nicky-roggeveen/",
-  location: "Rotterdam · Nederland",
-};
-
-const LOGOS = [
-  { name: "Mean Well",          src: "assets/logos/mean-well.png" },
-  { name: "Distrimex",          src: "assets/logos/distrimex.png" },
-  { name: "Koenig & Bauer",     src: "assets/logos/koenig-bauer.jpg" },
-  { name: "Geelen Counterflow", src: "assets/logos/geelen-counterflow.png" },
-  { name: "Advantech",          src: "assets/logos/advantech.png" },
-  { name: "OXBO",               src: "assets/logos/oxbo.png" },
-  { name: "Prowise",            src: "assets/logos/prowise.png" },
-  { name: "Kamadur",            src: "assets/logos/kamadur.png" },
-  { name: "DeltaChem",          src: "assets/logos/deltachem.png" },
-  { name: "Parhelia",           src: "assets/logos/parhelia.png" },
-  { name: "Ridder",             src: "assets/logos/ridder.png" },
-  { name: "Renishaw",           src: "assets/logos/renishaw.jpg" },
-];
-
-/* ---- Reveal on scroll ---- */
-function Reveal({ children, delay = 0, className = "", style = {} }) {
-  const ref = useRef(null);
-  const [shown, setShown] = useState(false);
-  useEffect(() => {
-    const el = ref.current;
-    if (!el) return;
-    const io = new IntersectionObserver(
-      (entries) => { entries.forEach((e) => { if (e.isIntersecting) { setShown(true); io.disconnect(); } }); },
-      { threshold: 0.10, rootMargin: "0px 0px -6% 0px" }
-    );
-    io.observe(el);
-    return () => io.disconnect();
-  }, []);
-  return (
-    <div
-      ref={ref}
-      className={`reveal ${shown ? "is-in" : ""} ${className}`}
-      style={{ transitionDelay: `${delay}ms`, ...style }}>
-      {children}
+<!-- Nav -->
+<nav class="nav">
+  <div class="nav__inner">
+    <a href="#top" class="nav__logo">
+      <img src="assets/4-2.png" alt="WerkGeluk Recruitment" />
+    </a>
+    <div class="nav__links">
+      <a href="#about">Over</a>
+      <a href="#expertise">Expertise</a>
+      <a href="#waarom">Waarom WerkGeluk</a>
+      <a href="#contact">Contact</a>
+      <a href="#locatie">Locatie</a>
     </div>
-  );
-}
+    <div class="nav__cta">
+      <a href="#contact" class="btn btn--gold btn--sm">Plan een gesprek <span class="arrow">→</span></a>
+    </div>
+    <button class="nav__hamburger" aria-label="Open menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
 
-/* ---- Nav ---- */
-function Nav() {
-  const [menuOpen, setMenuOpen] = useState(false);
-  const [activeSection, setActiveSection] = useState('top');
+<!-- Mobile menu -->
+<div class="nav__mobile" aria-hidden="true">
+  <a href="#about">Over</a>
+  <a href="#expertise">Expertise</a>
+  <a href="#waarom">Waarom WerkGeluk</a>
+  <a href="#contact">Contact</a>
+  <a href="#locatie">Locatie</a>
+  <a href="#contact" class="nav__mobile-cta">Plan een gesprek →</a>
+</div>
 
-  useEffect(() => {
-    const els = document.querySelectorAll('[id]');
-    const io = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((e) => { if (e.isIntersecting) setActiveSection(e.target.id); });
-      },
-      { rootMargin: '-25% 0px -65% 0px', threshold: 0 }
-    );
-    els.forEach((el) => io.observe(el));
-    return () => io.disconnect();
-  }, []);
+<!-- Hero -->
+<header class="hero" id="top">
+  <div class="container hero__inner">
+    <h1 class="hero__headline">WerkGeluk begint <em>bij de juiste match.</em></h1>
+    <p class="hero__sub">WerkGeluk Recruitment helpt organisaties bij het vinden van commerciële en technische sales professionals die niet alleen passen op papier, maar ook binnen cultuur, ambitie en visie.</p>
+    <p class="hero__tagline">Persoonlijk. Selectief. Gericht op duurzame matches.</p>
+    <div class="hero__ctas">
+      <a href="#contact" class="btn btn--gold">Plan een kennismaking <span class="arrow">→</span></a>
+    </div>
+    <div class="hero__meta">
+      <div class="hero__meta-item">
+        <span class="hero__meta-value">150+</span>
+        <span class="hero__meta-label">Duurzame matches</span>
+      </div>
+      <div class="hero__meta-item">
+        <span class="hero__meta-value">92%</span>
+        <span class="hero__meta-label">Retentie na 1 jaar</span>
+      </div>
+      <div class="hero__meta-item">
+        <span class="hero__meta-value">8 jr</span>
+        <span class="hero__meta-label">Ervaring</span>
+      </div>
+    </div>
+  </div>
+</header>
 
-  useEffect(() => {
-    document.body.style.overflow = menuOpen ? 'hidden' : '';
-    return () => { document.body.style.overflow = ''; };
-  }, [menuOpen]);
-
-  const links = [
-    ["Over", "#about", "about"],
-    ["Expertise", "#expertise", "expertise"],
-    ["Waarom WerkGeluk", "#waarom", "waarom"],
-    ["Contact", "#contact", "contact"],
-    ["Locatie", "#locatie", "locatie"],
-  ];
-
-  return (
-    <>
-      <nav className="nav">
-        <div className="nav__inner">
-          <a href="#top" className="nav__logo" onClick={() => setMenuOpen(false)}>
-            <img src="assets/4-2.png" alt="WerkGeluk Recruitment" />
-          </a>
-          <div className="nav__links">
-            {links.map(([label, href, id]) => (
-              <a key={href} href={href} className={activeSection === id ? 'is-active' : ''}>
-                {label}
-              </a>
-            ))}
+<!-- About -->
+<section class="section section--cream" id="about">
+  <div class="container">
+    <div class="about">
+      <div class="reveal about__portrait">
+        <img src="assets/nicky-portrait.jpeg" alt="Nicky Roggeveen, oprichter WerkGeluk Recruitment" class="about__portrait-photo" />
+        <div class="about__portrait-overlay"><span>Rotterdam · 2026</span></div>
+      </div>
+      <div class="reveal about__copy" style="transition-delay:100ms">
+        <span class="eyebrow">Over</span>
+        <h2>Persoonlijke recruitment, met aandacht voor de mens <em>achter het cv.</em></h2>
+        <p>WerkGeluk Recruitment is een klein boutique recruitmentbureau, opgericht door Nicky Roggeveen. Ik ben gespecialiseerd in commerciële en technische sales profielen, en help organisaties bij het vinden van mensen die niet alleen passen op papier, maar ook in de cultuur, het team en de visie.</p>
+        <p>In plaats van snelle plaatsingen of volume recruitment draait het bij mij om oprechte aandacht, kwaliteit en lange termijn relaties. Een grondig gesprek, een eerlijk advies en een match die blijft.</p>
+        <div class="about__signature">
+          <div>
+            <div class="about__signature-name">Nicky Roggeveen</div>
+            <div class="about__signature-role">Oprichter &amp; Recruitment Manager</div>
           </div>
-          <div className="nav__cta">
-            <a href="#contact" className="btn btn--gold btn--sm">Plan een gesprek<span className="arrow">→</span></a>
-          </div>
-          <button
-            className={`nav__hamburger ${menuOpen ? 'is-open' : ''}`}
-            onClick={() => setMenuOpen((o) => !o)}
-            aria-label={menuOpen ? 'Sluit menu' : 'Open menu'}
-            aria-expanded={menuOpen}
-          >
-            <span></span><span></span><span></span>
-          </button>
         </div>
-      </nav>
-      <div className={`nav__mobile ${menuOpen ? 'is-open' : ''}`} aria-hidden={!menuOpen}>
-        {links.map(([label, href]) => (
-          <a key={href} href={href} onClick={() => setMenuOpen(false)}>{label}</a>
-        ))}
-        <a href="#contact" className="nav__mobile-cta" onClick={() => setMenuOpen(false)}>
-          Plan een gesprek →
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Expertise -->
+<section class="section section--navy-deep" id="expertise">
+  <div class="container">
+    <div class="v3-expertise">
+      <div class="reveal">
+        <div class="section__head">
+          <div>
+            <span class="eyebrow" style="color:var(--wg-gold-400)">Expertise</span>
+            <h2 class="section__title">Sterke commerciële professionals vinden vraagt <em>meer dan alleen recruitment.</em></h2>
+          </div>
+          <div class="section__lede">
+            <p style="margin:0">De markt is veranderd. Goede sales professionals kiezen bewust voor organisaties die aansluiten bij hun ambities, persoonlijkheid en manier van werken.</p>
+            <p style="margin-top:18px;margin-bottom:0">WerkGeluk Recruitment helpt organisaties bij het aantrekken van professionals die inhoudelijk én persoonlijk passen. Geen massa-aanpak, maar een zorgvuldig proces met focus op kwaliteit, positionering en duurzame groei.</p>
+          </div>
+        </div>
+      </div>
+      <div class="reveal" style="transition-delay:80ms">
+        <div class="v3-expertise__rolelabel">Profielen waar we mee helpen</div>
+        <ul class="v3-rolegrid">
+          <li><span class="v3-rolegrid__dot"></span>Commerciële binnendienst</li>
+          <li><span class="v3-rolegrid__dot"></span>Accountmanagement</li>
+          <li><span class="v3-rolegrid__dot"></span>Business Development</li>
+          <li><span class="v3-rolegrid__dot"></span>Inside Sales</li>
+          <li><span class="v3-rolegrid__dot"></span>Sales Engineering</li>
+          <li><span class="v3-rolegrid__dot"></span>Technical Sales</li>
+          <li><span class="v3-rolegrid__dot"></span>Sales Management</li>
+          <li><span class="v3-rolegrid__dot"></span>Commercieel Management</li>
+          <li><span class="v3-rolegrid__dot"></span>Sales Leadership</li>
+          <li><span class="v3-rolegrid__dot"></span>Sales Director</li>
+          <li><span class="v3-rolegrid__dot"></span>Chief Commercial Officer (CCO)</li>
+        </ul>
+        <a href="#contact" class="btn btn--gold">Bespreek uw vacature <span class="arrow">→</span></a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Waarom -->
+<section class="section section--paper" id="waarom">
+  <div class="container">
+    <div class="reveal">
+      <div class="section__head">
+        <div>
+          <span class="eyebrow">Waarom WerkGeluk</span>
+          <h2 class="section__title">Waarom organisaties kiezen <em>voor WerkGeluk Recruitment.</em></h2>
+        </div>
+      </div>
+    </div>
+    <div class="steps-5">
+      <div class="reveal step">
+        <div class="step__dot"></div>
+        <span class="step__num">01</span>
+        <h4 class="step__title">Persoonlijk en betrokken</h4>
+        <p class="step__body">Direct contact, korte lijnen en échte aandacht voor zowel klant als kandidaat.</p>
+      </div>
+      <div class="reveal step" style="transition-delay:80ms">
+        <div class="step__dot"></div>
+        <span class="step__num">02</span>
+        <h4 class="step__title">Kwaliteit boven kwantiteit</h4>
+        <p class="step__body">Geen stapels cv’s, maar zorgvuldig geselecteerde professionals.</p>
+      </div>
+      <div class="reveal step" style="transition-delay:160ms">
+        <div class="step__dot"></div>
+        <span class="step__num">03</span>
+        <h4 class="step__title">Gespecialiseerde focus</h4>
+        <p class="step__body">Sterk netwerk binnen commerciële en technische sales functies.</p>
+      </div>
+      <div class="reveal step" style="transition-delay:240ms">
+        <div class="step__dot"></div>
+        <span class="step__num">04</span>
+        <h4 class="step__title">Boutique aanpak</h4>
+        <p class="step__body">Kleinschalig, selectief en gericht op lange termijn relaties.</p>
+      </div>
+      <div class="reveal step" style="transition-delay:320ms">
+        <div class="step__dot"></div>
+        <span class="step__num">05</span>
+        <h4 class="step__title">Moderne recruitmentvisie</h4>
+        <p class="step__body">Menselijk, transparant en gericht op duurzame groei.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Trust logos -->
+<section class="section section--cream section--tight">
+  <div class="container">
+    <div class="reveal">
+      <p class="trustbar-title">Vertrouwd door teams in sales, techniek en commerciële groei:</p>
+    </div>
+    <div class="logos-grid">
+      <div class="logo-cell" title="Mean Well"><img src="assets/logos/mean-well.png" alt="Mean Well" loading="lazy" /></div>
+      <div class="logo-cell" title="Distrimex"><img src="assets/logos/distrimex.png" alt="Distrimex" loading="lazy" /></div>
+      <div class="logo-cell" title="Koenig &amp; Bauer"><img src="assets/logos/koenig-bauer.jpg" alt="Koenig &amp; Bauer" loading="lazy" /></div>
+      <div class="logo-cell" title="Geelen Counterflow"><img src="assets/logos/geelen-counterflow.png" alt="Geelen Counterflow" loading="lazy" /></div>
+      <div class="logo-cell" title="Advantech"><img src="assets/logos/advantech.png" alt="Advantech" loading="lazy" /></div>
+      <div class="logo-cell" title="OXBO"><img src="assets/logos/oxbo.png" alt="OXBO" loading="lazy" /></div>
+      <div class="logo-cell" title="Prowise"><img src="assets/logos/prowise.png" alt="Prowise" loading="lazy" /></div>
+      <div class="logo-cell" title="Kamadur"><img src="assets/logos/kamadur.png" alt="Kamadur" loading="lazy" /></div>
+      <div class="logo-cell" title="DeltaChem"><img src="assets/logos/deltachem.png" alt="DeltaChem" loading="lazy" /></div>
+      <div class="logo-cell" title="Parhelia"><img src="assets/logos/parhelia.png" alt="Parhelia" loading="lazy" /></div>
+      <div class="logo-cell" title="Ridder"><img src="assets/logos/ridder.png" alt="Ridder" loading="lazy" /></div>
+      <div class="logo-cell" title="Renishaw"><img src="assets/logos/renishaw.jpg" alt="Renishaw" loading="lazy" /></div>
+    </div>
+  </div>
+</section>
+
+<!-- Contact -->
+<section class="section section--navy-deep" id="contact">
+  <div class="container">
+    <div class="cta">
+      <div class="reveal cta__copy">
+        <span class="eyebrow" style="color:var(--wg-gold-300)">Kennismaken</span>
+        <h2>Een gesprek begint <em>met een goede vraag.</em></h2>
+        <p>Heeft u een opdracht, een vacature of gewoon een vraag? Bel of mail vrijblijvend. Vaak is een eerste gesprek genoeg om te zien of er iets te bouwen valt.</p>
+      </div>
+      <div class="reveal cta__card" style="transition-delay:120ms">
+        <div class="cta__card-row">
+          <div class="cta__card-icon">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/>
+            </svg>
+          </div>
+          <div>
+            <div class="cta__card-label">E-mail</div>
+            <a class="cta__card-value" href="mailto:Nicky@werkgeluk-recruitment.nl">Nicky@werkgeluk-recruitment.nl</a>
+          </div>
+        </div>
+        <div class="cta__card-row">
+          <div class="cta__card-icon">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 13.5a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.6 2.69h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 10.2a16 16 0 0 0 5.89 5.89l.94-.94a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 21.92 17z"/>
+            </svg>
+          </div>
+          <div>
+            <div class="cta__card-label">Telefoon</div>
+            <a class="cta__card-value" href="tel:+31618236993">+31 6 18 23 69 93</a>
+          </div>
+        </div>
+        <div class="cta__card-row">
+          <div class="cta__card-icon">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+              <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/>
+            </svg>
+          </div>
+          <div>
+            <div class="cta__card-label">LinkedIn</div>
+            <a class="cta__card-value" href="https://www.linkedin.com/in/nicky-roggeveen/" target="_blank" rel="noreferrer">linkedin.com/in/nicky-roggeveen</a>
+          </div>
+        </div>
+        <a class="cta__primary" href="mailto:Nicky@werkgeluk-recruitment.nl">
+          Plan een kennismaking <span class="arrow">→</span>
         </a>
       </div>
-    </>
-  );
-}
+    </div>
+  </div>
+</section>
 
-/* ---- Hero ---- */
-function Hero() {
-  return (
-    <header className="hero" id="top">
-      <div className="container hero__inner">
-        <h1 className="hero__headline">
-          WerkGeluk begint <em>bij de juiste match.</em>
-        </h1>
-        <p className="hero__sub">WerkGeluk Recruitment helpt organisaties bij het vinden van commerciële en technische sales professionals die niet alleen passen op papier, maar ook binnen cultuur, ambitie en visie.</p>
-        <p className="hero__tagline">Persoonlijk. Selectief. Gericht op duurzame matches.</p>
-        <div className="hero__ctas">
-          <a href="#contact" className="btn btn--gold">Plan een kennismaking<span className="arrow">→</span></a>
-        </div>
-        <div className="hero__meta">
-          {[
-            { value: "150+", label: "Duurzame matches" },
-            { value: "92%",  label: "Retentie na 1 jaar" },
-            { value: "8 jr", label: "Ervaring" },
-          ].map((m) => (
-            <div key={m.label} className="hero__meta-item">
-              <span className="hero__meta-value">{m.value}</span>
-              <span className="hero__meta-label">{m.label}</span>
-            </div>
-          ))}
-        </div>
+<!-- Locatie -->
+<section class="section section--paper" id="locatie">
+  <div class="container">
+    <div class="locatie">
+      <div class="reveal locatie__copy">
+        <span class="eyebrow">Locatie</span>
+        <h2 class="section__title">WerkGeluk Recruitment, <em>gevestigd in Rotterdam.</em></h2>
+        <p class="locatie__body">Wij ontvangen u graag voor een persoonlijk gesprek op de Kop van Zuid. Goed bereikbaar met de auto en op loopafstand van station Wilhelminaplein.</p>
+        <address class="locatie__address">
+          <span>WerkGeluk Recruitment</span>
+          <span>Otto Reuchlinweg 1146</span>
+          <span>3072 MD Rotterdam</span>
+          <span>Nederland</span>
+        </address>
+        <a class="locatie__link" href="https://www.google.com/maps/search/?api=1&query=Otto+Reuchlinweg+1146+3072+MD+Rotterdam" target="_blank" rel="noreferrer">
+          Open in Google Maps <span class="arrow">→</span>
+        </a>
       </div>
-    </header>
-  );
-}
-
-/* ---- About ---- */
-function About() {
-  return (
-    <section className="section section--cream" id="about">
-      <div className="container">
-        <div className="about">
-          <Reveal className="about__portrait">
-            <img src="assets/nicky-portrait.jpeg" alt="Nicky Roggeveen, oprichter WerkGeluk Recruitment" className="about__portrait-photo" />
-            <div className="about__portrait-overlay"><span>Rotterdam · 2026</span></div>
-          </Reveal>
-          <Reveal className="about__copy" delay={100}>
-            <span className="eyebrow">Over</span>
-            <h2>Persoonlijke recruitment, met aandacht voor de mens <em>achter het cv.</em></h2>
-            <p>WerkGeluk Recruitment is een klein boutique recruitmentbureau, opgericht door Nicky Roggeveen. Ik ben gespecialiseerd in commerciële en technische sales profielen, en help organisaties bij het vinden van mensen die niet alleen passen op papier, maar ook in de cultuur, het team en de visie.</p>
-            <p>In plaats van snelle plaatsingen of volume recruitment draait het bij mij om oprechte aandacht, kwaliteit en lange termijn relaties. Een grondig gesprek, een eerlijk advies en een match die blijft.</p>
-            <div className="about__signature">
-              <div>
-                <div className="about__signature-name">Nicky Roggeveen</div>
-                <div className="about__signature-role">Oprichter & Recruitment Manager</div>
-              </div>
-            </div>
-          </Reveal>
-        </div>
+      <div class="reveal locatie__map" style="transition-delay:120ms">
+        <iframe
+          title="Locatie WerkGeluk Recruitment, Rotterdam"
+          src="https://www.google.com/maps?q=Otto+Reuchlinweg+1146,+3072+MD+Rotterdam&z=15&output=embed"
+          loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade"
+          allowfullscreen
+        ></iframe>
       </div>
-    </section>
-  );
-}
+    </div>
+  </div>
+</section>
 
-/* ---- Expertise ---- */
-function Expertise() {
-  const roles = [
-    "Commerciële binnendienst", "Accountmanagement", "Business Development",
-    "Inside Sales", "Sales Engineering", "Technical Sales",
-    "Sales Management", "Commercieel Management", "Sales Leadership",
-    "Sales Director", "Chief Commercial Officer (CCO)",
-  ];
-  return (
-    <section className="section section--navy-deep" id="expertise">
-      <div className="container">
-        <div className="v3-expertise">
-          <Reveal>
-            <div className="section__head">
-              <div>
-                <span className="eyebrow" style={{ color: "var(--wg-gold-400)" }}>Expertise</span>
-                <h2 className="section__title">Sterke commerciële professionals vinden vraagt <em>meer dan alleen recruitment.</em></h2>
-              </div>
-              <div className="section__lede">
-                <p style={{ margin: 0 }}>De markt is veranderd. Goede sales professionals kiezen bewust voor organisaties die aansluiten bij hun ambities, persoonlijkheid en manier van werken.</p>
-                <p style={{ marginTop: 18, marginBottom: 0 }}>WerkGeluk Recruitment helpt organisaties bij het aantrekken van professionals die inhoudelijk én persoonlijk passen. Geen massa-aanpak, maar een zorgvuldig proces met focus op kwaliteit, positionering en duurzame groei.</p>
-              </div>
-            </div>
-          </Reveal>
-          <Reveal delay={80}>
-            <div className="v3-expertise__rolelabel">Profielen waar we mee helpen</div>
-            <ul className="v3-rolegrid">
-              {roles.map((r) => <li key={r}><span className="v3-rolegrid__dot"></span>{r}</li>)}
-            </ul>
-            <a href="#contact" className="btn btn--gold">Bespreek uw vacature<span className="arrow">→</span></a>
-          </Reveal>
-        </div>
+<!-- Footer -->
+<footer class="footer">
+  <div class="container">
+    <div class="footer__inner">
+      <div class="footer__brand">
+        <img src="assets/6-1.png" alt="WerkGeluk Recruitment" />
+        <p>Boutique recruitment voor commerciële en technische sales professionals. Persoonlijk. Eerlijk. Duurzaam.</p>
       </div>
-    </section>
-  );
-}
-
-/* ---- Waarom ---- */
-function Waarom() {
-  const items = [
-    { num: "01", title: "Persoonlijk en betrokken", body: "Direct contact, korte lijnen en échte aandacht voor zowel klant als kandidaat." },
-    { num: "02", title: "Kwaliteit boven kwantiteit", body: "Geen stapels cv's, maar zorgvuldig geselecteerde professionals." },
-    { num: "03", title: "Gespecialiseerde focus", body: "Sterk netwerk binnen commerciële en technische sales functies." },
-    { num: "04", title: "Boutique aanpak", body: "Kleinschalig, selectief en gericht op lange termijn relaties." },
-    { num: "05", title: "Moderne recruitmentvisie", body: "Menselijk, transparant en gericht op duurzame groei." },
-  ];
-  return (
-    <section className="section section--paper" id="waarom">
-      <div className="container">
-        <Reveal>
-          <div className="section__head">
-            <div>
-              <span className="eyebrow">Waarom WerkGeluk</span>
-              <h2 className="section__title">Waarom organisaties kiezen <em>voor WerkGeluk Recruitment.</em></h2>
-            </div>
-          </div>
-        </Reveal>
-        <div className="steps-5">
-          {items.map((s, i) => (
-            <Reveal key={s.title} className="step" delay={i * 80}>
-              <div className="step__dot"></div>
-              <span className="step__num">{s.num}</span>
-              <h4 className="step__title">{s.title}</h4>
-              <p className="step__body">{s.body}</p>
-            </Reveal>
-          ))}
-        </div>
+      <div class="footer__col">
+        <h5>Navigatie</h5>
+        <ul>
+          <li><a href="#about">Over</a></li>
+          <li><a href="#expertise">Expertise</a></li>
+          <li><a href="#waarom">Waarom WerkGeluk</a></li>
+          <li><a href="#contact">Contact</a></li>
+          <li><a href="#locatie">Locatie</a></li>
+        </ul>
       </div>
-    </section>
-  );
-}
-
-/* ---- Trust + Logos ---- */
-function TrustLogos() {
-  return (
-    <section className="section section--cream section--tight">
-      <div className="container">
-        <Reveal>
-          <p className="trustbar-title">Vertrouwd door teams in sales, techniek en commerciële groei:</p>
-        </Reveal>
-        <div className="logos-grid">
-          {LOGOS.map((l) => (
-            <div key={l.name} className="logo-cell" title={l.name}>
-              <img src={l.src} alt={l.name} loading="lazy" />
-            </div>
-          ))}
-        </div>
+      <div class="footer__col">
+        <h5>Contact</h5>
+        <ul>
+          <li><a href="mailto:Nicky@werkgeluk-recruitment.nl">Nicky@werkgeluk-recruitment.nl</a></li>
+          <li><a href="tel:+31618236993">+31 6 18 23 69 93</a></li>
+          <li><a href="https://www.linkedin.com/in/nicky-roggeveen/" target="_blank" rel="noreferrer">LinkedIn</a></li>
+        </ul>
       </div>
-    </section>
-  );
-}
-
-/* ---- Contact CTA ---- */
-function Contact() {
-  return (
-    <section className="section section--navy-deep" id="contact">
-      <div className="container">
-        <div className="cta">
-          <Reveal className="cta__copy">
-            <span className="eyebrow" style={{ color: "var(--wg-gold-300)" }}>Kennismaken</span>
-            <h2>Een gesprek begint <em>met een goede vraag.</em></h2>
-            <p>Heeft u een opdracht, een vacature of gewoon een vraag? Bel of mail vrijblijvend. Vaak is een eerste gesprek genoeg om te zien of er iets te bouwen valt.</p>
-          </Reveal>
-          <Reveal className="cta__card" delay={120}>
-            <div className="cta__card-row">
-              <div className="cta__card-icon">
-                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
-                  <rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/>
-                </svg>
-              </div>
-              <div>
-                <div className="cta__card-label">E-mail</div>
-                <a className="cta__card-value" href={`mailto:${CONTACT.email}`}>{CONTACT.email}</a>
-              </div>
-            </div>
-            <div className="cta__card-row">
-              <div className="cta__card-icon">
-                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
-                  <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 13.5a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.6 2.69h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 10.2a16 16 0 0 0 5.89 5.89l.94-.94a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 21.92 17z"/>
-                </svg>
-              </div>
-              <div>
-                <div className="cta__card-label">Telefoon</div>
-                <a className="cta__card-value" href={CONTACT.phoneHref}>{CONTACT.phone}</a>
-              </div>
-            </div>
-            <div className="cta__card-row">
-              <div className="cta__card-icon">
-                <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
-                  <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/>
-                </svg>
-              </div>
-              <div>
-                <div className="cta__card-label">LinkedIn</div>
-                <a className="cta__card-value" href={CONTACT.linkedinHref} target="_blank" rel="noreferrer">{CONTACT.linkedin}</a>
-              </div>
-            </div>
-            <a className="cta__primary" href={`mailto:${CONTACT.email}`}>
-              Plan een kennismaking<span className="arrow">→</span>
-            </a>
-          </Reveal>
-        </div>
+    </div>
+    <div class="footer__base">
+      <span>© 2026 WerkGeluk Recruitment · KvK 70841640 · BTW NL001178713B61 · Rotterdam · Nederland</span>
+      <div class="footer__base-legal">
+        <a href="assets/algemene-voorwaarden.pdf" target="_blank" rel="noreferrer">Algemene voorwaarden</a>
+        <a href="assets/privacyverklaring.pdf" target="_blank" rel="noreferrer">Privacyverklaring</a>
       </div>
-    </section>
-  );
-}
+    </div>
+  </div>
+</footer>
 
-/* ---- Locatie ---- */
-function Locatie() {
-  return (
-    <section className="section section--paper" id="locatie">
-      <div className="container">
-        <div className="locatie">
-          <Reveal className="locatie__copy">
-            <span className="eyebrow">Locatie</span>
-            <h2 className="section__title">WerkGeluk Recruitment, <em>gevestigd in Rotterdam.</em></h2>
-            <p className="locatie__body">Wij ontvangen u graag voor een persoonlijk gesprek op de Kop van Zuid. Goed bereikbaar met de auto en op loopafstand van station Wilhelminaplein.</p>
-            <address className="locatie__address">
-              <span>WerkGeluk Recruitment</span>
-              <span>Otto Reuchlinweg 1008, 1146 & 1150</span>
-              <span>3072 MD Rotterdam</span>
-              <span>Nederland</span>
-            </address>
-            <a
-              className="locatie__link"
-              href="https://www.google.com/maps/search/?api=1&query=Otto+Reuchlinweg+1146+3072+MD+Rotterdam"
-              target="_blank"
-              rel="noreferrer">
-              Open in Google Maps<span className="arrow">→</span>
-            </a>
-          </Reveal>
-          <Reveal className="locatie__map" delay={120}>
-            <iframe
-              title="Locatie WerkGeluk Recruitment, Rotterdam"
-              src="https://www.google.com/maps?q=Otto+Reuchlinweg+1146,+3072+MD+Rotterdam&z=15&output=embed"
-              loading="lazy"
-              referrerPolicy="no-referrer-when-downgrade"
-              allowFullScreen
-            ></iframe>
-          </Reveal>
-        </div>
-      </div>
-    </section>
-  );
-}
+<script>
+const hamburger = document.querySelector('.nav__hamburger');
+const mobileMenu = document.querySelector('.nav__mobile');
 
-/* ---- Footer ---- */
-function Footer() {
-  return (
-    <footer className="footer">
-      <div className="container">
-        <div className="footer__inner">
-          <div className="footer__brand">
-            <img src="assets/6-1.png" alt="WerkGeluk Recruitment" />
-            <p>Boutique recruitment voor commerciële en technische sales professionals. Persoonlijk. Eerlijk. Duurzaam.</p>
-          </div>
-        </div>
-        <div className="footer__base">
-          <span>© 2026 WerkGeluk Recruitment · KvK 70841640 · BTW NL001178713B61 · {CONTACT.location}</span>
-          <div className="footer__base-legal">
-            <a href="assets/algemene-voorwaarden.pdf" target="_blank" rel="noreferrer">Algemene voorwaarden</a>
-          </div>
-        </div>
-      </div>
-    </footer>
-  );
-}
+hamburger.addEventListener('click', () => {
+  const open = hamburger.classList.toggle('is-open');
+  mobileMenu.classList.toggle('is-open', open);
+  hamburger.setAttribute('aria-label', open ? 'Sluit menu' : 'Open menu');
+  hamburger.setAttribute('aria-expanded', open);
+  mobileMenu.setAttribute('aria-hidden', !open);
+  document.body.style.overflow = open ? 'hidden' : '';
+});
 
-/* ---- App ---- */
-function App() {
-  return (
-    <>
-      <Nav />
-      <Hero />
-      <About />
-      <Expertise />
-      <Waarom />
-      <TrustLogos />
-      <Contact />
-      <Locatie />
-      <Footer />
-    </>
-  );
-}
+mobileMenu.querySelectorAll('a').forEach(a => {
+  a.addEventListener('click', () => {
+    hamburger.classList.remove('is-open');
+    mobileMenu.classList.remove('is-open');
+    hamburger.setAttribute('aria-label', 'Open menu');
+    hamburger.setAttribute('aria-expanded', 'false');
+    mobileMenu.setAttribute('aria-hidden', 'true');
+    document.body.style.overflow = '';
+  });
+});
 
-ReactDOM.createRoot(document.getElementById('root')).render(<App />);
-</script>
+const navLinks = document.querySelectorAll('.nav__links a');
+const sectionObserver = new IntersectionObserver(entries => {
+  entries.forEach(e => {
+    if (e.isIntersecting) {
+      navLinks.forEach(a => a.classList.toggle('is-active', a.getAttribute('href') === '#' + e.target.id));
+    }
+  });
+}, { rootMargin: '-25% 0px -65% 0px', threshold: 0 });
+document.querySelectorAll('[id]').forEach(s => sectionObserver.observe(s));
+
+const revealObserver = new IntersectionObserver(entries => {
+  entries.forEach(e => {
+    if (e.isIntersecting) { e.target.classList.add('is-in'); revealObserver.unobserve(e.target); }
+  });
+}, { threshold: 0.10, rootMargin: '0px 0px -6% 0px' });
+document.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
+<\/script>
 </body>
 </html>
