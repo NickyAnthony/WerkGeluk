@@ -69,7 +69,19 @@
    Reset + Base
    ========================================================= */
 *, *::before, *::after { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
 html, body { margin: 0; padding: 0; }
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  .reveal { transition: none !important; opacity: 1 !important; transform: none !important; }
+  .btn, .arrow, .nav__links a::after, .about__portrait-photo,
+  .logo-cell img, .locatie__link, .cta__card-value { transition: none !important; }
+}
+:focus-visible {
+  outline: 2px solid var(--wg-gold-500);
+  outline-offset: 3px;
+  border-radius: 3px;
+}
 body {
   font-family: var(--font-sans);
   background: var(--wg-navy-900);
@@ -136,7 +148,7 @@ button { font-family: inherit; }
   font-family: inherit;
 }
 .btn:active { transform: translateY(1px) scale(0.99); }
-.btn--gold { background: var(--gold-accent); color: var(--wg-navy-900); }
+.btn--gold { background: var(--wg-gold-500); color: var(--wg-navy-900); }
 .btn--gold:hover { background: var(--wg-gold-400); box-shadow: var(--sh-gold); transform: translateY(-1px); }
 .btn--sm { padding: 10px 18px; font-size: 13px; border-radius: 8px; }
 .arrow { display: inline-block; transition: transform 240ms var(--ease-out); }
@@ -262,6 +274,29 @@ button { font-family: inherit; }
   opacity: 0.86;
 }
 .hero__ctas { display: flex; gap: 14px; flex-wrap: wrap; margin-top: 44px; }
+.hero__meta {
+  display: flex;
+  gap: 48px;
+  margin-top: 64px;
+  padding-top: 40px;
+  border-top: 1px solid rgba(250,248,244,0.14);
+}
+.hero__meta-item { display: flex; flex-direction: column; gap: 4px; }
+.hero__meta-value {
+  font-family: var(--font-serif);
+  font-size: clamp(28px, 3.5vw, 40px);
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  color: var(--wg-gold-300);
+  line-height: 1;
+}
+.hero__meta-label {
+  font-size: 12px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: rgba(250,248,244,0.56);
+  font-weight: 500;
+}
 
 /* =========================================================
    Section scaffold
@@ -455,6 +490,17 @@ button { font-family: inherit; }
   border-radius: 999px;
   opacity: 0.4;
 }
+.step__num {
+  font-family: var(--font-serif);
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 0.14em;
+  color: var(--gold-accent);
+  opacity: 0.8;
+  margin-bottom: 14px;
+  display: block;
+  text-transform: uppercase;
+}
 .step__title {
   font-family: var(--font-serif);
   font-weight: 600;
@@ -493,8 +539,10 @@ button { font-family: inherit; }
   justify-content: center;
   min-height: 110px;
   border-right: 1px solid var(--wg-line);
-  transition: opacity 240ms ease;
+  transition: background 240ms ease;
+  cursor: pointer;
 }
+.logo-cell:hover { background: var(--wg-cream); }
 .logo-cell:nth-child(6n) { border-right: none; }
 .logo-cell:nth-child(-n+6) { border-bottom: 1px solid var(--wg-line); }
 .logo-cell img {
@@ -789,7 +837,19 @@ function Hero() {
         <p className="hero__sub">WerkGeluk Recruitment helpt organisaties bij het vinden van commerciële en technische sales professionals die niet alleen passen op papier, maar ook binnen cultuur, ambitie en visie.</p>
         <p className="hero__tagline">Persoonlijk. Selectief. Gericht op duurzame matches.</p>
         <div className="hero__ctas">
-          <a href="#contact" className="btn btn--gold" style={{ backgroundColor: "rgb(231,201,141)" }}>Plan een kennismaking<span className="arrow">→</span></a>
+          <a href="#contact" className="btn btn--gold">Plan een kennismaking<span className="arrow">→</span></a>
+        </div>
+        <div className="hero__meta">
+          {[
+            { value: "150+", label: "Duurzame matches" },
+            { value: "92%",  label: "Retentie na 1 jaar" },
+            { value: "8 jr", label: "Ervaring" },
+          ].map((m) => (
+            <div key={m.label} className="hero__meta-item">
+              <span className="hero__meta-value">{m.value}</span>
+              <span className="hero__meta-label">{m.label}</span>
+            </div>
+          ))}
         </div>
       </div>
     </header>
@@ -853,7 +913,7 @@ function Expertise() {
             <ul className="v3-rolegrid">
               {roles.map((r) => <li key={r}><span className="v3-rolegrid__dot"></span>{r}</li>)}
             </ul>
-            <a href="#contact" className="btn btn--gold" style={{ backgroundColor: "rgb(231,201,141)" }}>Bespreek uw vacature<span className="arrow">→</span></a>
+            <a href="#contact" className="btn btn--gold">Bespreek uw vacature<span className="arrow">→</span></a>
           </Reveal>
         </div>
       </div>
@@ -864,11 +924,11 @@ function Expertise() {
 /* ---- Waarom ---- */
 function Waarom() {
   const items = [
-    { title: "Persoonlijk en betrokken", body: "Direct contact, korte lijnen en échte aandacht voor zowel klant als kandidaat." },
-    { title: "Kwaliteit boven kwantiteit", body: "Geen stapels cv's, maar zorgvuldig geselecteerde professionals." },
-    { title: "Gespecialiseerde focus", body: "Sterk netwerk binnen commerciële en technische sales functies." },
-    { title: "Boutique aanpak", body: "Kleinschalig, selectief en gericht op lange termijn relaties." },
-    { title: "Moderne recruitmentvisie", body: "Menselijk, transparant en gericht op duurzame groei." },
+    { num: "01", title: "Persoonlijk en betrokken", body: "Direct contact, korte lijnen en échte aandacht voor zowel klant als kandidaat." },
+    { num: "02", title: "Kwaliteit boven kwantiteit", body: "Geen stapels cv's, maar zorgvuldig geselecteerde professionals." },
+    { num: "03", title: "Gespecialiseerde focus", body: "Sterk netwerk binnen commerciële en technische sales functies." },
+    { num: "04", title: "Boutique aanpak", body: "Kleinschalig, selectief en gericht op lange termijn relaties." },
+    { num: "05", title: "Moderne recruitmentvisie", body: "Menselijk, transparant en gericht op duurzame groei." },
   ];
   return (
     <section className="section section--paper" id="waarom">
@@ -885,6 +945,7 @@ function Waarom() {
           {items.map((s, i) => (
             <Reveal key={s.title} className="step" delay={i * 80}>
               <div className="step__dot"></div>
+              <span className="step__num">{s.num}</span>
               <h4 className="step__title">{s.title}</h4>
               <p className="step__body">{s.body}</p>
             </Reveal>
@@ -928,21 +989,33 @@ function Contact() {
           </Reveal>
           <Reveal className="cta__card" delay={120}>
             <div className="cta__card-row">
-              <div className="cta__card-icon">@</div>
+              <div className="cta__card-icon">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+                  <rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/>
+                </svg>
+              </div>
               <div>
                 <div className="cta__card-label">E-mail</div>
                 <a className="cta__card-value" href={`mailto:${CONTACT.email}`}>{CONTACT.email}</a>
               </div>
             </div>
             <div className="cta__card-row">
-              <div className="cta__card-icon">☏</div>
+              <div className="cta__card-icon">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+                  <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 13.5a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.6 2.69h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 10.2a16 16 0 0 0 5.89 5.89l.94-.94a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 21.92 17z"/>
+                </svg>
+              </div>
               <div>
                 <div className="cta__card-label">Telefoon</div>
                 <a className="cta__card-value" href={CONTACT.phoneHref}>{CONTACT.phone}</a>
               </div>
             </div>
             <div className="cta__card-row">
-              <div className="cta__card-icon">in</div>
+              <div className="cta__card-icon">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                  <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/>
+                </svg>
+              </div>
               <div>
                 <div className="cta__card-label">LinkedIn</div>
                 <a className="cta__card-value" href={CONTACT.linkedinHref} target="_blank" rel="noreferrer">{CONTACT.linkedin}</a>
