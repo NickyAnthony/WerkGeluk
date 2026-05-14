@@ -69,7 +69,7 @@
    Reset + Base
    ========================================================= */
 *, *::before, *::after { box-sizing: border-box; }
-html { scroll-behavior: smooth; }
+html { scroll-behavior: smooth; scroll-padding-top: 72px; }
 html, body { margin: 0; padding: 0; }
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
@@ -873,7 +873,7 @@ button { font-family: inherit; }
   align-items: center;
   padding: 5px 14px;
   background: var(--gold-soft);
-  color: var(--gold-accent);
+  color: var(--wg-gold-700);
   font-size: 11px;
   font-weight: 600;
   letter-spacing: 0.2em;
@@ -888,14 +888,14 @@ button { font-family: inherit; }
   line-height: 1.1;
   letter-spacing: -0.02em;
   margin: 0 0 20px;
-  color: var(--wg-paper);
+  color: var(--wg-ink-900);
   text-wrap: balance;
 }
 .voor-pro__em {
   font-family: var(--font-serif);
   font-style: italic;
   font-size: clamp(20px, 2.4vw, 26px);
-  color: var(--wg-gold-300);
+  color: var(--gold-accent);
   margin: 0 0 40px;
   font-weight: 500;
   line-height: 1.25;
@@ -904,13 +904,13 @@ button { font-family: inherit; }
 .voor-pro__body p {
   font-size: 17px;
   line-height: 1.75;
-  color: rgba(250,248,244,0.72);
+  color: var(--fg-2);
   margin: 0 0 20px;
 }
 .voor-pro__body p:last-child { margin-bottom: 0; }
 .voor-pro__tagline {
   font-style: italic;
-  color: rgba(250,248,244,0.45) !important;
+  color: var(--fg-3) !important;
   font-size: 15px !important;
 }
 .btn--navy {
@@ -976,6 +976,7 @@ button { font-family: inherit; }
   transition: width 60ms linear;
   pointer-events: none;
 }
+@media (max-height: 480px) { #progress-bar { display: none; } }
 
 /* =========================================================
    Logo marquee (carrousel)
@@ -1102,8 +1103,8 @@ button { font-family: inherit; }
   <div class="container">
     <div class="about">
       <div class="reveal about__portrait">
-        <img src="assets/nicky-portrait.jpeg" alt="Nicky Roggeveen, oprichter WerkGeluk Recruitment" class="about__portrait-photo" />
-        <div class="about__portrait-overlay"><span>Rotterdam · 2026</span></div>
+        <img src="assets/nicky-portrait.jpeg" alt="Nicky Roggeveen, oprichter WerkGeluk Recruitment" class="about__portrait-photo" loading="lazy" />
+        <div class="about__portrait-overlay"><span>Rotterdam</span></div>
       </div>
       <div class="reveal about__copy" style="transition-delay:100ms">
         <span class="eyebrow">Over</span>
@@ -1159,7 +1160,7 @@ button { font-family: inherit; }
 </section>
 
 <!-- Voor professionals -->
-<section class="section section--navy-deep" id="voor-professionals">
+<section class="section section--paper" id="voor-professionals">
   <div class="container">
     <div class="voor-pro">
 
@@ -1191,6 +1192,7 @@ button { font-family: inherit; }
           <span class="eyebrow">Waarom WerkGeluk</span>
           <h2 class="section__title">Waarom organisaties kiezen <em>voor WerkGeluk Recruitment.</em></h2>
         </div>
+        <p class="section__lede">Niet elk recruitmentbureau werkt hetzelfde. Bij WerkGeluk draait het om persoonlijk contact, een gerichte aanpak en matches die ook op de langere termijn standhouden.</p>
       </div>
     </div>
     <div class="steps-5">
@@ -1221,8 +1223,8 @@ button { font-family: inherit; }
       <div class="reveal step" style="transition-delay:320ms">
         <div class="step__dot"></div>
         <span class="step__num">05</span>
-        <h4 class="step__title">Moderne recruitmentvisie</h4>
-        <p class="step__body">Menselijk, transparant en gericht op duurzame groei.</p>
+        <h4 class="step__title">Eerlijk en toekomstgericht</h4>
+        <p class="step__body">Transparant over verwachtingen, eerlijk in advies en gericht op een match die blijft.</p>
       </div>
     </div>
   </div>
@@ -1274,6 +1276,26 @@ button { font-family: inherit; }
         <span class="eyebrow" style="color:var(--wg-gold-300)">Kennismaken</span>
         <h2>Een gesprek begint <em>met een goede vraag.</em></h2>
         <p>Heb je een opdracht, een vacature of gewoon een vraag? Bel of mail vrijblijvend. Vaak is een eerste gesprek genoeg om te zien of er iets te bouwen valt.</p>
+        <div style="display:flex;flex-direction:column;gap:12px;margin-top:28px;">
+          <a href="tel:+31618236993" style="display:inline-flex;align-items:center;gap:12px;font-size:16px;font-weight:500;color:var(--wg-paper);opacity:0.85;transition:opacity 200ms ease;" onmouseover="this.style.opacity='1'" onmouseout="this.style.opacity='0.85'">
+            <span style="width:36px;height:36px;background:rgba(250,248,244,0.1);border-radius:50%;display:inline-flex;align-items:center;justify-content:center;flex-shrink:0;">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 13.5a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.6 2.69h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 10.2a16 16 0 0 0 5.89 5.89l.94-.94a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 21.92 17z"/></svg>
+            </span>
+            +31 6 18 23 69 93
+          </a>
+          <a href="mailto:Nicky@werkgeluk-recruitment.nl" style="display:inline-flex;align-items:center;gap:12px;font-size:16px;font-weight:500;color:var(--wg-paper);opacity:0.85;transition:opacity 200ms ease;" onmouseover="this.style.opacity='1'" onmouseout="this.style.opacity='0.85'">
+            <span style="width:36px;height:36px;background:rgba(250,248,244,0.1);border-radius:50%;display:inline-flex;align-items:center;justify-content:center;flex-shrink:0;">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
+            </span>
+            Nicky@werkgeluk-recruitment.nl
+          </a>
+          <a href="https://www.linkedin.com/in/nicky-roggeveen/" target="_blank" rel="noreferrer" style="display:inline-flex;align-items:center;gap:12px;font-size:16px;font-weight:500;color:var(--wg-paper);opacity:0.85;transition:opacity 200ms ease;" onmouseover="this.style.opacity='1'" onmouseout="this.style.opacity='0.85'">
+            <span style="width:36px;height:36px;background:rgba(250,248,244,0.1);border-radius:50%;display:inline-flex;align-items:center;justify-content:center;flex-shrink:0;">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+            </span>
+            LinkedIn — Nicky Roggeveen
+          </a>
+        </div>
       </div>
       <!-- Contactformulier via Formspree (gratis op formspree.io — vervang YOUR_FORM_ID) -->
       <div class="reveal contact-form" style="transition-delay:120ms">
