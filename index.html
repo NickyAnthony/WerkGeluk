@@ -34,6 +34,7 @@
   --wg-navy-400: #4F6088;
   --wg-navy-050: #F3F5FA;
   --wg-gold-700: #8B6A2E;
+  --wg-gold-gradient: linear-gradient(135deg, #8B6A2E 0%, #C9A25B 35%, #F0D89A 55%, #C9A25B 75%, #8B6A2E 100%);
   --wg-gold-600: #A98545;
   --wg-gold-500: #C9A25B;
   --wg-gold-400: #DCBB7B;
@@ -166,8 +167,18 @@ button { font-family: inherit; }
   font-family: inherit;
 }
 .btn:active { transform: translateY(1px) scale(0.99); }
-.btn--gold { background: var(--wg-gold-500); color: var(--wg-navy-900); }
-.btn--gold:hover { background: var(--wg-gold-400); box-shadow: var(--sh-gold); transform: translateY(-1px); }
+.btn--gold {
+  background: var(--wg-gold-gradient);
+  background-size: 200% 200%;
+  background-position: 0% 50%;
+  color: var(--wg-navy-900);
+  transition: background-position 400ms var(--ease-out), box-shadow 240ms var(--ease-out), transform 240ms var(--ease-out);
+}
+.btn--gold:hover {
+  background-position: 100% 50%;
+  box-shadow: var(--sh-gold);
+  transform: translateY(-1px);
+}
 .btn--ghost { border-color: rgba(250,248,244,0.3); color: rgba(250,248,244,0.82); }
 .btn--ghost:hover { border-color: rgba(250,248,244,0.7); color: var(--wg-paper); background: rgba(250,248,244,0.06); }
 .btn--sm { padding: 10px 18px; font-size: 13px; border-radius: 8px; }
