@@ -3,8 +3,9 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>WerkGeluk Recruitment — Boutique recruitment voor commerciële en technische sales</title>
+  <title>WerkGeluk Recruitment | Rotterdam</title>
   <meta name="description" content="WerkGeluk Recruitment helpt organisaties bij het vinden van commerciële en technische sales professionals. Persoonlijk. Selectief. Gericht op duurzame matches." />
+  <link rel="canonical" href="https://nickyanthony.github.io/WerkGeluk/" />
   <link rel="icon" href="favicon.svg" type="image/svg+xml" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -118,6 +119,22 @@ button { font-family: inherit; }
   display: inline-block;
   opacity: 0.7;
 }
+
+/* Skip-to-content */
+.skip-link {
+  position: absolute;
+  top: -100px;
+  left: 16px;
+  z-index: 200;
+  background: var(--wg-gold-500);
+  color: var(--wg-navy-900);
+  padding: 10px 18px;
+  border-radius: 8px;
+  font-weight: 600;
+  font-size: 14px;
+  transition: top 200ms ease;
+}
+.skip-link:focus { top: 16px; }
 
 /* Content visible by default; animation only activates when JS has run */
 .js-ready .reveal {
@@ -340,6 +357,26 @@ button { font-family: inherit; }
   margin: 0;
 }
 .hero__ctas { display: flex; gap: 14px; flex-wrap: wrap; margin-top: 44px; }
+.hero__scroll {
+  position: absolute;
+  bottom: 40px;
+  left: 50%;
+  transform: translateX(-50%);
+  color: rgba(250,248,244,0.45);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px; height: 40px;
+  border-radius: 50%;
+  border: 1px solid rgba(250,248,244,0.18);
+  transition: color 240ms ease, border-color 240ms ease;
+  animation: bounce 2.4s ease-in-out infinite;
+}
+.hero__scroll:hover { color: var(--wg-gold-300); border-color: rgba(201,162,91,0.5); }
+@keyframes bounce {
+  0%, 100% { transform: translateX(-50%) translateY(0); }
+  50% { transform: translateX(-50%) translateY(6px); }
+}
 .hero__meta-label {
   font-size: 12px;
   letter-spacing: 0.12em;
@@ -826,10 +863,10 @@ button { font-family: inherit; }
   border-bottom: 1px solid rgba(250,248,244,0.1);
   align-items: start;
 }
-.footer__brand img { width: 220px; height: auto; margin-bottom: 24px; }
+.footer__brand img { width: 260px; height: auto; margin-bottom: 28px; }
 .footer__brand p { font-size: 14px; line-height: 1.7; max-width: 300px; margin: 0 0 20px; }
-.footer__brand-meta { display: flex; flex-direction: column; gap: 4px; }
-.footer__brand-meta span { font-size: 12px; color: rgba(250,248,244,0.45); letter-spacing: 0.04em; }
+.footer__brand-meta { display: flex; flex-direction: column; gap: 6px; margin-top: 4px; }
+.footer__brand-meta span { font-size: 12px; color: rgba(250,248,244,0.5); letter-spacing: 0.03em; line-height: 1.5; }
 .footer__social { display: flex; gap: 12px; margin-top: 20px; }
 .footer__social a {
   width: 36px; height: 36px;
@@ -1050,6 +1087,7 @@ button { font-family: inherit; }
 </head>
 <body>
 
+<a href="#main-content" class="skip-link">Ga naar inhoud</a>
 <div id="progress-bar"></div>
 
 <!-- Nav -->
@@ -1093,10 +1131,15 @@ button { font-family: inherit; }
     <p class="hero__sub">WerkGeluk Recruitment helpt organisaties bij het vinden van commerciële en technische sales professionals die niet alleen passen op papier, maar ook binnen cultuur, ambitie en visie.</p>
     <div class="hero__ctas">
       <a href="#contact" class="btn btn--gold">Plan een kennismaking <span class="arrow">→</span></a>
-      <a href="#voor-professionals" class="btn btn--ghost">Op zoek naar een nieuwe stap? <span class="arrow">→</span></a>
+      <a href="#voor-professionals" class="btn btn--ghost">Jouw volgende stap <span class="arrow">→</span></a>
     </div>
   </div>
+  <a href="#about" class="hero__scroll" aria-label="Scroll naar beneden">
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
+  </a>
 </header>
+
+<main id="main-content">
 
 <!-- About -->
 <section class="section section--cream" id="about">
@@ -1160,7 +1203,7 @@ button { font-family: inherit; }
 </section>
 
 <!-- Voor professionals -->
-<section class="section section--paper" id="voor-professionals">
+<section class="section section--cream" id="voor-professionals">
   <div class="container">
     <div class="voor-pro">
 
@@ -1297,9 +1340,9 @@ button { font-family: inherit; }
           </a>
         </div>
       </div>
-      <!-- Contactformulier via Formspree (gratis op formspree.io — vervang YOUR_FORM_ID) -->
+      <!-- Contactformulier via Formspree -->
       <div class="reveal contact-form" style="transition-delay:120ms">
-        <form id="contact-form" action="https://formspree.io/f/YOUR_FORM_ID" method="POST" novalidate>
+        <form id="contact-form" action="https://formspree.io/f/mwvyjzpo" method="POST" novalidate>
           <div class="contact-form__row">
             <div class="contact-form__field">
               <label for="cf-name">Naam</label>
@@ -1375,6 +1418,8 @@ button { font-family: inherit; }
   </div>
 </section>
 
+</main>
+
 <!-- Footer -->
 <footer class="footer">
   <div class="container">
@@ -1382,7 +1427,7 @@ button { font-family: inherit; }
 
       <!-- Brand -->
       <div class="footer__brand">
-        <img src="assets/6-1.png" alt="WerkGeluk Recruitment" />
+        <img src="assets/logo-horizontal-light.png" alt="WerkGeluk Recruitment" />
         <p>Boutique recruitment voor commerciële en technische sales professionals. Persoonlijk. Eerlijk. Duurzaam.</p>
         <div class="footer__brand-meta">
           <span>KvK: 70841640</span>
