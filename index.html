@@ -806,6 +806,70 @@ button { font-family: inherit; }
 .footer__base-legal a:hover { color: var(--gold-accent); }
 
 /* =========================================================
+   Voor professionals
+   ========================================================= */
+.voor-pro {
+  display: grid;
+  grid-template-columns: 1fr 1.3fr;
+  gap: 88px;
+  align-items: start;
+}
+.voor-pro__tag {
+  display: inline-flex;
+  align-items: center;
+  padding: 5px 14px;
+  background: var(--gold-soft);
+  color: var(--gold-accent);
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  border-radius: 999px;
+  margin-bottom: 28px;
+}
+.voor-pro__headline {
+  font-family: var(--font-serif);
+  font-weight: 700;
+  font-size: clamp(30px, 3.8vw, 50px);
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+  margin: 0 0 20px;
+  color: var(--fg-1);
+  text-wrap: balance;
+}
+.voor-pro__em {
+  font-family: var(--font-serif);
+  font-style: italic;
+  font-size: clamp(20px, 2.4vw, 26px);
+  color: var(--gold-accent);
+  margin: 0 0 40px;
+  font-weight: 500;
+  line-height: 1.25;
+}
+.voor-pro__body { display: flex; flex-direction: column; gap: 0; }
+.voor-pro__body p {
+  font-size: 17px;
+  line-height: 1.75;
+  color: var(--fg-2);
+  margin: 0 0 20px;
+}
+.voor-pro__body p:last-child { margin-bottom: 0; }
+.voor-pro__tagline {
+  font-style: italic;
+  color: var(--fg-3) !important;
+  font-size: 15px !important;
+}
+.btn--navy {
+  background: var(--wg-navy-800);
+  color: var(--wg-paper);
+}
+.btn--navy:hover {
+  background: var(--wg-navy-700);
+  transform: translateY(-1px);
+  box-shadow: var(--sh-3);
+}
+
+/* =========================================================
    Responsive
    ========================================================= */
 @media (max-width: 1100px) {
@@ -820,6 +884,7 @@ button { font-family: inherit; }
   .section { padding: 80px 0; }
   .section__head { grid-template-columns: 1fr; gap: 24px; margin-bottom: 48px; }
   .about { grid-template-columns: 1fr; gap: 40px; }
+  .voor-pro { grid-template-columns: 1fr; gap: 40px; }
   .cta { grid-template-columns: 1fr; gap: 32px; }
   .footer__inner { grid-template-columns: 1fr 1fr; gap: 32px; }
   .footer__brand { grid-column: 1 / -1; }
@@ -918,6 +983,7 @@ button { font-family: inherit; }
     <div class="nav__links">
       <a href="#about">Over</a>
       <a href="#expertise">Expertise</a>
+      <a href="#voor-professionals">Voor professionals</a>
       <a href="#waarom">Waarom WerkGeluk</a>
       <a href="#contact">Contact</a>
       <a href="#locatie">Locatie</a>
@@ -935,6 +1001,7 @@ button { font-family: inherit; }
 <div class="nav__mobile" aria-hidden="true">
   <a href="#about">Over</a>
   <a href="#expertise">Expertise</a>
+  <a href="#voor-professionals">Voor professionals</a>
   <a href="#waarom">Waarom WerkGeluk</a>
   <a href="#contact">Contact</a>
   <a href="#locatie">Locatie</a>
@@ -1024,6 +1091,30 @@ button { font-family: inherit; }
         </ul>
         <a href="#contact" class="btn btn--gold">Bespreek uw vacature <span class="arrow">→</span></a>
       </div>
+    </div>
+  </div>
+</section>
+
+<!-- Voor professionals -->
+<section class="section section--cream" id="voor-professionals">
+  <div class="container">
+    <div class="voor-pro">
+
+      <!-- Links: tag + headline + CTA -->
+      <div class="reveal">
+        <span class="voor-pro__tag">Voor professionals</span>
+        <h2 class="voor-pro__headline">Een nieuwe stap moet niet alleen interessant zijn.</h2>
+        <p class="voor-pro__em">Het moet ook écht bij je passen.</p>
+        <a href="mailto:Nicky@werkgeluk-recruitment.nl" class="btn btn--navy">Plan een vrijblijvend kennismakingsgesprek <span class="arrow">→</span></a>
+      </div>
+
+      <!-- Rechts: body tekst -->
+      <div class="reveal voor-pro__body" style="transition-delay:100ms">
+        <p>Veel professionals maken op een gegeven moment een volgende stap in hun salesfunctie of commerciële carrière. Maar die stap gaat niet alleen over een hogere functietitel of een beter salaris. Het gaat over de omgeving. De cultuur. Het type leiderschap dat je uitdaagt en de ruimte die je krijgt om jezelf te ontwikkelen.</p>
+        <p>WerkGeluk Recruitment begeleidt commerciële en technische sales professionals bij het vinden van een positie die inhoudelijk én persoonlijk aansluit. Geen standaard vacaturelijstjes, maar oprechte aandacht voor wie je bent en wat je zoekt.</p>
+        <p class="voor-pro__tagline">Persoonlijk. Eerlijk. Meer dan standaard recruitment.</p>
+      </div>
+
     </div>
   </div>
 </section>
@@ -1234,6 +1325,7 @@ button { font-family: inherit; }
         <ul>
           <li><a href="#about">Over</a></li>
           <li><a href="#expertise">Expertise</a></li>
+          <li><a href="#voor-professionals">Voor professionals</a></li>
           <li><a href="#waarom">Waarom WerkGeluk</a></li>
           <li><a href="#contact">Contact</a></li>
           <li><a href="#locatie">Locatie</a></li>
