@@ -6,6 +6,9 @@
   <title>WerkGeluk Recruitment — Boutique recruitment voor commerciële en technische sales</title>
   <meta name="description" content="WerkGeluk Recruitment helpt organisaties bij het vinden van commerciële en technische sales professionals. Persoonlijk. Selectief. Gericht op duurzame matches." />
   <link rel="icon" href="favicon.svg" type="image/svg+xml" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Arimo:ital,wght@0,400..700;1,400..700&display=swap" rel="stylesheet" />
   <meta property="og:title" content="WerkGeluk Recruitment — Boutique recruitment voor commerciële en technische sales" />
   <meta property="og:description" content="WerkGeluk Recruitment helpt organisaties bij het vinden van commerciële en technische sales professionals. Persoonlijk. Selectief. Gericht op duurzame matches." />
   <meta property="og:type" content="website" />
@@ -20,20 +23,7 @@
 /* =========================================================
    Foundations — Colors + Type tokens
    ========================================================= */
-@font-face {
-  font-family: 'Arimo';
-  src: url('fonts/Arimo-VariableFont_wght.ttf') format('truetype-variations');
-  font-weight: 400 700;
-  font-style: normal;
-  font-display: swap;
-}
-@font-face {
-  font-family: 'Arimo';
-  src: url('fonts/Arimo-Italic-VariableFont_wght.ttf') format('truetype-variations');
-  font-weight: 400 700;
-  font-style: italic;
-  font-display: swap;
-}
+/* Arimo via Google Fonts — WOFF2, geoptimaliseerd en gecached via CDN */
 :root {
   --wg-navy-900: #09152C;
   --wg-navy-800: #0F1F3D;
@@ -161,6 +151,8 @@ button { font-family: inherit; }
 .btn:active { transform: translateY(1px) scale(0.99); }
 .btn--gold { background: var(--wg-gold-500); color: var(--wg-navy-900); }
 .btn--gold:hover { background: var(--wg-gold-400); box-shadow: var(--sh-gold); transform: translateY(-1px); }
+.btn--ghost { border-color: rgba(250,248,244,0.3); color: rgba(250,248,244,0.82); }
+.btn--ghost:hover { border-color: rgba(250,248,244,0.7); color: var(--wg-paper); background: rgba(250,248,244,0.06); }
 .btn--sm { padding: 10px 18px; font-size: 13px; border-radius: 8px; }
 .arrow { display: inline-block; transition: transform 240ms var(--ease-out); }
 .btn:hover .arrow { transform: translateX(3px); }
@@ -347,32 +339,7 @@ button { font-family: inherit; }
   max-width: 720px;
   margin: 0;
 }
-.hero__tagline {
-  font-size: 19px;
-  line-height: 1.6;
-  color: rgba(250,248,244,0.78);
-  max-width: 720px;
-  margin: 12px 0 0;
-  font-style: italic;
-  opacity: 0.86;
-}
 .hero__ctas { display: flex; gap: 14px; flex-wrap: wrap; margin-top: 44px; }
-.hero__meta {
-  display: flex;
-  gap: 48px;
-  margin-top: 64px;
-  padding-top: 40px;
-  border-top: 1px solid rgba(250,248,244,0.14);
-}
-.hero__meta-item { display: flex; flex-direction: column; gap: 4px; }
-.hero__meta-value {
-  font-family: var(--font-serif);
-  font-size: clamp(28px, 3.5vw, 40px);
-  font-weight: 700;
-  letter-spacing: -0.02em;
-  color: var(--wg-gold-300);
-  line-height: 1;
-}
 .hero__meta-label {
   font-size: 12px;
   letter-spacing: 0.12em;
@@ -711,6 +678,93 @@ button { font-family: inherit; }
 .cta__primary:hover { background: var(--wg-navy-700); transform: translateY(-1px); box-shadow: var(--sh-3); }
 
 /* =========================================================
+   Contactformulier
+   ========================================================= */
+.contact-form {
+  background: var(--wg-paper);
+  color: var(--wg-ink-900);
+  border-radius: var(--r-xl);
+  padding: 40px;
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  box-shadow: var(--sh-3);
+  border: 1px solid var(--wg-line);
+}
+.contact-form__row { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+.contact-form__field { display: flex; flex-direction: column; gap: 6px; }
+.contact-form__field label {
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--fg-3);
+}
+.contact-form__field input,
+.contact-form__field textarea,
+.contact-form__field select {
+  font-family: var(--font-sans);
+  font-size: 15px;
+  color: var(--wg-ink-900);
+  background: var(--wg-cream);
+  border: 1px solid var(--wg-line);
+  border-radius: 8px;
+  padding: 12px 14px;
+  outline: none;
+  transition: border-color 200ms ease, box-shadow 200ms ease;
+  resize: none;
+}
+.contact-form__field input:focus,
+.contact-form__field textarea:focus,
+.contact-form__field select:focus {
+  border-color: var(--wg-gold-500);
+  box-shadow: 0 0 0 3px rgba(201,162,91,0.15);
+}
+.contact-form__field textarea { min-height: 110px; }
+.contact-form__submit {
+  margin-top: 4px;
+  font-size: 15px;
+  padding: 16px 24px;
+  border-radius: 12px;
+  width: 100%;
+  background: var(--wg-navy-800);
+  color: var(--wg-paper);
+  border: none;
+  font-weight: 600;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  transition: all 240ms var(--ease-out);
+  font-family: var(--font-sans);
+}
+.contact-form__submit:hover { background: var(--wg-navy-700); transform: translateY(-1px); box-shadow: var(--sh-3); }
+.contact-form__success {
+  display: none;
+  text-align: center;
+  padding: 32px 0;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+}
+.contact-form__success.is-visible { display: flex; }
+.contact-form__success-icon {
+  width: 52px; height: 52px;
+  border-radius: 999px;
+  background: var(--gold-soft);
+  color: var(--gold-accent);
+  display: flex; align-items: center; justify-content: center;
+  font-size: 22px;
+}
+.contact-form__success p { font-size: 16px; color: var(--fg-2); margin: 0; max-width: 280px; line-height: 1.55; }
+.contact-form__note { font-size: 12px; color: var(--fg-3); text-align: center; margin-top: 4px; }
+.contact-form__note a { color: var(--gold-accent); text-decoration: underline; }
+@media (max-width: 640px) {
+  .contact-form__row { grid-template-columns: 1fr; }
+}
+
+/* =========================================================
    Locatie
    ========================================================= */
 .locatie { display: grid; grid-template-columns: 1fr 1.15fr; gap: 72px; align-items: stretch; }
@@ -969,6 +1023,29 @@ button { font-family: inherit; }
   .logo-track { animation: none; }
 }
     </style>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "LocalBusiness",
+    "name": "WerkGeluk Recruitment",
+    "description": "Boutique recruitment voor commerciële en technische sales professionals. Persoonlijk. Selectief. Gericht op duurzame matches.",
+    "url": "https://nickyanthony.github.io/WerkGeluk/",
+    "telephone": "+31618236993",
+    "email": "Nicky@werkgeluk-recruitment.nl",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "Otto Reuchlinweg 1146",
+      "addressLocality": "Rotterdam",
+      "postalCode": "3072 MD",
+      "addressCountry": "NL"
+    },
+    "founder": {
+      "@type": "Person",
+      "name": "Nicky Roggeveen"
+    },
+    "sameAs": ["https://www.linkedin.com/in/nicky-roggeveen/"]
+  }
+  </script>
 </head>
 <body>
 
@@ -1013,23 +1090,9 @@ button { font-family: inherit; }
   <div class="container hero__inner">
     <h1 class="hero__headline">WerkGeluk begint <em>bij de juiste match.</em></h1>
     <p class="hero__sub">WerkGeluk Recruitment helpt organisaties bij het vinden van commerciële en technische sales professionals die niet alleen passen op papier, maar ook binnen cultuur, ambitie en visie.</p>
-    <p class="hero__tagline">Persoonlijk. Selectief. Gericht op duurzame matches.</p>
     <div class="hero__ctas">
       <a href="#contact" class="btn btn--gold">Plan een kennismaking <span class="arrow">→</span></a>
-    </div>
-    <div class="hero__meta">
-      <div class="hero__meta-item">
-        <span class="hero__meta-value" data-count="150" data-suffix="+">0+</span>
-        <span class="hero__meta-label">Duurzame matches</span>
-      </div>
-      <div class="hero__meta-item">
-        <span class="hero__meta-value" data-count="92" data-suffix="%">0%</span>
-        <span class="hero__meta-label">Retentie na 1 jaar</span>
-      </div>
-      <div class="hero__meta-item">
-        <span class="hero__meta-value" data-count="8" data-suffix=" jr">0 jr</span>
-        <span class="hero__meta-label">Ervaring</span>
-      </div>
+      <a href="#voor-professionals" class="btn btn--ghost">Op zoek naar een nieuwe stap? <span class="arrow">→</span></a>
     </div>
   </div>
 </header>
@@ -1089,7 +1152,7 @@ button { font-family: inherit; }
           <li><span class="v3-rolegrid__dot"></span>Sales Director</li>
           <li><span class="v3-rolegrid__dot"></span>Chief Commercial Officer (CCO)</li>
         </ul>
-        <a href="#contact" class="btn btn--gold">Bespreek uw vacature <span class="arrow">→</span></a>
+        <a href="#contact" class="btn btn--gold">Bespreek jouw vacature <span class="arrow">→</span></a>
       </div>
     </div>
   </div>
@@ -1210,45 +1273,50 @@ button { font-family: inherit; }
       <div class="reveal cta__copy">
         <span class="eyebrow" style="color:var(--wg-gold-300)">Kennismaken</span>
         <h2>Een gesprek begint <em>met een goede vraag.</em></h2>
-        <p>Heeft u een opdracht, een vacature of gewoon een vraag? Bel of mail vrijblijvend. Vaak is een eerste gesprek genoeg om te zien of er iets te bouwen valt.</p>
+        <p>Heb je een opdracht, een vacature of gewoon een vraag? Bel of mail vrijblijvend. Vaak is een eerste gesprek genoeg om te zien of er iets te bouwen valt.</p>
       </div>
-      <div class="reveal cta__card" style="transition-delay:120ms">
-        <div class="cta__card-row">
-          <div class="cta__card-icon">
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-              <rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/>
-            </svg>
+      <!-- Contactformulier via Formspree (gratis op formspree.io — vervang YOUR_FORM_ID) -->
+      <div class="reveal contact-form" style="transition-delay:120ms">
+        <form id="contact-form" action="https://formspree.io/f/YOUR_FORM_ID" method="POST" novalidate>
+          <div class="contact-form__row">
+            <div class="contact-form__field">
+              <label for="cf-name">Naam</label>
+              <input type="text" id="cf-name" name="naam" placeholder="Jouw naam" required />
+            </div>
+            <div class="contact-form__field">
+              <label for="cf-company">Bedrijf</label>
+              <input type="text" id="cf-company" name="bedrijf" placeholder="Optioneel" />
+            </div>
           </div>
-          <div>
-            <div class="cta__card-label">E-mail</div>
-            <a class="cta__card-value" href="mailto:Nicky@werkgeluk-recruitment.nl">Nicky@werkgeluk-recruitment.nl</a>
+          <div class="contact-form__field">
+            <label for="cf-email">E-mailadres</label>
+            <input type="email" id="cf-email" name="email" placeholder="jouw@emailadres.nl" required />
           </div>
+          <div class="contact-form__field">
+            <label for="cf-subject">Onderwerp</label>
+            <select id="cf-subject" name="onderwerp">
+              <option value="">Selecteer een onderwerp</option>
+              <option value="vacature">Ik heb een vacature</option>
+              <option value="professional">Ik zoek een nieuwe stap</option>
+              <option value="kennismaking">Vrijblijvende kennismaking</option>
+              <option value="overig">Overig</option>
+            </select>
+          </div>
+          <div class="contact-form__field">
+            <label for="cf-message">Bericht</label>
+            <textarea id="cf-message" name="bericht" placeholder="Vertel kort waar je mee kunt helpen…" required></textarea>
+          </div>
+          <button type="submit" class="contact-form__submit">
+            Verstuur bericht <span class="arrow">→</span>
+          </button>
+          <p class="contact-form__note">
+            Of mail direct: <a href="mailto:Nicky@werkgeluk-recruitment.nl">Nicky@werkgeluk-recruitment.nl</a>
+          </p>
+        </form>
+        <div class="contact-form__success" id="form-success" aria-live="polite">
+          <div class="contact-form__success-icon">✓</div>
+          <p><strong>Bericht verstuurd!</strong><br>Nicky neemt zo snel mogelijk contact met je op.</p>
         </div>
-        <div class="cta__card-row">
-          <div class="cta__card-icon">
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-              <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 13.5a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.6 2.69h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 10.2a16 16 0 0 0 5.89 5.89l.94-.94a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 21.92 17z"/>
-            </svg>
-          </div>
-          <div>
-            <div class="cta__card-label">Telefoon</div>
-            <a class="cta__card-value" href="tel:+31618236993">+31 6 18 23 69 93</a>
-          </div>
-        </div>
-        <div class="cta__card-row">
-          <div class="cta__card-icon">
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
-              <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/>
-            </svg>
-          </div>
-          <div>
-            <div class="cta__card-label">LinkedIn</div>
-            <a class="cta__card-value" href="https://www.linkedin.com/in/nicky-roggeveen/" target="_blank" rel="noreferrer">linkedin.com/in/nicky-roggeveen</a>
-          </div>
-        </div>
-        <a class="cta__primary" href="mailto:Nicky@werkgeluk-recruitment.nl">
-          Plan een kennismaking <span class="arrow">→</span>
-        </a>
       </div>
     </div>
   </div>
@@ -1261,7 +1329,7 @@ button { font-family: inherit; }
       <div class="reveal locatie__copy">
         <span class="eyebrow">Locatie</span>
         <h2 class="section__title">WerkGeluk Recruitment, <em>gevestigd in Rotterdam.</em></h2>
-        <p class="locatie__body">Wij ontvangen u graag voor een persoonlijk gesprek op de Kop van Zuid. Goed bereikbaar met de auto en op loopafstand van station Wilhelminaplein.</p>
+        <p class="locatie__body">Je bent van harte welkom voor een persoonlijk gesprek op de Kop van Zuid. Goed bereikbaar met de auto en op loopafstand van station Wilhelminaplein.</p>
         <address class="locatie__address">
           <span>WerkGeluk Recruitment</span>
           <span>Otto Reuchlinweg 1146</span>
@@ -1422,30 +1490,34 @@ function updateProgress() {
 }
 window.addEventListener('scroll', updateProgress, { passive: true });
 
-/* ── 2. Counting numbers ── */
-function animateCounter(el) {
-  const target = parseInt(el.dataset.count, 10);
-  const suffix = el.dataset.suffix || '';
-  const duration = 1800;
-  const start = performance.now();
-  function step(now) {
-    const progress = Math.min((now - start) / duration, 1);
-    const ease = 1 - Math.pow(1 - progress, 3); // ease-out cubic
-    el.textContent = Math.floor(ease * target) + suffix;
-    if (progress < 1) requestAnimationFrame(step);
-    else el.textContent = target + suffix;
-  }
-  requestAnimationFrame(step);
-}
-const counterObserver = new IntersectionObserver(entries => {
-  entries.forEach(e => {
-    if (e.isIntersecting && e.target.dataset.count) {
-      animateCounter(e.target);
-      counterObserver.unobserve(e.target);
+/* ── 2. Contactformulier ── */
+const contactForm = document.getElementById('contact-form');
+const formSuccess = document.getElementById('form-success');
+if (contactForm) {
+  contactForm.addEventListener('submit', async (e) => {
+    e.preventDefault();
+    const btn = contactForm.querySelector('.contact-form__submit');
+    btn.textContent = 'Wordt verstuurd…';
+    btn.disabled = true;
+    try {
+      const res = await fetch(contactForm.action, {
+        method: 'POST',
+        body: new FormData(contactForm),
+        headers: { 'Accept': 'application/json' }
+      });
+      if (res.ok) {
+        contactForm.style.display = 'none';
+        formSuccess.classList.add('is-visible');
+      } else {
+        btn.textContent = 'Probeer opnieuw';
+        btn.disabled = false;
+      }
+    } catch {
+      btn.textContent = 'Probeer opnieuw';
+      btn.disabled = false;
     }
   });
-}, { threshold: 0.5 });
-document.querySelectorAll('[data-count]').forEach(el => counterObserver.observe(el));
+}
 
 /* ── 3. Parallax hero ── */
 const hero = document.querySelector('.hero');
