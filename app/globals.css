@@ -393,6 +393,161 @@ body {
   font-weight: 500;
 }
 
+/* ══════════════════════════════════════════
+   ── HERO HEADER ──
+   ══════════════════════════════════════════ */
+
+.hero-header {
+  position: relative;
+  overflow: hidden;
+  background: #0d1b2a;
+  padding: 80px 64px 72px;
+}
+
+/* Animated floating orbs */
+.hero-orb {
+  position: absolute;
+  border-radius: 50%;
+  pointer-events: none;
+  filter: blur(72px);
+}
+
+.hero-orb-1 {
+  width: 480px;
+  height: 480px;
+  top: -160px;
+  left: -80px;
+  background: radial-gradient(circle, rgba(201, 162, 91, 0.22) 0%, rgba(139, 106, 46, 0.06) 60%, transparent 80%);
+  animation: orb-float-1 14s ease-in-out infinite;
+}
+
+.hero-orb-2 {
+  width: 360px;
+  height: 360px;
+  top: 20px;
+  right: 5%;
+  background: radial-gradient(circle, rgba(240, 216, 154, 0.14) 0%, rgba(201, 162, 91, 0.05) 60%, transparent 80%);
+  animation: orb-float-2 18s ease-in-out infinite;
+}
+
+.hero-orb-3 {
+  width: 280px;
+  height: 280px;
+  bottom: -80px;
+  left: 40%;
+  background: radial-gradient(circle, rgba(139, 106, 46, 0.18) 0%, transparent 70%);
+  animation: orb-float-3 22s ease-in-out infinite;
+}
+
+@keyframes orb-float-1 {
+  0%, 100% { transform: translate(0, 0) scale(1); }
+  30%       { transform: translate(40px, -30px) scale(1.06); }
+  60%       { transform: translate(-25px, 20px) scale(0.94); }
+  80%       { transform: translate(15px, -10px) scale(1.02); }
+}
+
+@keyframes orb-float-2 {
+  0%, 100% { transform: translate(0, 0) scale(1); }
+  25%       { transform: translate(-50px, 35px) scale(0.92); }
+  55%       { transform: translate(30px, -20px) scale(1.08); }
+  75%       { transform: translate(-15px, 25px) scale(0.97); }
+}
+
+@keyframes orb-float-3 {
+  0%, 100% { transform: translate(0, 0) scale(1); }
+  40%       { transform: translate(60px, -40px) scale(1.1); }
+  70%       { transform: translate(-40px, 30px) scale(0.9); }
+}
+
+/* Subtle dot grid */
+.hero-grid {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background-image: radial-gradient(circle, rgba(201, 162, 91, 0.12) 1px, transparent 1px);
+  background-size: 32px 32px;
+  mask-image: radial-gradient(ellipse 80% 100% at 50% 0%, black 40%, transparent 100%);
+  -webkit-mask-image: radial-gradient(ellipse 80% 100% at 50% 0%, black 40%, transparent 100%);
+}
+
+/* Mouse-follow glow */
+.hero-mouse-glow {
+  position: absolute;
+  width: 400px;
+  height: 400px;
+  border-radius: 50%;
+  pointer-events: none;
+  transform: translate(-50%, -50%);
+  background: radial-gradient(circle, rgba(240, 216, 154, 0.08) 0%, transparent 65%);
+  transition: left 0.15s ease-out, top 0.15s ease-out;
+  filter: blur(8px);
+}
+
+/* Content layer */
+.hero-content {
+  position: relative;
+  z-index: 1;
+  max-width: 1200px;
+  margin: 0 auto;
+  animation: hero-enter 0.7s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+@keyframes hero-enter {
+  from { opacity: 0; transform: translateY(16px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+.hero-eyebrow {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 10px;
+  letter-spacing: 4px;
+  color: rgba(201, 162, 91, 0.7);
+  text-transform: uppercase;
+  margin-bottom: 16px;
+}
+
+.hero-title {
+  font-family: 'Fraunces', serif;
+  font-weight: 500;
+  font-size: 52px;
+  letter-spacing: -1px;
+  line-height: 1.05;
+  color: #fff;
+  margin-bottom: 16px;
+}
+
+.hero-title-accent {
+  background: linear-gradient(90deg, #8b6a2e 0%, #c9a25b 35%, #f0d89a 55%, #c9a25b 75%, #8b6a2e 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  background-size: 200% auto;
+  animation: shimmer 4s linear infinite;
+}
+
+@keyframes shimmer {
+  0%   { background-position: 0% center; }
+  100% { background-position: 200% center; }
+}
+
+.hero-subtitle {
+  font-size: 14px;
+  color: rgba(255, 255, 255, 0.45);
+  letter-spacing: 0.3px;
+  font-family: 'Inter', sans-serif;
+}
+
+/* Bottom fade into canvas */
+.hero-fade {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 64px;
+  background: linear-gradient(to bottom, transparent, #e1e5ec);
+  pointer-events: none;
+}
+
 /* ── Palette grid ── */
 .palette-grid {
   display: grid;
