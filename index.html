@@ -355,7 +355,6 @@ button { font-family: inherit; }
   inset: 0;
   width: 100%;
   height: 100%;
-  display: block;
   pointer-events: none;
   z-index: 0;
 }
@@ -1660,49 +1659,51 @@ hero.addEventListener('mouseleave', function() {
   const canvas = document.querySelector('.hero__canvas');
   if (!canvas) return;
   const ctx = canvas.getContext('2d');
-  const heroEl = canvas.parentElement;
 
   let W, H;
   function resize() {
-    const rect = heroEl.getBoundingClientRect();
-    W = canvas.width  = rect.width  || window.innerWidth;
-    H = canvas.height = rect.height || window.innerHeight;
+    W = canvas.width  = canvas.offsetWidth;
+    H = canvas.height = canvas.offsetHeight;
   }
   window.addEventListener('resize', resize, { passive: true });
-  /* Wacht op layout voor eerste meting */
-  requestAnimationFrame(resize);
+  resize();
 
-  const COLORS = [[201,162,91],[240,216,154],[250,248,244]];
+  /* Particle definitie */
+  const COLORS = [
+    [201,162,91],   /* goud */
+    [240,216,154],  /* licht goud */
+    [250,248,244],  /* off-white */
+  ];
   const COUNT = 70;
   const pts = Array.from({ length: COUNT }, () => {
     const c = COLORS[Math.floor(Math.random() * COLORS.length)];
     return {
-      x:  Math.random(),
-      y:  Math.random(),
-      r:  Math.random() * 1.8 + 0.6,
-      vx: (Math.random() - 0.5) * 0.0012,
-      vy: -(Math.random() * 0.0018 + 0.0006),
-      op:  Math.random() * 0.4 + 0.1,
-      dop: (Math.random() > 0.5 ? 1 : -1) * 0.006,
+      x: Math.random() * 1,   /* fractie van W */
+      y: Math.random() * 1,   /* fractie van H */
+      r: Math.random() * 1.2 + 0.3,
+      vx: (Math.random() - 0.5) * 0.00012,
+      vy: -(Math.random() * 0.00022 + 0.00008),
+      op: Math.random() * 0.35 + 0.05,
+      dop: (Math.random() > 0.5 ? 1 : -1) * 0.0008,
+      c: c,
     };
   });
 
   function tick() {
-    if (!W || !H) { requestAnimationFrame(tick); return; }
     ctx.clearRect(0, 0, W, H);
     for (const p of pts) {
-      p.x  += p.vx;
-      p.y  += p.vy;
+      p.x += p.vx;
+      p.y += p.vy;
       p.op += p.dop;
-      if (p.op > 0.5)  { p.op = 0.5;  p.dop = -Math.abs(p.dop); }
-      if (p.op < 0.05) { p.op = 0.05; p.dop =  Math.abs(p.dop); }
-      if (p.y < -0.02) { p.y = 1.02; p.x = Math.random(); }
-      if (p.x < -0.02)  p.x = 1.02;
-      if (p.x >  1.02)  p.x = -0.02;
+      if (p.op > 0.45) { p.op = 0.45; p.dop = -Math.abs(p.dop); }
+      if (p.op < 0.04) { p.op = 0.04; p.dop =  Math.abs(p.dop); }
+      if (p.y < -0.02)         { p.y = 1.02; p.x = Math.random(); }
+      if (p.x < -0.02)         p.x = 1.02;
+      if (p.x >  1.02)         p.x = -0.02;
       const [r,g,b] = p.c;
       ctx.beginPath();
       ctx.arc(p.x * W, p.y * H, p.r, 0, Math.PI * 2);
-      ctx.fillStyle = `rgba(${r},${g},${b},${p.op.toFixed(3)})`;
+      ctx.fillStyle = `rgba(${r},${g},${b},${p.op})`;
       ctx.fill();
     }
     requestAnimationFrame(tick);
