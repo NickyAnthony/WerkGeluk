@@ -9,7 +9,7 @@
   <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Arimo:ital,wght@0,400..700;1,400..700&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Arimo:ital,wght@0,400..700;1,400..700&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&display=swap" rel="stylesheet" />
   <meta property="og:title" content="WerkGeluk Recruitment — Boutique recruitment voor commerciële en technische sales" />
   <meta property="og:description" content="WerkGeluk Recruitment helpt organisaties bij het vinden van commerciële en technische sales professionals. Persoonlijk. Selectief. Gericht op duurzame matches." />
   <meta property="og:type" content="website" />
@@ -54,6 +54,7 @@
   --fg-2: var(--wg-ink-700);
   --fg-3: var(--wg-ink-500);
   --gold-accent: var(--wg-gold-700);
+  --gold-on-dark: var(--wg-gold-300);
   --gold-soft: var(--wg-gold-100);
   --sh-2: 0 2px 8px rgba(14,27,51,0.06), 0 1px 2px rgba(14,27,51,0.04);
   --sh-3: 0 8px 24px rgba(14,27,51,0.08), 0 2px 4px rgba(14,27,51,0.04);
@@ -63,7 +64,7 @@
   --r-xl: 22px;
   --r-pill: 999px;
   --font-sans: 'Arimo', -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif;
-  --font-serif: 'Arimo', Georgia, serif;
+  --font-serif: 'Playfair Display', Georgia, serif;
   --ease-out: cubic-bezier(0.22, 1, 0.36, 1);
 }
 
@@ -239,7 +240,9 @@ button { font-family: inherit; }
   background: none;
   border: none;
   cursor: pointer;
-  padding: 8px;
+  padding: 10px;
+  min-width: 44px;
+  min-height: 44px;
   margin-left: auto;
   color: rgba(250,248,244,0.9);
   flex-direction: column;
@@ -288,6 +291,7 @@ button { font-family: inherit; }
   text-align: center;
 }
 .nav__mobile a:hover { color: var(--wg-gold-300); }
+.nav__mobile a { cursor: pointer; }
 .nav__mobile-cta {
   margin-top: 20px;
   padding: 14px 36px !important;
@@ -431,7 +435,7 @@ button { font-family: inherit; }
   max-width: 540px;
   color: var(--fg-2);
 }
-.section--navy-deep .section__lede { color: rgba(250,248,244,0.72); }
+.section--navy-deep .section__lede { color: rgba(250,248,244,0.82); }
 
 /* =========================================================
    About
@@ -571,7 +575,7 @@ button { font-family: inherit; }
   height: 1px;
   background: var(--wg-line);
 }
-.step { padding: 0 28px; }
+.step { padding: 0 28px; cursor: default; }
 .step__dot {
   width: 16px; height: 16px;
   border-radius: 999px;
@@ -669,7 +673,7 @@ button { font-family: inherit; }
   text-wrap: balance;
 }
 .cta__copy h2 em { font-style: italic; font-weight: 500; color: var(--wg-gold-300); }
-.cta__copy p { font-size: 18px; line-height: 1.6; color: rgba(250,248,244,0.72); margin: 0; max-width: 520px; }
+.cta__copy p { font-size: 18px; line-height: 1.6; color: rgba(250,248,244,0.82); margin: 0; max-width: 520px; }
 .cta__card {
   background: var(--wg-paper);
   color: var(--wg-ink-900);
@@ -769,6 +773,21 @@ button { font-family: inherit; }
   box-shadow: 0 0 0 3px rgba(201,162,91,0.15);
 }
 .contact-form__field textarea { min-height: 110px; }
+.contact-form__field input:invalid:not(:placeholder-shown),
+.contact-form__field textarea:invalid:not(:placeholder-shown),
+.contact-form__field select:invalid:not(:placeholder-shown) {
+  border-color: #DC2626;
+  outline: none;
+}
+.contact-form__error {
+  font-size: 13px;
+  color: #DC2626;
+  display: none;
+  align-items: center;
+  gap: 6px;
+  margin-top: 2px;
+}
+.contact-form__error.is-visible { display: flex; }
 .contact-form__submit {
   margin-top: 4px;
   font-size: 15px;
@@ -878,7 +897,7 @@ button { font-family: inherit; }
 .footer__brand img { width: 220px; height: auto; margin-bottom: 28px; }
 .footer__brand p { font-size: 14px; line-height: 1.7; max-width: 300px; margin: 0 0 20px; }
 .footer__brand-meta { display: flex; flex-direction: column; gap: 6px; margin-top: 4px; }
-.footer__brand-meta span { font-size: 12px; color: rgba(250,248,244,0.5); letter-spacing: 0.03em; line-height: 1.5; }
+.footer__brand-meta span { font-size: 12px; color: rgba(250,248,244,0.82); letter-spacing: 0.03em; line-height: 1.5; }
 .footer__social { display: flex; gap: 12px; margin-top: 20px; }
 .footer__social a {
   width: 36px; height: 36px;
@@ -891,8 +910,8 @@ button { font-family: inherit; }
 .footer__social a:hover { background: var(--wg-gold-700); color: var(--wg-paper); border-color: var(--wg-gold-700); }
 .footer__col h5 { font-size: 11px; letter-spacing: 0.22em; text-transform: uppercase; font-weight: 500; color: var(--wg-paper); margin: 0 0 16px; }
 .footer__col ul { list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 12px; }
-.footer__col li { font-size: 14px; color: rgba(250,248,244,0.7); }
-.footer__col a { font-size: 14px; color: rgba(250,248,244,0.7); transition: color 200ms ease; }
+.footer__col li { font-size: 14px; color: rgba(250,248,244,0.88); }
+.footer__col a { font-size: 14px; color: rgba(250,248,244,0.88); transition: color 200ms ease; }
 .footer__col a:hover { color: var(--gold-accent); }
 .footer__base {
   padding: 24px 0 0;
@@ -900,12 +919,12 @@ button { font-family: inherit; }
   justify-content: space-between;
   align-items: center;
   font-size: 12px;
-  color: rgba(250,248,244,0.5);
+  color: rgba(250,248,244,0.72);
   flex-wrap: wrap;
   gap: 16px;
 }
 .footer__base-legal { display: flex; gap: 24px; }
-.footer__base-legal a { color: rgba(250,248,244,0.5); transition: color 200ms ease; }
+.footer__base-legal a { color: rgba(250,248,244,0.72); transition: color 200ms ease; }
 .footer__base-legal a:hover { color: var(--gold-accent); }
 
 /* =========================================================
@@ -973,6 +992,35 @@ button { font-family: inherit; }
 }
 
 /* =========================================================
+   Hero stats
+   ========================================================= */
+.hero__stats {
+  display: flex;
+  gap: 40px;
+  margin-top: 48px;
+  padding-top: 40px;
+  border-top: 1px solid rgba(250,248,244,0.1);
+}
+.hero__stat {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+.hero__stat-value {
+  font-size: 28px;
+  font-weight: 700;
+  color: var(--wg-paper);
+  letter-spacing: -0.02em;
+  font-family: var(--font-serif);
+}
+.hero__stat-label {
+  font-size: 12px;
+  color: rgba(250,248,244,0.6);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+/* =========================================================
    Responsive
    ========================================================= */
 @media (max-width: 1100px) {
@@ -1020,6 +1068,8 @@ button { font-family: inherit; }
   .voor-pro .btn { white-space: normal; width: 100%; text-align: center; }
   .voor-pro__headline { font-size: 26px; }
   .voor-pro__em { font-size: 18px; }
+  .hero__stats { gap: 24px; }
+  .hero__stat-value { font-size: 22px; }
 }
 
 /* =========================================================
@@ -1049,22 +1099,19 @@ button { font-family: inherit; }
 }
 .logo-track {
   display: flex;
-  width: max-content;
-  animation: marquee 32s linear infinite;
-}
-.logo-track:hover { animation-play-state: paused; }
-@keyframes marquee {
-  0%   { transform: translateX(0); }
-  100% { transform: translateX(-50%); }
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0;
 }
 .logo-item {
-  padding: 32px 44px;
+  padding: 28px 40px;
   display: flex;
   align-items: center;
   justify-content: center;
-  min-width: 160px;
+  min-width: 140px;
   border-right: 1px solid var(--wg-line);
   flex-shrink: 0;
+  cursor: default;
 }
 .logo-item img {
   max-height: 48px;
@@ -1154,6 +1201,20 @@ button { font-family: inherit; }
     <div class="hero__ctas">
       <a href="contact.html" class="btn btn--gold">Plan een gesprek <span class="arrow">→</span></a>
       <a href="#voor-professionals" class="btn btn--ghost">Jouw volgende stap <span class="arrow">→</span></a>
+    </div>
+    <div class="hero__stats">
+      <div class="hero__stat">
+        <span class="hero__stat-value">50+</span>
+        <span class="hero__stat-label">Plaatsingen</span>
+      </div>
+      <div class="hero__stat">
+        <span class="hero__stat-value">5+</span>
+        <span class="hero__stat-label">Jaar ervaring</span>
+      </div>
+      <div class="hero__stat">
+        <span class="hero__stat-value">100%</span>
+        <span class="hero__stat-label">Persoonlijk contact</span>
+      </div>
     </div>
   </div>
   <a href="#about" class="hero__scroll" aria-label="Scroll naar beneden">
@@ -1315,19 +1376,6 @@ button { font-family: inherit; }
         <div class="logo-item"><img src="assets/logos/parhelia.png" alt="Parhelia" loading="lazy" /></div>
         <div class="logo-item"><img src="assets/logos/ridder.png" alt="Ridder" loading="lazy" /></div>
         <div class="logo-item"><img src="assets/logos/renishaw.jpg" alt="Renishaw" loading="lazy" /></div>
-        <!-- duplicate set for seamless loop -->
-        <div class="logo-item" aria-hidden="true"><img src="assets/logos/mean-well.png" alt="" loading="lazy" /></div>
-        <div class="logo-item" aria-hidden="true"><img src="assets/logos/distrimex.png" alt="" loading="lazy" /></div>
-        <div class="logo-item" aria-hidden="true"><img src="assets/logos/koenig-bauer.jpg" alt="" loading="lazy" /></div>
-        <div class="logo-item" aria-hidden="true"><img src="assets/logos/geelen-counterflow.png" alt="" loading="lazy" /></div>
-        <div class="logo-item" aria-hidden="true"><img src="assets/logos/advantech.png" alt="" loading="lazy" /></div>
-        <div class="logo-item" aria-hidden="true"><img src="assets/logos/oxbo.png" alt="" loading="lazy" /></div>
-        <div class="logo-item" aria-hidden="true"><img src="assets/logos/prowise.png" alt="" loading="lazy" /></div>
-        <div class="logo-item" aria-hidden="true"><img src="assets/logos/kamadur.png" alt="" loading="lazy" /></div>
-        <div class="logo-item" aria-hidden="true"><img src="assets/logos/deltachem.png" alt="" loading="lazy" /></div>
-        <div class="logo-item" aria-hidden="true"><img src="assets/logos/parhelia.png" alt="" loading="lazy" /></div>
-        <div class="logo-item" aria-hidden="true"><img src="assets/logos/ridder.png" alt="" loading="lazy" /></div>
-        <div class="logo-item" aria-hidden="true"><img src="assets/logos/renishaw.jpg" alt="" loading="lazy" /></div>
       </div>
     </div>
   </div>
@@ -1377,7 +1425,11 @@ button { font-family: inherit; }
           </div>
           <div class="contact-form__field">
             <label for="cf-email">E-mailadres</label>
-            <input type="email" id="cf-email" name="email" placeholder="jouw@emailadres.nl" required />
+            <input type="email" id="cf-email" name="email" placeholder="jouw@emailadres.nl" required aria-describedby="cf-email-error" />
+            <span class="contact-form__error" id="cf-email-error" role="alert">
+              <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12" y2="16"/></svg>
+              Vul een geldig e-mailadres in
+            </span>
           </div>
           <div class="contact-form__field">
             <label for="cf-subject">Onderwerp</label>
@@ -1488,7 +1540,7 @@ button { font-family: inherit; }
     </div>
     <div class="footer__base">
       <span>© 2026 WerkGeluk Recruitment · Rotterdam · Nederland</span>
-      <span style="color:rgba(250,248,244,0.4);">KvK: 70841640 &nbsp;·&nbsp; BTW: NL001178713B61</span>
+      <span style="color:rgba(250,248,244,0.65);">KvK: 70841640 &nbsp;·&nbsp; BTW: NL001178713B61</span>
     </div>
   </div>
 </footer>
