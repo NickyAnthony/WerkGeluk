@@ -11,7 +11,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Arimo:ital,wght@0,400..700;1,400..700&display=swap" rel="stylesheet" />
-  <meta property="og:title" content="WerkGeluk Recruitment — Boutique recruitment voor commerciële en technische sales" />
+  <meta property="og:title" content="WerkGeluk Recruitment — Persoonlijk recruitment voor commerciële en technische sales" />
   <meta property="og:description" content="WerkGeluk Recruitment helpt organisaties bij het vinden van commerciële en technische sales professionals. Persoonlijk. Selectief. Gericht op duurzame matches." />
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://nickyanthony.github.io/WerkGeluk/" />
@@ -19,7 +19,7 @@
   <meta property="og:locale" content="nl_NL" />
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="WerkGeluk Recruitment" />
-  <meta name="twitter:description" content="Boutique recruitment voor commerciële en technische sales professionals." />
+  <meta name="twitter:description" content="Persoonlijk recruitment voor commerciële en technische sales professionals." />
   <meta name="twitter:image" content="https://nickyanthony.github.io/WerkGeluk/assets/6-2.png" />
   <style>
 /* =========================================================
@@ -65,7 +65,6 @@
   --r-xl: 22px;
   --r-pill: 999px;
   --font-sans: 'Arimo', -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif;
-  --font-serif: 'Arimo', Georgia, serif;
   --ease-out: cubic-bezier(0.22, 1, 0.36, 1);
 }
 
@@ -80,6 +79,8 @@ html, body { margin: 0; padding: 0; }
   .js-ready .reveal { transition: none !important; opacity: 1 !important; transform: none !important; }
   .btn, .arrow, .nav__links a::after, .about__portrait-photo,
   .logo-cell img, .locatie__link, .cta__card-value { transition: none !important; }
+  .logo-track { animation: none; }
+  .hero__scroll { animation: none; }
 }
 :focus-visible {
   outline: 2px solid var(--wg-gold-500);
@@ -282,7 +283,7 @@ button { font-family: inherit; }
 }
 .nav__mobile.is-open { opacity: 1; pointer-events: all; }
 .nav__mobile a {
-  font-family: var(--font-serif);
+  font-family: var(--font-sans);
   font-size: 32px;
   font-weight: 600;
   letter-spacing: -0.02em;
@@ -340,7 +341,7 @@ button { font-family: inherit; }
 }
 .hero__inner { position: relative; z-index: 1; padding-top: 8px; }
 .hero__headline {
-  font-family: var(--font-serif);
+  font-family: var(--font-sans);
   font-weight: 700;
   font-size: clamp(48px, 7vw, 96px);
   line-height: 1.02;
@@ -382,7 +383,7 @@ button { font-family: inherit; }
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 40px; height: 40px;
+  width: 44px; height: 44px;
   border-radius: 50%;
   border: 1px solid rgba(250,248,244,0.18);
   transition: color 240ms ease, border-color 240ms ease;
@@ -418,7 +419,7 @@ button { font-family: inherit; }
   align-items: end;
 }
 .section__title {
-  font-family: var(--font-serif);
+  font-family: var(--font-sans);
   font-weight: 600;
   font-size: clamp(36px, 4.4vw, 56px);
   line-height: 1.05;
@@ -483,7 +484,7 @@ button { font-family: inherit; }
 }
 .about__portrait-overlay::before {
   content: "Nicky Roggeveen";
-  font-family: var(--font-serif);
+  font-family: var(--font-sans);
   font-style: italic;
   font-weight: 500;
   font-size: 22px;
@@ -492,7 +493,7 @@ button { font-family: inherit; }
 }
 .about__copy { display: flex; flex-direction: column; justify-content: center; gap: 20px; }
 .about__copy h2 {
-  font-family: var(--font-serif);
+  font-family: var(--font-sans);
   font-weight: 600;
   font-size: clamp(28px, 3.4vw, 44px);
   line-height: 1.1;
@@ -512,7 +513,7 @@ button { font-family: inherit; }
   border-top: 1px solid var(--wg-line);
 }
 .about__signature-name {
-  font-family: var(--font-serif);
+  font-family: var(--font-sans);
   font-style: italic;
   font-weight: 500;
   font-size: 22px;
@@ -594,7 +595,7 @@ button { font-family: inherit; }
   opacity: 0.4;
 }
 .step__num {
-  font-family: var(--font-serif);
+  font-family: var(--font-sans);
   font-size: 12px;
   font-weight: 500;
   letter-spacing: 0.14em;
@@ -605,7 +606,7 @@ button { font-family: inherit; }
   text-transform: uppercase;
 }
 .step__title {
-  font-family: var(--font-serif);
+  font-family: var(--font-sans);
   font-weight: 600;
   font-size: 22px;
   line-height: 1.2;
@@ -665,7 +666,7 @@ button { font-family: inherit; }
    ========================================================= */
 .cta { display: grid; grid-template-columns: 1.2fr 1fr; gap: 80px; align-items: center; }
 .cta__copy h2 {
-  font-family: var(--font-serif);
+  font-family: var(--font-sans);
   font-weight: 600;
   font-size: clamp(40px, 5.4vw, 72px);
   line-height: 1.02;
@@ -702,7 +703,7 @@ button { font-family: inherit; }
   display: flex;
   align-items: center;
   justify-content: center;
-  font-family: var(--font-serif);
+  font-family: var(--font-sans);
   font-style: italic;
   font-weight: 600;
   font-size: 16px;
@@ -828,6 +829,27 @@ button { font-family: inherit; }
 .contact-form__success p { font-size: 16px; color: var(--fg-2); margin: 0; max-width: 280px; line-height: 1.55; }
 .contact-form__note { font-size: 12px; color: var(--fg-3); text-align: center; margin-top: 4px; }
 .contact-form__note a { color: var(--gold-accent); text-decoration: underline; }
+.cta__contact-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  font-size: 16px;
+  font-weight: 500;
+  color: var(--wg-paper);
+  opacity: 0.85;
+  transition: opacity 200ms ease;
+}
+.cta__contact-link:hover,
+.cta__contact-link:focus-visible { opacity: 1; }
+.cta__contact-link__icon {
+  width: 36px; height: 36px;
+  background: rgba(250,248,244,0.1);
+  border-radius: 50%;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
 @media (max-width: 640px) {
   .contact-form__row { grid-template-columns: 1fr; }
   .contact-form__submit { width: 100%; justify-content: center; }
@@ -847,7 +869,7 @@ button { font-family: inherit; }
   padding: 20px 0;
   border-top: 1px solid var(--wg-line);
   border-bottom: 1px solid var(--wg-line);
-  font-family: var(--font-serif);
+  font-family: var(--font-sans);
   font-size: 19px;
   line-height: 1.45;
   color: var(--fg-1);
@@ -901,7 +923,7 @@ button { font-family: inherit; }
 .footer__brand-meta span { font-size: 12px; color: rgba(250,248,244,0.82); letter-spacing: 0.03em; line-height: 1.5; }
 .footer__social { display: flex; gap: 12px; margin-top: 20px; }
 .footer__social a {
-  width: 36px; height: 36px;
+  width: 40px; height: 40px;
   border-radius: 999px;
   border: 1px solid rgba(250,248,244,0.14);
   display: flex; align-items: center; justify-content: center;
@@ -951,7 +973,7 @@ button { font-family: inherit; }
   margin-bottom: 28px;
 }
 .voor-pro__headline {
-  font-family: var(--font-serif);
+  font-family: var(--font-sans);
   font-weight: 700;
   font-size: clamp(30px, 3.8vw, 50px);
   line-height: 1.1;
@@ -961,7 +983,7 @@ button { font-family: inherit; }
   text-wrap: balance;
 }
 .voor-pro__em {
-  font-family: var(--font-serif);
+  font-family: var(--font-sans);
   font-style: italic;
   font-size: clamp(20px, 2.4vw, 26px);
   color: var(--gold-accent);
@@ -1092,7 +1114,7 @@ button { font-family: inherit; }
     "@context": "https://schema.org",
     "@type": "LocalBusiness",
     "name": "WerkGeluk Recruitment",
-    "description": "Boutique recruitment voor commerciële en technische sales professionals. Persoonlijk. Selectief. Gericht op duurzame matches.",
+    "description": "Persoonlijk recruitment voor commerciële en technische sales professionals. Selectief. Gericht op duurzame matches.",
     "url": "https://nickyanthony.github.io/WerkGeluk/",
     "telephone": "+31618236993",
     "email": "Nicky@werkgeluk-recruitment.nl",
@@ -1258,8 +1280,7 @@ button { font-family: inherit; }
     <div class="reveal">
       <div class="section__head">
         <div>
-          <span class="eyebrow">Waarom WerkGeluk</span>
-          <h2 class="section__title">Waarom organisaties kiezen <em>voor WerkGeluk Recruitment.</em></h2>
+              <h2 class="section__title">Waarom organisaties kiezen <em>voor WerkGeluk Recruitment.</em></h2>
         </div>
         <p class="section__lede">Niet elk recruitmentbureau werkt hetzelfde. Bij WerkGeluk draait het om persoonlijk contact, een gerichte aanpak en matches die ook op de langere termijn standhouden.</p>
       </div>
@@ -1268,31 +1289,31 @@ button { font-family: inherit; }
       <div class="reveal step">
         <div class="step__dot"></div>
         <span class="step__num">01</span>
-        <h4 class="step__title">Je spreekt altijd direct met Nicky</h4>
+        <h3 class="step__title">Je spreekt altijd direct met Nicky</h3>
         <p class="step__body">Geen accountmanagers of doorverwijzingen. Eén aanspreekpunt, van eerste gesprek tot definitieve plaatsing.</p>
       </div>
       <div class="reveal step" style="transition-delay:80ms">
         <div class="step__dot"></div>
         <span class="step__num">02</span>
-        <h4 class="step__title">Selectief, niet massaal</h4>
+        <h3 class="step__title">Selectief, niet massaal</h3>
         <p class="step__body">Je ontvangt alleen zorgvuldig gescreende kandidaten die inhoudelijk passend zijn.</p>
       </div>
       <div class="reveal step" style="transition-delay:160ms">
         <div class="step__dot"></div>
         <span class="step__num">03</span>
-        <h4 class="step__title">Specialist in sales & techniek</h4>
+        <h3 class="step__title">Specialist in sales & techniek</h3>
         <p class="step__body">Jarenlange focus op commerciële en technische sales. Geen generalist, maar iemand die de markt echt kent.</p>
       </div>
       <div class="reveal step" style="transition-delay:240ms">
         <div class="step__dot"></div>
         <span class="step__num">04</span>
-        <h4 class="step__title">Kleinschalig en betrokken</h4>
+        <h3 class="step__title">Kleinschalig en betrokken</h3>
         <p class="step__body">Bewust klein gebleven. Zo blijft de aandacht voor elke opdracht en elke kandidaat hoog.</p>
       </div>
       <div class="reveal step" style="transition-delay:320ms">
         <div class="step__dot"></div>
         <span class="step__num">05</span>
-        <h4 class="step__title">Eerlijk over wat past en wat niet</h4>
+        <h3 class="step__title">Eerlijk over wat past en wat niet</h3>
         <p class="step__body">Geen gladde verkooppraatjes. Als het geen goede match is, zeg ik dat ook. Dat spaart iedereen tijd.</p>
       </div>
     </div>
@@ -1346,23 +1367,23 @@ button { font-family: inherit; }
         <h2>Een gesprek begint <em>met een goede vraag.</em></h2>
         <p>Heb je een opdracht, een vacature of gewoon een vraag? Bel of mail vrijblijvend. Vaak is een eerste gesprek genoeg om te zien of er iets te bouwen valt.</p>
         <div style="display:flex;flex-direction:column;gap:12px;margin-top:28px;">
-          <a href="tel:+31618236993" style="display:inline-flex;align-items:center;gap:12px;font-size:16px;font-weight:500;color:var(--wg-paper);opacity:0.85;transition:opacity 200ms ease;" onmouseover="this.style.opacity='1'" onmouseout="this.style.opacity='0.85'">
-            <span style="width:36px;height:36px;background:rgba(250,248,244,0.1);border-radius:50%;display:inline-flex;align-items:center;justify-content:center;flex-shrink:0;">
+          <a href="tel:+31618236993" class="cta__contact-link">
+            <span class="cta__contact-link__icon">
               <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 13.5a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.6 2.69h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 10.2a16 16 0 0 0 5.89 5.89l.94-.94a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 21.92 17z"/></svg>
             </span>
             +31 6 18 23 69 93
           </a>
-          <a href="mailto:Nicky@werkgeluk-recruitment.nl" style="display:inline-flex;align-items:center;gap:12px;font-size:16px;font-weight:500;color:var(--wg-paper);opacity:0.85;transition:opacity 200ms ease;" onmouseover="this.style.opacity='1'" onmouseout="this.style.opacity='0.85'">
-            <span style="width:36px;height:36px;background:rgba(250,248,244,0.1);border-radius:50%;display:inline-flex;align-items:center;justify-content:center;flex-shrink:0;">
+          <a href="mailto:Nicky@werkgeluk-recruitment.nl" class="cta__contact-link">
+            <span class="cta__contact-link__icon">
               <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
             </span>
             Nicky@werkgeluk-recruitment.nl
           </a>
-          <a href="https://www.linkedin.com/in/nicky-roggeveen/" target="_blank" rel="noreferrer" style="display:inline-flex;align-items:center;gap:12px;font-size:16px;font-weight:500;color:var(--wg-paper);opacity:0.85;transition:opacity 200ms ease;" onmouseover="this.style.opacity='1'" onmouseout="this.style.opacity='0.85'">
-            <span style="width:36px;height:36px;background:rgba(250,248,244,0.1);border-radius:50%;display:inline-flex;align-items:center;justify-content:center;flex-shrink:0;">
+          <a href="https://www.linkedin.com/in/nicky-roggeveen/" target="_blank" rel="noreferrer" class="cta__contact-link" aria-label="Nicky Roggeveen op LinkedIn (opent in nieuw tabblad)">
+            <span class="cta__contact-link__icon">
               <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
             </span>
-            LinkedIn — Nicky Roggeveen
+            Nicky Roggeveen op LinkedIn
           </a>
         </div>
       </div>
@@ -1422,7 +1443,6 @@ button { font-family: inherit; }
   <div class="container">
     <div class="locatie">
       <div class="reveal locatie__copy">
-        <span class="eyebrow">Locatie</span>
         <h2 class="section__title">WerkGeluk Recruitment, <em>gevestigd in Rotterdam.</em></h2>
         <p class="locatie__body">Je bent van harte welkom voor een persoonlijk gesprek op de Kop van Zuid. Goed bereikbaar met de auto en op loopafstand van station Wilhelminaplein.</p>
         <address class="locatie__address">
@@ -1508,6 +1528,16 @@ document.documentElement.classList.add('js-ready');
 /* ── Mobile menu ── */
 const hamburger = document.querySelector('.nav__hamburger');
 const mobileMenu = document.querySelector('.nav__mobile');
+const menuFocusables = () => Array.from(mobileMenu.querySelectorAll('a, button, [tabindex]:not([tabindex="-1"])'));
+function handleMenuTrap(e) {
+  if (e.key !== 'Tab') return;
+  const items = menuFocusables();
+  const first = items[0], last = items[items.length - 1];
+  if (e.shiftKey ? document.activeElement === first : document.activeElement === last) {
+    e.preventDefault();
+    (e.shiftKey ? last : first).focus();
+  }
+}
 hamburger.addEventListener('click', () => {
   const open = hamburger.classList.toggle('is-open');
   mobileMenu.classList.toggle('is-open', open);
@@ -1515,6 +1545,13 @@ hamburger.addEventListener('click', () => {
   hamburger.setAttribute('aria-expanded', open);
   mobileMenu.setAttribute('aria-hidden', !open);
   document.body.style.overflow = open ? 'hidden' : '';
+  if (open) {
+    menuFocusables()[0]?.focus();
+    document.addEventListener('keydown', handleMenuTrap);
+  } else {
+    document.removeEventListener('keydown', handleMenuTrap);
+    hamburger.focus();
+  }
 });
 mobileMenu.querySelectorAll('a').forEach(a => {
   a.addEventListener('click', () => {
