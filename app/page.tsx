@@ -1,4 +1,3 @@
-import HeroHeader from '@/components/ui/HeroHeader'
 import TwoSoulsLogo from '@/components/logos/TwoSoulsLogo'
 import CheckMatchLogo from '@/components/logos/CheckMatchLogo'
 import TwinDropsLogo from '@/components/logos/TwinDropsLogo'
@@ -1370,7 +1369,32 @@ function PaletteSection() {
 export default function HomePage() {
   return (
     <div style={{ background: '#E1E5EC', minHeight: '100vh' }}>
-      <HeroHeader />
+      {/* Page header */}
+      <header
+        style={{
+          padding: '56px 64px 40px',
+          maxWidth: '1200px',
+          margin: '0 auto',
+        }}
+      >
+        <h1
+          style={{
+            fontFamily: "'Fraunces', serif",
+            fontWeight: 500,
+            fontSize: '36px',
+            letterSpacing: '-0.5px',
+            lineHeight: 1.1,
+            color: '#0D1B2A',
+          }}
+        >
+          WerkGeluk Recruitment
+          <br />
+          Logo Designs
+        </h1>
+        <p style={{ marginTop: '10px', fontSize: '14px', color: '#5A6470', letterSpacing: '0.2px' }}>
+          Visuele identiteit — merkbouwstenen, varianten &amp; toepassingen
+        </p>
+      </header>
 
       {/* Main content */}
       <main
