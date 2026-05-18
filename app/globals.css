@@ -2,430 +2,467 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --navy: #0D1B2A;
-  --gold: #C9A25B;
-  --cloud: #F4F6F8;
-  --canvas: #E1E5EC;
-  --sub: #5A6470;
-  --border: #E2E5EA;
-}
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
-* {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-}
+  :root {
+    --navy:  #0D1B2A;
+    --gold:  #C9A25B;
+    --cloud: #F4F6F8;
+    --canvas: #E1E5EC;
+    --sub:   #5A6470;
+    --border: #E2E5EA;
+  }
 
-html,
-body {
-  background: var(--canvas);
-  font-family: 'Inter', system-ui, sans-serif;
-  color: var(--navy);
-  min-height: 100vh;
-}
+  html, body {
+    background: var(--canvas);
+    font-family: 'Inter', system-ui, sans-serif;
+    color: var(--navy);
+    min-height: 100vh;
+  }
 
-.gold-gradient {
-  background: linear-gradient(
-    135deg,
-    #8b6a2e 0%,
-    #c9a25b 35%,
-    #f0d89a 55%,
-    #c9a25b 75%,
-    #8b6a2e 100%
-  );
-}
+  /* ── Page header ── */
+  .page-header {
+    padding: 56px 64px 40px;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+  .page-header h1 {
+    font-family: 'Fraunces', serif;
+    font-weight: 500;
+    font-size: 36px;
+    letter-spacing: -0.5px;
+    line-height: 1.1;
+    color: var(--navy);
+  }
+  .page-header p {
+    margin-top: 10px;
+    font-size: 14px;
+    color: var(--sub);
+    letter-spacing: 0.2px;
+  }
 
-/* ── Artboard grid helpers ── */
-.artboard-grid {
-  display: grid;
-  gap: 16px;
-}
+  /* ── Layout ── */
+  .page-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 64px 80px;
+    display: flex;
+    flex-direction: column;
+    gap: 80px;
+  }
 
-.artboard-grid.two {
-  grid-template-columns: 1fr 1fr;
-}
+  /* ── Section ── */
+  .section-title {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 10px;
+    letter-spacing: 3px;
+    color: var(--sub);
+    text-transform: uppercase;
+    margin-bottom: 6px;
+  }
+  .section-heading {
+    font-family: 'Fraunces', serif;
+    font-weight: 500;
+    font-size: 26px;
+    letter-spacing: -0.3px;
+    color: var(--navy);
+  }
+  .section-sub {
+    margin-top: 4px;
+    font-size: 13px;
+    color: var(--sub);
+  }
+  .section-header {
+    margin-bottom: 28px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid var(--border);
+  }
 
-.artboard-grid.three {
-  grid-template-columns: 1fr 1fr 1fr;
-}
+  /* ── Artboard grid ── */
+  .artboard-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+    gap: 16px;
+  }
+  .artboard-grid.full { grid-template-columns: 1fr; }
+  .artboard-grid.two  { grid-template-columns: 1fr 1fr; }
+  .artboard-grid.three { grid-template-columns: 1fr 1fr 1fr; }
 
-/* ── Logo split panel ── */
-.logo-split {
-  display: flex;
-  width: 100%;
-  border-radius: 6px;
-  overflow: hidden;
-}
+  /* ── Artboard card ── */
+  .artboard {
+    background: #fff;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 1px 3px rgba(13,27,42,.07), 0 4px 16px rgba(13,27,42,.05);
+  }
+  .artboard-label {
+    padding: 10px 16px;
+    border-bottom: 1px solid var(--border);
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 9px;
+    letter-spacing: 1.8px;
+    color: var(--sub);
+    text-transform: uppercase;
+  }
+  .artboard-body {
+    padding: 40px;
+    background: var(--canvas);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 220px;
+  }
+  .artboard-body.white { background: #fff; }
+  .artboard-body.navy  { background: var(--navy); }
+  .artboard-body.cloud { background: var(--cloud); }
+  .artboard-body.plain { padding: 0; min-height: 0; }
 
-.logo-split-panel {
-  flex: 1;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 32px;
-}
+  /* ── Palette cards ── */
+  .palette-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 12px;
+    height: 200px;
+  }
+  .palette-card {
+    border-radius: 6px;
+    padding: 18px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    border: 1px solid transparent;
+  }
+  .palette-card.light { border-color: var(--border); }
+  .palette-card-name {
+    font-family: 'Fraunces', serif;
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 1;
+  }
+  .palette-card-role {
+    font-family: 'Inter', sans-serif;
+    font-size: 10px;
+    opacity: 0.7;
+    margin-top: 5px;
+    line-height: 1.4;
+  }
+  .palette-card-hex {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 10px;
+    opacity: 0.85;
+    margin-top: 14px;
+  }
 
-/* ── Logo layout helpers ── */
-.logo-h {
-  display: flex;
-  align-items: center;
-  gap: 14px;
-}
+  /* ── Logo showcase split (white | cloud) ── */
+  .logo-split {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    min-height: 220px;
+  }
+  .logo-split-panel {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 48px 40px;
+  }
 
-.logo-v {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 16px;
-}
+  /* ── Logo wordmark ── */
+  .wordmark {
+    line-height: 1;
+  }
+  .wordmark-text {
+    font-weight: 500;
+    font-size: 28px;
+    letter-spacing: -0.4px;
+    color: var(--navy);
+  }
+  .wordmark-sub {
+    font-family: 'Inter', sans-serif;
+    font-weight: 500;
+    font-size: 9px;
+    letter-spacing: 4.5px;
+    color: var(--sub);
+    margin-top: 5px;
+  }
 
-/* ── Wordmark ── */
-.wordmark-text {
-  font-size: 28px;
-  font-weight: 600;
-  letter-spacing: -0.6px;
-  line-height: 1;
-  color: var(--navy);
-}
+  /* logo horizontal layout */
+  .logo-h {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+  }
+  .logo-v {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 16px;
+    text-align: center;
+  }
 
-.wordmark-sub {
-  font-family: 'Inter', sans-serif;
-  font-size: 8px;
-  letter-spacing: 3px;
-  color: var(--sub);
-  text-transform: uppercase;
-  margin-top: 3px;
-}
+  /* ── Favicon set ── */
+  .favicon-set {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    align-items: flex-start;
+    padding: 36px;
+    background: var(--cloud);
+    min-height: 240px;
+  }
+  .favicon-row {
+    display: flex;
+    gap: 18px;
+    align-items: flex-end;
+  }
+  .favicon-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+  }
+  .favicon-box {
+    background: #fff;
+    border: 1px solid var(--border);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .favicon-label {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 9px;
+    color: #888;
+  }
+  .tab-mock {
+    display: flex;
+    align-items: center;
+  }
+  .tab-inner {
+    background: #fff;
+    border-radius: 6px 6px 0 0;
+    padding: 6px 12px 6px 10px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    border: 1px solid var(--border);
+    border-bottom: none;
+  }
+  .tab-title {
+    font-family: 'Inter', sans-serif;
+    font-size: 11px;
+    color: #3A4150;
+  }
+  .tab-close {
+    font-family: 'Inter', sans-serif;
+    font-size: 13px;
+    color: #9BA1AB;
+    margin-left: 4px;
+    line-height: 0.7;
+  }
 
-/* ── Favicon set ── */
-.favicon-set {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 16px;
-}
+  /* ── Business card ── */
+  .bizcard-wrap {
+    display: flex;
+    gap: 24px;
+    padding: 36px;
+    background: var(--canvas);
+    border-radius: 0;
+  }
+  .bizcard {
+    width: 340px;
+    height: 200px;
+    border-radius: 6px;
+    box-shadow: 0 8px 24px rgba(13,27,42,.12), 0 1px 2px rgba(13,27,42,.06);
+    flex-shrink: 0;
+  }
+  .bizcard-front {
+    background: #fff;
+    padding: 26px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%;
+  }
+  .bizcard-logo-wrap {
+    transform: scale(0.75);
+    transform-origin: top left;
+    margin-left: -8px;
+    margin-top: -6px;
+  }
+  .bizcard-contact {
+    font-family: 'Inter', sans-serif;
+    font-size: 10px;
+    color: var(--sub);
+    line-height: 1.5;
+  }
+  .bizcard-name {
+    font-weight: 600;
+    color: var(--navy);
+    font-size: 12px;
+    margin-bottom: 2px;
+  }
+  .bizcard-info-row {
+    display: flex;
+    gap: 14px;
+    margin-top: 8px;
+  }
+  .bizcard-back {
+    background: var(--navy);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    overflow: hidden;
+    height: 100%;
+  }
+  .bizcard-glow {
+    position: absolute;
+    right: -20px;
+    top: -20px;
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    opacity: 0.22;
+  }
 
-.favicon-row {
-  display: flex;
-  align-items: flex-end;
-  gap: 20px;
-}
+  /* ── Letterhead ── */
+  .letterhead {
+    width: 420px;
+    background: #fff;
+    border-radius: 4px;
+    box-shadow: 0 12px 32px rgba(13,27,42,.10);
+    padding: 32px 40px;
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+  .letterhead-logo-wrap {
+    transform: scale(0.68);
+    transform-origin: top left;
+    margin-left: -6px;
+    margin-top: -5px;
+  }
+  .letterhead-rule {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding-top: 4px;
+  }
+  .letterhead-rule-navy { height: 2px; background: var(--navy); flex: 3; }
+  .letterhead-rule-gold {
+    height: 2px;
+    background: linear-gradient(135deg, #8B6A2E 0%, #C9A25B 35%, #F0D89A 55%, #C9A25B 75%, #8B6A2E 100%);
+    flex: 1;
+  }
+  .letterhead-address {
+    display: flex;
+    justify-content: space-between;
+    font-family: 'Inter', sans-serif;
+    font-size: 7.5px;
+    color: var(--sub);
+    letter-spacing: 1.2px;
+    margin-top: -12px;
+  }
+  .letterhead-body {
+    font-family: 'Inter', sans-serif;
+    font-size: 9px;
+    color: var(--navy);
+    line-height: 1.7;
+  }
+  .letterhead-date { color: var(--sub); margin-bottom: 12px; }
+  .letterhead-salutation { font-weight: 600; margin-bottom: 8px; }
+  .letterhead-lines {
+    background: repeating-linear-gradient(
+      0deg,
+      transparent 0,
+      transparent 11px,
+      #E2E5EA 11px,
+      #E2E5EA 12px
+    );
+    height: 160px;
+    margin-bottom: 10px;
+  }
+  .letterhead-footer {
+    position: absolute;
+    bottom: 14px;
+    left: 40px;
+    right: 40px;
+    display: flex;
+    justify-content: space-between;
+    font-family: 'Inter', sans-serif;
+    font-size: 7px;
+    color: #9BA1AB;
+    letter-spacing: 1.5px;
+  }
 
-.favicon-item {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 6px;
-}
+  /* ── LinkedIn banner ── */
+  .linkedin-banner {
+    width: 680px;
+    height: 170px;
+    border-radius: 8px;
+    overflow: hidden;
+    display: flex;
+    align-items: stretch;
+    box-shadow: 0 6px 20px rgba(13,27,42,.10);
+    border: 1px solid var(--border);
+  }
+  .linkedin-left {
+    width: 200px;
+    background: var(--navy);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    flex-shrink: 0;
+  }
+  .linkedin-glow {
+    position: absolute;
+    right: -30px;
+    bottom: -30px;
+    width: 110px;
+    height: 110px;
+    border-radius: 55px;
+    opacity: 0.18;
+  }
+  .linkedin-right {
+    flex: 1;
+    padding: 0 36px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 10px;
+    background: #fff;
+  }
+  .linkedin-headline {
+    font-family: 'Fraunces', serif;
+    font-size: 20px;
+    color: var(--navy);
+    font-weight: 400;
+    line-height: 1.2;
+    letter-spacing: -0.3px;
+  }
+  .linkedin-tags {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  .linkedin-dot {
+    width: 6px;
+    height: 6px;
+    border-radius: 3px;
+  }
+  .linkedin-tag {
+    font-family: 'Inter', sans-serif;
+    font-size: 9.5px;
+    color: var(--sub);
+    letter-spacing: 2px;
+    font-weight: 500;
+  }
 
-.favicon-box {
-  background: var(--navy);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.favicon-label {
-  font-family: 'JetBrains Mono', monospace;
-  font-size: 9px;
-  color: var(--sub);
-  letter-spacing: 1px;
-}
-
-/* ── Browser tab mock ── */
-.tab-mock {
-  width: 260px;
-  height: 30px;
-  background: #e8eaed;
-  border-radius: 6px 6px 0 0;
-  overflow: hidden;
-  display: flex;
-  align-items: flex-end;
-}
-
-.tab-inner {
-  background: #fff;
-  height: 26px;
-  width: 180px;
-  display: flex;
-  align-items: center;
-  gap: 6px;
-  padding: 0 10px;
-  border-radius: 6px 6px 0 0;
-}
-
-.tab-title {
-  font-size: 10px;
-  color: #333;
-  font-family: 'Inter', sans-serif;
-  flex: 1;
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
-}
-
-.tab-close {
-  font-size: 12px;
-  color: #999;
-}
-
-/* ── Business card ── */
-.bizcard-wrap {
-  display: flex;
-  gap: 20px;
-  flex-wrap: wrap;
-}
-
-.bizcard {
-  width: 340px;
-  height: 190px;
-  box-shadow: 0 8px 32px rgba(13, 27, 42, 0.12);
-  flex-shrink: 0;
-  overflow: hidden;
-}
-
-.bizcard-front {
-  width: 100%;
-  height: 100%;
-  background: #fff;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  padding: 24px 28px;
-}
-
-.bizcard-back {
-  width: 100%;
-  height: 100%;
-  background: var(--navy);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  position: relative;
-  overflow: hidden;
-}
-
-.bizcard-glow {
-  position: absolute;
-  right: -20px;
-  bottom: -20px;
-  width: 120px;
-  height: 120px;
-  border-radius: 60px;
-  opacity: 0.15;
-}
-
-.bizcard-name {
-  font-weight: 600;
-  font-size: 13px;
-  color: var(--navy);
-}
-
-.bizcard-contact {
-  display: flex;
-  flex-direction: column;
-  gap: 3px;
-  font-size: 11px;
-  color: var(--sub);
-}
-
-.bizcard-info-row {
-  display: flex;
-  gap: 14px;
-  margin-top: 2px;
-}
-
-/* ── Letterhead ── */
-.letterhead {
-  width: 100%;
-  background: #fff;
-  border-radius: 4px;
-  overflow: hidden;
-  padding: 28px 32px 24px;
-  display: flex;
-  flex-direction: column;
-  gap: 16px;
-  box-shadow: 0 2px 12px rgba(13, 27, 42, 0.06);
-}
-
-.letterhead-logo-wrap {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-}
-
-.letterhead-rule {
-  display: flex;
-  flex-direction: column;
-  gap: 2px;
-}
-
-.letterhead-rule-navy {
-  height: 2px;
-  background: var(--navy);
-}
-
-.letterhead-rule-gold {
-  height: 1px;
-  background: linear-gradient(90deg, #8b6a2e, #c9a25b, #f0d89a, #c9a25b, #8b6a2e);
-}
-
-.letterhead-address {
-  display: flex;
-  justify-content: space-between;
-  font-size: 8px;
-  letter-spacing: 1.5px;
-  color: var(--sub);
-  text-transform: uppercase;
-  font-family: 'Inter', sans-serif;
-}
-
-.letterhead-body {
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-  font-size: 10px;
-  color: var(--navy);
-  font-family: 'Inter', sans-serif;
-}
-
-.letterhead-date {
-  color: var(--sub);
-  font-size: 9px;
-}
-
-.letterhead-salutation {
-  font-size: 10px;
-}
-
-.letterhead-lines {
-  height: 36px;
-  background: repeating-linear-gradient(
-    to bottom,
-    transparent,
-    transparent 11px,
-    var(--border) 11px,
-    var(--border) 12px
-  );
-}
-
-.letterhead-footer {
-  display: flex;
-  justify-content: space-between;
-  font-size: 7.5px;
-  color: #9ba1ab;
-  letter-spacing: 1px;
-  font-family: 'Inter', sans-serif;
-  padding-top: 8px;
-  border-top: 1px solid var(--border);
-}
-
-/* ── LinkedIn banner ── */
-.linkedin-banner {
-  width: 100%;
-  max-width: 680px;
-  height: 170px;
-  border-radius: 8px;
-  overflow: hidden;
-  display: flex;
-  align-items: stretch;
-  box-shadow: 0 6px 20px rgba(13, 27, 42, 0.1);
-  border: 1px solid var(--border);
-}
-
-.linkedin-left {
-  width: 200px;
-  background: var(--navy);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  position: relative;
-  flex-shrink: 0;
-}
-
-.linkedin-glow {
-  position: absolute;
-  right: -30px;
-  bottom: -30px;
-  width: 110px;
-  height: 110px;
-  border-radius: 55px;
-  opacity: 0.18;
-}
-
-.linkedin-right {
-  flex: 1;
-  padding: 0 36px;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  gap: 10px;
-  background: #fff;
-}
-
-.linkedin-headline {
-  font-family: 'Fraunces', serif;
-  font-size: 20px;
-  color: var(--navy);
-  font-weight: 400;
-  line-height: 1.2;
-  letter-spacing: -0.3px;
-}
-
-.linkedin-tags {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-}
-
-.linkedin-dot {
-  width: 6px;
-  height: 6px;
-  border-radius: 3px;
-}
-
-.linkedin-tag {
-  font-family: 'Inter', sans-serif;
-  font-size: 9.5px;
-  color: var(--sub);
-  letter-spacing: 2px;
-  font-weight: 500;
-}
-
-/* ── Palette grid ── */
-.palette-grid {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 12px;
-}
-
-.palette-card {
-  border-radius: 8px;
-  padding: 20px 18px;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  min-height: 120px;
-  border: 1px solid rgba(0, 0, 0, 0.06);
-}
-
-.palette-card-name {
-  font-family: 'Fraunces', serif;
-  font-size: 18px;
-  font-weight: 500;
-  line-height: 1;
-}
-
-.palette-card-role {
-  font-size: 11px;
-  opacity: 0.7;
-  margin-top: 4px;
-  font-family: 'Inter', sans-serif;
-}
-
-.palette-card-hex {
-  font-family: 'JetBrains Mono', monospace;
-  font-size: 11px;
-  opacity: 0.8;
-}
+  /* ── Divider ── */
+  .divider {
+    height: 1px;
+    background: var(--border);
+    margin: 0;
+  }
