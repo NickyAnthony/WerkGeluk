@@ -874,7 +874,7 @@ button { font-family: inherit; }
   border-bottom: 1px solid rgba(250,248,244,0.1);
   align-items: start;
 }
-.footer__brand img { width: 260px; height: auto; margin-bottom: 28px; }
+.footer__brand img { width: 180px; height: auto; margin-bottom: 28px; }
 .footer__brand p { font-size: 14px; line-height: 1.7; max-width: 300px; margin: 0 0 20px; }
 .footer__brand-meta { display: flex; flex-direction: column; gap: 6px; margin-top: 4px; }
 .footer__brand-meta span { font-size: 12px; color: rgba(250,248,244,0.5); letter-spacing: 0.03em; line-height: 1.5; }
@@ -1001,6 +1001,8 @@ button { font-family: inherit; }
   .steps-5 { grid-template-columns: 1fr 1fr; }
   .steps-5::before { display: none; }
   .v3-rolegrid { grid-template-columns: 1fr 1fr; }
+  .step__dot::before { display: none; }
+  .step { padding: 16px 20px; }
 }
 @media (max-width: 640px) {
   .logos-grid { grid-template-columns: repeat(2, 1fr); }
@@ -1009,6 +1011,14 @@ button { font-family: inherit; }
   .steps-5 { grid-template-columns: 1fr; }
   .v3-rolegrid { grid-template-columns: 1fr; }
   .footer__inner { grid-template-columns: 1fr; }
+  .footer__brand { text-align: center; }
+  .footer__brand img { margin: 0 auto 28px; display: block; }
+  .footer__brand-meta { align-items: center; }
+  .footer__social { justify-content: center; }
+  .footer__col { text-align: center; }
+  .voor-pro .btn { white-space: normal; width: 100%; text-align: center; }
+  .voor-pro__headline { font-size: 26px; }
+  .voor-pro__em { font-size: 18px; }
 }
 
 /* =========================================================
@@ -1438,7 +1448,7 @@ button { font-family: inherit; }
 
       <!-- Brand -->
       <div class="footer__brand">
-        <img src="assets/logo-horizontal-light.png" alt="WerkGeluk Recruitment" />
+        <img src="assets/6-2.png" alt="WerkGeluk Recruitment" />
         <p>Boutique recruitment voor commerciële en technische sales professionals. Persoonlijk. Eerlijk. Duurzaam.</p>
         <div class="footer__brand-meta">
           <span>KvK: 70841640</span>
