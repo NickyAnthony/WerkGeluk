@@ -14,31 +14,33 @@ export default function HeroHeader() {
 
   return (
     <header className="hero-header" onMouseMove={handleMouseMove}>
-      {/* Animated gold orbs */}
+      {/* Drijvende gouden orbs — heel subtiel op canvas achtergrond */}
       <div className="hero-orb hero-orb-1" />
       <div className="hero-orb hero-orb-2" />
-      <div className="hero-orb hero-orb-3" />
 
-      {/* Dot grid overlay */}
-      <div className="hero-grid" />
-
-      {/* Mouse-follow glow */}
+      {/* Muis-volg gloed */}
       <div className="hero-mouse-glow" ref={glowRef} />
 
-      {/* Content */}
+      {/* Content — identiek aan de originele header */}
       <div className="hero-content">
-        <div className="hero-eyebrow">Visuele identiteit</div>
-        <h1 className="hero-title">
-          WerkGeluk<br />
-          <span className="hero-title-accent">Recruitment</span>
+        <h1
+          style={{
+            fontFamily: "'Fraunces', serif",
+            fontWeight: 500,
+            fontSize: '36px',
+            letterSpacing: '-0.5px',
+            lineHeight: 1.1,
+            color: '#0D1B2A',
+          }}
+        >
+          WerkGeluk Recruitment
+          <br />
+          Logo Designs
         </h1>
-        <p className="hero-subtitle">
-          Merkbouwstenen, logo&nbsp;varianten &amp; toepassingen
+        <p style={{ marginTop: '10px', fontSize: '14px', color: '#5A6470', letterSpacing: '0.2px' }}>
+          Visuele identiteit — merkbouwstenen, varianten &amp; toepassingen
         </p>
       </div>
-
-      {/* Bottom fade into page */}
-      <div className="hero-fade" />
     </header>
   )
 }
