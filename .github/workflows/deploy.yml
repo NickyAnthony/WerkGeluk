@@ -2,7 +2,7 @@ name: Deploy to GitHub Pages
 
 on:
   push:
-    branches: [main]
+    branches: [main, claude/implement-werkgeluk-logo-m1vah]
   workflow_dispatch:
 
 permissions:
