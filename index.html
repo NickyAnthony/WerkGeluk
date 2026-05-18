@@ -329,11 +329,6 @@ button { font-family: inherit; }
     rgba(201,162,91,0.14) 30%,
     transparent 60%);
   pointer-events: none;
-  transform: translate(
-    calc((var(--mx, 0.5) - 0.5) * -60px),
-    calc((var(--my, 0.5) - 0.5) * -40px)
-  );
-  transition: transform 1.2s cubic-bezier(0.22,1,0.36,1);
 }
 .hero::after {
   content: "";
@@ -342,37 +337,6 @@ button { font-family: inherit; }
   width: 640px; height: 640px;
   background: radial-gradient(circle at center, rgba(45,64,104,0.6) 0%, transparent 60%);
   pointer-events: none;
-  transform: translate(
-    calc((var(--mx, 0.5) - 0.5) * 40px),
-    calc((var(--my, 0.5) - 0.5) * 30px)
-  );
-  transition: transform 1.6s cubic-bezier(0.22,1,0.36,1);
-}
-
-/* Canvas particle overlay */
-.hero__canvas {
-  position: absolute;
-  inset: 0;
-  width: 100%;
-  height: 100%;
-  pointer-events: none;
-  z-index: 0;
-}
-
-/* Pulsing glow animation */
-@media (prefers-reduced-motion: no-preference) {
-  .hero::before { animation: glow-a 14s ease-in-out infinite alternate; }
-  .hero::after  { animation: glow-b 18s ease-in-out infinite alternate; }
-}
-@keyframes glow-a {
-  0%   { opacity: 1;    transform: translate(calc((var(--mx,0.5)-.5)*-60px),calc((var(--my,0.5)-.5)*-40px)) scale(1); }
-  50%  { opacity: 0.75; transform: translate(calc((var(--mx,0.5)-.5)*-60px - 40px),calc((var(--my,0.5)-.5)*-40px + 30px)) scale(1.08); }
-  100% { opacity: 1;    transform: translate(calc((var(--mx,0.5)-.5)*-60px + 20px),calc((var(--my,0.5)-.5)*-40px - 20px)) scale(0.96); }
-}
-@keyframes glow-b {
-  0%   { opacity: 1;    transform: translate(calc((var(--mx,0.5)-.5)*40px),calc((var(--my,0.5)-.5)*30px)) scale(1); }
-  50%  { opacity: 0.7;  transform: translate(calc((var(--mx,0.5)-.5)*40px + 50px),calc((var(--my,0.5)-.5)*30px - 40px)) scale(1.12); }
-  100% { opacity: 1;    transform: translate(calc((var(--mx,0.5)-.5)*40px - 30px),calc((var(--my,0.5)-.5)*30px + 25px)) scale(0.92); }
 }
 .hero__inner { position: relative; z-index: 1; padding-top: 8px; }
 .hero__headline {
@@ -1188,7 +1152,6 @@ button { font-family: inherit; }
 
 <!-- Hero -->
 <header class="hero" id="top">
-  <canvas class="hero__canvas" aria-hidden="true"></canvas>
   <div class="container hero__inner">
     <h1 class="hero__headline">WerkGeluk begint <em>bij de juiste match.</em></h1>
     <p class="hero__sub">WerkGeluk Recruitment helpt organisaties bij het vinden van commerciële en technische sales professionals die niet alleen passen op papier, maar ook binnen cultuur, ambitie en visie.</p>
@@ -1641,75 +1604,6 @@ function updateParallax() {
 if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
   window.addEventListener('scroll', updateParallax, { passive: true });
 }
-
-/* ── Hero: muis-parallax op glow-orbs ── */
-hero.addEventListener('mousemove', function(e) {
-  const r = hero.getBoundingClientRect();
-  hero.style.setProperty('--mx', ((e.clientX - r.left) / r.width).toFixed(3));
-  hero.style.setProperty('--my', ((e.clientY - r.top)  / r.height).toFixed(3));
-});
-hero.addEventListener('mouseleave', function() {
-  hero.style.setProperty('--mx', '0.5');
-  hero.style.setProperty('--my', '0.5');
-});
-
-/* ── Hero: canvas particle systeem ── */
-(function() {
-  if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
-  const canvas = document.querySelector('.hero__canvas');
-  if (!canvas) return;
-  const ctx = canvas.getContext('2d');
-
-  let W, H;
-  function resize() {
-    W = canvas.width  = canvas.offsetWidth;
-    H = canvas.height = canvas.offsetHeight;
-  }
-  window.addEventListener('resize', resize, { passive: true });
-  resize();
-
-  /* Particle definitie */
-  const COLORS = [
-    [201,162,91],   /* goud */
-    [240,216,154],  /* licht goud */
-    [250,248,244],  /* off-white */
-  ];
-  const COUNT = 70;
-  const pts = Array.from({ length: COUNT }, () => {
-    const c = COLORS[Math.floor(Math.random() * COLORS.length)];
-    return {
-      x: Math.random() * 1,   /* fractie van W */
-      y: Math.random() * 1,   /* fractie van H */
-      r: Math.random() * 1.2 + 0.3,
-      vx: (Math.random() - 0.5) * 0.00012,
-      vy: -(Math.random() * 0.00022 + 0.00008),
-      op: Math.random() * 0.35 + 0.05,
-      dop: (Math.random() > 0.5 ? 1 : -1) * 0.0008,
-      c: c,
-    };
-  });
-
-  function tick() {
-    ctx.clearRect(0, 0, W, H);
-    for (const p of pts) {
-      p.x += p.vx;
-      p.y += p.vy;
-      p.op += p.dop;
-      if (p.op > 0.45) { p.op = 0.45; p.dop = -Math.abs(p.dop); }
-      if (p.op < 0.04) { p.op = 0.04; p.dop =  Math.abs(p.dop); }
-      if (p.y < -0.02)         { p.y = 1.02; p.x = Math.random(); }
-      if (p.x < -0.02)         p.x = 1.02;
-      if (p.x >  1.02)         p.x = -0.02;
-      const [r,g,b] = p.c;
-      ctx.beginPath();
-      ctx.arc(p.x * W, p.y * H, p.r, 0, Math.PI * 2);
-      ctx.fillStyle = `rgba(${r},${g},${b},${p.op})`;
-      ctx.fill();
-    }
-    requestAnimationFrame(tick);
-  }
-  tick();
-})();
 <\/script>
 </body>
 </html>
