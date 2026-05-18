@@ -1,1 +1,1609 @@
-PCFkb2N0eXBlIGh0bWw+CjxodG1sIGxhbmc9Im5sIj4KPGhlYWQ+CiAgPG1ldGEgY2hhcnNldD0idXRmLTgiIC8+CiAgPG1ldGEgbmFtZT0idmlld3BvcnQiIGNvbnRlbnQ9IndpZHRoPWRldmljZS13aWR0aCwgaW5pdGlhbC1zY2FsZT0xIiAvPgogIDx0aXRsZT5XZXJrR2VsdWsgUmVjcnVpdG1lbnQgfCBSb3R0ZXJkYW08L3RpdGxlPgogIDxtZXRhIG5hbWU9ImRlc2NyaXB0aW9uIiBjb250ZW50PSJXZXJrR2VsdWsgUmVjcnVpdG1lbnQgaGVscHQgb3JnYW5pc2F0aWVzIGJpaiBoZXQgdmluZGVuIHZhbiBjb21tZXJjacOrbGUgZW4gdGVjaG5pc2NoZSBzYWxlcyBwcm9mZXNzaW9uYWxzLiBQZXJzb29ubGlqay4gU2VsZWN0aWVmLiBHZXJpY2h0IG9wIGR1dXJ6YW1lIG1hdGNoZXMuIiAvPgogIDxsaW5rIHJlbD0iY2Fub25pY2FsIiBocmVmPSJodHRwczovL25pY2t5YW50aG9ueS5naXRodWIuaW8vV2Vya0dlbHVrLyIgLz4KICA8bGluayByZWw9Imljb24iIGhyZWY9ImZhdmljb24uc3ZnIiB0eXBlPSJpbWFnZS9zdmcreG1sIiAvPgogIDxsaW5rIHJlbD0iYXBwbGUtdG91Y2gtaWNvbiIgaHJlZj0iYXNzZXRzL2xvZ28tbWFyay1kYXJrLnBuZyIgLz4KICA8bGluayByZWw9InByZWNvbm5lY3QiIGhyZWY9Imh0dHBzOi8vZm9udHMuZ29vZ2xlYXBpcy5jb20iIC8+CiAgPGxpbmsgcmVsPSJwcmVjb25uZWN0IiBocmVmPSJodHRwczovL2ZvbnRzLmdzdGF0aWMuY29tIiBjcm9zc29yaWdpbiAvPgogIDxsaW5rIGhyZWY9Imh0dHBzOi8vZm9udHMuZ29vZ2xlYXBpcy5jb20vY3NzMj9mYW1pbHk9QXJpbW86aXRhbCx3Z2h0QDAsNDAwLi43MDA7MSw0MDAuLjcwMCZkaXNwbGF5PXN3YXAiIHJlbD0ic3R5bGVzaGVldCIgLz4KICA8bWV0YSBwcm9wZXJ0eT0ib2c6dGl0bGUiIGNvbnRlbnQ9IldlcmtHZWx1ayBSZWNydWl0bWVudCDigJQgQm91dGlxdWUgcmVjcnVpdG1lbnQgdm9vciBjb21tZXJjacOrbGUgZW4gdGVjaG5pc2NoZSBzYWxlcyIgLz4KICA8bWV0YSBwcm9wZXJ0eT0ib2c6ZGVzY3JpcHRpb24iIGNvbnRlbnQ9IldlcmtHZWx1ayBSZWNydWl0bWVudCBoZWxwdCBvcmdhbmlzYXRpZXMgYmlqIGhldCB2aW5kZW4gdmFuIGNvbW1lcmNpw6tsZSBlbiB0ZWNobmlzY2hlIHNhbGVzIHByb2Zlc3Npb25hbHMuIFBlcnNvb25saWprLiBTZWxlY3RpZWYuIEdlcmljaHQgb3AgZHV1cnphbWUgbWF0Y2hlcy4iIC8+CiAgPG1ldGEgcHJvcGVydHk9Im9nOnR5cGUiIGNvbnRlbnQ9IndlYnNpdGUiIC8+CiAgPG1ldGEgcHJvcGVydHk9Im9nOnVybCIgY29udGVudD0iaHR0cHM6Ly9uaWNreWFudGhvbnkuZ2l0aHViLmlvL1dlcmtHZWx1ay8iIC8+CiAgPG1ldGEgcHJvcGVydHk9Im9nOmltYWdlIiBjb250ZW50PSJodHRwczovL25pY2t5YW50aG9ueS5naXRodWIuaW8vV2Vya0dlbHVrL2Fzc2V0cy82LTIucG5nIiAvPgogIDxtZXRhIHByb3BlcnR5PSJvZzpsb2NhbGUiIGNvbnRlbnQ9Im5sX05MIiAvPgogIDxtZXRhIG5hbWU9InR3aXR0ZXI6Y2FyZCIgY29udGVudD0ic3VtbWFyeV9sYXJnZV9pbWFnZSIgLz4KICA8bWV0YSBuYW1lPSJ0d2l0dGVyOnRpdGxlIiBjb250ZW50PSJXZXJLR2VsdWsgUmVjcnVpdG1lbnQiIC8+CiAgPG1ldGEgbmFtZT0idHdpdHRlcjpkZXNjcmlwdGlvbiIgY29udGVudD0iQm91dGlxdWUgcmVjcnVpdG1lbnQgdm9vciBjb21tZXJjacOrbGUgZW4gdGVjaG5pc2NoZSBzYWxlcyBwcm9mZXNzaW9uYWxzLiIgLz4KICA8bWV0YSBuYW1lPSJ0d2l0dGVyOmltYWdlIiBjb250ZW50PSJodHRwczovL25pY2t5YW50aG9ueS5naXRodWIuaW8vV2Vya0dlbHVrL2Fzc2V0cy82LTIucG5nIiAvPgogIDxzdHlsZT4KLyogPT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09CiAgIEZvdW5kYXRpb25zIOKAlCBDb2xvcnMgKyBUeXBlIHRva2VucwogICA9PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT0gKi8KLyogQXJpbW8gdmlhIEdvb2dsZSBGb250cyDigJQgV09GRjIsIGdlb3B0aW1hbGlzZWVyZCBlbiBnZWNhY2hlZCB2aWEgQ0ROICovCjpyb290IHsKICAtLXdnLW5hdnktOTAwOiAjMDkxNTJDOwogIC0td2ctbmF2eS04MDA6ICMwRjFGM0Q7CiAgLS13Zy1uYXZ5LTcwMDogIzEzMjU0MTsKICAtLXdnLW5hdnktNjAwOiAjMUIyRTUwOwogIC0td2ctbmF2eS01MDA6ICMyRDQwNjg7CiAgLS13Zy1uYXZ5LTQwMDogIzRGNjA4ODsKICAtLXdnLW5hdnktMDUwOiAjRjNGNUZBOwogIC0td2ctZ29sZC03MDA6ICM4QjZBMkU7CiAgLS13Zy1nb2xkLWdyYWRpZW50OiBsaW5lYXItZ3JhZGllbnQoMTM1ZGVnLCAjOEI2QTJFIDBLZWN0YSwgI0M5QTI1QiAzNSUsICNGMEQ4OUEgNTUlLCAjQzlBMjVCIDc1JSwgIzhCNkEyRSAxMDAlKTsKICAtLXdnLWdvbGQtNjAwOiAjQTk4NTQ1OwogIC0td2ctZ29sZC01MDA6ICNDOUE yNUI7CiAgLS13Zy1nb2xkLTQwMDogI0RDQkI3QjsKICAtLXdnLWdvbGQtMzAwOiAjRThDQzhFOwogIC0td2ctZ29sZC0yMDA6ICNGMEQ4OUE7CiAgLS13Zy1nb2xkLTEwMDogI0Y3RTdCRTsKICAtLXdnLXBhcGVyOiAjRkFGOEY0OwogIC0td2ctY3JlYW06ICNGNUY3RkE7CiAgLS13Zy13aGl0ZTogI0ZGRkZGRjsKICAtLXdnLWluay05MDA6ICMwRjFGM0Q7CiAgLS13Zy1pbmstNzAwOiAjMkMzRDVFOwogIC0td2ctaW5rLTUwMDogIzVDNkE4NTsKICAtLXdnLWluay0zMDA6ICM5OEEyQjY7CiAgLS13Zy1saW5lOiAjRTVFN0VDOwogIC0td2ctbGluZS1zdHJvbmc6ICNDOUNDRURCOWOGIC0tZmctMTogdmFyKC0td2ctaW5rLTkwMCk7CiAgLS1mZy0yOiB2YXIoLS13Zy1pbmstNzAwKTsKICAtLWZnLTM6IHZhcigkLXdnLWluay01MDApOwogIC0tZ29sZC1hY2NlbnQ6IHZhcigkLXdnLWdvbGQtNzAwKTsKICAtLWdvbGQtb24tZGFyazogdmFyKC0td2ctZ29sZC0zMDApOwogIC0tZ29sZC1zb2Z0OiB2YXIoLS13Zy1nb2xkLTEwMCk7CiAgLS1zaC0yOiAwIDJweCA4cHggcmdiYSgxNCwyNyw1MSwwLjA2KSwgMCAxcHggMnB4IHJnYmEoMTQsMjcsNTEsMC4wNCk7CiAgLS1zaC0zOiAwIDhweCAyNHB4IHJnYmEoMTQsMjcsNTEsMC4wOCksIDAgMnB4IDRweCByZ2JhKDE0LDI3LDUxLDAuMDQpOwogIC0tc2gtZ29sZDogMCA2cHggMjBweCByZ2JhKDE3NiwxMzEsMzgsMC4yMik7CiAgLS1yLW1kOiA4cHg7CiAgLS1yLWxnOiAxNHB4OwogIC0tci14bDogMjJweDsKICAtLXItcGlsbDogOTk5cHg7CiAgLS1mb250LXNhbnM6ICdBcmltbycsIC1hcHBsZS1zeXN0ZW0sIEJsaW5rTWFjU3lzdGVtRm9udCwgJ1NlZ29lIFVJJywgSGVsdmV0aWNhLCBBcmlhbCwgc2Fucy1zZXJpZjsKICAtLWZvbnQtc2VyaWY6ICdBcmltbycsIEdlb3JnaWEsIHNlcmlmOwogIC0tZWFzZS1vdXQ6IGN1YmljLWJlemllcigwLjIyLCAxLCAwLjM2LCAxKTsKfQoKLyogPT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09CiAgIFJlc2V0ICsgQmFzZQogICA9PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT0gKi8KKiwgKjo6YmVmb3JlLCAqOjphZnRlciB7IGJveC1zaXppbmc6IGJvcmRlci1ib3g7IH0KaHRtbCB7IHNjcm9sbC1iZWhhdmlvcjogc21vb3RoOyBzY3JvbGwtcGFkZGluZy10b3A6IDcycHg7IH0KaHRtbCwgYm9keSB7IG1hcmdpbjogMDsgcGFkZGluZzogMDsgfQpAbWVkaWEgKHByZWZlcnMtcmVkdWNlZC1tb3Rpb246IHJlZHVjZSkgewogIGh0bWwgeyBzY3JvbGwtYmVoYXZpb3I6IGF1dG87IH0KICAuanMtcmVhZHkgLnJldmVhbCB7IHRyYW5zaXRpb246IG5vbmUgIWltcG9ydGFudDsgb3BhY2l0eTogMSAhaW1wb3J0YW50OyB0cmFuc2Zvcm06IG5vbmUgIWltcG9ydGFudDsgfQogIC5idG4sIC5hcnJvdywgLm5hdl9fbGlua3MgYTo6YWZ0ZXIsIC5hYm91dF9fcG9ydHJhaXQtcGhvdG8sCiAgLmxvZ28tY2VsbCBpbWcsIC5sb2NhdGllX19saW5rLCAuY3RhX19jYXJkLXZhbHVlIHsgdHJhbnNpdGlvbjogbm9uZSAhaW1wb3J0YW50OyB9Cn0KOmZvY3VzLXZpc2libGUgewogIG91dGxpbmU6IDJweCBzb2xpZCB2YXIoLS13Zy1nb2xkLTUwMCk7CiAgb3V0bGluZS1vZmZzZXQ6IDNweDsKICBib3JkZXItcmFkaXVzOiAzcHg7Cn0KYm9keSB7CiAgZm9udC1mYW1pbHk6IHZhcigtLWZvbnQtc2Fucyk7CiAgYmFja2dyb3VuZDogdmFyKC0td2ctbmF2eS05MDApOwogIGNvbG9yOiB2YXIoLS13Zy1wYXBlcik7CiAgLXdlYmtpdC1mb250LXNtb290aGluZzogYW50aWFsaWFzZWQ7CiAgdGV4dC1yZW5kZXJpbmc6IG9wdGltaXplTGVnaWJpbGl0eTsKfQppbWcgeyBtYXgtd2lkdGg6IDEwMCU7IGRpc3BsYXk6IGJsb2NrOyB9CmEgeyBjb2xvcjogaW5oZXJpdDsgdGV4dC1kZWNvcmF0aW9uOiBub25lOyB9CmJ1dHRvbiB7IGZvbnQtZmFtaWx5OiBpbmhlcml0OyB9CgovKiA9PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT0KICAgTGF5b3V0CiAgID09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PSAqLwouY29udGFpbmVyIHsgbWF4LXdpZHRoOiAxMjAwcHg7IG1hcmdpbjogMCBhdXRvOyBwYWRkaW5nOiAwIDQwcHg7IH0KCi8qID09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PQogICBVdGlsaXRpZXMKICAgPT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09ICovCi5leWVicm93IHsKICBkaXNwbGF5OiBpbmxpbmUtZmxleDsKICBhbGlnbi1pdGVtczogY2VudGVyOwogIGdhcDogMTBweDsKICBmb250LXNpemU6IDEycHg7CiAgZm9udC13ZWlnaHQ6IDUwMDsKICBsZXR0ZXItc3BhY2luZzogMC4yMmVtOwogIHRleHQtdHJhbnNmb3JtOiB1cHBlcmNhc2U7CiAgY29sb3I6IHZhcigtLWdvbGQtYWNjZW50KTsKfQouZXllYnJvdzo6YmVmb3JlIHsKICBjb250ZW50OiAiIjsKICB3aWR0aDogMjJweDsgaGVpZ2h0OiAxcHg7CiAgYmFja2dyb3VuZDogY3VycmVudENvbG9yOwogIGRpc3BsYXk6IGlubGluZS1ibG9jazsKICBvcGFjaXR5OiAwLjc7Cn0KCi8qIFNraXAtdG8tY29udGVudCAqLwoudHNraXAtbGluayB7CiAgcG9zaXRpb246IGFic29sdXRlOwogIHRvcDogLTEwMHB4OwogIGxlZnQ6IDE2cHg7CiAgei1pbmRleDogMjAwOwogIGJhY2tncm91bmQ6IHZhcigtLXdnLWdvbGQtNTAwKTsKICBjb2xvcjogdmFyKC0td2ctbmF2eS05MDApOwogIHBhZGRpbmc6IDEwcHggMThweDsKICBib3JkZXItcmFkaXVzOiA4cHg7CiAgZm9udC13ZWlnaHQ6IDYwMDsKICBmb250LXNpemU6IDE0cHg7CiAgdHJhbnNpdGlvbjogdG9wIDIwMG1zIGVhc2U7Cn0KLnNraXAtbGluazpmb2N1cyB7IHRvcDogMTZweDsgfQo=
+<!doctype html>
+<html lang="nl">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>WerkGeluk Recruitment | Rotterdam</title>
+  <meta name="description" content="WerkGeluk Recruitment helpt organisaties bij het vinden van commerciële en technische sales professionals. Persoonlijk. Selectief. Gericht op duurzame matches." />
+  <link rel="canonical" href="https://nickyanthony.github.io/WerkGeluk/" />
+  <link rel="icon" href="favicon.svg" type="image/svg+xml" />
+  <link rel="apple-touch-icon" href="assets/logo-mark-dark.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Arimo:ital,wght@0,400..700;1,400..700&display=swap" rel="stylesheet" />
+  <meta property="og:title" content="WerkGeluk Recruitment — Boutique recruitment voor commerciële en technische sales" />
+  <meta property="og:description" content="WerkGeluk Recruitment helpt organisaties bij het vinden van commerciële en technische sales professionals. Persoonlijk. Selectief. Gericht op duurzame matches." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://nickyanthony.github.io/WerkGeluk/" />
+  <meta property="og:image" content="https://nickyanthony.github.io/WerkGeluk/assets/6-2.png" />
+  <meta property="og:locale" content="nl_NL" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="WerkGeluk Recruitment" />
+  <meta name="twitter:description" content="Boutique recruitment voor commerciële en technische sales professionals." />
+  <meta name="twitter:image" content="https://nickyanthony.github.io/WerkGeluk/assets/6-2.png" />
+  <style>
+/* =========================================================
+   Foundations — Colors + Type tokens
+   ========================================================= */
+/* Arimo via Google Fonts — WOFF2, geoptimaliseerd en gecached via CDN */
+:root {
+  --wg-navy-900: #09152C;
+  --wg-navy-800: #0F1F3D;
+  --wg-navy-700: #132541;
+  --wg-navy-600: #1B2E50;
+  --wg-navy-500: #2D4068;
+  --wg-navy-400: #4F6088;
+  --wg-navy-050: #F3F5FA;
+  --wg-gold-700: #8B6A2E;
+  --wg-gold-gradient: linear-gradient(135deg, #8B6A2E 0%, #C9A25B 35%, #F0D89A 55%, #C9A25B 75%, #8B6A2E 100%);
+  --wg-gold-600: #A98545;
+  --wg-gold-500: #C9A25B;
+  --wg-gold-400: #DCBB7B;
+  --wg-gold-300: #E8CC8E;
+  --wg-gold-200: #F0D89A;
+  --wg-gold-100: #F7E7BE;
+  --wg-paper: #FAF8F4;
+  --wg-cream: #F5F7FA;
+  --wg-white: #FFFFFF;
+  --wg-ink-900: #0F1F3D;
+  --wg-ink-700: #2C3D5E;
+  --wg-ink-500: #5C6A85;
+  --wg-ink-300: #98A2B6;
+  --wg-line: #E5E7EC;
+  --wg-line-strong: #C9CFDB;
+  --fg-1: var(--wg-ink-900);
+  --fg-2: var(--wg-ink-700);
+  --fg-3: var(--wg-ink-500);
+  --gold-accent: var(--wg-gold-700);
+  --gold-on-dark: var(--wg-gold-300);
+  --gold-soft: var(--wg-gold-100);
+  --sh-2: 0 2px 8px rgba(14,27,51,0.06), 0 1px 2px rgba(14,27,51,0.04);
+  --sh-3: 0 8px 24px rgba(14,27,51,0.08), 0 2px 4px rgba(14,27,51,0.04);
+  --sh-gold: 0 6px 20px rgba(176,131,38,0.22);
+  --r-md: 8px;
+  --r-lg: 14px;
+  --r-xl: 22px;
+  --r-pill: 999px;
+  --font-sans: 'Arimo', -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif;
+  --font-serif: 'Arimo', Georgia, serif;
+  --ease-out: cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+/* =========================================================
+   Reset + Base
+   ========================================================= */
+*, *::before, *::after { box-sizing: border-box; }
+html { scroll-behavior: smooth; scroll-padding-top: 72px; }
+html, body { margin: 0; padding: 0; }
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  .js-ready .reveal { transition: none !important; opacity: 1 !important; transform: none !important; }
+  .btn, .arrow, .nav__links a::after, .about__portrait-photo,
+  .logo-cell img, .locatie__link, .cta__card-value { transition: none !important; }
+}
+:focus-visible {
+  outline: 2px solid var(--wg-gold-500);
+  outline-offset: 3px;
+  border-radius: 3px;
+}
+body {
+  font-family: var(--font-sans);
+  background: var(--wg-navy-900);
+  color: var(--wg-paper);
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+img { max-width: 100%; display: block; }
+a { color: inherit; text-decoration: none; }
+button { font-family: inherit; }
+
+/* =========================================================
+   Layout
+   ========================================================= */
+.container { max-width: 1200px; margin: 0 auto; padding: 0 40px; }
+
+/* =========================================================
+   Utilities
+   ========================================================= */
+.eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--gold-accent);
+}
+.eyebrow::before {
+  content: "";
+  width: 22px; height: 1px;
+  background: currentColor;
+  display: inline-block;
+  opacity: 0.7;
+}
+
+/* Skip-to-content */
+.skip-link {
+  position: absolute;
+  top: -100px;
+  left: 16px;
+  z-index: 200;
+  background: var(--wg-gold-500);
+  color: var(--wg-navy-900);
+  padding: 10px 18px;
+  border-radius: 8px;
+  font-weight: 600;
+  font-size: 14px;
+  transition: top 200ms ease;
+}
+.skip-link:focus { top: 16px; }
+
+/* Content visible by default; animation only activates when JS has run */
+.js-ready .reveal {
+  opacity: 0;
+  transform: translateY(14px);
+  transition: opacity 720ms var(--ease-out), transform 720ms var(--ease-out);
+}
+.js-ready .reveal.is-in { opacity: 1; transform: none; }
+
+/* =========================================================
+   Buttons
+   ========================================================= */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 16px 28px;
+  border-radius: 10px;
+  font-size: 15px;
+  font-weight: 600;
+  letter-spacing: -0.005em;
+  border: 1px solid transparent;
+  cursor: pointer;
+  transition: all 240ms var(--ease-out);
+  white-space: nowrap;
+  background: none;
+  color: inherit;
+  font-family: inherit;
+}
+.btn:active { transform: translateY(1px) scale(0.99); }
+.btn--gold {
+  background: var(--wg-gold-gradient);
+  background-size: 200% 200%;
+  background-position: 0% 50%;
+  color: var(--wg-navy-900);
+  transition: background-position 400ms var(--ease-out), box-shadow 240ms var(--ease-out), transform 240ms var(--ease-out);
+}
+.btn--gold:hover {
+  background-position: 100% 50%;
+  box-shadow: var(--sh-gold);
+  transform: translateY(-1px);
+}
+.btn--ghost { border-color: rgba(250,248,244,0.3); color: rgba(250,248,244,0.82); }
+.btn--ghost:hover { border-color: rgba(250,248,244,0.7); color: var(--wg-paper); background: rgba(250,248,244,0.06); }
+.btn--sm { padding: 10px 18px; font-size: 13px; border-radius: 8px; }
+.arrow { display: inline-block; transition: transform 240ms var(--ease-out); }
+.btn:hover .arrow { transform: translateX(3px); }
+
+/* =========================================================
+   Nav
+   ========================================================= */
+.nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+  z-index: 30;
+  background: rgba(9,21,44,0.72);
+  border-bottom: 1px solid rgba(250,248,244,0.06);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+}
+.nav__inner {
+  display: flex;
+  align-items: center;
+  gap: 36px;
+  padding: 4px 40px;
+  max-width: 1320px;
+  margin: 0 auto;
+}
+.nav__logo img { width: 280px; height: auto; display: block; }
+.nav__links { display: flex; gap: 32px; flex: 1; margin-left: 24px; }
+.nav__links a {
+  font-size: 14px;
+  font-weight: 500;
+  color: rgba(250,248,244,0.78);
+  position: relative;
+  padding: 4px 0;
+  transition: color 200ms ease;
+}
+.nav__links a::after {
+  content: "";
+  position: absolute;
+  left: 0; right: 100%;
+  bottom: -4px;
+  height: 1px;
+  background: var(--wg-gold-500);
+  transition: right 280ms var(--ease-out);
+}
+.nav__links a:hover,
+.nav__links a.is-active { color: var(--wg-paper); }
+.nav__links a:hover::after,
+.nav__links a.is-active::after { right: 0; }
+.nav__cta { margin-left: auto; }
+
+/* Hamburger */
+.nav__hamburger {
+  display: none;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 10px;
+  min-width: 44px;
+  min-height: 44px;
+  margin-left: auto;
+  color: rgba(250,248,244,0.9);
+  flex-direction: column;
+  gap: 5px;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  z-index: 31;
+}
+.nav__hamburger span {
+  display: block;
+  width: 22px;
+  height: 1.5px;
+  background: currentColor;
+  border-radius: 2px;
+  transition: transform 300ms var(--ease-out), opacity 200ms ease, transform 300ms var(--ease-out);
+}
+.nav__hamburger.is-open span:nth-child(1) { transform: translateY(6.5px) rotate(45deg); }
+.nav__hamburger.is-open span:nth-child(2) { opacity: 0; }
+.nav__hamburger.is-open span:nth-child(3) { transform: translateY(-6.5px) rotate(-45deg); }
+
+/* Mobile menu overlay */
+.nav__mobile {
+  position: fixed;
+  inset: 0;
+  background: var(--wg-navy-900);
+  z-index: 29;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 280ms ease;
+}
+.nav__mobile.is-open { opacity: 1; pointer-events: all; }
+.nav__mobile a {
+  font-family: var(--font-serif);
+  font-size: 32px;
+  font-weight: 600;
+  letter-spacing: -0.02em;
+  color: rgba(250,248,244,0.88);
+  padding: 12px 28px;
+  transition: color 200ms ease;
+  text-align: center;
+}
+.nav__mobile a:hover { color: var(--wg-gold-300); }
+.nav__mobile a { cursor: pointer; }
+.nav__mobile-cta {
+  margin-top: 20px;
+  padding: 14px 36px !important;
+  background: var(--wg-gold-500) !important;
+  color: var(--wg-navy-900) !important;
+  border-radius: 10px;
+  font-family: var(--font-sans) !important;
+  font-size: 15px !important;
+  font-weight: 600 !important;
+  letter-spacing: 0 !important;
+}
+
+/* =========================================================
+   Hero — Cinematic Navy
+   ========================================================= */
+.hero {
+  position: relative;
+  background: var(--wg-navy-900);
+  background-image:
+    radial-gradient(rgba(250,248,244,0.045) 1px, transparent 1px);
+  background-size: 38px 38px;
+  color: var(--wg-paper);
+  padding: 160px 0 120px;
+  overflow: hidden;
+  isolation: isolate;
+}
+.hero::before {
+  content: "";
+  position: absolute;
+  top: -160px; right: -180px;
+  width: 920px; height: 920px;
+  background: radial-gradient(circle at center,
+    rgba(201,162,91,0.34) 0%,
+    rgba(201,162,91,0.14) 30%,
+    transparent 60%);
+  pointer-events: none;
+}
+.hero::after {
+  content: "";
+  position: absolute;
+  bottom: -260px; left: -180px;
+  width: 640px; height: 640px;
+  background: radial-gradient(circle at center, rgba(45,64,104,0.6) 0%, transparent 60%);
+  pointer-events: none;
+}
+.hero__inner { position: relative; z-index: 1; padding-top: 8px; }
+.hero__headline {
+  font-family: var(--font-serif);
+  font-weight: 700;
+  font-size: clamp(48px, 7vw, 96px);
+  line-height: 1.02;
+  letter-spacing: -0.025em;
+  margin: 28px 0 36px;
+  max-width: 18ch;
+  color: var(--wg-paper);
+  text-wrap: balance;
+}
+.hero__headline em {
+  font-style: italic;
+  color: var(--wg-gold-300);
+  font-weight: 500;
+  display: inline-block;
+  position: relative;
+}
+.hero__headline em::after {
+  content: "";
+  position: absolute;
+  left: -2px; right: -2px; bottom: 0.06em;
+  height: 1px;
+  background: var(--wg-gold-400);
+  opacity: 0.4;
+}
+.hero__sub {
+  font-size: 19px;
+  line-height: 1.6;
+  color: rgba(250,248,244,0.78);
+  max-width: 720px;
+  margin: 0;
+}
+.hero__ctas { display: flex; gap: 14px; flex-wrap: wrap; margin-top: 44px; }
+.hero__scroll {
+  position: absolute;
+  bottom: 40px;
+  left: 50%;
+  transform: translateX(-50%);
+  color: rgba(250,248,244,0.45);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px; height: 40px;
+  border-radius: 50%;
+  border: 1px solid rgba(250,248,244,0.18);
+  transition: color 240ms ease, border-color 240ms ease;
+  animation: bounce 2.4s ease-in-out infinite;
+}
+.hero__scroll:hover { color: var(--wg-gold-300); border-color: rgba(201,162,91,0.5); }
+@keyframes bounce {
+  0%, 100% { transform: translateX(-50%) translateY(0); }
+  50% { transform: translateX(-50%) translateY(6px); }
+}
+.hero__meta-label {
+  font-size: 12px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: rgba(250,248,244,0.56);
+  font-weight: 500;
+}
+
+/* =========================================================
+   Section scaffold
+   ========================================================= */
+.section { padding: 120px 0; }
+.section--tight { padding: 88px 0; }
+.section--paper { background: var(--wg-paper); color: var(--wg-ink-900); }
+.section--cream { background: var(--wg-cream); color: var(--wg-ink-900); }
+.section--navy-deep { background: var(--wg-navy-900); color: var(--wg-paper); }
+
+.section__head {
+  display: grid;
+  grid-template-columns: 1fr 1.2fr;
+  gap: 80px;
+  margin-bottom: 72px;
+  align-items: end;
+}
+.section__title {
+  font-family: var(--font-serif);
+  font-weight: 600;
+  font-size: clamp(36px, 4.4vw, 56px);
+  line-height: 1.05;
+  letter-spacing: -0.025em;
+  margin: 18px 0 0;
+  color: inherit;
+  text-wrap: balance;
+}
+.section__title em { font-style: italic; font-weight: 500; color: var(--gold-accent); }
+.section--navy-deep .section__title em { color: var(--wg-gold-300); }
+.section__lede {
+  font-size: 18px;
+  line-height: 1.6;
+  margin: 0;
+  max-width: 540px;
+  color: var(--fg-2);
+}
+.section--navy-deep .section__lede { color: rgba(250,248,244,0.82); }
+
+/* =========================================================
+   About
+   ========================================================= */
+.about {
+  display: grid;
+  grid-template-columns: 1fr 1.05fr;
+  gap: 88px;
+  align-items: stretch;
+}
+.about__portrait {
+  position: relative;
+  aspect-ratio: 4 / 5;
+  border-radius: var(--r-lg);
+  overflow: hidden;
+  background: var(--wg-navy-800);
+  box-shadow: var(--sh-3);
+}
+.about__portrait-photo {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: 50% 28%;
+  z-index: 1;
+  transition: transform 800ms var(--ease-out);
+}
+.about__portrait:hover .about__portrait-photo { transform: scale(1.02); }
+.about__portrait-overlay {
+  position: absolute;
+  left: 0; right: 0; bottom: 0;
+  padding: 96px 28px 24px;
+  z-index: 2;
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  color: var(--wg-paper);
+  font-size: 12px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  font-weight: 500;
+  background: linear-gradient(to top, rgba(9,21,44,0.78) 0%, rgba(9,21,44,0.0) 100%);
+}
+.about__portrait-overlay::before {
+  content: "Nicky Roggeveen";
+  font-family: var(--font-serif);
+  font-style: italic;
+  font-weight: 500;
+  font-size: 22px;
+  letter-spacing: -0.01em;
+  text-transform: none;
+}
+.about__copy { display: flex; flex-direction: column; justify-content: center; gap: 20px; }
+.about__copy h2 {
+  font-family: var(--font-serif);
+  font-weight: 600;
+  font-size: clamp(28px, 3.4vw, 44px);
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+  margin: 8px 0 0;
+  text-wrap: balance;
+  color: var(--fg-1);
+}
+.about__copy h2 em { font-style: italic; color: var(--gold-accent); font-weight: 500; }
+.about__copy p { font-size: 17px; line-height: 1.7; color: var(--fg-2); margin: 0; }
+.about__signature {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin-top: 16px;
+  padding-top: 24px;
+  border-top: 1px solid var(--wg-line);
+}
+.about__signature-name {
+  font-family: var(--font-serif);
+  font-style: italic;
+  font-weight: 500;
+  font-size: 22px;
+  color: var(--gold-accent);
+}
+.about__signature-role { font-size: 13px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--fg-3); }
+
+/* =========================================================
+   Expertise
+   ========================================================= */
+.v3-expertise { display: flex; flex-direction: column; gap: 16px; }
+
+.v3-expertise__rolelabel {
+  font-size: 12px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: rgba(250,248,244,0.62);
+  margin-bottom: 18px;
+}
+.v3-rolegrid {
+  list-style: none;
+  margin: 0 0 40px;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0;
+  border-top: 1px solid rgba(250,248,244,0.16);
+}
+.v3-rolegrid li {
+  font-size: 17px;
+  line-height: 1.4;
+  padding: 18px 20px 18px 0;
+  border-bottom: 1px solid rgba(250,248,244,0.16);
+  color: var(--wg-paper);
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+.v3-rolegrid__dot {
+  width: 8px; height: 8px;
+  border-radius: 999px;
+  background: var(--wg-gold-400);
+  flex: none;
+}
+
+/* =========================================================
+   Waarom (5 steps)
+   ========================================================= */
+.steps-5 {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 0;
+  position: relative;
+}
+.steps-5::before {
+  display: none;
+  content: "";
+  position: absolute;
+  top: 88px;
+  left: 8%; right: 8%;
+  height: 1px;
+  background: var(--wg-line);
+}
+.step { padding: 0 28px; cursor: default; }
+.step__dot {
+  width: 16px; height: 16px;
+  border-radius: 999px;
+  background: var(--gold-accent);
+  margin-bottom: 36px;
+  position: relative;
+  z-index: 2;
+}
+.step__dot::before {
+  content: "";
+  position: absolute;
+  inset: -6px;
+  border: 1px solid var(--gold-accent);
+  border-radius: 999px;
+  opacity: 0.4;
+}
+.step__num {
+  font-family: var(--font-serif);
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 0.14em;
+  color: var(--gold-accent);
+  opacity: 0.8;
+  margin-bottom: 14px;
+  display: block;
+  text-transform: uppercase;
+}
+.step__title {
+  font-family: var(--font-serif);
+  font-weight: 600;
+  font-size: 22px;
+  line-height: 1.2;
+  letter-spacing: -0.01em;
+  margin: 0 0 12px;
+  color: inherit;
+}
+.step__body { font-size: 14px; line-height: 1.65; color: var(--fg-2); margin: 0; }
+
+/* =========================================================
+   Trust bar + Logos
+   ========================================================= */
+.trustbar-title {
+  font-size: 22px;
+  line-height: 1.35;
+  font-weight: 500;
+  letter-spacing: -0.01em;
+  color: var(--fg-1);
+  margin: 0 0 40px;
+  text-align: center;
+}
+.logos-grid {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  gap: 0;
+  border-top: 1px solid var(--wg-line);
+  border-bottom: 1px solid var(--wg-line);
+  padding: 8px 0;
+}
+.logo-cell {
+  padding: 28px 22px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 110px;
+  border-right: 1px solid var(--wg-line);
+  transition: background 240ms ease;
+  cursor: pointer;
+}
+.logo-cell:hover { background: var(--wg-cream); }
+.logo-cell:nth-child(6n) { border-right: none; }
+.logo-cell:nth-child(-n+6) { border-bottom: 1px solid var(--wg-line); }
+.logo-cell img {
+  max-width: 100%;
+  max-height: 56px;
+  width: auto;
+  height: auto;
+  object-fit: contain;
+  filter: grayscale(1) contrast(0.95) brightness(0.95);
+  opacity: 0.72;
+  transition: filter 320ms var(--ease-out), opacity 320ms var(--ease-out);
+}
+.logo-cell:hover img { filter: grayscale(0) contrast(1) brightness(1); opacity: 1; }
+
+/* =========================================================
+   CTA / Contact
+   ========================================================= */
+.cta { display: grid; grid-template-columns: 1.2fr 1fr; gap: 80px; align-items: center; }
+.cta__copy h2 {
+  font-family: var(--font-serif);
+  font-weight: 600;
+  font-size: clamp(40px, 5.4vw, 72px);
+  line-height: 1.02;
+  letter-spacing: -0.025em;
+  margin: 18px 0 24px;
+  text-wrap: balance;
+}
+.cta__copy h2 em { font-style: italic; font-weight: 500; color: var(--wg-gold-300); }
+.cta__copy p { font-size: 18px; line-height: 1.6; color: rgba(250,248,244,0.82); margin: 0; max-width: 520px; }
+.cta__card {
+  background: var(--wg-paper);
+  color: var(--wg-ink-900);
+  border-radius: var(--r-xl);
+  padding: 40px;
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  box-shadow: var(--sh-3);
+  border: 1px solid var(--wg-line);
+}
+.cta__card-row {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 14px 0;
+  border-bottom: 1px solid var(--wg-line);
+}
+.cta__card-row:last-of-type { border-bottom: none; }
+.cta__card-icon {
+  width: 40px; height: 40px;
+  background: var(--gold-soft);
+  color: var(--gold-accent);
+  border-radius: 999px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-serif);
+  font-style: italic;
+  font-weight: 600;
+  font-size: 16px;
+  flex-shrink: 0;
+}
+.cta__card-label { font-size: 11px; letter-spacing: 0.18em; text-transform: uppercase; color: var(--fg-3); font-weight: 500; margin-bottom: 2px; }
+.cta__card-value { font-size: 16px; font-weight: 500; color: var(--wg-ink-900); }
+.cta__card-value:hover { color: var(--gold-accent); }
+.cta__primary {
+  margin-top: 8px;
+  font-size: 15px;
+  padding: 16px 24px;
+  border-radius: 12px;
+  width: 100%;
+  background: var(--wg-navy-800);
+  color: var(--wg-paper);
+  border: none;
+  font-weight: 600;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  transition: all 240ms var(--ease-out);
+}
+.cta__primary:hover { background: var(--wg-navy-700); transform: translateY(-1px); box-shadow: var(--sh-3); }
+
+/* =========================================================
+   Contactformulier
+   ========================================================= */
+.contact-form {
+  background: var(--wg-paper);
+  color: var(--wg-ink-900);
+  border-radius: var(--r-xl);
+  padding: 64px 40px 40px;
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+  box-shadow: var(--sh-3);
+  border: 1px solid var(--wg-line);
+}
+.contact-form__row { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+.contact-form__field { display: flex; flex-direction: column; gap: 10px; margin-top: 8px; }
+.contact-form__field label {
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--fg-3);
+}
+.contact-form__field input,
+.contact-form__field textarea,
+.contact-form__field select {
+  font-family: var(--font-sans);
+  font-size: 15px;
+  color: var(--wg-ink-900);
+  background: var(--wg-cream);
+  border: 1px solid var(--wg-line);
+  border-radius: 8px;
+  padding: 12px 14px;
+  outline: none;
+  transition: border-color 200ms ease, box-shadow 200ms ease;
+  resize: none;
+}
+.contact-form__field input:focus,
+.contact-form__field textarea:focus,
+.contact-form__field select:focus {
+  border-color: var(--wg-gold-500);
+  box-shadow: 0 0 0 3px rgba(201,162,91,0.15);
+}
+.contact-form__field textarea { min-height: 110px; }
+.contact-form__field input:invalid:not(:placeholder-shown),
+.contact-form__field textarea:invalid:not(:placeholder-shown),
+.contact-form__field select:invalid:not(:placeholder-shown) {
+  border-color: #DC2626;
+  outline: none;
+}
+.contact-form__error {
+  font-size: 13px;
+  color: #DC2626;
+  display: none;
+  align-items: center;
+  gap: 6px;
+  margin-top: 2px;
+}
+.contact-form__error.is-visible { display: flex; }
+.contact-form__submit {
+  margin-top: 4px;
+  font-size: 15px;
+  padding: 16px 24px;
+  border-radius: 12px;
+  width: 100%;
+  background: var(--wg-navy-800);
+  color: var(--wg-paper);
+  border: none;
+  font-weight: 600;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  transition: all 240ms var(--ease-out);
+  font-family: var(--font-sans);
+}
+.contact-form__submit:hover { background: var(--wg-navy-700); transform: translateY(-1px); box-shadow: var(--sh-3); }
+.contact-form__success {
+  display: none;
+  text-align: center;
+  padding: 32px 0;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+}
+.contact-form__success.is-visible { display: flex; }
+.contact-form__success-icon {
+  width: 52px; height: 52px;
+  border-radius: 999px;
+  background: var(--gold-soft);
+  color: var(--gold-accent);
+  display: flex; align-items: center; justify-content: center;
+  font-size: 22px;
+}
+.contact-form__success p { font-size: 16px; color: var(--fg-2); margin: 0; max-width: 280px; line-height: 1.55; }
+.contact-form__note { font-size: 12px; color: var(--fg-3); text-align: center; margin-top: 4px; }
+.contact-form__note a { color: var(--gold-accent); text-decoration: underline; }
+@media (max-width: 640px) {
+  .contact-form__row { grid-template-columns: 1fr; }
+  .contact-form__submit { width: 100%; justify-content: center; }
+}
+
+/* =========================================================
+   Locatie
+   ========================================================= */
+.locatie { display: grid; grid-template-columns: 1fr 1.15fr; gap: 72px; align-items: stretch; }
+.locatie__copy { display: flex; flex-direction: column; justify-content: center; gap: 18px; }
+.locatie__body { font-size: 17px; line-height: 1.7; color: var(--fg-2); margin: 0; max-width: 460px; }
+.locatie__address {
+  font-style: normal;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  padding: 20px 0;
+  border-top: 1px solid var(--wg-line);
+  border-bottom: 1px solid var(--wg-line);
+  font-family: var(--font-serif);
+  font-size: 19px;
+  line-height: 1.45;
+  color: var(--fg-1);
+}
+.locatie__address span:first-child { color: var(--gold-accent); font-style: italic; font-weight: 500; }
+.locatie__link {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 14px;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  color: var(--gold-accent);
+  border-bottom: 1px solid currentColor;
+  padding-bottom: 4px;
+  align-self: flex-start;
+  transition: gap 220ms var(--ease-out);
+}
+.locatie__link:hover { gap: 14px; }
+.locatie__map {
+  position: relative;
+  aspect-ratio: 5 / 4;
+  border-radius: var(--r-lg);
+  overflow: hidden;
+  box-shadow: var(--sh-3);
+  border: 1px solid var(--wg-line);
+  background: #eef0f4;
+}
+.locatie__map iframe { position: absolute; inset: 0; width: 100%; height: 100%; border: none; filter: saturate(0.85) contrast(0.96); }
+
+/* =========================================================
+   Footer
+   ========================================================= */
+.footer {
+  background: var(--wg-navy-900);
+  color: rgba(250,248,244,0.7);
+  padding: 96px 0 32px;
+  border-top: 1px solid rgba(250,248,244,0.06);
+}
+.footer__inner {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr 1fr;
+  gap: 56px;
+  padding-bottom: 64px;
+  border-bottom: 1px solid rgba(250,248,244,0.1);
+  align-items: start;
+}
+.footer__brand img { width: 260px; height: auto; margin-bottom: 28px; }
+.footer__brand p { font-size: 14px; line-height: 1.7; max-width: 300px; margin: 0 0 20px; }
+.footer__brand-meta { display: flex; flex-direction: column; gap: 6px; margin-top: 4px; }
+.footer__brand-meta span { font-size: 12px; color: rgba(250,248,244,0.82); letter-spacing: 0.03em; line-height: 1.5; }
+.footer__social { display: flex; gap: 12px; margin-top: 20px; }
+.footer__social a {
+  width: 36px; height: 36px;
+  border-radius: 999px;
+  border: 1px solid rgba(250,248,244,0.14);
+  display: flex; align-items: center; justify-content: center;
+  color: rgba(250,248,244,0.6);
+  transition: background 200ms ease, color 200ms ease, border-color 200ms ease;
+}
+.footer__social a:hover { background: var(--wg-gold-700); color: var(--wg-paper); border-color: var(--wg-gold-700); }
+.footer__col h5 { font-size: 11px; letter-spacing: 0.22em; text-transform: uppercase; font-weight: 500; color: var(--wg-paper); margin: 0 0 16px; }
+.footer__col ul { list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 12px; }
+.footer__col li { font-size: 14px; color: rgba(250,248,244,0.88); }
+.footer__col a { font-size: 14px; color: rgba(250,248,244,0.88); transition: color 200ms ease; }
+.footer__col a:hover { color: var(--gold-accent); }
+.footer__base {
+  padding: 24px 0 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 12px;
+  color: rgba(250,248,244,0.72);
+  flex-wrap: wrap;
+  gap: 16px;
+}
+.footer__base-legal { display: flex; gap: 24px; }
+.footer__base-legal a { color: rgba(250,248,244,0.72); transition: color 200ms ease; }
+.footer__base-legal a:hover { color: var(--gold-accent); }
+
+/* =========================================================
+   Voor professionals
+   ========================================================= */
+.voor-pro {
+  display: grid;
+  grid-template-columns: 1fr 1.3fr;
+  gap: 88px;
+  align-items: start;
+}
+.voor-pro__tag {
+  display: inline-flex;
+  align-items: center;
+  padding: 5px 14px;
+  background: var(--gold-soft);
+  color: var(--wg-gold-700);
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  border-radius: 999px;
+  margin-bottom: 28px;
+}
+.voor-pro__headline {
+  font-family: var(--font-serif);
+  font-weight: 700;
+  font-size: clamp(30px, 3.8vw, 50px);
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+  margin: 0 0 20px;
+  color: var(--wg-ink-900);
+  text-wrap: balance;
+}
+.voor-pro__em {
+  font-family: var(--font-serif);
+  font-style: italic;
+  font-size: clamp(20px, 2.4vw, 26px);
+  color: var(--gold-accent);
+  margin: 0 0 40px;
+  font-weight: 500;
+  line-height: 1.25;
+}
+.voor-pro__body { display: flex; flex-direction: column; gap: 0; }
+.voor-pro__body p {
+  font-size: 17px;
+  line-height: 1.75;
+  color: var(--fg-2);
+  margin: 0 0 20px;
+}
+.voor-pro__body p:last-child { margin-bottom: 0; }
+.voor-pro__tagline {
+  font-style: italic;
+  color: var(--fg-3) !important;
+  font-size: 15px !important;
+}
+.btn--navy {
+  background: var(--wg-navy-800);
+  color: var(--wg-paper);
+}
+.btn--navy:hover {
+  background: var(--wg-navy-700);
+  transform: translateY(-1px);
+  box-shadow: var(--sh-3);
+}
+
+/* =========================================================
+   Responsive
+   ========================================================= */
+@media (max-width: 1100px) {
+  .logos-grid { grid-template-columns: repeat(4, 1fr); }
+  .logo-cell:nth-child(6n) { border-right: 1px solid var(--wg-line); }
+  .logo-cell:nth-child(4n) { border-right: none; }
+  .logo-cell:nth-child(-n+4) { border-bottom: 1px solid var(--wg-line); }
+  .steps-5 { grid-template-columns: repeat(3, 1fr); }
+}
+@media (max-width: 900px) {
+  .container { padding: 0 24px; }
+  .section { padding: 80px 0; }
+  .section__head { grid-template-columns: 1fr; gap: 24px; margin-bottom: 48px; }
+  .about { grid-template-columns: 1fr; gap: 40px; }
+  .voor-pro { grid-template-columns: 1fr; gap: 40px; }
+  .cta { grid-template-columns: 1fr; gap: 32px; }
+  .footer__inner { grid-template-columns: 1fr 1fr; gap: 32px; }
+  .footer__brand { grid-column: 1 / -1; }
+  .nav__links { display: none; }
+  .nav__cta { display: none; }
+  .nav__hamburger { display: flex; flex-direction: column; }
+  .nav__logo img { width: 200px; }
+  .nav__inner { padding: 6px 20px; }
+  .hero { padding: 110px 0 80px; }
+  .hero__meta { gap: 28px; }
+  .locatie { grid-template-columns: 1fr; gap: 40px; }
+  .steps-5 { grid-template-columns: 1fr; }
+  .steps-5::before { display: none; }
+  .v3-rolegrid { grid-template-columns: 1fr 1fr; }
+  .step__dot::before { display: none; }
+  .step { padding: 16px 20px; }
+}
+@media (max-width: 640px) {
+  .logos-grid { grid-template-columns: repeat(2, 1fr); }
+  .logo-cell:nth-child(4n) { border-right: 1px solid var(--wg-line); }
+  .logo-cell:nth-child(2n) { border-right: none; }
+  .steps-5 { grid-template-columns: 1fr; }
+  .v3-rolegrid { grid-template-columns: 1fr; }
+  .footer__inner { grid-template-columns: 1fr; }
+  .footer__brand { text-align: center; }
+  .footer__brand img { margin: 0 auto 28px; display: block; }
+  .footer__brand-meta { align-items: center; }
+  .footer__social { justify-content: center; }
+  .footer__col { text-align: center; }
+  .voor-pro .btn { white-space: normal; width: 100%; text-align: center; }
+  .voor-pro__headline { font-size: 26px; }
+  .voor-pro__em { font-size: 18px; }
+}
+
+/* =========================================================
+   Scroll progress bar
+   ========================================================= */
+#progress-bar {
+  position: fixed;
+  top: 0; left: 0;
+  height: 3px;
+  width: 0%;
+  background: linear-gradient(90deg, var(--wg-gold-600), var(--wg-gold-300));
+  z-index: 100;
+  transition: width 60ms linear;
+  pointer-events: none;
+}
+@media (max-height: 480px) { #progress-bar { display: none; } }
+
+/* =========================================================
+   Logo carrousel (marquee)
+   ========================================================= */
+.logo-marquee {
+  overflow: hidden;
+  -webkit-mask-image: linear-gradient(90deg, transparent 0%, #000 8%, #000 92%, transparent 100%);
+  mask-image: linear-gradient(90deg, transparent 0%, #000 8%, #000 92%, transparent 100%);
+}
+.logo-track {
+  display: flex;
+  width: max-content;
+  animation: marquee 32s linear infinite;
+}
+.logo-track:hover { animation-play-state: paused; }
+@keyframes marquee {
+  0%   { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+.logo-item {
+  padding: 32px 44px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 160px;
+  border-right: 1px solid var(--wg-line);
+  flex-shrink: 0;
+}
+.logo-item img { height: 80px; width: auto; object-fit: contain; filter: grayscale(100%); opacity: 0.55; transition: filter 300ms ease, opacity 300ms ease; }
+.logo-item:hover img { filter: grayscale(0%); opacity: 1; }
+    </style>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "LocalBusiness",
+    "name": "WerkGeluk Recruitment",
+    "description": "Boutique recruitment voor commerciële en technische sales professionals. Persoonlijk. Selectief. Gericht op duurzame matches.",
+    "url": "https://nickyanthony.github.io/WerkGeluk/",
+    "telephone": "+31618236993",
+    "email": "Nicky@werkgeluk-recruitment.nl",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "Otto Reuchlinweg 1146",
+      "addressLocality": "Rotterdam",
+      "postalCode": "3072 MD",
+      "addressCountry": "NL"
+    },
+    "founder": {
+      "@type": "Person",
+      "name": "Nicky Roggeveen"
+    },
+    "sameAs": ["https://www.linkedin.com/in/nicky-roggeveen/"]
+  }
+  </script>
+</head>
+<body>
+
+<a href="#main-content" class="skip-link">Ga naar inhoud</a>
+<div id="progress-bar"></div>
+
+<!-- Nav -->
+<nav class="nav">
+  <div class="nav__inner">
+    <a href="#top" class="nav__logo">
+      <img src="assets/4-2.png" alt="WerkGeluk Recruitment" />
+    </a>
+    <div class="nav__links">
+      <a href="#about">Over</a>
+      <a href="#expertise">Expertise</a>
+      <a href="#voor-professionals">Voor professionals</a>
+      <a href="#waarom">Waarom WerkGeluk</a>
+      <a href="contact.html">Contact</a>
+      <a href="#locatie">Locatie</a>
+    </div>
+    <div class="nav__cta">
+      <a href="#contact" class="btn btn--gold btn--sm">Plan een gesprek <span class="arrow">→</span></a>
+    </div>
+    <button class="nav__hamburger" aria-label="Open menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+
+<!-- Mobile menu -->
+<div class="nav__mobile" aria-hidden="true">
+  <a href="#about">Over</a>
+  <a href="#expertise">Expertise</a>
+  <a href="#voor-professionals">Voor professionals</a>
+  <a href="#waarom">Waarom WerkGeluk</a>
+  <a href="contact.html">Contact</a>
+  <a href="#locatie">Locatie</a>
+  <a href="contact.html" class="nav__mobile-cta">Plan een gesprek →</a>
+</div>
+
+<!-- Hero -->
+<header class="hero" id="top">
+  <div class="container hero__inner">
+    <h1 class="hero__headline">WerkGeluk begint <em>bij de juiste match.</em></h1>
+    <p class="hero__sub">WerkGeluk Recruitment helpt organisaties bij het vinden van commerciële en technische sales professionals die niet alleen passen op papier, maar ook binnen cultuur, ambitie en visie.</p>
+    <div class="hero__ctas">
+      <a href="contact.html" class="btn btn--gold">Plan een gesprek <span class="arrow">→</span></a>
+      <a href="#voor-professionals" class="btn btn--ghost">Jouw volgende stap <span class="arrow">→</span></a>
+    </div>
+  </div>
+  <a href="#about" class="hero__scroll" aria-label="Scroll naar beneden">
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
+  </a>
+</header>
+
+<main id="main-content">
+
+<!-- About -->
+<section class="section section--cream" id="about">
+  <div class="container">
+    <div class="about">
+      <div class="reveal about__portrait">
+        <img src="assets/nicky-portrait.jpeg" alt="Nicky Roggeveen, oprichter WerkGeluk Recruitment" class="about__portrait-photo" loading="lazy" />
+        <div class="about__portrait-overlay"><span>Rotterdam</span></div>
+      </div>
+      <div class="reveal about__copy" style="transition-delay:100ms">
+        <span class="eyebrow">Over</span>
+        <h2>Persoonlijke recruitment, met aandacht voor de mens <em>achter het cv.</em></h2>
+        <p>WerkGeluk Recruitment is een klein recruitmentbureau, opgericht door Nicky Roggeveen. Ik ben gespecialiseerd in commerciële en technische sales profielen, en help organisaties bij het vinden van mensen die niet alleen passen op papier, maar ook in de cultuur, het team en de visie.</p>
+        <p>In plaats van snelle plaatsingen of volume recruitment draait het bij mij om oprechte aandacht, kwaliteit en lange termijn relaties. Een grondig gesprek, een eerlijk advies en een match die blijft.</p>
+        <div class="about__signature">
+          <div>
+            <div class="about__signature-name">Nicky Roggeveen</div>
+            <div class="about__signature-role">Oprichter &amp; Recruitment Manager</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Expertise -->
+<section class="section section--navy-deep" id="expertise">
+  <div class="container">
+    <div class="v3-expertise">
+      <div class="reveal">
+        <div class="section__head">
+          <div>
+            <span class="eyebrow">Expertise</span>
+            <h2 class="section__title">Sterke commerciële professionals vinden vraagt <em>meer dan alleen recruitment.</em></h2>
+          </div>
+          <div class="section__lede">
+            <p style="margin:0">De markt is veranderd. Goede sales professionals kiezen bewust voor organisaties die aansluiten bij hun ambities, persoonlijkheid en manier van werken.</p>
+            <p style="margin-top:18px;margin-bottom:0">WerkGeluk Recruitment helpt organisaties bij het aantrekken van professionals die inhoudelijk én persoonlijk passen. Geen massa-aanpak, maar een zorgvuldig proces met focus op kwaliteit, positionering en duurzame groei.</p>
+          </div>
+        </div>
+      </div>
+      <div class="reveal" style="transition-delay:80ms">
+        <div class="v3-expertise__rolelabel">Profielen waar we mee helpen</div>
+        <ul class="v3-rolegrid">
+          <li><span class="v3-rolegrid__dot"></span>Commerciële binnendienst</li>
+          <li><span class="v3-rolegrid__dot"></span>Accountmanagement</li>
+          <li><span class="v3-rolegrid__dot"></span>Business Development</li>
+          <li><span class="v3-rolegrid__dot"></span>Inside Sales</li>
+          <li><span class="v3-rolegrid__dot"></span>Sales Engineering</li>
+          <li><span class="v3-rolegrid__dot"></span>Technical Sales</li>
+          <li><span class="v3-rolegrid__dot"></span>Sales Management</li>
+          <li><span class="v3-rolegrid__dot"></span>Commercieel Management</li>
+          <li><span class="v3-rolegrid__dot"></span>Sales Leadership</li>
+          <li><span class="v3-rolegrid__dot"></span>Sales Director</li>
+          <li><span class="v3-rolegrid__dot"></span>Chief Commercial Officer (CCO)</li>
+        </ul>
+        <a href="#contact" class="btn btn--gold">Bespreek jouw vacature <span class="arrow">→</span></a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Voor professionals -->
+<section class="section section--cream" id="voor-professionals">
+  <div class="container">
+    <div class="voor-pro">
+
+      <!-- Links: tag + headline + CTA -->
+      <div class="reveal">
+        <span class="voor-pro__tag">Voor professionals</span>
+        <h2 class="voor-pro__headline">Een nieuwe stap moet niet alleen interessant zijn.</h2>
+        <p class="voor-pro__em">Het moet ook écht bij je passen.</p>
+        <a href="contact.html" class="btn btn--gold">Plan een gesprek <span class="arrow">→</span></a>
+      </div>
+
+      <!-- Rechts: body tekst -->
+      <div class="reveal voor-pro__body" style="transition-delay:100ms">
+        <p>Veel professionals maken op een gegeven moment een volgende stap in hun salesfunctie of commerciële carrière. Maar die stap gaat niet alleen over een hogere functietitel of een beter salaris. Het gaat over de omgeving. De cultuur. Het type leiderschap dat je uitdaagt en de ruimte die je krijgt om jezelf te ontwikkelen.</p>
+        <p>WerkGeluk Recruitment begeleidt commerciële en technische sales professionals bij het vinden van een positie die inhoudelijk én persoonlijk aansluit. Geen standaard vacaturelijstjes, maar oprechte aandacht voor wie je bent en wat je zoekt.</p>
+        <p class="voor-pro__tagline">Persoonlijk. Eerlijk. Meer dan standaard recruitment.</p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- Waarom -->
+<section class="section section--paper" id="waarom">
+  <div class="container">
+    <div class="reveal">
+      <div class="section__head">
+        <div>
+          <span class="eyebrow">Waarom WerkGeluk</span>
+          <h2 class="section__title">Waarom organisaties kiezen <em>voor WerkGeluk Recruitment.</em></h2>
+        </div>
+        <p class="section__lede">Niet elk recruitmentbureau werkt hetzelfde. Bij WerkGeluk draait het om persoonlijk contact, een gerichte aanpak en matches die ook op de langere termijn standhouden.</p>
+      </div>
+    </div>
+    <div class="steps-5">
+      <div class="reveal step">
+        <div class="step__dot"></div>
+        <span class="step__num">01</span>
+        <h4 class="step__title">Je spreekt altijd direct met Nicky</h4>
+        <p class="step__body">Geen accountmanagers of doorverwijzingen. Eén aanspreekpunt, van eerste gesprek tot definitieve plaatsing.</p>
+      </div>
+      <div class="reveal step" style="transition-delay:80ms">
+        <div class="step__dot"></div>
+        <span class="step__num">02</span>
+        <h4 class="step__title">Selectief, niet massaal</h4>
+        <p class="step__body">Je ontvangt alleen zorgvuldig gescreende kandidaten die inhoudelijk passend zijn.</p>
+      </div>
+      <div class="reveal step" style="transition-delay:160ms">
+        <div class="step__dot"></div>
+        <span class="step__num">03</span>
+        <h4 class="step__title">Specialist in sales & techniek</h4>
+        <p class="step__body">Jarenlange focus op commerciële en technische sales. Geen generalist, maar iemand die de markt echt kent.</p>
+      </div>
+      <div class="reveal step" style="transition-delay:240ms">
+        <div class="step__dot"></div>
+        <span class="step__num">04</span>
+        <h4 class="step__title">Kleinschalig en betrokken</h4>
+        <p class="step__body">Bewust klein gebleven. Zo blijft de aandacht voor elke opdracht en elke kandidaat hoog.</p>
+      </div>
+      <div class="reveal step" style="transition-delay:320ms">
+        <div class="step__dot"></div>
+        <span class="step__num">05</span>
+        <h4 class="step__title">Eerlijk over wat past en wat niet</h4>
+        <p class="step__body">Geen gladde verkooppraatjes. Als het geen goede match is, zeg ik dat ook. Dat spaart iedereen tijd.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Trust logos -->
+<section class="section section--cream section--tight">
+  <div class="container">
+    <div class="reveal">
+      <p class="trustbar-title">Vertrouwd door teams in sales, techniek en commerciële groei:</p>
+    </div>
+    <div class="logo-marquee" aria-label="Klanten">
+      <div class="logo-track">
+        <div class="logo-item"><img src="assets/logos/mean-well.png" alt="Mean Well" loading="lazy" /></div>
+        <div class="logo-item"><img src="assets/logos/distrimex.png" alt="Distrimex" loading="lazy" /></div>
+        <div class="logo-item"><img src="assets/logos/koenig-bauer.jpg" alt="Koenig &amp; Bauer" loading="lazy" /></div>
+        <div class="logo-item"><img src="assets/logos/geelen-counterflow.png" alt="Geelen Counterflow" loading="lazy" /></div>
+        <div class="logo-item"><img src="assets/logos/advantech.png" alt="Advantech" loading="lazy" /></div>
+        <div class="logo-item"><img src="assets/logos/oxbo.png" alt="OXBO" loading="lazy" /></div>
+        <div class="logo-item"><img src="assets/logos/prowise.png" alt="Prowise" loading="lazy" /></div>
+        <div class="logo-item"><img src="assets/logos/kamadur.png" alt="Kamadur" loading="lazy" /></div>
+        <div class="logo-item"><img src="assets/logos/deltachem.png" alt="DeltaChem" loading="lazy" /></div>
+        <div class="logo-item"><img src="assets/logos/parhelia.png" alt="Parhelia" loading="lazy" /></div>
+        <div class="logo-item"><img src="assets/logos/ridder.png" alt="Ridder" loading="lazy" /></div>
+        <div class="logo-item"><img src="assets/logos/renishaw.jpg" alt="Renishaw" loading="lazy" /></div>
+        <!-- duplicate set for seamless marquee loop -->
+        <div class="logo-item" aria-hidden="true"><img src="assets/logos/mean-well.png" alt="" loading="lazy" /></div>
+        <div class="logo-item" aria-hidden="true"><img src="assets/logos/distrimex.png" alt="" loading="lazy" /></div>
+        <div class="logo-item" aria-hidden="true"><img src="assets/logos/koenig-bauer.jpg" alt="" loading="lazy" /></div>
+        <div class="logo-item" aria-hidden="true"><img src="assets/logos/geelen-counterflow.png" alt="" loading="lazy" /></div>
+        <div class="logo-item" aria-hidden="true"><img src="assets/logos/advantech.png" alt="" loading="lazy" /></div>
+        <div class="logo-item" aria-hidden="true"><img src="assets/logos/oxbo.png" alt="" loading="lazy" /></div>
+        <div class="logo-item" aria-hidden="true"><img src="assets/logos/prowise.png" alt="" loading="lazy" /></div>
+        <div class="logo-item" aria-hidden="true"><img src="assets/logos/kamadur.png" alt="" loading="lazy" /></div>
+        <div class="logo-item" aria-hidden="true"><img src="assets/logos/deltachem.png" alt="" loading="lazy" /></div>
+        <div class="logo-item" aria-hidden="true"><img src="assets/logos/parhelia.png" alt="" loading="lazy" /></div>
+        <div class="logo-item" aria-hidden="true"><img src="assets/logos/ridder.png" alt="" loading="lazy" /></div>
+        <div class="logo-item" aria-hidden="true"><img src="assets/logos/renishaw.jpg" alt="" loading="lazy" /></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Contact -->
+<section class="section section--navy-deep" id="contact">
+  <div class="container">
+    <div class="cta">
+      <div class="reveal cta__copy">
+        <span class="eyebrow" style="color:var(--wg-gold-300)">Kennismaken</span>
+        <h2>Een gesprek begint <em>met een goede vraag.</em></h2>
+        <p>Heb je een opdracht, een vacature of gewoon een vraag? Bel of mail vrijblijvend. Vaak is een eerste gesprek genoeg om te zien of er iets te bouwen valt.</p>
+        <div style="display:flex;flex-direction:column;gap:12px;margin-top:28px;">
+          <a href="tel:+31618236993" style="display:inline-flex;align-items:center;gap:12px;font-size:16px;font-weight:500;color:var(--wg-paper);opacity:0.85;transition:opacity 200ms ease;" onmouseover="this.style.opacity='1'" onmouseout="this.style.opacity='0.85'">
+            <span style="width:36px;height:36px;background:rgba(250,248,244,0.1);border-radius:50%;display:inline-flex;align-items:center;justify-content:center;flex-shrink:0;">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 13.5a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.6 2.69h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 10.2a16 16 0 0 0 5.89 5.89l.94-.94a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 21.92 17z"/></svg>
+            </span>
+            +31 6 18 23 69 93
+          </a>
+          <a href="mailto:Nicky@werkgeluk-recruitment.nl" style="display:inline-flex;align-items:center;gap:12px;font-size:16px;font-weight:500;color:var(--wg-paper);opacity:0.85;transition:opacity 200ms ease;" onmouseover="this.style.opacity='1'" onmouseout="this.style.opacity='0.85'">
+            <span style="width:36px;height:36px;background:rgba(250,248,244,0.1);border-radius:50%;display:inline-flex;align-items:center;justify-content:center;flex-shrink:0;">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
+            </span>
+            Nicky@werkgeluk-recruitment.nl
+          </a>
+          <a href="https://www.linkedin.com/in/nicky-roggeveen/" target="_blank" rel="noreferrer" style="display:inline-flex;align-items:center;gap:12px;font-size:16px;font-weight:500;color:var(--wg-paper);opacity:0.85;transition:opacity 200ms ease;" onmouseover="this.style.opacity='1'" onmouseout="this.style.opacity='0.85'">
+            <span style="width:36px;height:36px;background:rgba(250,248,244,0.1);border-radius:50%;display:inline-flex;align-items:center;justify-content:center;flex-shrink:0;">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+            </span>
+            LinkedIn — Nicky Roggeveen
+          </a>
+        </div>
+      </div>
+      <!-- Contactformulier via Formspree -->
+      <div class="reveal contact-form" style="transition-delay:120ms">
+        <form id="contact-form" action="https://formspree.io/f/mwvyjzpo" method="POST" novalidate>
+          <div class="contact-form__row">
+            <div class="contact-form__field">
+              <label for="cf-name">Naam</label>
+              <input type="text" id="cf-name" name="naam" placeholder="Jouw naam" required />
+            </div>
+            <div class="contact-form__field">
+              <label for="cf-company">Bedrijf</label>
+              <input type="text" id="cf-company" name="bedrijf" placeholder="Optioneel" />
+            </div>
+          </div>
+          <div class="contact-form__field">
+            <label for="cf-email">E-mailadres</label>
+            <input type="email" id="cf-email" name="email" placeholder="jouw@emailadres.nl" required aria-describedby="cf-email-error" />
+            <span class="contact-form__error" id="cf-email-error" role="alert">
+              <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12" y2="16"/></svg>
+              Vul een geldig e-mailadres in
+            </span>
+          </div>
+          <div class="contact-form__field">
+            <label for="cf-subject">Onderwerp</label>
+            <select id="cf-subject" name="onderwerp">
+              <option value="">Selecteer een onderwerp</option>
+              <option value="vacature">Ik heb een vacature</option>
+              <option value="professional">Ik zoek een nieuwe stap</option>
+              <option value="kennismaking">Vrijblijvende kennismaking</option>
+              <option value="overig">Overig</option>
+            </select>
+          </div>
+          <div class="contact-form__field">
+            <label for="cf-message">Bericht</label>
+            <textarea id="cf-message" name="bericht" placeholder="Vertel kort waar je mee kunt helpen…" required></textarea>
+          </div>
+          <button type="submit" class="contact-form__submit">
+            Verstuur bericht <span class="arrow">→</span>
+          </button>
+          <p class="contact-form__note">
+            Of mail direct: <a href="mailto:Nicky@werkgeluk-recruitment.nl">Nicky@werkgeluk-recruitment.nl</a>
+          </p>
+        </form>
+        <div class="contact-form__success" id="form-success" aria-live="polite">
+          <div class="contact-form__success-icon">✓</div>
+          <p><strong>Bericht verstuurd!</strong><br>Nicky neemt zo snel mogelijk contact met je op.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Locatie -->
+<section class="section section--paper" id="locatie">
+  <div class="container">
+    <div class="locatie">
+      <div class="reveal locatie__copy">
+        <span class="eyebrow">Locatie</span>
+        <h2 class="section__title">WerkGeluk Recruitment, <em>gevestigd in Rotterdam.</em></h2>
+        <p class="locatie__body">Je bent van harte welkom voor een persoonlijk gesprek op de Kop van Zuid. Goed bereikbaar met de auto en op loopafstand van station Wilhelminaplein.</p>
+        <address class="locatie__address">
+          <span>WerkGeluk Recruitment</span>
+          <span>Otto Reuchlinweg 1146</span>
+          <span>3072 MD Rotterdam</span>
+          <span>Nederland</span>
+        </address>
+        <a class="locatie__link" href="https://www.google.com/maps/search/?api=1&query=Otto+Reuchlinweg+1146+3072+MD+Rotterdam" target="_blank" rel="noreferrer">
+          Open in Google Maps <span class="arrow">→</span>
+        </a>
+      </div>
+      <div class="reveal locatie__map" style="transition-delay:120ms">
+        <iframe
+          title="Locatie WerkGeluk Recruitment, Rotterdam"
+          src="https://www.google.com/maps?q=Otto+Reuchlinweg+1146,+3072+MD+Rotterdam&z=15&output=embed"
+          loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade"
+          allowfullscreen
+        ></iframe>
+      </div>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<!-- Footer -->
+<footer class="footer">
+  <div class="container">
+    <div class="footer__inner">
+
+      <!-- Brand -->
+      <div class="footer__brand">
+        <img src="assets/6-2.png" alt="WerkGeluk Recruitment" />
+      </div>
+
+      <!-- Navigatie -->
+      <div class="footer__col">
+        <h5>Navigatie</h5>
+        <ul>
+          <li><a href="#about">Over</a></li>
+          <li><a href="#expertise">Expertise</a></li>
+          <li><a href="#voor-professionals">Voor professionals</a></li>
+          <li><a href="#waarom">Waarom WerkGeluk</a></li>
+          <li><a href="contact.html">Contact</a></li>
+          <li><a href="#locatie">Locatie</a></li>
+        </ul>
+      </div>
+
+      <!-- Contact -->
+      <div class="footer__col">
+        <h5>Contact</h5>
+        <ul>
+          <li><a href="mailto:Nicky@werkgeluk-recruitment.nl">Nicky@werkgeluk-recruitment.nl</a></li>
+          <li><a href="tel:+31618236993">+31 6 18 23 69 93</a></li>
+          <li><a href="https://www.linkedin.com/in/nicky-roggeveen/" target="_blank" rel="noreferrer">LinkedIn</a></li>
+          <li><a href="#locatie">Rotterdam · Nederland</a></li>
+        </ul>
+      </div>
+
+      <!-- Juridisch -->
+      <div class="footer__col">
+        <h5>Juridisch</h5>
+        <ul>
+          <li><a href="assets/algemene-voorwaarden.pdf" target="_blank" rel="noreferrer">Algemene voorwaarden ↗</a></li>
+          <li><a href="assets/privacyverklaring.pdf" target="_blank" rel="noreferrer">Privacyverklaring ↗</a></li>
+        </ul>
+      </div>
+
+    </div>
+    <div class="footer__base">
+      <span>© 2026 WerkGeluk Recruitment · Rotterdam · Nederland</span>
+      <span style="color:rgba(250,248,244,0.65);">KvK: 70841640 &nbsp;·&nbsp; BTW: NL001178713B61</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+/* Enable reveal animations now that JS is running */
+document.documentElement.classList.add('js-ready');
+
+/* ── Mobile menu ── */
+const hamburger = document.querySelector('.nav__hamburger');
+const mobileMenu = document.querySelector('.nav__mobile');
+hamburger.addEventListener('click', () => {
+  const open = hamburger.classList.toggle('is-open');
+  mobileMenu.classList.toggle('is-open', open);
+  hamburger.setAttribute('aria-label', open ? 'Sluit menu' : 'Open menu');
+  hamburger.setAttribute('aria-expanded', open);
+  mobileMenu.setAttribute('aria-hidden', !open);
+  document.body.style.overflow = open ? 'hidden' : '';
+});
+mobileMenu.querySelectorAll('a').forEach(a => {
+  a.addEventListener('click', () => {
+    hamburger.classList.remove('is-open');
+    mobileMenu.classList.remove('is-open');
+    hamburger.setAttribute('aria-label', 'Open menu');
+    hamburger.setAttribute('aria-expanded', 'false');
+    mobileMenu.setAttribute('aria-hidden', 'true');
+    document.body.style.overflow = '';
+  });
+});
+
+/* ── Active nav on scroll ── */
+const navLinks = document.querySelectorAll('.nav__links a');
+const sectionObserver = new IntersectionObserver(entries => {
+  entries.forEach(e => {
+    if (e.isIntersecting)
+      navLinks.forEach(a => a.classList.toggle('is-active', a.getAttribute('href') === '#' + e.target.id));
+  });
+}, { rootMargin: '-25% 0px -65% 0px', threshold: 0 });
+document.querySelectorAll('[id]').forEach(s => sectionObserver.observe(s));
+
+/* ── Reveal on scroll ── */
+const revealObserver = new IntersectionObserver(entries => {
+  entries.forEach(e => {
+    if (e.isIntersecting) { e.target.classList.add('is-in'); revealObserver.unobserve(e.target); }
+  });
+}, { threshold: 0.05, rootMargin: '0px 0px -4% 0px' });
+document.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
+
+/* Immediately show elements already in viewport on page load */
+requestAnimationFrame(() => {
+  document.querySelectorAll('.reveal').forEach(el => {
+    const rect = el.getBoundingClientRect();
+    if (rect.top < window.innerHeight && rect.bottom > 0) {
+      el.classList.add('is-in');
+    }
+  });
+});
+
+/* ── 1. Scroll progress bar ── */
+const progressBar = document.getElementById('progress-bar');
+function updateProgress() {
+  const scrolled = window.scrollY;
+  const total = document.documentElement.scrollHeight - window.innerHeight;
+  progressBar.style.width = (total > 0 ? (scrolled / total) * 100 : 0) + '%';
+}
+window.addEventListener('scroll', updateProgress, { passive: true });
+
+/* ── 2. Contactformulier ── */
+const contactForm = document.getElementById('contact-form');
+const formSuccess = document.getElementById('form-success');
+if (contactForm) {
+  contactForm.addEventListener('submit', async (e) => {
+    e.preventDefault();
+    const btn = contactForm.querySelector('.contact-form__submit');
+    btn.textContent = 'Wordt verstuurd…';
+    btn.disabled = true;
+    try {
+      const res = await fetch(contactForm.action, {
+        method: 'POST',
+        body: new FormData(contactForm),
+        headers: { 'Accept': 'application/json' }
+      });
+      if (res.ok) {
+        contactForm.style.display = 'none';
+        formSuccess.classList.add('is-visible');
+      } else {
+        btn.textContent = 'Probeer opnieuw';
+        btn.disabled = false;
+      }
+    } catch {
+      btn.textContent = 'Probeer opnieuw';
+      btn.disabled = false;
+    }
+  });
+}
+
+/* ── 3. Parallax hero ── */
+const hero = document.querySelector('.hero');
+function updateParallax() {
+  const y = window.scrollY;
+  if (y < hero.offsetHeight * 1.5) {
+    hero.style.backgroundPositionY = (y * 0.35) + 'px';
+  }
+}
+if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+  window.addEventListener('scroll', updateParallax, { passive: true });
+}
+<\/script>
+</body>
+</html>
