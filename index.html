@@ -1030,6 +1030,51 @@ button { font-family: inherit; }
 }
 
 /* =========================================================
+   Cookie banner
+   ========================================================= */
+#cookie-banner {
+  position: fixed;
+  bottom: 0; left: 0; right: 0;
+  z-index: 50;
+  background: rgba(9,21,44,0.97);
+  border-top: 1px solid rgba(201,162,91,0.2);
+  padding: 16px 40px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  flex-wrap: wrap;
+  backdrop-filter: blur(10px);
+  transform: translateY(0);
+  transition: transform 400ms var(--ease-out);
+}
+#cookie-banner.is-hidden { transform: translateY(110%); }
+#cookie-banner p {
+  font-size: 13px;
+  color: rgba(250,248,244,0.7);
+  margin: 0;
+  line-height: 1.5;
+  max-width: 680px;
+}
+#cookie-banner a { color: var(--wg-gold-400); text-decoration: underline; }
+#cookie-accept {
+  flex-shrink: 0;
+  padding: 9px 22px;
+  background: var(--wg-gold-gradient);
+  background-size: 200% 200%;
+  background-position: 0% 50%;
+  color: var(--wg-navy-900);
+  border: none;
+  border-radius: 8px;
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+  font-family: var(--font-sans);
+  transition: background-position 400ms var(--ease-out), transform 200ms var(--ease-out);
+}
+#cookie-accept:hover { background-position: 100% 50%; transform: translateY(-1px); }
+
+/* =========================================================
    Scroll progress bar
    ========================================================= */
 #progress-bar {
@@ -1116,6 +1161,12 @@ button { font-family: inherit; }
 <body>
 
 <div id="progress-bar"></div>
+
+<!-- Cookie banner -->
+<div id="cookie-banner" role="dialog" aria-label="Cookiemelding">
+  <p>Deze website gebruikt Google Fonts, een externe dienst van Google. Hierbij wordt je IP-adres kort verwerkt. Meer informatie vind je in onze <a href="assets/privacyverklaring.pdf" target="_blank" rel="noreferrer">privacyverklaring</a>.</p>
+  <button id="cookie-accept">Begrepen</button>
+</div>
 
 <!-- Nav -->
 <nav class="nav">
@@ -1491,6 +1542,17 @@ button { font-family: inherit; }
 <script>
 /* Enable reveal animations now that JS is running */
 document.documentElement.classList.add('js-ready');
+
+/* ── Cookie banner ── */
+const cookieBanner = document.getElementById('cookie-banner');
+const cookieAccept = document.getElementById('cookie-accept');
+if (localStorage.getItem('cookie-accepted')) {
+  cookieBanner.classList.add('is-hidden');
+}
+cookieAccept.addEventListener('click', () => {
+  localStorage.setItem('cookie-accepted', '1');
+  cookieBanner.classList.add('is-hidden');
+});
 
 /* ── Nav scroll glassmorphism ── */
 const nav = document.querySelector('.nav');
