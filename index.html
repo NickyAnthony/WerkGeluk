@@ -1350,7 +1350,7 @@ button { font-family: inherit; }
         <p>Heb je een opdracht, een vacature of gewoon een vraag? Bel of mail vrijblijvend. Vaak is een eerste gesprek genoeg om te zien of er iets te bouwen valt.</p>
       </div>
       <div class="reveal contact-form" style="transition-delay:120ms">
-        <form id="contact-form" novalidate>
+        <form id="contact-form" action="https://formspree.io/f/mwvyjzpo" method="POST" novalidate>
           <div class="contact-form__row">
             <div class="contact-form__field">
               <label for="cf-name">Naam</label>
@@ -1547,35 +1547,32 @@ function updateProgress() {
 }
 window.addEventListener('scroll', updateProgress, { passive: true });
 
-/* ── 2. Contactformulier — mailto fallback ── */
+/* ── 2. Contactformulier via Formspree ── */
 const contactForm = document.getElementById('contact-form');
 const formSuccess = document.getElementById('form-success');
 if (contactForm) {
-  contactForm.addEventListener('submit', (e) => {
+  contactForm.addEventListener('submit', async (e) => {
     e.preventDefault();
-    const naam      = document.getElementById('cf-name').value.trim();
-    const bedrijf   = document.getElementById('cf-company').value.trim();
-    const email     = document.getElementById('cf-email').value.trim();
-    const onderwerp = document.getElementById('cf-subject').value;
-    const bericht   = document.getElementById('cf-message').value.trim();
-    const subjectMap = {
-      vacature:      'Vacature via website',
-      professional:  'Op zoek naar een nieuwe stap',
-      kennismaking:  'Vrijblijvende kennismaking',
-      overig:        'Bericht via website'
-    };
-    const subject = encodeURIComponent(subjectMap[onderwerp] || 'Bericht via website');
-    const bodyLines = [
-      'Naam: ' + naam,
-      bedrijf ? 'Bedrijf: ' + bedrijf : '',
-      'E-mail: ' + email,
-      '',
-      bericht
-    ].filter(Boolean).join('\n');
-    const body = encodeURIComponent(bodyLines);
-    window.location.href = 'mailto:Nicky@werkgeluk-recruitment.nl?subject=' + subject + '&body=' + body;
-    contactForm.style.display = 'none';
-    formSuccess.classList.add('is-visible');
+    const btn = contactForm.querySelector('.contact-form__submit');
+    btn.textContent = 'Wordt verstuurd…';
+    btn.disabled = true;
+    try {
+      const res = await fetch(contactForm.action, {
+        method: 'POST',
+        body: new FormData(contactForm),
+        headers: { 'Accept': 'application/json' }
+      });
+      if (res.ok) {
+        contactForm.style.display = 'none';
+        formSuccess.classList.add('is-visible');
+      } else {
+        btn.textContent = 'Probeer opnieuw';
+        btn.disabled = false;
+      }
+    } catch {
+      btn.textContent = 'Probeer opnieuw';
+      btn.disabled = false;
+    }
   });
 }
 
