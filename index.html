@@ -1547,13 +1547,13 @@ document.documentElement.classList.add('js-ready');
 const cookieBanner = document.getElementById('cookie-banner');
 const cookieAccept = document.getElementById('cookie-accept');
 if (localStorage.getItem('cookie-accepted')) {
-  cookieBanner.style.display = 'none';
+  cookieBanner.remove();
+} else {
+  cookieAccept.addEventListener('click', () => {
+    localStorage.setItem('cookie-accepted', '1');
+    cookieBanner.remove();
+  });
 }
-cookieAccept.addEventListener('click', () => {
-  localStorage.setItem('cookie-accepted', '1');
-  cookieBanner.classList.add('is-hidden');
-  setTimeout(() => { cookieBanner.style.display = 'none'; }, 420);
-});
 
 /* ── Nav scroll glassmorphism ── */
 const nav = document.querySelector('.nav');
