@@ -25,28 +25,17 @@ html { scroll-behavior: smooth; }
 body { font-family: 'Inter', system-ui, sans-serif; color: var(--text); background: var(--white); line-height: 1.6; }
 
 /* NAV */
-@keyframes nav-enter { from { opacity: 0; transform: translateY(-16px); } to { opacity: 1; transform: translateY(0); } }
-nav {
-  position: sticky; top: 0; z-index: 100;
-  background: rgba(255,255,255,0.92);
-  backdrop-filter: blur(14px); -webkit-backdrop-filter: blur(14px);
-  border-bottom: 1px solid var(--border);
-  transition: box-shadow 400ms ease, background 400ms ease;
-  animation: nav-enter 600ms cubic-bezier(0.22,1,0.36,1) both;
-}
-nav.is-scrolled { background: rgba(255,255,255,0.98); box-shadow: 0 4px 24px rgba(15,31,61,0.10); }
+nav { position: sticky; top: 0; z-index: 100; background: rgba(255,255,255,0.95); backdrop-filter: blur(8px); border-bottom: 1px solid var(--border); }
 .nav-inner { max-width: 1160px; margin: 0 auto; padding: 0 32px; display: flex; align-items: center; justify-content: space-between; height: 72px; }
 .nav-logo { display: flex; align-items: center; gap: 14px; text-decoration: none; }
 .nav-logo-name { font-family: 'Raleway', 'Manrope', sans-serif; font-weight: 800; font-size: 22px; letter-spacing: -0.3px; color: var(--navy); line-height: 1; }
 .nav-logo-sub { font-family: 'Raleway', 'Inter', sans-serif; font-weight: 400; font-size: 9px; letter-spacing: 3.5px; text-transform: uppercase; color: var(--sub); margin-top: 5px; }
 .nav-links { display: flex; align-items: center; gap: 8px; list-style: none; }
-.nav-links a { text-decoration: none; font-size: 14px; font-weight: 500; color: var(--sub); padding: 8px 16px; border-radius: 8px; transition: color .2s, background .2s; position: relative; }
-.nav-links a:not(.nav-cta)::after { content: ''; position: absolute; left: 16px; right: 100%; bottom: 6px; height: 1.5px; background: var(--gold); border-radius: 2px; transition: right 280ms cubic-bezier(0.22,1,0.36,1); }
-.nav-links a:not(.nav-cta):hover::after, .nav-links a.active:not(.nav-cta)::after { right: 16px; }
+.nav-links a { text-decoration: none; font-size: 14px; font-weight: 500; color: var(--sub); padding: 8px 16px; border-radius: 8px; transition: color .2s, background .2s; }
 .nav-links a:hover { color: var(--navy); background: var(--cloud); }
 .nav-links a.active { color: var(--navy); }
-.nav-cta { background: linear-gradient(135deg, var(--navy) 0%, #1a3560 100%); color: var(--white) !important; border-radius: 8px; padding: 10px 20px !important; transition: box-shadow .25s, transform .25s !important; box-shadow: 0 2px 10px rgba(15,31,61,0.18); }
-.nav-cta:hover { box-shadow: 0 6px 20px rgba(15,31,61,0.28); transform: translateY(-1px); }
+.nav-cta { background: var(--navy); color: var(--white) !important; border-radius: 8px; padding: 10px 20px !important; transition: background .2s !important; }
+.nav-cta:hover { background: #162d52 !important; }
 
 /* PAGE HEADER */
 .page-header {
@@ -435,11 +424,5 @@ footer { background: var(--navy); padding: 64px 32px 40px; color: rgba(255,255,2
   </div>
 </footer>
 
-<script>
-const navEl = document.querySelector('nav');
-function updateNav() { navEl.classList.toggle('is-scrolled', window.scrollY > 40); }
-window.addEventListener('scroll', updateNav, { passive: true });
-updateNav();
-</script>
 </body>
 </html>
