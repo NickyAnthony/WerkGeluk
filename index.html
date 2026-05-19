@@ -32,6 +32,7 @@
   --wg-navy-500: #2D4068;
   --wg-navy-400: #4F6088;
   --wg-navy-050: #F3F5FA;
+  --wg-gold-gradient: linear-gradient(135deg, #8B6A2E 0%, #C9A25B 35%, #F0D89A 55%, #C9A25B 75%, #8B6A2E 100%);
   --wg-gold-700: #8B6A2E;
   --wg-gold-600: #A98545;
   --wg-gold-500: #C9A25B;
@@ -150,14 +151,16 @@ button { font-family: inherit; }
 }
 .btn:active { transform: translateY(1px) scale(0.99); }
 .btn--gold {
-  background: linear-gradient(135deg, var(--wg-gold-500) 0%, var(--wg-gold-400) 100%);
+  background: var(--wg-gold-gradient);
+  background-size: 200% 200%;
+  background-position: 0% 50%;
   color: var(--wg-navy-900);
-  box-shadow: 0 2px 12px rgba(201,162,91,0.18);
+  transition: background-position 400ms var(--ease-out), box-shadow 240ms var(--ease-out), transform 240ms var(--ease-out);
 }
 .btn--gold:hover {
-  background: linear-gradient(135deg, var(--wg-gold-400) 0%, var(--wg-gold-300) 100%);
-  box-shadow: 0 8px 28px rgba(201,162,91,0.42), 0 2px 6px rgba(201,162,91,0.22);
-  transform: translateY(-2px);
+  background-position: 100% 50%;
+  box-shadow: var(--sh-gold);
+  transform: translateY(-1px);
 }
 .btn--ghost { border-color: rgba(250,248,244,0.3); color: rgba(250,248,244,0.82); }
 .btn--ghost:hover { border-color: rgba(250,248,244,0.7); color: var(--wg-paper); background: rgba(250,248,244,0.06); }
@@ -874,7 +877,7 @@ button { font-family: inherit; }
   border-bottom: 1px solid rgba(250,248,244,0.1);
   align-items: start;
 }
-.footer__brand img { width: 220px; height: auto; margin-bottom: 24px; }
+.footer__brand img { width: 260px; height: auto; margin-bottom: 28px; }
 .footer__brand p { font-size: 14px; line-height: 1.7; max-width: 300px; margin: 0 0 20px; }
 .footer__brand-meta { display: flex; flex-direction: column; gap: 4px; }
 .footer__brand-meta span { font-size: 12px; color: rgba(250,248,244,0.45); letter-spacing: 0.04em; }
@@ -1408,31 +1411,7 @@ button { font-family: inherit; }
 
       <!-- Brand -->
       <div class="footer__brand">
-        <img src="assets/6-1.png" alt="WerkGeluk Recruitment" />
-        <p>Boutique recruitment voor commerciële en technische sales professionals. Persoonlijk. Eerlijk. Duurzaam.</p>
-        <div class="footer__brand-meta">
-          <span>KvK: 70841640</span>
-          <span>BTW: NL001178713B61</span>
-          <span>Otto Reuchlinweg 1146 · 3072 MD Rotterdam</span>
-        </div>
-        <div class="footer__social">
-          <a href="https://www.linkedin.com/in/nicky-roggeveen/" target="_blank" rel="noreferrer" aria-label="LinkedIn">
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
-              <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/>
-              <rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/>
-            </svg>
-          </a>
-          <a href="mailto:Nicky@werkgeluk-recruitment.nl" aria-label="E-mail">
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-              <rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/>
-            </svg>
-          </a>
-          <a href="tel:+31618236993" aria-label="Telefoon">
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-              <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 13.5a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.6 2.69h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 10.2a16 16 0 0 0 5.89 5.89l.94-.94a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 21.92 17z"/>
-            </svg>
-          </a>
-        </div>
+        <img src="assets/6-2.png" alt="WerkGeluk Recruitment" />
       </div>
 
       <!-- Navigatie -->
