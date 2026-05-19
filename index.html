@@ -3,11 +3,9 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>WerkGeluk Recruitment | Rotterdam</title>
+  <title>WerkGeluk Recruitment — Boutique recruitment voor commerciële en technische sales</title>
   <meta name="description" content="WerkGeluk Recruitment helpt organisaties bij het vinden van commerciële en technische sales professionals. Persoonlijk. Selectief. Gericht op duurzame matches." />
-  <link rel="canonical" href="https://nickyanthony.github.io/WerkGeluk/" />
   <link rel="icon" href="favicon.svg" type="image/svg+xml" />
-  <link rel="apple-touch-icon" href="assets/logo-mark-dark.png" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Arimo:ital,wght@0,400..700;1,400..700&display=swap" rel="stylesheet" />
@@ -15,12 +13,12 @@
   <meta property="og:description" content="WerkGeluk Recruitment helpt organisaties bij het vinden van commerciële en technische sales professionals. Persoonlijk. Selectief. Gericht op duurzame matches." />
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://nickyanthony.github.io/WerkGeluk/" />
-  <meta property="og:image" content="https://nickyanthony.github.io/WerkGeluk/assets/6-2.png" />
+  <meta property="og:image" content="https://nickyanthony.github.io/WerkGeluk/assets/logo-horizontal-light.png" />
   <meta property="og:locale" content="nl_NL" />
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="WerkGeluk Recruitment" />
   <meta name="twitter:description" content="Boutique recruitment voor commerciële en technische sales professionals." />
-  <meta name="twitter:image" content="https://nickyanthony.github.io/WerkGeluk/assets/6-2.png" />
+  <meta name="twitter:image" content="https://nickyanthony.github.io/WerkGeluk/assets/logo-horizontal-light.png" />
   <style>
 /* =========================================================
    Foundations — Colors + Type tokens
@@ -35,7 +33,6 @@
   --wg-navy-400: #4F6088;
   --wg-navy-050: #F3F5FA;
   --wg-gold-700: #8B6A2E;
-  --wg-gold-gradient: linear-gradient(135deg, #8B6A2E 0%, #C9A25B 35%, #F0D89A 55%, #C9A25B 75%, #8B6A2E 100%);
   --wg-gold-600: #A98545;
   --wg-gold-500: #C9A25B;
   --wg-gold-400: #DCBB7B;
@@ -55,7 +52,6 @@
   --fg-2: var(--wg-ink-700);
   --fg-3: var(--wg-ink-500);
   --gold-accent: var(--wg-gold-700);
-  --gold-on-dark: var(--wg-gold-300);
   --gold-soft: var(--wg-gold-100);
   --sh-2: 0 2px 8px rgba(14,27,51,0.06), 0 1px 2px rgba(14,27,51,0.04);
   --sh-3: 0 8px 24px rgba(14,27,51,0.08), 0 2px 4px rgba(14,27,51,0.04);
@@ -73,7 +69,7 @@
    Reset + Base
    ========================================================= */
 *, *::before, *::after { box-sizing: border-box; }
-html { scroll-behavior: smooth; scroll-padding-top: 72px; }
+html { scroll-behavior: smooth; }
 html, body { margin: 0; padding: 0; }
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
@@ -123,22 +119,6 @@ button { font-family: inherit; }
   opacity: 0.7;
 }
 
-/* Skip-to-content */
-.skip-link {
-  position: absolute;
-  top: -100px;
-  left: 16px;
-  z-index: 200;
-  background: var(--wg-gold-500);
-  color: var(--wg-navy-900);
-  padding: 10px 18px;
-  border-radius: 8px;
-  font-weight: 600;
-  font-size: 14px;
-  transition: top 200ms ease;
-}
-.skip-link:focus { top: 16px; }
-
 /* Content visible by default; animation only activates when JS has run */
 .js-ready .reveal {
   opacity: 0;
@@ -170,16 +150,14 @@ button { font-family: inherit; }
 }
 .btn:active { transform: translateY(1px) scale(0.99); }
 .btn--gold {
-  background: var(--wg-gold-gradient);
-  background-size: 200% 200%;
-  background-position: 0% 50%;
+  background: linear-gradient(135deg, var(--wg-gold-500) 0%, var(--wg-gold-400) 100%);
   color: var(--wg-navy-900);
-  transition: background-position 400ms var(--ease-out), box-shadow 240ms var(--ease-out), transform 240ms var(--ease-out);
+  box-shadow: 0 2px 12px rgba(201,162,91,0.18);
 }
 .btn--gold:hover {
-  background-position: 100% 50%;
-  box-shadow: var(--sh-gold);
-  transform: translateY(-1px);
+  background: linear-gradient(135deg, var(--wg-gold-400) 0%, var(--wg-gold-300) 100%);
+  box-shadow: 0 8px 28px rgba(201,162,91,0.42), 0 2px 6px rgba(201,162,91,0.22);
+  transform: translateY(-2px);
 }
 .btn--ghost { border-color: rgba(250,248,244,0.3); color: rgba(250,248,244,0.82); }
 .btn--ghost:hover { border-color: rgba(250,248,244,0.7); color: var(--wg-paper); background: rgba(250,248,244,0.06); }
@@ -190,17 +168,32 @@ button { font-family: inherit; }
 /* =========================================================
    Nav
    ========================================================= */
+@keyframes nav-enter {
+  from { opacity: 0; transform: translateY(-18px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
 .nav {
   position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  width: 100%;
+  top: 0; left: 0; right: 0; width: 100%;
   z-index: 30;
-  background: rgba(9,21,44,0.72);
-  border-bottom: 1px solid rgba(250,248,244,0.06);
-  backdrop-filter: blur(14px);
-  -webkit-backdrop-filter: blur(14px);
+  background: rgba(9,21,44,0.55);
+  border-bottom: 1px solid rgba(250,248,244,0.04);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  transition:
+    background 480ms var(--ease-out),
+    border-color 480ms var(--ease-out),
+    box-shadow 480ms var(--ease-out),
+    backdrop-filter 480ms var(--ease-out);
+  animation: nav-enter 700ms var(--ease-out) both;
+}
+.nav.is-scrolled {
+  background: rgba(9,21,44,0.92);
+  border-bottom: 1px solid rgba(201,162,91,0.15);
+  backdrop-filter: blur(22px);
+  -webkit-backdrop-filter: blur(22px);
+  box-shadow: 0 4px 32px rgba(9,21,44,0.55), 0 1px 0 rgba(201,162,91,0.07);
 }
 .nav__inner {
   display: flex;
@@ -226,8 +219,8 @@ button { font-family: inherit; }
   left: 0; right: 100%;
   bottom: -4px;
   height: 1px;
-  background: var(--wg-gold-500);
-  transition: right 280ms var(--ease-out);
+  background: var(--wg-gold-400);
+  transition: right 300ms var(--ease-out);
 }
 .nav__links a:hover,
 .nav__links a.is-active { color: var(--wg-paper); }
@@ -241,9 +234,7 @@ button { font-family: inherit; }
   background: none;
   border: none;
   cursor: pointer;
-  padding: 10px;
-  min-width: 44px;
-  min-height: 44px;
+  padding: 8px;
   margin-left: auto;
   color: rgba(250,248,244,0.9);
   flex-direction: column;
@@ -259,7 +250,7 @@ button { font-family: inherit; }
   height: 1.5px;
   background: currentColor;
   border-radius: 2px;
-  transition: transform 300ms var(--ease-out), opacity 200ms ease, transform 300ms var(--ease-out);
+  transition: transform 300ms var(--ease-out), opacity 200ms ease;
 }
 .nav__hamburger.is-open span:nth-child(1) { transform: translateY(6.5px) rotate(45deg); }
 .nav__hamburger.is-open span:nth-child(2) { opacity: 0; }
@@ -278,7 +269,7 @@ button { font-family: inherit; }
   gap: 4px;
   opacity: 0;
   pointer-events: none;
-  transition: opacity 280ms ease;
+  transition: opacity 320ms ease;
 }
 .nav__mobile.is-open { opacity: 1; pointer-events: all; }
 .nav__mobile a {
@@ -288,11 +279,10 @@ button { font-family: inherit; }
   letter-spacing: -0.02em;
   color: rgba(250,248,244,0.88);
   padding: 12px 28px;
-  transition: color 200ms ease;
+  transition: color 200ms ease, transform 200ms var(--ease-out);
   text-align: center;
 }
-.nav__mobile a:hover { color: var(--wg-gold-300); }
-.nav__mobile a { cursor: pointer; }
+.nav__mobile a:hover { color: var(--wg-gold-300); transform: translateX(4px); }
 .nav__mobile-cta {
   margin-top: 20px;
   padding: 14px 36px !important;
@@ -350,12 +340,27 @@ button { font-family: inherit; }
   color: var(--wg-paper);
   text-wrap: balance;
 }
+@keyframes gold-shimmer {
+  0%   { background-position: -200% center; }
+  100% { background-position: 200% center; }
+}
 .hero__headline em {
   font-style: italic;
-  color: var(--wg-gold-300);
   font-weight: 500;
   display: inline-block;
   position: relative;
+  background: linear-gradient(
+    90deg,
+    var(--wg-gold-400)  0%,
+    var(--wg-gold-200) 38%,
+    var(--wg-gold-400) 55%,
+    var(--wg-gold-300) 100%
+  );
+  background-size: 200% auto;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  animation: gold-shimmer 5s linear infinite;
 }
 .hero__headline em::after {
   content: "";
@@ -363,7 +368,7 @@ button { font-family: inherit; }
   left: -2px; right: -2px; bottom: 0.06em;
   height: 1px;
   background: var(--wg-gold-400);
-  opacity: 0.4;
+  opacity: 0.35;
 }
 .hero__sub {
   font-size: 19px;
@@ -373,26 +378,6 @@ button { font-family: inherit; }
   margin: 0;
 }
 .hero__ctas { display: flex; gap: 14px; flex-wrap: wrap; margin-top: 44px; }
-.hero__scroll {
-  position: absolute;
-  bottom: 40px;
-  left: 50%;
-  transform: translateX(-50%);
-  color: rgba(250,248,244,0.45);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 40px; height: 40px;
-  border-radius: 50%;
-  border: 1px solid rgba(250,248,244,0.18);
-  transition: color 240ms ease, border-color 240ms ease;
-  animation: bounce 2.4s ease-in-out infinite;
-}
-.hero__scroll:hover { color: var(--wg-gold-300); border-color: rgba(201,162,91,0.5); }
-@keyframes bounce {
-  0%, 100% { transform: translateX(-50%) translateY(0); }
-  50% { transform: translateX(-50%) translateY(6px); }
-}
 .hero__meta-label {
   font-size: 12px;
   letter-spacing: 0.12em;
@@ -400,6 +385,16 @@ button { font-family: inherit; }
   color: rgba(250,248,244,0.56);
   font-weight: 500;
 }
+
+/* ── Hero entry animations ── */
+@keyframes hero-fade-up {
+  from { opacity: 0; transform: translateY(22px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+.hero__inner > .eyebrow { animation: hero-fade-up 700ms var(--ease-out) 150ms both; }
+.hero__headline         { animation: hero-fade-up 800ms var(--ease-out) 280ms both; }
+.hero__sub              { animation: hero-fade-up 800ms var(--ease-out) 440ms both; }
+.hero__ctas             { animation: hero-fade-up 800ms var(--ease-out) 590ms both; }
 
 /* =========================================================
    Section scaffold
@@ -436,7 +431,7 @@ button { font-family: inherit; }
   max-width: 540px;
   color: var(--fg-2);
 }
-.section--navy-deep .section__lede { color: rgba(250,248,244,0.82); }
+.section--navy-deep .section__lede { color: rgba(250,248,244,0.72); }
 
 /* =========================================================
    About
@@ -576,7 +571,7 @@ button { font-family: inherit; }
   height: 1px;
   background: var(--wg-line);
 }
-.step { padding: 0 28px; cursor: default; }
+.step { padding: 0 28px; }
 .step__dot {
   width: 16px; height: 16px;
   border-radius: 999px;
@@ -674,7 +669,7 @@ button { font-family: inherit; }
   text-wrap: balance;
 }
 .cta__copy h2 em { font-style: italic; font-weight: 500; color: var(--wg-gold-300); }
-.cta__copy p { font-size: 18px; line-height: 1.6; color: rgba(250,248,244,0.82); margin: 0; max-width: 520px; }
+.cta__copy p { font-size: 18px; line-height: 1.6; color: rgba(250,248,244,0.72); margin: 0; max-width: 520px; }
 .cta__card {
   background: var(--wg-paper);
   color: var(--wg-ink-900);
@@ -737,15 +732,15 @@ button { font-family: inherit; }
   background: var(--wg-paper);
   color: var(--wg-ink-900);
   border-radius: var(--r-xl);
-  padding: 64px 40px 40px;
+  padding: 40px;
   display: flex;
   flex-direction: column;
-  gap: 32px;
+  gap: 18px;
   box-shadow: var(--sh-3);
   border: 1px solid var(--wg-line);
 }
 .contact-form__row { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
-.contact-form__field { display: flex; flex-direction: column; gap: 10px; margin-top: 8px; }
+.contact-form__field { display: flex; flex-direction: column; gap: 6px; }
 .contact-form__field label {
   font-size: 11px;
   font-weight: 600;
@@ -774,21 +769,6 @@ button { font-family: inherit; }
   box-shadow: 0 0 0 3px rgba(201,162,91,0.15);
 }
 .contact-form__field textarea { min-height: 110px; }
-.contact-form__field input:invalid:not(:placeholder-shown),
-.contact-form__field textarea:invalid:not(:placeholder-shown),
-.contact-form__field select:invalid:not(:placeholder-shown) {
-  border-color: #DC2626;
-  outline: none;
-}
-.contact-form__error {
-  font-size: 13px;
-  color: #DC2626;
-  display: none;
-  align-items: center;
-  gap: 6px;
-  margin-top: 2px;
-}
-.contact-form__error.is-visible { display: flex; }
 .contact-form__submit {
   margin-top: 4px;
   font-size: 15px;
@@ -830,7 +810,6 @@ button { font-family: inherit; }
 .contact-form__note a { color: var(--gold-accent); text-decoration: underline; }
 @media (max-width: 640px) {
   .contact-form__row { grid-template-columns: 1fr; }
-  .contact-form__submit { width: 100%; justify-content: center; }
 }
 
 /* =========================================================
@@ -895,10 +874,10 @@ button { font-family: inherit; }
   border-bottom: 1px solid rgba(250,248,244,0.1);
   align-items: start;
 }
-.footer__brand img { width: 260px; height: auto; margin-bottom: 28px; }
+.footer__brand img { width: 220px; height: auto; margin-bottom: 24px; }
 .footer__brand p { font-size: 14px; line-height: 1.7; max-width: 300px; margin: 0 0 20px; }
-.footer__brand-meta { display: flex; flex-direction: column; gap: 6px; margin-top: 4px; }
-.footer__brand-meta span { font-size: 12px; color: rgba(250,248,244,0.82); letter-spacing: 0.03em; line-height: 1.5; }
+.footer__brand-meta { display: flex; flex-direction: column; gap: 4px; }
+.footer__brand-meta span { font-size: 12px; color: rgba(250,248,244,0.45); letter-spacing: 0.04em; }
 .footer__social { display: flex; gap: 12px; margin-top: 20px; }
 .footer__social a {
   width: 36px; height: 36px;
@@ -911,8 +890,8 @@ button { font-family: inherit; }
 .footer__social a:hover { background: var(--wg-gold-700); color: var(--wg-paper); border-color: var(--wg-gold-700); }
 .footer__col h5 { font-size: 11px; letter-spacing: 0.22em; text-transform: uppercase; font-weight: 500; color: var(--wg-paper); margin: 0 0 16px; }
 .footer__col ul { list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 12px; }
-.footer__col li { font-size: 14px; color: rgba(250,248,244,0.88); }
-.footer__col a { font-size: 14px; color: rgba(250,248,244,0.88); transition: color 200ms ease; }
+.footer__col li { font-size: 14px; color: rgba(250,248,244,0.7); }
+.footer__col a { font-size: 14px; color: rgba(250,248,244,0.7); transition: color 200ms ease; }
 .footer__col a:hover { color: var(--gold-accent); }
 .footer__base {
   padding: 24px 0 0;
@@ -920,12 +899,12 @@ button { font-family: inherit; }
   justify-content: space-between;
   align-items: center;
   font-size: 12px;
-  color: rgba(250,248,244,0.72);
+  color: rgba(250,248,244,0.5);
   flex-wrap: wrap;
   gap: 16px;
 }
 .footer__base-legal { display: flex; gap: 24px; }
-.footer__base-legal a { color: rgba(250,248,244,0.72); transition: color 200ms ease; }
+.footer__base-legal a { color: rgba(250,248,244,0.5); transition: color 200ms ease; }
 .footer__base-legal a:hover { color: var(--gold-accent); }
 
 /* =========================================================
@@ -942,7 +921,7 @@ button { font-family: inherit; }
   align-items: center;
   padding: 5px 14px;
   background: var(--gold-soft);
-  color: var(--wg-gold-700);
+  color: var(--gold-accent);
   font-size: 11px;
   font-weight: 600;
   letter-spacing: 0.2em;
@@ -957,14 +936,14 @@ button { font-family: inherit; }
   line-height: 1.1;
   letter-spacing: -0.02em;
   margin: 0 0 20px;
-  color: var(--wg-ink-900);
+  color: var(--wg-paper);
   text-wrap: balance;
 }
 .voor-pro__em {
   font-family: var(--font-serif);
   font-style: italic;
   font-size: clamp(20px, 2.4vw, 26px);
-  color: var(--gold-accent);
+  color: var(--wg-gold-300);
   margin: 0 0 40px;
   font-weight: 500;
   line-height: 1.25;
@@ -973,13 +952,13 @@ button { font-family: inherit; }
 .voor-pro__body p {
   font-size: 17px;
   line-height: 1.75;
-  color: var(--fg-2);
+  color: rgba(250,248,244,0.72);
   margin: 0 0 20px;
 }
 .voor-pro__body p:last-child { margin-bottom: 0; }
 .voor-pro__tagline {
   font-style: italic;
-  color: var(--fg-3) !important;
+  color: rgba(250,248,244,0.45) !important;
   font-size: 15px !important;
 }
 .btn--navy {
@@ -1019,11 +998,9 @@ button { font-family: inherit; }
   .hero { padding: 110px 0 80px; }
   .hero__meta { gap: 28px; }
   .locatie { grid-template-columns: 1fr; gap: 40px; }
-  .steps-5 { grid-template-columns: 1fr; }
+  .steps-5 { grid-template-columns: 1fr 1fr; }
   .steps-5::before { display: none; }
   .v3-rolegrid { grid-template-columns: 1fr 1fr; }
-  .step__dot::before { display: none; }
-  .step { padding: 16px 20px; }
 }
 @media (max-width: 640px) {
   .logos-grid { grid-template-columns: repeat(2, 1fr); }
@@ -1032,14 +1009,6 @@ button { font-family: inherit; }
   .steps-5 { grid-template-columns: 1fr; }
   .v3-rolegrid { grid-template-columns: 1fr; }
   .footer__inner { grid-template-columns: 1fr; }
-  .footer__brand { text-align: center; }
-  .footer__brand img { margin: 0 auto 28px; display: block; }
-  .footer__brand-meta { align-items: center; }
-  .footer__social { justify-content: center; }
-  .footer__col { text-align: center; }
-  .voor-pro .btn { white-space: normal; width: 100%; text-align: center; }
-  .voor-pro__headline { font-size: 26px; }
-  .voor-pro__em { font-size: 18px; }
 }
 
 /* =========================================================
@@ -1055,15 +1024,16 @@ button { font-family: inherit; }
   transition: width 60ms linear;
   pointer-events: none;
 }
-@media (max-height: 480px) { #progress-bar { display: none; } }
 
 /* =========================================================
-   Logo carrousel (marquee)
+   Logo marquee (carrousel)
    ========================================================= */
 .logo-marquee {
   overflow: hidden;
-  -webkit-mask-image: linear-gradient(90deg, transparent 0%, #000 8%, #000 92%, transparent 100%);
-  mask-image: linear-gradient(90deg, transparent 0%, #000 8%, #000 92%, transparent 100%);
+  border-top: 1px solid var(--wg-line);
+  border-bottom: 1px solid var(--wg-line);
+  -webkit-mask-image: linear-gradient(to right, transparent 0%, black 8%, black 92%, transparent 100%);
+  mask-image: linear-gradient(to right, transparent 0%, black 8%, black 92%, transparent 100%);
 }
 .logo-track {
   display: flex;
@@ -1084,8 +1054,22 @@ button { font-family: inherit; }
   border-right: 1px solid var(--wg-line);
   flex-shrink: 0;
 }
-.logo-item img { height: 80px; width: auto; object-fit: contain; filter: grayscale(100%); opacity: 0.55; transition: filter 300ms ease, opacity 300ms ease; }
-.logo-item:hover img { filter: grayscale(0%); opacity: 1; }
+.logo-item img {
+  max-height: 48px;
+  width: auto;
+  object-fit: contain;
+  filter: grayscale(1) contrast(0.9) brightness(0.95);
+  opacity: 0.65;
+  transition: filter 320ms var(--ease-out), opacity 320ms var(--ease-out), transform 320ms var(--ease-out);
+}
+.logo-item:hover img {
+  filter: grayscale(0) contrast(1) brightness(1);
+  opacity: 1;
+  transform: scale(1.06);
+}
+@media (prefers-reduced-motion: reduce) {
+  .logo-track { animation: none; }
+}
     </style>
   <script type="application/ld+json">
   {
@@ -1113,7 +1097,6 @@ button { font-family: inherit; }
 </head>
 <body>
 
-<a href="#main-content" class="skip-link">Ga naar inhoud</a>
 <div id="progress-bar"></div>
 
 <!-- Nav -->
@@ -1127,7 +1110,7 @@ button { font-family: inherit; }
       <a href="#expertise">Expertise</a>
       <a href="#voor-professionals">Voor professionals</a>
       <a href="#waarom">Waarom WerkGeluk</a>
-      <a href="contact.html">Contact</a>
+      <a href="#contact">Contact</a>
       <a href="#locatie">Locatie</a>
     </div>
     <div class="nav__cta">
@@ -1145,9 +1128,9 @@ button { font-family: inherit; }
   <a href="#expertise">Expertise</a>
   <a href="#voor-professionals">Voor professionals</a>
   <a href="#waarom">Waarom WerkGeluk</a>
-  <a href="contact.html">Contact</a>
+  <a href="#contact">Contact</a>
   <a href="#locatie">Locatie</a>
-  <a href="contact.html" class="nav__mobile-cta">Plan een gesprek →</a>
+  <a href="#contact" class="nav__mobile-cta">Plan een gesprek →</a>
 </div>
 
 <!-- Hero -->
@@ -1156,29 +1139,24 @@ button { font-family: inherit; }
     <h1 class="hero__headline">WerkGeluk begint <em>bij de juiste match.</em></h1>
     <p class="hero__sub">WerkGeluk Recruitment helpt organisaties bij het vinden van commerciële en technische sales professionals die niet alleen passen op papier, maar ook binnen cultuur, ambitie en visie.</p>
     <div class="hero__ctas">
-      <a href="contact.html" class="btn btn--gold">Plan een gesprek <span class="arrow">→</span></a>
-      <a href="#voor-professionals" class="btn btn--ghost">Jouw volgende stap <span class="arrow">→</span></a>
+      <a href="#contact" class="btn btn--gold">Plan een kennismaking <span class="arrow">→</span></a>
+      <a href="#voor-professionals" class="btn btn--ghost">Op zoek naar een nieuwe stap? <span class="arrow">→</span></a>
     </div>
   </div>
-  <a href="#about" class="hero__scroll" aria-label="Scroll naar beneden">
-    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
-  </a>
 </header>
-
-<main id="main-content">
 
 <!-- About -->
 <section class="section section--cream" id="about">
   <div class="container">
     <div class="about">
       <div class="reveal about__portrait">
-        <img src="assets/nicky-portrait.jpeg" alt="Nicky Roggeveen, oprichter WerkGeluk Recruitment" class="about__portrait-photo" loading="lazy" />
-        <div class="about__portrait-overlay"><span>Rotterdam</span></div>
+        <img src="assets/nicky-portrait.jpeg" alt="Nicky Roggeveen, oprichter WerkGeluk Recruitment" class="about__portrait-photo" />
+        <div class="about__portrait-overlay"><span>Rotterdam · 2026</span></div>
       </div>
       <div class="reveal about__copy" style="transition-delay:100ms">
         <span class="eyebrow">Over</span>
         <h2>Persoonlijke recruitment, met aandacht voor de mens <em>achter het cv.</em></h2>
-        <p>WerkGeluk Recruitment is een klein recruitmentbureau, opgericht door Nicky Roggeveen. Ik ben gespecialiseerd in commerciële en technische sales profielen, en help organisaties bij het vinden van mensen die niet alleen passen op papier, maar ook in de cultuur, het team en de visie.</p>
+        <p>WerkGeluk Recruitment is een klein boutique recruitmentbureau, opgericht door Nicky Roggeveen. Ik ben gespecialiseerd in commerciële en technische sales profielen, en help organisaties bij het vinden van mensen die niet alleen passen op papier, maar ook in de cultuur, het team en de visie.</p>
         <p>In plaats van snelle plaatsingen of volume recruitment draait het bij mij om oprechte aandacht, kwaliteit en lange termijn relaties. Een grondig gesprek, een eerlijk advies en een match die blijft.</p>
         <div class="about__signature">
           <div>
@@ -1198,7 +1176,7 @@ button { font-family: inherit; }
       <div class="reveal">
         <div class="section__head">
           <div>
-            <span class="eyebrow">Expertise</span>
+            <span class="eyebrow" style="color:var(--wg-gold-400)">Expertise</span>
             <h2 class="section__title">Sterke commerciële professionals vinden vraagt <em>meer dan alleen recruitment.</em></h2>
           </div>
           <div class="section__lede">
@@ -1229,7 +1207,7 @@ button { font-family: inherit; }
 </section>
 
 <!-- Voor professionals -->
-<section class="section section--cream" id="voor-professionals">
+<section class="section section--navy-deep" id="voor-professionals">
   <div class="container">
     <div class="voor-pro">
 
@@ -1238,7 +1216,7 @@ button { font-family: inherit; }
         <span class="voor-pro__tag">Voor professionals</span>
         <h2 class="voor-pro__headline">Een nieuwe stap moet niet alleen interessant zijn.</h2>
         <p class="voor-pro__em">Het moet ook écht bij je passen.</p>
-        <a href="contact.html" class="btn btn--gold">Plan een gesprek <span class="arrow">→</span></a>
+        <a href="mailto:Nicky@werkgeluk-recruitment.nl" class="btn btn--gold">Plan een vrijblijvend kennismakingsgesprek <span class="arrow">→</span></a>
       </div>
 
       <!-- Rechts: body tekst -->
@@ -1261,39 +1239,38 @@ button { font-family: inherit; }
           <span class="eyebrow">Waarom WerkGeluk</span>
           <h2 class="section__title">Waarom organisaties kiezen <em>voor WerkGeluk Recruitment.</em></h2>
         </div>
-        <p class="section__lede">Niet elk recruitmentbureau werkt hetzelfde. Bij WerkGeluk draait het om persoonlijk contact, een gerichte aanpak en matches die ook op de langere termijn standhouden.</p>
       </div>
     </div>
     <div class="steps-5">
       <div class="reveal step">
         <div class="step__dot"></div>
         <span class="step__num">01</span>
-        <h4 class="step__title">Je spreekt altijd direct met Nicky</h4>
-        <p class="step__body">Geen accountmanagers of doorverwijzingen. Eén aanspreekpunt, van eerste gesprek tot definitieve plaatsing.</p>
+        <h4 class="step__title">Persoonlijk en betrokken</h4>
+        <p class="step__body">Direct contact, korte lijnen en échte aandacht voor zowel klant als kandidaat.</p>
       </div>
       <div class="reveal step" style="transition-delay:80ms">
         <div class="step__dot"></div>
         <span class="step__num">02</span>
-        <h4 class="step__title">Selectief, niet massaal</h4>
-        <p class="step__body">Je ontvangt alleen zorgvuldig gescreende kandidaten die inhoudelijk passend zijn.</p>
+        <h4 class="step__title">Kwaliteit boven kwantiteit</h4>
+        <p class="step__body">Geen stapels cv’s, maar zorgvuldig geselecteerde professionals.</p>
       </div>
       <div class="reveal step" style="transition-delay:160ms">
         <div class="step__dot"></div>
         <span class="step__num">03</span>
-        <h4 class="step__title">Specialist in sales & techniek</h4>
-        <p class="step__body">Jarenlange focus op commerciële en technische sales. Geen generalist, maar iemand die de markt echt kent.</p>
+        <h4 class="step__title">Gespecialiseerde focus</h4>
+        <p class="step__body">Sterk netwerk binnen commerciële en technische sales functies.</p>
       </div>
       <div class="reveal step" style="transition-delay:240ms">
         <div class="step__dot"></div>
         <span class="step__num">04</span>
-        <h4 class="step__title">Kleinschalig en betrokken</h4>
-        <p class="step__body">Bewust klein gebleven. Zo blijft de aandacht voor elke opdracht en elke kandidaat hoog.</p>
+        <h4 class="step__title">Boutique aanpak</h4>
+        <p class="step__body">Kleinschalig, selectief en gericht op lange termijn relaties.</p>
       </div>
       <div class="reveal step" style="transition-delay:320ms">
         <div class="step__dot"></div>
         <span class="step__num">05</span>
-        <h4 class="step__title">Eerlijk over wat past en wat niet</h4>
-        <p class="step__body">Geen gladde verkooppraatjes. Als het geen goede match is, zeg ik dat ook. Dat spaart iedereen tijd.</p>
+        <h4 class="step__title">Moderne recruitmentvisie</h4>
+        <p class="step__body">Menselijk, transparant en gericht op duurzame groei.</p>
       </div>
     </div>
   </div>
@@ -1319,7 +1296,7 @@ button { font-family: inherit; }
         <div class="logo-item"><img src="assets/logos/parhelia.png" alt="Parhelia" loading="lazy" /></div>
         <div class="logo-item"><img src="assets/logos/ridder.png" alt="Ridder" loading="lazy" /></div>
         <div class="logo-item"><img src="assets/logos/renishaw.jpg" alt="Renishaw" loading="lazy" /></div>
-        <!-- duplicate set for seamless marquee loop -->
+        <!-- duplicate set for seamless loop -->
         <div class="logo-item" aria-hidden="true"><img src="assets/logos/mean-well.png" alt="" loading="lazy" /></div>
         <div class="logo-item" aria-hidden="true"><img src="assets/logos/distrimex.png" alt="" loading="lazy" /></div>
         <div class="logo-item" aria-hidden="true"><img src="assets/logos/koenig-bauer.jpg" alt="" loading="lazy" /></div>
@@ -1345,30 +1322,10 @@ button { font-family: inherit; }
         <span class="eyebrow" style="color:var(--wg-gold-300)">Kennismaken</span>
         <h2>Een gesprek begint <em>met een goede vraag.</em></h2>
         <p>Heb je een opdracht, een vacature of gewoon een vraag? Bel of mail vrijblijvend. Vaak is een eerste gesprek genoeg om te zien of er iets te bouwen valt.</p>
-        <div style="display:flex;flex-direction:column;gap:12px;margin-top:28px;">
-          <a href="tel:+31618236993" style="display:inline-flex;align-items:center;gap:12px;font-size:16px;font-weight:500;color:var(--wg-paper);opacity:0.85;transition:opacity 200ms ease;" onmouseover="this.style.opacity='1'" onmouseout="this.style.opacity='0.85'">
-            <span style="width:36px;height:36px;background:rgba(250,248,244,0.1);border-radius:50%;display:inline-flex;align-items:center;justify-content:center;flex-shrink:0;">
-              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 13.5a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.6 2.69h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 10.2a16 16 0 0 0 5.89 5.89l.94-.94a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 21.92 17z"/></svg>
-            </span>
-            +31 6 18 23 69 93
-          </a>
-          <a href="mailto:Nicky@werkgeluk-recruitment.nl" style="display:inline-flex;align-items:center;gap:12px;font-size:16px;font-weight:500;color:var(--wg-paper);opacity:0.85;transition:opacity 200ms ease;" onmouseover="this.style.opacity='1'" onmouseout="this.style.opacity='0.85'">
-            <span style="width:36px;height:36px;background:rgba(250,248,244,0.1);border-radius:50%;display:inline-flex;align-items:center;justify-content:center;flex-shrink:0;">
-              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
-            </span>
-            Nicky@werkgeluk-recruitment.nl
-          </a>
-          <a href="https://www.linkedin.com/in/nicky-roggeveen/" target="_blank" rel="noreferrer" style="display:inline-flex;align-items:center;gap:12px;font-size:16px;font-weight:500;color:var(--wg-paper);opacity:0.85;transition:opacity 200ms ease;" onmouseover="this.style.opacity='1'" onmouseout="this.style.opacity='0.85'">
-            <span style="width:36px;height:36px;background:rgba(250,248,244,0.1);border-radius:50%;display:inline-flex;align-items:center;justify-content:center;flex-shrink:0;">
-              <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
-            </span>
-            LinkedIn — Nicky Roggeveen
-          </a>
-        </div>
       </div>
-      <!-- Contactformulier via Formspree -->
+      <!-- Contactformulier via Formspree (gratis op formspree.io — vervang YOUR_FORM_ID) -->
       <div class="reveal contact-form" style="transition-delay:120ms">
-        <form id="contact-form" action="https://formspree.io/f/mwvyjzpo" method="POST" novalidate>
+        <form id="contact-form" action="https://formspree.io/f/YOUR_FORM_ID" method="POST" novalidate>
           <div class="contact-form__row">
             <div class="contact-form__field">
               <label for="cf-name">Naam</label>
@@ -1381,11 +1338,7 @@ button { font-family: inherit; }
           </div>
           <div class="contact-form__field">
             <label for="cf-email">E-mailadres</label>
-            <input type="email" id="cf-email" name="email" placeholder="jouw@emailadres.nl" required aria-describedby="cf-email-error" />
-            <span class="contact-form__error" id="cf-email-error" role="alert">
-              <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12" y2="16"/></svg>
-              Vul een geldig e-mailadres in
-            </span>
+            <input type="email" id="cf-email" name="email" placeholder="jouw@emailadres.nl" required />
           </div>
           <div class="contact-form__field">
             <label for="cf-subject">Onderwerp</label>
@@ -1448,8 +1401,6 @@ button { font-family: inherit; }
   </div>
 </section>
 
-</main>
-
 <!-- Footer -->
 <footer class="footer">
   <div class="container">
@@ -1457,7 +1408,31 @@ button { font-family: inherit; }
 
       <!-- Brand -->
       <div class="footer__brand">
-        <img src="assets/6-2.png" alt="WerkGeluk Recruitment" />
+        <img src="assets/6-1.png" alt="WerkGeluk Recruitment" />
+        <p>Boutique recruitment voor commerciële en technische sales professionals. Persoonlijk. Eerlijk. Duurzaam.</p>
+        <div class="footer__brand-meta">
+          <span>KvK: 70841640</span>
+          <span>BTW: NL001178713B61</span>
+          <span>Otto Reuchlinweg 1146 · 3072 MD Rotterdam</span>
+        </div>
+        <div class="footer__social">
+          <a href="https://www.linkedin.com/in/nicky-roggeveen/" target="_blank" rel="noreferrer" aria-label="LinkedIn">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+              <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/>
+              <rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/>
+            </svg>
+          </a>
+          <a href="mailto:Nicky@werkgeluk-recruitment.nl" aria-label="E-mail">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/>
+            </svg>
+          </a>
+          <a href="tel:+31618236993" aria-label="Telefoon">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 13.5a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.6 2.69h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 10.2a16 16 0 0 0 5.89 5.89l.94-.94a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 21.92 17z"/>
+            </svg>
+          </a>
+        </div>
       </div>
 
       <!-- Navigatie -->
@@ -1468,7 +1443,7 @@ button { font-family: inherit; }
           <li><a href="#expertise">Expertise</a></li>
           <li><a href="#voor-professionals">Voor professionals</a></li>
           <li><a href="#waarom">Waarom WerkGeluk</a></li>
-          <li><a href="contact.html">Contact</a></li>
+          <li><a href="#contact">Contact</a></li>
           <li><a href="#locatie">Locatie</a></li>
         </ul>
       </div>
@@ -1496,7 +1471,6 @@ button { font-family: inherit; }
     </div>
     <div class="footer__base">
       <span>© 2026 WerkGeluk Recruitment · Rotterdam · Nederland</span>
-      <span style="color:rgba(250,248,244,0.65);">KvK: 70841640 &nbsp;·&nbsp; BTW: NL001178713B61</span>
     </div>
   </div>
 </footer>
@@ -1504,6 +1478,14 @@ button { font-family: inherit; }
 <script>
 /* Enable reveal animations now that JS is running */
 document.documentElement.classList.add('js-ready');
+
+/* ── Nav scroll glassmorphism ── */
+const nav = document.querySelector('.nav');
+function updateNavState() {
+  nav.classList.toggle('is-scrolled', window.scrollY > 50);
+}
+window.addEventListener('scroll', updateNavState, { passive: true });
+updateNavState();
 
 /* ── Mobile menu ── */
 const hamburger = document.querySelector('.nav__hamburger');
