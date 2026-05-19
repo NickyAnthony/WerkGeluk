@@ -400,14 +400,6 @@ button { font-family: inherit; }
   margin: 0;
 }
 .hero__ctas { display: flex; gap: 14px; flex-wrap: wrap; margin-top: 44px; }
-.hero__meta-label {
-  font-size: 12px;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
-  color: rgba(250,248,244,0.56);
-  font-weight: 500;
-}
-
 /* ── Hero entry animations ── */
 @keyframes hero-fade-up {
   from { opacity: 0; transform: translateY(22px); }
@@ -692,60 +684,6 @@ button { font-family: inherit; }
 }
 .cta__copy h2 em { font-style: italic; font-weight: 500; color: var(--wg-gold-300); }
 .cta__copy p { font-size: 18px; line-height: 1.6; color: rgba(250,248,244,0.72); margin: 0; max-width: 520px; }
-.cta__card {
-  background: var(--wg-paper);
-  color: var(--wg-ink-900);
-  border-radius: var(--r-xl);
-  padding: 40px;
-  display: flex;
-  flex-direction: column;
-  gap: 18px;
-  box-shadow: var(--sh-3);
-  border: 1px solid var(--wg-line);
-}
-.cta__card-row {
-  display: flex;
-  align-items: center;
-  gap: 14px;
-  padding: 14px 0;
-  border-bottom: 1px solid var(--wg-line);
-}
-.cta__card-row:last-of-type { border-bottom: none; }
-.cta__card-icon {
-  width: 40px; height: 40px;
-  background: var(--gold-soft);
-  color: var(--gold-accent);
-  border-radius: 999px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-family: var(--font-serif);
-  font-style: italic;
-  font-weight: 600;
-  font-size: 16px;
-  flex-shrink: 0;
-}
-.cta__card-label { font-size: 11px; letter-spacing: 0.18em; text-transform: uppercase; color: var(--fg-3); font-weight: 500; margin-bottom: 2px; }
-.cta__card-value { font-size: 16px; font-weight: 500; color: var(--wg-ink-900); }
-.cta__card-value:hover { color: var(--gold-accent); }
-.cta__primary {
-  margin-top: 8px;
-  font-size: 15px;
-  padding: 16px 24px;
-  border-radius: 12px;
-  width: 100%;
-  background: var(--wg-navy-800);
-  color: var(--wg-paper);
-  border: none;
-  font-weight: 600;
-  cursor: pointer;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  gap: 10px;
-  transition: all 240ms var(--ease-out);
-}
-.cta__primary:hover { background: var(--wg-navy-700); transform: translateY(-1px); box-shadow: var(--sh-3); }
 
 /* =========================================================
    Contactformulier
@@ -798,8 +736,10 @@ button { font-family: inherit; }
   padding: 16px 24px;
   border-radius: 12px;
   width: 100%;
-  background: var(--wg-navy-800);
-  color: var(--wg-paper);
+  background: var(--wg-gold-gradient);
+  background-size: 200% 200%;
+  background-position: 0% 50%;
+  color: var(--wg-navy-900);
   border: none;
   font-weight: 600;
   cursor: pointer;
@@ -807,10 +747,10 @@ button { font-family: inherit; }
   align-items: center;
   justify-content: center;
   gap: 10px;
-  transition: all 240ms var(--ease-out);
+  transition: background-position 400ms var(--ease-out), box-shadow 240ms var(--ease-out), transform 240ms var(--ease-out);
   font-family: var(--font-sans);
 }
-.contact-form__submit:hover { background: var(--wg-navy-700); transform: translateY(-1px); box-shadow: var(--sh-3); }
+.contact-form__submit:hover { background-position: 100% 50%; box-shadow: var(--sh-gold); transform: translateY(-1px); }
 .contact-form__success {
   display: none;
   text-align: center;
@@ -1243,7 +1183,7 @@ button { font-family: inherit; }
         <span class="voor-pro__tag">Voor professionals</span>
         <h2 class="voor-pro__headline">Een nieuwe stap moet niet alleen interessant zijn.</h2>
         <p class="voor-pro__em">Het moet ook écht bij je passen.</p>
-        <a href="mailto:Nicky@werkgeluk-recruitment.nl" class="btn btn--gold">Plan een vrijblijvend kennismakingsgesprek <span class="arrow">→</span></a>
+        <a href="#contact" class="btn btn--gold">Plan een kennismaking <span class="arrow">→</span></a>
       </div>
 
       <!-- Rechts: body tekst -->
