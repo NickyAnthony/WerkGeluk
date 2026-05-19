@@ -1165,7 +1165,7 @@ button { font-family: inherit; }
 <!-- Cookie banner -->
 <div id="cookie-banner" role="dialog" aria-label="Cookiemelding">
   <p>Deze website gebruikt Google Fonts, een externe dienst van Google. Hierbij wordt je IP-adres kort verwerkt. Meer informatie vind je in onze <a href="assets/privacyverklaring.pdf" target="_blank" rel="noreferrer">privacyverklaring</a>.</p>
-  <button id="cookie-accept">Begrepen</button>
+  <button id="cookie-accept" onclick="document.getElementById('cookie-banner').style.display='none';localStorage.setItem('cookie-accepted','1')">Begrepen</button>
 </div>
 
 <!-- Nav -->
@@ -1545,14 +1545,8 @@ document.documentElement.classList.add('js-ready');
 
 /* ── Cookie banner ── */
 const cookieBanner = document.getElementById('cookie-banner');
-const cookieAccept = document.getElementById('cookie-accept');
-if (localStorage.getItem('cookie-accepted')) {
-  cookieBanner.remove();
-} else {
-  cookieAccept.addEventListener('click', () => {
-    localStorage.setItem('cookie-accepted', '1');
-    cookieBanner.remove();
-  });
+if (cookieBanner && localStorage.getItem('cookie-accepted')) {
+  cookieBanner.style.display = 'none';
 }
 
 /* ── Nav scroll glassmorphism ── */
