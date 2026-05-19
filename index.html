@@ -447,6 +447,8 @@ button { font-family: inherit; }
   color: var(--fg-2);
 }
 .section--navy-deep .section__lede { color: rgba(250,248,244,0.72); }
+.section__lede p { margin: 0; }
+.section__lede p + p { margin-top: 18px; }
 
 /* =========================================================
    About
@@ -685,6 +687,20 @@ button { font-family: inherit; }
 }
 .cta__copy h2 em { font-style: italic; font-weight: 500; color: var(--wg-gold-300); }
 .cta__copy p { font-size: 18px; line-height: 1.6; color: rgba(250,248,244,0.72); margin: 0; max-width: 520px; }
+.cta__contacts { display: flex; flex-direction: column; gap: 12px; margin-top: 32px; }
+.cta__contact-link {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  padding: 14px 18px;
+  border: 1px solid rgba(250,248,244,0.1);
+  border-radius: var(--r-md);
+  background: rgba(250,248,244,0.04);
+  transition: background 200ms ease, border-color 200ms ease;
+}
+.cta__contact-link:hover { background: rgba(250,248,244,0.08); border-color: rgba(201,162,91,0.3); }
+.cta__contact-label { font-size: 11px; letter-spacing: 0.16em; text-transform: uppercase; color: rgba(250,248,244,0.45); font-weight: 500; }
+.cta__contact-value { font-size: 15px; color: var(--wg-paper); font-weight: 500; }
 
 /* =========================================================
    Contactformulier
@@ -866,19 +882,6 @@ button { font-family: inherit; }
   z-index: 1;
 }
 .footer__brand img { width: 260px; height: auto; margin-bottom: 28px; }
-.footer__brand p { font-size: 14px; line-height: 1.7; max-width: 300px; margin: 0 0 20px; }
-.footer__brand-meta { display: flex; flex-direction: column; gap: 4px; }
-.footer__brand-meta span { font-size: 12px; color: rgba(250,248,244,0.45); letter-spacing: 0.04em; }
-.footer__social { display: flex; gap: 12px; margin-top: 20px; }
-.footer__social a {
-  width: 36px; height: 36px;
-  border-radius: 999px;
-  border: 1px solid rgba(250,248,244,0.14);
-  display: flex; align-items: center; justify-content: center;
-  color: rgba(250,248,244,0.6);
-  transition: background 200ms ease, color 200ms ease, border-color 200ms ease;
-}
-.footer__social a:hover { background: var(--wg-gold-700); color: var(--wg-paper); border-color: var(--wg-gold-700); }
 .footer__col h5 { font-size: 11px; letter-spacing: 0.22em; text-transform: uppercase; font-weight: 500; color: var(--wg-paper); margin: 0 0 16px; }
 .footer__col ul { list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 12px; }
 .footer__col li { font-size: 14px; color: rgba(250,248,244,0.7); }
@@ -1137,7 +1140,7 @@ button { font-family: inherit; }
     <p class="hero__sub">WerkGeluk Recruitment helpt organisaties bij het vinden van commerciële en technische sales professionals die niet alleen passen op papier, maar ook binnen cultuur, ambitie en visie.</p>
     <div class="hero__ctas">
       <a href="#contact" class="btn btn--gold">Plan een kennismaking <span class="arrow">→</span></a>
-      <a href="#voor-professionals" class="btn btn--ghost">Op zoek naar een nieuwe stap? <span class="arrow">→</span></a>
+      <a href="#voor-professionals" class="btn btn--ghost">Ik zoek een nieuwe functie <span class="arrow">→</span></a>
     </div>
   </div>
 </header>
@@ -1177,8 +1180,8 @@ button { font-family: inherit; }
             <h2 class="section__title">Sterke commerciële professionals vinden vraagt <em>meer dan alleen recruitment.</em></h2>
           </div>
           <div class="section__lede">
-            <p style="margin:0">De markt is veranderd. Goede sales professionals kiezen bewust voor organisaties die aansluiten bij hun ambities, persoonlijkheid en manier van werken.</p>
-            <p style="margin-top:18px;margin-bottom:0">WerkGeluk Recruitment helpt organisaties bij het aantrekken van professionals die inhoudelijk én persoonlijk passen. Geen massa-aanpak, maar een zorgvuldig proces met focus op kwaliteit, positionering en duurzame groei.</p>
+            <p>De markt is veranderd. Goede sales professionals kiezen bewust voor organisaties die aansluiten bij hun ambities, persoonlijkheid en manier van werken.</p>
+            <p>WerkGeluk Recruitment helpt organisaties bij het aantrekken van professionals die inhoudelijk én persoonlijk passen. Geen massa-aanpak, maar een zorgvuldig proces met focus op kwaliteit, positionering en duurzame groei.</p>
           </div>
         </div>
       </div>
@@ -1199,30 +1202,6 @@ button { font-family: inherit; }
         </ul>
         <a href="#contact" class="btn btn--gold">Bespreek jouw vacature <span class="arrow">→</span></a>
       </div>
-    </div>
-  </div>
-</section>
-
-<!-- Voor professionals -->
-<section class="section section--cream" id="voor-professionals">
-  <div class="container">
-    <div class="voor-pro">
-
-      <!-- Links: tag + headline + CTA -->
-      <div class="reveal">
-        <span class="voor-pro__tag">Voor professionals</span>
-        <h2 class="voor-pro__headline">Een nieuwe stap moet niet alleen interessant zijn.</h2>
-        <p class="voor-pro__em">Het moet ook écht bij je passen.</p>
-        <a href="#contact" class="btn btn--gold">Plan een kennismaking <span class="arrow">→</span></a>
-      </div>
-
-      <!-- Rechts: body tekst -->
-      <div class="reveal voor-pro__body" style="transition-delay:100ms">
-        <p>Veel professionals maken op een gegeven moment een volgende stap in hun salesfunctie of commerciële carrière. Maar die stap gaat niet alleen over een hogere functietitel of een beter salaris. Het gaat over de omgeving. De cultuur. Het type leiderschap dat je uitdaagt en de ruimte die je krijgt om jezelf te ontwikkelen.</p>
-        <p>WerkGeluk Recruitment begeleidt commerciële en technische sales professionals bij het vinden van een positie die inhoudelijk én persoonlijk aansluit. Geen standaard vacaturelijstjes, maar oprechte aandacht voor wie je bent en wat je zoekt.</p>
-        <p class="voor-pro__tagline">Persoonlijk. Eerlijk. Meer dan standaard recruitment.</p>
-      </div>
-
     </div>
   </div>
 </section>
@@ -1312,6 +1291,30 @@ button { font-family: inherit; }
   </div>
 </section>
 
+<!-- Voor professionals -->
+<section class="section section--paper" id="voor-professionals">
+  <div class="container">
+    <div class="voor-pro">
+
+      <!-- Links: tag + headline + CTA -->
+      <div class="reveal">
+        <span class="voor-pro__tag">Voor professionals</span>
+        <h2 class="voor-pro__headline">Een nieuwe stap moet niet alleen interessant zijn.</h2>
+        <p class="voor-pro__em">Het moet ook écht bij je passen.</p>
+        <a href="#contact" class="btn btn--gold">Plan een kennismaking <span class="arrow">→</span></a>
+      </div>
+
+      <!-- Rechts: body tekst -->
+      <div class="reveal voor-pro__body" style="transition-delay:100ms">
+        <p>Veel professionals maken op een gegeven moment een volgende stap in hun salesfunctie of commerciële carrière. Maar die stap gaat niet alleen over een hogere functietitel of een beter salaris. Het gaat over de omgeving. De cultuur. Het type leiderschap dat je uitdaagt en de ruimte die je krijgt om jezelf te ontwikkelen.</p>
+        <p>WerkGeluk Recruitment begeleidt commerciële en technische sales professionals bij het vinden van een positie die inhoudelijk én persoonlijk aansluit. Geen standaard vacaturelijstjes, maar oprechte aandacht voor wie je bent en wat je zoekt.</p>
+        <p class="voor-pro__tagline">Persoonlijk. Eerlijk. Meer dan standaard recruitment.</p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
 <!-- Contact -->
 <section class="section section--navy-deep" id="contact">
   <div class="container">
@@ -1320,6 +1323,16 @@ button { font-family: inherit; }
         <span class="eyebrow" style="color:var(--wg-gold-300)">Kennismaken</span>
         <h2>Een gesprek begint <em>met een goede vraag.</em></h2>
         <p>Heb je een opdracht, een vacature of gewoon een vraag? Bel of mail vrijblijvend. Vaak is een eerste gesprek genoeg om te zien of er iets te bouwen valt.</p>
+        <div class="cta__contacts">
+          <a href="tel:+31618236993" class="cta__contact-link">
+            <span class="cta__contact-label">Telefoon</span>
+            <span class="cta__contact-value">+31 6 18 23 69 93</span>
+          </a>
+          <a href="mailto:Nicky@werkgeluk-recruitment.nl" class="cta__contact-link">
+            <span class="cta__contact-label">E-mail</span>
+            <span class="cta__contact-value">Nicky@werkgeluk-recruitment.nl</span>
+          </a>
+        </div>
       </div>
       <div class="reveal contact-form" style="transition-delay:120ms">
         <form id="contact-form" action="https://formspree.io/f/mwvyjzpo" method="POST" novalidate>
