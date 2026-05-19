@@ -313,24 +313,42 @@ button { font-family: inherit; }
   overflow: hidden;
   isolation: isolate;
 }
+@keyframes orb-gold {
+  0%   { transform: translate(0px,   0px)    scale(1);    }
+  25%  { transform: translate(-60px, 70px)   scale(1.06); }
+  50%  { transform: translate(-25px, 130px)  scale(0.94); }
+  75%  { transform: translate(50px,  40px)   scale(1.05); }
+  100% { transform: translate(0px,   0px)    scale(1);    }
+}
+@keyframes orb-navy {
+  0%   { transform: translate(0px,   0px)    scale(1);   }
+  33%  { transform: translate(80px,  -70px)  scale(1.1); }
+  66%  { transform: translate(-50px, -100px) scale(0.92);}
+  100% { transform: translate(0px,   0px)    scale(1);   }
+}
 .hero::before {
   content: "";
   position: absolute;
   top: -160px; right: -180px;
   width: 920px; height: 920px;
   background: radial-gradient(circle at center,
-    rgba(201,162,91,0.34) 0%,
-    rgba(201,162,91,0.14) 30%,
+    rgba(201,162,91,0.58) 0%,
+    rgba(201,162,91,0.26) 30%,
     transparent 60%);
   pointer-events: none;
+  animation: orb-gold 20s ease-in-out infinite;
 }
 .hero::after {
   content: "";
   position: absolute;
   bottom: -260px; left: -180px;
   width: 640px; height: 640px;
-  background: radial-gradient(circle at center, rgba(45,64,104,0.6) 0%, transparent 60%);
+  background: radial-gradient(circle at center, rgba(45,64,104,0.9) 0%, transparent 60%);
   pointer-events: none;
+  animation: orb-navy 26s ease-in-out infinite;
+}
+@media (prefers-reduced-motion: reduce) {
+  .hero::before, .hero::after { animation: none; }
 }
 .hero__inner { position: relative; z-index: 1; padding-top: 8px; }
 .hero__headline {
@@ -940,14 +958,14 @@ button { font-family: inherit; }
   line-height: 1.1;
   letter-spacing: -0.02em;
   margin: 0 0 20px;
-  color: var(--wg-paper);
+  color: var(--fg-1);
   text-wrap: balance;
 }
 .voor-pro__em {
   font-family: var(--font-serif);
   font-style: italic;
   font-size: clamp(20px, 2.4vw, 26px);
-  color: var(--wg-gold-300);
+  color: var(--gold-accent);
   margin: 0 0 40px;
   font-weight: 500;
   line-height: 1.25;
@@ -956,13 +974,13 @@ button { font-family: inherit; }
 .voor-pro__body p {
   font-size: 17px;
   line-height: 1.75;
-  color: rgba(250,248,244,0.72);
+  color: var(--fg-2);
   margin: 0 0 20px;
 }
 .voor-pro__body p:last-child { margin-bottom: 0; }
 .voor-pro__tagline {
   font-style: italic;
-  color: rgba(250,248,244,0.45) !important;
+  color: var(--fg-3) !important;
   font-size: 15px !important;
 }
 .btn--navy {
@@ -978,6 +996,10 @@ button { font-family: inherit; }
 /* =========================================================
    Responsive
    ========================================================= */
+@media (max-width: 1280px) {
+  .nav__links { gap: 20px; }
+  .nav__logo img { width: 220px; }
+}
 @media (max-width: 1100px) {
   .logos-grid { grid-template-columns: repeat(4, 1fr); }
   .logo-cell:nth-child(6n) { border-right: 1px solid var(--wg-line); }
@@ -1111,14 +1133,14 @@ button { font-family: inherit; }
     </a>
     <div class="nav__links">
       <a href="#about">Over</a>
-      <a href="#expertise">Expertise</a>
+      <a href="diensten.html">Diensten</a>
       <a href="#voor-professionals">Voor professionals</a>
       <a href="#waarom">Waarom WerkGeluk</a>
       <a href="#contact">Kennismaken</a>
       <a href="#locatie">Locatie</a>
     </div>
     <div class="nav__cta">
-      <a href="#contact" class="btn btn--gold btn--sm">Plan een gesprek <span class="arrow">→</span></a>
+      <a href="#contact" class="btn btn--gold btn--sm">Kennismaken <span class="arrow">→</span></a>
     </div>
     <button class="nav__hamburger" aria-label="Open menu" aria-expanded="false">
       <span></span><span></span><span></span>
@@ -1128,13 +1150,13 @@ button { font-family: inherit; }
 
 <!-- Mobile menu -->
 <div class="nav__mobile" aria-hidden="true">
-  <a href="#about">Over</a>
-  <a href="#expertise">Expertise</a>
+  <a href="over-ons.html">Over ons</a>
+  <a href="diensten.html">Diensten</a>
   <a href="#voor-professionals">Voor professionals</a>
   <a href="#waarom">Waarom WerkGeluk</a>
   <a href="#contact">Kennismaken</a>
   <a href="#locatie">Locatie</a>
-  <a href="#contact" class="nav__mobile-cta">Plan een gesprek →</a>
+  <a href="#contact" class="nav__mobile-cta">Kennismaken →</a>
 </div>
 
 <!-- Hero -->
@@ -1211,7 +1233,7 @@ button { font-family: inherit; }
 </section>
 
 <!-- Voor professionals -->
-<section class="section section--navy-deep" id="voor-professionals">
+<section class="section section--cream" id="voor-professionals">
   <div class="container">
     <div class="voor-pro">
 
@@ -1327,9 +1349,8 @@ button { font-family: inherit; }
         <h2>Een gesprek begint <em>met een goede vraag.</em></h2>
         <p>Heb je een opdracht, een vacature of gewoon een vraag? Bel of mail vrijblijvend. Vaak is een eerste gesprek genoeg om te zien of er iets te bouwen valt.</p>
       </div>
-      <!-- Contactformulier via Formspree (gratis op formspree.io — vervang YOUR_FORM_ID) -->
       <div class="reveal contact-form" style="transition-delay:120ms">
-        <form id="contact-form" action="https://formspree.io/f/YOUR_FORM_ID" method="POST" novalidate>
+        <form id="contact-form" novalidate>
           <div class="contact-form__row">
             <div class="contact-form__field">
               <label for="cf-name">Naam</label>
@@ -1420,7 +1441,9 @@ button { font-family: inherit; }
         <h5>Navigatie</h5>
         <ul>
           <li><a href="#about">Over</a></li>
+          <li><a href="over-ons.html">Over ons</a></li>
           <li><a href="#expertise">Expertise</a></li>
+          <li><a href="diensten.html">Diensten</a></li>
           <li><a href="#voor-professionals">Voor professionals</a></li>
           <li><a href="#waarom">Waarom WerkGeluk</a></li>
           <li><a href="#contact">Kennismaken</a></li>
@@ -1526,32 +1549,35 @@ function updateProgress() {
 }
 window.addEventListener('scroll', updateProgress, { passive: true });
 
-/* ── 2. Contactformulier ── */
+/* ── 2. Contactformulier — mailto fallback ── */
 const contactForm = document.getElementById('contact-form');
 const formSuccess = document.getElementById('form-success');
 if (contactForm) {
-  contactForm.addEventListener('submit', async (e) => {
+  contactForm.addEventListener('submit', (e) => {
     e.preventDefault();
-    const btn = contactForm.querySelector('.contact-form__submit');
-    btn.textContent = 'Wordt verstuurd…';
-    btn.disabled = true;
-    try {
-      const res = await fetch(contactForm.action, {
-        method: 'POST',
-        body: new FormData(contactForm),
-        headers: { 'Accept': 'application/json' }
-      });
-      if (res.ok) {
-        contactForm.style.display = 'none';
-        formSuccess.classList.add('is-visible');
-      } else {
-        btn.textContent = 'Probeer opnieuw';
-        btn.disabled = false;
-      }
-    } catch {
-      btn.textContent = 'Probeer opnieuw';
-      btn.disabled = false;
-    }
+    const naam      = document.getElementById('cf-name').value.trim();
+    const bedrijf   = document.getElementById('cf-company').value.trim();
+    const email     = document.getElementById('cf-email').value.trim();
+    const onderwerp = document.getElementById('cf-subject').value;
+    const bericht   = document.getElementById('cf-message').value.trim();
+    const subjectMap = {
+      vacature:      'Vacature via website',
+      professional:  'Op zoek naar een nieuwe stap',
+      kennismaking:  'Vrijblijvende kennismaking',
+      overig:        'Bericht via website'
+    };
+    const subject = encodeURIComponent(subjectMap[onderwerp] || 'Bericht via website');
+    const bodyLines = [
+      'Naam: ' + naam,
+      bedrijf ? 'Bedrijf: ' + bedrijf : '',
+      'E-mail: ' + email,
+      '',
+      bericht
+    ].filter(Boolean).join('\n');
+    const body = encodeURIComponent(bodyLines);
+    window.location.href = 'mailto:Nicky@werkgeluk-recruitment.nl?subject=' + subject + '&body=' + body;
+    contactForm.style.display = 'none';
+    formSuccess.classList.add('is-visible');
   });
 }
 
