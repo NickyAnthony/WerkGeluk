@@ -757,19 +757,19 @@ button { font-family: inherit; }
   padding: 40px;
   display: flex;
   flex-direction: column;
-  gap: 26px;
+  gap: 10px;
   box-shadow: var(--sh-3);
   border: 1px solid var(--wg-line);
 }
 .contact-form__row { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
-.contact-form__field { display: flex; flex-direction: column; gap: 8px; }
+.contact-form__field { display: flex; flex-direction: column; gap: 8px; margin-top: 16px; }
+.contact-form__row .contact-form__field { margin-top: 0; }
 .contact-form__field label {
   font-size: 11px;
   font-weight: 600;
   letter-spacing: 0.16em;
   text-transform: uppercase;
   color: var(--fg-3);
-  padding-top: 8px;
 }
 .contact-form__field input,
 .contact-form__field textarea,
@@ -1473,6 +1473,7 @@ button { font-family: inherit; }
     </div>
     <div class="footer__base">
       <span>© 2026 WerkGeluk Recruitment · Rotterdam · Nederland</span>
+      <span>KvK: 70841640 · BTW: NL001178713B61</span>
     </div>
   </div>
 </footer>
