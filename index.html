@@ -997,7 +997,7 @@ button { font-family: inherit; }
   .logo-cell:nth-child(6n) { border-right: 1px solid var(--wg-line); }
   .logo-cell:nth-child(4n) { border-right: none; }
   .logo-cell:nth-child(-n+4) { border-bottom: 1px solid var(--wg-line); }
-  .steps-5 { grid-template-columns: repeat(3, 1fr); }
+  .steps-5 { grid-template-columns: repeat(3, 1fr); row-gap: 48px; }
 }
 @media (max-width: 900px) {
   .container { padding: 0 24px; }
@@ -1016,7 +1016,7 @@ button { font-family: inherit; }
   .hero { padding: 110px 0 80px; }
   .hero__meta { gap: 28px; }
   .locatie { grid-template-columns: 1fr; gap: 40px; }
-  .steps-5 { grid-template-columns: 1fr 1fr; }
+  .steps-5 { grid-template-columns: 1fr 1fr; row-gap: 48px; }
   .steps-5::before { display: none; }
   .v3-rolegrid { grid-template-columns: 1fr 1fr; }
 }
@@ -1024,7 +1024,7 @@ button { font-family: inherit; }
   .logos-grid { grid-template-columns: repeat(2, 1fr); }
   .logo-cell:nth-child(4n) { border-right: 1px solid var(--wg-line); }
   .logo-cell:nth-child(2n) { border-right: none; }
-  .steps-5 { grid-template-columns: 1fr; }
+  .steps-5 { grid-template-columns: 1fr; row-gap: 40px; }
   .v3-rolegrid { grid-template-columns: 1fr; }
   .footer__inner { grid-template-columns: 1fr; }
 }
