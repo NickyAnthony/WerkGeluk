@@ -1547,11 +1547,12 @@ document.documentElement.classList.add('js-ready');
 const cookieBanner = document.getElementById('cookie-banner');
 const cookieAccept = document.getElementById('cookie-accept');
 if (localStorage.getItem('cookie-accepted')) {
-  cookieBanner.classList.add('is-hidden');
+  cookieBanner.style.display = 'none';
 }
 cookieAccept.addEventListener('click', () => {
   localStorage.setItem('cookie-accepted', '1');
   cookieBanner.classList.add('is-hidden');
+  setTimeout(() => { cookieBanner.style.display = 'none'; }, 420);
 });
 
 /* ── Nav scroll glassmorphism ── */
