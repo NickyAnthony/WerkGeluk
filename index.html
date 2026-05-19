@@ -5,12 +5,14 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>WerkGeluk Recruitment — Persoonlijke recruitment voor commerciële en technische sales</title>
   <meta name="description" content="WerkGeluk Recruitment helpt organisaties bij het vinden van commerciële en technische sales professionals. Persoonlijk. Selectief. Gericht op duurzame matches." />
-  <link rel="icon" href="favicon.svg" type="image/svg+xml" />
+  <link rel="icon" href="assets/logo-mark-dark.png" type="image/png" />
+  <link rel="canonical" href="https://nickyanthony.github.io/WerkGeluk/" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Arimo:ital,wght@0,400..700;1,400..700&display=swap" rel="stylesheet" />
+  <link rel="preload" href="https://fonts.googleapis.com/css2?family=Arimo:ital,wght@0,400..700;1,400..700&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'" />
+  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Arimo:ital,wght@0,400..700;1,400..700&display=swap" /></noscript>
   <meta property="og:title" content="WerkGeluk Recruitment — Persoonlijke recruitment voor commerciële en technische sales" />
-  <meta property="og:description" content="WerkGeluk Recruitment helpt organisaties bij het vinden van commerciële en technische sales professionals. Persoonlijk. Selectief. Gericht op duurzame matches." />
+  <meta property="og:description" content="Persoonlijke recruitment voor commerciële en technische sales. Oprecht. Selectief. Gericht op matches die blijven. Neem vrijblijvend contact op." />
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://nickyanthony.github.io/WerkGeluk/" />
   <meta property="og:image" content="https://nickyanthony.github.io/WerkGeluk/assets/logo-horizontal-light.png" />
@@ -788,6 +790,19 @@ button { font-family: inherit; }
 .contact-form__success p { font-size: 16px; color: var(--fg-2); margin: 0; max-width: 280px; line-height: 1.55; }
 .contact-form__note { font-size: 12px; color: var(--fg-3); text-align: center; margin-top: 4px; }
 .contact-form__note a { color: var(--gold-accent); text-decoration: underline; }
+.contact-form__error {
+  display: none;
+  font-size: 11px;
+  color: #c0392b;
+  margin-top: -4px;
+}
+.contact-form__field.has-error .contact-form__error { display: block; }
+.contact-form__field.has-error input,
+.contact-form__field.has-error textarea,
+.contact-form__field.has-error select {
+  border-color: #c0392b;
+  box-shadow: 0 0 0 3px rgba(192,57,43,0.12);
+}
 @media (max-width: 640px) {
   .contact-form__row { grid-template-columns: 1fr; }
 }
@@ -1150,8 +1165,8 @@ button { font-family: inherit; }
   <div class="container">
     <div class="about">
       <div class="reveal about__portrait">
-        <img src="assets/nicky-portrait.jpeg" alt="Nicky Roggeveen, oprichter WerkGeluk Recruitment" class="about__portrait-photo" />
-        <div class="about__portrait-overlay"><span>Rotterdam · 2026</span></div>
+        <img src="assets/nicky-portrait.jpeg" alt="Nicky Roggeveen, oprichter WerkGeluk Recruitment" class="about__portrait-photo" width="800" height="1000" />
+        <div class="about__portrait-overlay"><span>Oprichter · WerkGeluk Recruitment</span></div>
       </div>
       <div class="reveal about__copy" style="transition-delay:100ms">
         <span class="eyebrow">Over</span>
@@ -1213,7 +1228,7 @@ button { font-family: inherit; }
       <div class="section__head">
         <div>
           <span class="eyebrow">Waarom WerkGeluk</span>
-          <h2 class="section__title">Waarom organisaties kiezen <em>voor WerkGeluk Recruitment.</em></h2>
+          <h2 class="section__title">Wat WerkGeluk Recruitment <em>onderscheidt.</em></h2>
         </div>
         <p class="section__lede">WerkGeluk Recruitment onderscheidt zich door een persoonlijke aanpak, diepgaande kennis van commerciële en technische sales, en een oprechte focus op duurzame matches voor zowel organisaties als professionals.</p>
       </div>
@@ -1340,15 +1355,23 @@ button { font-family: inherit; }
             <div class="contact-form__field">
               <label for="cf-name">Naam</label>
               <input type="text" id="cf-name" name="naam" placeholder="Jouw naam" required />
+              <span class="contact-form__error">Vul je naam in.</span>
             </div>
             <div class="contact-form__field">
               <label for="cf-company">Bedrijf</label>
               <input type="text" id="cf-company" name="bedrijf" placeholder="Optioneel" />
             </div>
           </div>
-          <div class="contact-form__field">
-            <label for="cf-email">E-mailadres</label>
-            <input type="email" id="cf-email" name="email" placeholder="jouw@emailadres.nl" required />
+          <div class="contact-form__row">
+            <div class="contact-form__field">
+              <label for="cf-email">E-mailadres</label>
+              <input type="email" id="cf-email" name="email" placeholder="jouw@emailadres.nl" required />
+              <span class="contact-form__error">Vul een geldig e-mailadres in.</span>
+            </div>
+            <div class="contact-form__field">
+              <label for="cf-phone">Telefoonnummer <span style="font-weight:400;text-transform:none;letter-spacing:0;font-size:10px;color:var(--fg-3)">(optioneel)</span></label>
+              <input type="tel" id="cf-phone" name="telefoon" placeholder="+31 6 ..." />
+            </div>
           </div>
           <div class="contact-form__field">
             <label for="cf-subject">Onderwerp</label>
@@ -1363,6 +1386,7 @@ button { font-family: inherit; }
           <div class="contact-form__field">
             <label for="cf-message">Bericht</label>
             <textarea id="cf-message" name="bericht" placeholder="Vertel kort waar het over gaat…" required></textarea>
+            <span class="contact-form__error">Schrijf een kort bericht.</span>
           </div>
           <button type="submit" class="contact-form__submit">
             Verstuur bericht <span class="arrow">→</span>
@@ -1539,6 +1563,22 @@ const formSuccess = document.getElementById('form-success');
 if (contactForm) {
   contactForm.addEventListener('submit', async (e) => {
     e.preventDefault();
+
+    /* Client-side validatie */
+    let valid = true;
+    contactForm.querySelectorAll('[required]').forEach(field => {
+      const wrapper = field.closest('.contact-form__field');
+      const empty = field.value.trim() === '';
+      const emailInvalid = field.type === 'email' && !empty && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(field.value.trim());
+      if (empty || emailInvalid) {
+        wrapper.classList.add('has-error');
+        valid = false;
+      } else {
+        wrapper.classList.remove('has-error');
+      }
+    });
+    if (!valid) return;
+
     const btn = contactForm.querySelector('.contact-form__submit');
     btn.textContent = 'Wordt verstuurd…';
     btn.disabled = true;
@@ -1562,7 +1602,14 @@ if (contactForm) {
   });
 }
 
-/* ── 3. Parallax hero ── */
+/* ── 3. Formulier: fout wissen bij invoer ── */
+contactForm && contactForm.querySelectorAll('[required]').forEach(field => {
+  field.addEventListener('input', () => {
+    field.closest('.contact-form__field').classList.remove('has-error');
+  });
+});
+
+/* ── 5. Parallax hero ── */
 const hero = document.querySelector('.hero');
 function updateParallax() {
   const y = window.scrollY;
