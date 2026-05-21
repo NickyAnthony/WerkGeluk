@@ -1193,14 +1193,14 @@ button { font-family: inherit; }
     <div class="nav__cta">
       <a href="#contact" class="btn btn--gold btn--sm">Kennismaken <span class="arrow">→</span></a>
     </div>
-    <button class="nav__hamburger" aria-label="Open menu" aria-expanded="false">
+    <button class="nav__hamburger" aria-label="Open menu" aria-expanded="false" onclick="var o=this.classList.toggle('is-open');var m=document.querySelector('.nav__mobile');m.classList.toggle('is-open',o);this.setAttribute('aria-expanded',o);m.setAttribute('aria-hidden',!o);document.body.style.overflow=o?'hidden':'';">
       <span></span><span></span><span></span>
     </button>
   </div>
 </nav>
 
 <!-- Mobile menu -->
-<div class="nav__mobile" aria-hidden="true">
+<div class="nav__mobile" aria-hidden="true" onclick="if(event.target.tagName==='A'){this.classList.remove('is-open');this.setAttribute('aria-hidden','true');var h=document.querySelector('.nav__hamburger');h.classList.remove('is-open');h.setAttribute('aria-expanded','false');document.body.style.overflow='';}">
   <a href="#about">Over</a>
   <a href="#expertise">Expertise</a>
   <a href="#voor-professionals">Voor professionals</a>
