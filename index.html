@@ -242,7 +242,7 @@ button { font-family: inherit; }
   background: none;
   border: none;
   cursor: pointer;
-  padding: 8px;
+  padding: 12px;
   margin-left: auto;
   color: rgba(250,248,244,0.9);
   flex-direction: column;
@@ -250,7 +250,11 @@ button { font-family: inherit; }
   align-items: center;
   justify-content: center;
   position: relative;
-  z-index: 31;
+  z-index: 200;
+  touch-action: manipulation;
+  -webkit-tap-highlight-color: transparent;
+  min-width: 44px;
+  min-height: 44px;
 }
 .nav__hamburger span {
   display: block;
@@ -269,7 +273,7 @@ button { font-family: inherit; }
   position: fixed;
   inset: 0;
   background: var(--wg-navy-900);
-  z-index: 29;
+  z-index: 190;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -1027,6 +1031,10 @@ button { font-family: inherit; }
   .steps-5 { grid-template-columns: 1fr; row-gap: 40px; }
   .v3-rolegrid { grid-template-columns: 1fr; }
   .footer__inner { grid-template-columns: 1fr; }
+  .footer__brand { text-align: center; }
+  .footer__brand img { margin: 0 auto 28px; }
+  .footer__col { text-align: center; }
+  .footer__col ul { align-items: center; }
 }
 
 /* =========================================================
