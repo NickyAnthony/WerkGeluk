@@ -3,25 +3,22 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>WerkGeluk Recruitment — Persoonlijke recruitment voor commerciële en technische sales</title>
+  <title>WerkGeluk Recruitment | Rotterdam</title>
   <meta name="description" content="WerkGeluk Recruitment helpt organisaties bij het vinden van commerciële en technische sales professionals. Persoonlijk. Selectief. Gericht op duurzame matches." />
+  <link rel="canonical" href="https://nickyanthony.github.io/WerkGeluk/" />
   <link rel="icon" href="favicon.svg" type="image/svg+xml" />
-  <link rel="shortcut icon" href="favicon.svg" />
-  <link rel="apple-touch-icon" href="assets/logo-mark-dark.png" />
-  <link rel="canonical" href="https://www.werkgeluk-recruitment.nl/" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link rel="preload" href="https://fonts.googleapis.com/css2?family=Arimo:ital,wght@0,400..700;1,400..700&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'" />
-  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Arimo:ital,wght@0,400..700;1,400..700&display=swap" /></noscript>
-  <meta property="og:title" content="WerkGeluk Recruitment — Persoonlijke recruitment voor commerciële en technische sales" />
-  <meta property="og:description" content="Persoonlijke recruitment voor commerciële en technische sales. Oprecht. Selectief. Gericht op matches die blijven. Neem vrijblijvend contact op." />
+  <link href="https://fonts.googleapis.com/css2?family=Arimo:ital,wght@0,400..700;1,400..700&display=swap" rel="stylesheet" />
+  <meta property="og:title" content="WerkGeluk Recruitment — Boutique recruitment voor commerciële en technische sales" />
+  <meta property="og:description" content="WerkGeluk Recruitment helpt organisaties bij het vinden van commerciële en technische sales professionals. Persoonlijk. Selectief. Gericht op duurzame matches." />
   <meta property="og:type" content="website" />
-  <meta property="og:url" content="https://www.werkgeluk-recruitment.nl/" />
+  <meta property="og:url" content="https://nickyanthony.github.io/WerkGeluk/" />
   <meta property="og:image" content="https://nickyanthony.github.io/WerkGeluk/assets/logo-horizontal-light.png" />
   <meta property="og:locale" content="nl_NL" />
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="WerkGeluk Recruitment" />
-  <meta name="twitter:description" content="Persoonlijke recruitment voor commerciële en technische sales professionals." />
+  <meta name="twitter:description" content="Boutique recruitment voor commerciële en technische sales professionals." />
   <meta name="twitter:image" content="https://nickyanthony.github.io/WerkGeluk/assets/logo-horizontal-light.png" />
   <style>
 /* =========================================================
@@ -36,8 +33,8 @@
   --wg-navy-500: #2D4068;
   --wg-navy-400: #4F6088;
   --wg-navy-050: #F3F5FA;
-  --wg-gold-gradient: linear-gradient(135deg, #8B6A2E 0%, #C9A25B 35%, #F0D89A 55%, #C9A25B 75%, #8B6A2E 100%);
   --wg-gold-700: #8B6A2E;
+  --wg-gold-gradient: linear-gradient(135deg, #8B6A2E 0%, #C9A25B 35%, #F0D89A 55%, #C9A25B 75%, #8B6A2E 100%);
   --wg-gold-600: #A98545;
   --wg-gold-500: #C9A25B;
   --wg-gold-400: #DCBB7B;
@@ -74,7 +71,7 @@
    Reset + Base
    ========================================================= */
 *, *::before, *::after { box-sizing: border-box; }
-html { scroll-behavior: smooth; }
+html { scroll-behavior: smooth; scroll-padding-top: 72px; }
 html, body { margin: 0; padding: 0; }
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
@@ -123,6 +120,22 @@ button { font-family: inherit; }
   display: inline-block;
   opacity: 0.7;
 }
+
+/* Skip-to-content */
+.skip-link {
+  position: absolute;
+  top: -100px;
+  left: 16px;
+  z-index: 200;
+  background: var(--wg-gold-500);
+  color: var(--wg-navy-900);
+  padding: 10px 18px;
+  border-radius: 8px;
+  font-weight: 600;
+  font-size: 14px;
+  transition: top 200ms ease;
+}
+.skip-link:focus { top: 16px; }
 
 /* Content visible by default; animation only activates when JS has run */
 .js-ready .reveal {
@@ -175,32 +188,17 @@ button { font-family: inherit; }
 /* =========================================================
    Nav
    ========================================================= */
-@keyframes nav-enter {
-  from { opacity: 0; transform: translateY(-18px); }
-  to   { opacity: 1; transform: translateY(0); }
-}
-
 .nav {
   position: fixed;
-  top: 0; left: 0; right: 0; width: 100%;
+  top: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
   z-index: 30;
-  background: rgba(9,21,44,0.55);
-  border-bottom: 1px solid rgba(250,248,244,0.04);
-  backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
-  transition:
-    background 480ms var(--ease-out),
-    border-color 480ms var(--ease-out),
-    box-shadow 480ms var(--ease-out),
-    backdrop-filter 480ms var(--ease-out);
-  animation: nav-enter 700ms var(--ease-out) both;
-}
-.nav.is-scrolled {
-  background: rgba(9,21,44,0.92);
-  border-bottom: 1px solid rgba(201,162,91,0.15);
-  backdrop-filter: blur(22px);
-  -webkit-backdrop-filter: blur(22px);
-  box-shadow: 0 4px 32px rgba(9,21,44,0.55), 0 1px 0 rgba(201,162,91,0.07);
+  background: rgba(9,21,44,0.72);
+  border-bottom: 1px solid rgba(250,248,244,0.06);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
 }
 .nav__inner {
   display: flex;
@@ -218,7 +216,6 @@ button { font-family: inherit; }
   color: rgba(250,248,244,0.78);
   position: relative;
   padding: 4px 0;
-  white-space: nowrap;
   transition: color 200ms ease;
 }
 .nav__links a::after {
@@ -228,7 +225,7 @@ button { font-family: inherit; }
   bottom: -4px;
   height: 1px;
   background: var(--wg-gold-400);
-  transition: right 300ms var(--ease-out);
+  transition: right 280ms var(--ease-out);
 }
 .nav__links a:hover,
 .nav__links a.is-active { color: var(--wg-paper); }
@@ -242,7 +239,7 @@ button { font-family: inherit; }
   background: none;
   border: none;
   cursor: pointer;
-  padding: 12px;
+  padding: 8px;
   margin-left: auto;
   color: rgba(250,248,244,0.9);
   flex-direction: column;
@@ -250,11 +247,7 @@ button { font-family: inherit; }
   align-items: center;
   justify-content: center;
   position: relative;
-  z-index: 200;
-  touch-action: manipulation;
-  -webkit-tap-highlight-color: transparent;
-  min-width: 44px;
-  min-height: 44px;
+  z-index: 31;
 }
 .nav__hamburger span {
   display: block;
@@ -262,7 +255,7 @@ button { font-family: inherit; }
   height: 1.5px;
   background: currentColor;
   border-radius: 2px;
-  transition: transform 300ms var(--ease-out), opacity 200ms ease;
+  transition: transform 300ms var(--ease-out), opacity 200ms ease, transform 300ms var(--ease-out);
 }
 .nav__hamburger.is-open span:nth-child(1) { transform: translateY(6.5px) rotate(45deg); }
 .nav__hamburger.is-open span:nth-child(2) { opacity: 0; }
@@ -273,7 +266,7 @@ button { font-family: inherit; }
   position: fixed;
   inset: 0;
   background: var(--wg-navy-900);
-  z-index: 190;
+  z-index: 29;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -281,7 +274,7 @@ button { font-family: inherit; }
   gap: 4px;
   opacity: 0;
   pointer-events: none;
-  transition: opacity 320ms ease;
+  transition: opacity 280ms ease;
 }
 .nav__mobile.is-open { opacity: 1; pointer-events: all; }
 .nav__mobile a {
@@ -291,10 +284,10 @@ button { font-family: inherit; }
   letter-spacing: -0.02em;
   color: rgba(250,248,244,0.88);
   padding: 12px 28px;
-  transition: color 200ms ease, transform 200ms var(--ease-out);
+  transition: color 200ms ease;
   text-align: center;
 }
-.nav__mobile a:hover { color: var(--wg-gold-300); transform: translateX(4px); }
+.nav__mobile a:hover { color: var(--wg-gold-300); }
 .nav__mobile-cta {
   margin-top: 20px;
   padding: 14px 36px !important;
@@ -321,43 +314,24 @@ button { font-family: inherit; }
   overflow: hidden;
   isolation: isolate;
 }
-@keyframes orb-gold {
-  0%   { transform: translate(0px,    0px)    scale(1);    }
-  25%  { transform: translate(-90px,  100px)  scale(1.08); }
-  50%  { transform: translate(-40px,  180px)  scale(0.93); }
-  75%  { transform: translate(70px,   60px)   scale(1.07); }
-  100% { transform: translate(0px,    0px)    scale(1);    }
-}
-@keyframes orb-navy {
-  0%   { transform: translate(0px,    0px)    scale(1);    }
-  33%  { transform: translate(110px, -100px)  scale(1.12); }
-  66%  { transform: translate(-70px, -140px)  scale(0.90); }
-  100% { transform: translate(0px,    0px)    scale(1);    }
-}
 .hero::before {
   content: "";
   position: absolute;
   top: -160px; right: -180px;
   width: 920px; height: 920px;
   background: radial-gradient(circle at center,
-    rgba(201,162,91,0.58) 0%,
-    rgba(201,162,91,0.26) 30%,
+    rgba(201,162,91,0.34) 0%,
+    rgba(201,162,91,0.14) 30%,
     transparent 60%);
   pointer-events: none;
-  animation: orb-gold 16s ease-in-out infinite;
 }
 .hero::after {
   content: "";
   position: absolute;
   bottom: -260px; left: -180px;
   width: 640px; height: 640px;
-  background: radial-gradient(circle at center, rgba(45,64,104,0.9) 0%, transparent 60%);
+  background: radial-gradient(circle at center, rgba(45,64,104,0.6) 0%, transparent 60%);
   pointer-events: none;
-  animation: orb-navy 20s ease-in-out infinite;
-}
-@media (prefers-reduced-motion: reduce) {
-  .hero::before, .hero::after,
-  .footer::before, .footer::after { animation: none; }
 }
 .hero__inner { position: relative; z-index: 1; padding-top: 8px; }
 .hero__headline {
@@ -371,27 +345,12 @@ button { font-family: inherit; }
   color: var(--wg-paper);
   text-wrap: balance;
 }
-@keyframes gold-shimmer {
-  0%   { background-position: -200% center; }
-  100% { background-position: 200% center; }
-}
 .hero__headline em {
   font-style: italic;
+  color: var(--wg-gold-300);
   font-weight: 500;
   display: inline-block;
   position: relative;
-  background: linear-gradient(
-    90deg,
-    var(--wg-gold-400)  0%,
-    var(--wg-gold-200) 38%,
-    var(--wg-gold-400) 55%,
-    var(--wg-gold-300) 100%
-  );
-  background-size: 200% auto;
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-  animation: gold-shimmer 5s linear infinite;
 }
 .hero__headline em::after {
   content: "";
@@ -399,7 +358,7 @@ button { font-family: inherit; }
   left: -2px; right: -2px; bottom: 0.06em;
   height: 1px;
   background: var(--wg-gold-400);
-  opacity: 0.35;
+  opacity: 0.4;
 }
 .hero__sub {
   font-size: 19px;
@@ -409,15 +368,33 @@ button { font-family: inherit; }
   margin: 0;
 }
 .hero__ctas { display: flex; gap: 14px; flex-wrap: wrap; margin-top: 44px; }
-/* ── Hero entry animations ── */
-@keyframes hero-fade-up {
-  from { opacity: 0; transform: translateY(22px); }
-  to   { opacity: 1; transform: translateY(0); }
+.hero__scroll {
+  position: absolute;
+  bottom: 40px;
+  left: 50%;
+  transform: translateX(-50%);
+  color: rgba(250,248,244,0.45);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px; height: 40px;
+  border-radius: 50%;
+  border: 1px solid rgba(250,248,244,0.18);
+  transition: color 240ms ease, border-color 240ms ease;
+  animation: bounce 2.4s ease-in-out infinite;
 }
-.hero__inner > .eyebrow { animation: hero-fade-up 700ms var(--ease-out) 150ms both; }
-.hero__headline         { animation: hero-fade-up 800ms var(--ease-out) 280ms both; }
-.hero__sub              { animation: hero-fade-up 800ms var(--ease-out) 440ms both; }
-.hero__ctas             { animation: hero-fade-up 800ms var(--ease-out) 590ms both; }
+.hero__scroll:hover { color: var(--wg-gold-300); border-color: rgba(201,162,91,0.5); }
+@keyframes bounce {
+  0%, 100% { transform: translateX(-50%) translateY(0); }
+  50% { transform: translateX(-50%) translateY(6px); }
+}
+.hero__meta-label {
+  font-size: 12px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: rgba(250,248,244,0.56);
+  font-weight: 500;
+}
 
 /* =========================================================
    Section scaffold
@@ -455,8 +432,6 @@ button { font-family: inherit; }
   color: var(--fg-2);
 }
 .section--navy-deep .section__lede { color: rgba(250,248,244,0.72); }
-.section__lede p { margin: 0; }
-.section__lede p + p { margin-top: 18px; }
 
 /* =========================================================
    About
@@ -695,20 +670,60 @@ button { font-family: inherit; }
 }
 .cta__copy h2 em { font-style: italic; font-weight: 500; color: var(--wg-gold-300); }
 .cta__copy p { font-size: 18px; line-height: 1.6; color: rgba(250,248,244,0.72); margin: 0; max-width: 520px; }
-.cta__contacts { display: flex; flex-direction: column; gap: 12px; margin-top: 32px; }
-.cta__contact-link {
+.cta__card {
+  background: var(--wg-paper);
+  color: var(--wg-ink-900);
+  border-radius: var(--r-xl);
+  padding: 40px;
   display: flex;
   flex-direction: column;
-  gap: 2px;
-  padding: 14px 18px;
-  border: 1px solid rgba(250,248,244,0.1);
-  border-radius: var(--r-md);
-  background: rgba(250,248,244,0.04);
-  transition: background 200ms ease, border-color 200ms ease;
+  gap: 18px;
+  box-shadow: var(--sh-3);
+  border: 1px solid var(--wg-line);
 }
-.cta__contact-link:hover { background: rgba(250,248,244,0.08); border-color: rgba(201,162,91,0.3); }
-.cta__contact-label { font-size: 11px; letter-spacing: 0.16em; text-transform: uppercase; color: rgba(250,248,244,0.45); font-weight: 500; }
-.cta__contact-value { font-size: 15px; color: var(--wg-paper); font-weight: 500; }
+.cta__card-row {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 14px 0;
+  border-bottom: 1px solid var(--wg-line);
+}
+.cta__card-row:last-of-type { border-bottom: none; }
+.cta__card-icon {
+  width: 40px; height: 40px;
+  background: var(--gold-soft);
+  color: var(--gold-accent);
+  border-radius: 999px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-serif);
+  font-style: italic;
+  font-weight: 600;
+  font-size: 16px;
+  flex-shrink: 0;
+}
+.cta__card-label { font-size: 11px; letter-spacing: 0.18em; text-transform: uppercase; color: var(--fg-3); font-weight: 500; margin-bottom: 2px; }
+.cta__card-value { font-size: 16px; font-weight: 500; color: var(--wg-ink-900); }
+.cta__card-value:hover { color: var(--gold-accent); }
+.cta__primary {
+  margin-top: 8px;
+  font-size: 15px;
+  padding: 16px 24px;
+  border-radius: 12px;
+  width: 100%;
+  background: var(--wg-navy-800);
+  color: var(--wg-paper);
+  border: none;
+  font-weight: 600;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  transition: all 240ms var(--ease-out);
+}
+.cta__primary:hover { background: var(--wg-navy-700); transform: translateY(-1px); box-shadow: var(--sh-3); }
 
 /* =========================================================
    Contactformulier
@@ -720,14 +735,12 @@ button { font-family: inherit; }
   padding: 40px;
   display: flex;
   flex-direction: column;
-  gap: 10px;
+  gap: 18px;
   box-shadow: var(--sh-3);
   border: 1px solid var(--wg-line);
 }
-.contact-form__row { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; margin-top: 16px; }
-.contact-form__row:first-child { margin-top: 0; }
-.contact-form__field { display: flex; flex-direction: column; gap: 8px; margin-top: 16px; }
-.contact-form__row .contact-form__field { margin-top: 0; }
+.contact-form__row { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+.contact-form__field { display: flex; flex-direction: column; gap: 6px; }
 .contact-form__field label {
   font-size: 11px;
   font-weight: 600;
@@ -762,10 +775,8 @@ button { font-family: inherit; }
   padding: 16px 24px;
   border-radius: 12px;
   width: 100%;
-  background: var(--wg-gold-gradient);
-  background-size: 200% 200%;
-  background-position: 0% 50%;
-  color: var(--wg-navy-900);
+  background: var(--wg-navy-800);
+  color: var(--wg-paper);
   border: none;
   font-weight: 600;
   cursor: pointer;
@@ -773,10 +784,10 @@ button { font-family: inherit; }
   align-items: center;
   justify-content: center;
   gap: 10px;
-  transition: background-position 400ms var(--ease-out), box-shadow 240ms var(--ease-out), transform 240ms var(--ease-out);
+  transition: all 240ms var(--ease-out);
   font-family: var(--font-sans);
 }
-.contact-form__submit:hover { background-position: 100% 50%; box-shadow: var(--sh-gold); transform: translateY(-1px); }
+.contact-form__submit:hover { background: var(--wg-navy-700); transform: translateY(-1px); box-shadow: var(--sh-3); }
 .contact-form__success {
   display: none;
   text-align: center;
@@ -797,19 +808,6 @@ button { font-family: inherit; }
 .contact-form__success p { font-size: 16px; color: var(--fg-2); margin: 0; max-width: 280px; line-height: 1.55; }
 .contact-form__note { font-size: 12px; color: var(--fg-3); text-align: center; margin-top: 4px; }
 .contact-form__note a { color: var(--gold-accent); text-decoration: underline; }
-.contact-form__error {
-  display: none;
-  font-size: 11px;
-  color: #c0392b;
-  margin-top: -4px;
-}
-.contact-form__field.has-error .contact-form__error { display: block; }
-.contact-form__field.has-error input,
-.contact-form__field.has-error textarea,
-.contact-form__field.has-error select {
-  border-color: #c0392b;
-  box-shadow: 0 0 0 3px rgba(192,57,43,0.12);
-}
 @media (max-width: 640px) {
   .contact-form__row { grid-template-columns: 1fr; }
 }
@@ -867,43 +865,29 @@ button { font-family: inherit; }
   color: rgba(250,248,244,0.7);
   padding: 96px 0 32px;
   border-top: 1px solid rgba(250,248,244,0.06);
-  position: relative;
-  overflow: hidden;
-}
-.footer::before {
-  content: "";
-  position: absolute;
-  top: -100px; right: -140px;
-  width: 620px; height: 620px;
-  background: radial-gradient(circle at center,
-    rgba(201,162,91,0.38) 0%,
-    rgba(201,162,91,0.14) 30%,
-    transparent 60%);
-  pointer-events: none;
-  animation: orb-gold 16s ease-in-out infinite;
-  animation-delay: -8s;
-}
-.footer::after {
-  content: "";
-  position: absolute;
-  bottom: -80px; left: -120px;
-  width: 480px; height: 480px;
-  background: radial-gradient(circle at center, rgba(45,64,104,0.85) 0%, transparent 60%);
-  pointer-events: none;
-  animation: orb-navy 20s ease-in-out infinite;
-  animation-delay: -10s;
 }
 .footer__inner {
   display: grid;
-  grid-template-columns: 2fr 1fr 1fr 1fr;
-  gap: 56px;
+  grid-template-columns: 1.4fr 1fr 1fr 1fr;
+  gap: 48px;
   padding-bottom: 64px;
   border-bottom: 1px solid rgba(250,248,244,0.1);
   align-items: start;
-  position: relative;
-  z-index: 1;
 }
 .footer__brand img { width: 260px; height: auto; margin-bottom: 28px; }
+.footer__brand p { font-size: 14px; line-height: 1.7; max-width: 300px; margin: 0 0 20px; }
+.footer__brand-meta { display: flex; flex-direction: column; gap: 6px; margin-top: 4px; }
+.footer__brand-meta span { font-size: 12px; color: rgba(250,248,244,0.5); letter-spacing: 0.03em; line-height: 1.5; }
+.footer__social { display: flex; gap: 12px; margin-top: 20px; }
+.footer__social a {
+  width: 36px; height: 36px;
+  border-radius: 999px;
+  border: 1px solid rgba(250,248,244,0.14);
+  display: flex; align-items: center; justify-content: center;
+  color: rgba(250,248,244,0.6);
+  transition: background 200ms ease, color 200ms ease, border-color 200ms ease;
+}
+.footer__social a:hover { background: var(--wg-gold-700); color: var(--wg-paper); border-color: var(--wg-gold-700); }
 .footer__col h5 { font-size: 11px; letter-spacing: 0.22em; text-transform: uppercase; font-weight: 500; color: var(--wg-paper); margin: 0 0 16px; }
 .footer__col ul { list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 12px; }
 .footer__col li { font-size: 14px; color: rgba(250,248,244,0.7); }
@@ -918,8 +902,6 @@ button { font-family: inherit; }
   color: rgba(250,248,244,0.5);
   flex-wrap: wrap;
   gap: 16px;
-  position: relative;
-  z-index: 1;
 }
 .footer__base-legal { display: flex; gap: 24px; }
 .footer__base-legal a { color: rgba(250,248,244,0.5); transition: color 200ms ease; }
@@ -939,7 +921,7 @@ button { font-family: inherit; }
   align-items: center;
   padding: 5px 14px;
   background: var(--gold-soft);
-  color: var(--gold-accent);
+  color: var(--wg-gold-700);
   font-size: 11px;
   font-weight: 600;
   letter-spacing: 0.2em;
@@ -954,7 +936,7 @@ button { font-family: inherit; }
   line-height: 1.1;
   letter-spacing: -0.02em;
   margin: 0 0 20px;
-  color: var(--fg-1);
+  color: var(--wg-ink-900);
   text-wrap: balance;
 }
 .voor-pro__em {
@@ -992,23 +974,22 @@ button { font-family: inherit; }
 /* =========================================================
    Responsive
    ========================================================= */
-@media (max-width: 1280px) {
-  .nav__links { gap: 20px; }
-  .nav__logo img { width: 220px; }
-}
 @media (max-width: 1100px) {
   .logos-grid { grid-template-columns: repeat(4, 1fr); }
   .logo-cell:nth-child(6n) { border-right: 1px solid var(--wg-line); }
   .logo-cell:nth-child(4n) { border-right: none; }
   .logo-cell:nth-child(-n+4) { border-bottom: 1px solid var(--wg-line); }
-  .steps-5 { grid-template-columns: repeat(3, 1fr); row-gap: 48px; }
+  .steps-5 { grid-template-columns: repeat(3, 1fr); }
 }
 @media (max-width: 900px) {
   .container { padding: 0 24px; }
   .section { padding: 80px 0; }
   .section__head { grid-template-columns: 1fr; gap: 24px; margin-bottom: 48px; }
   .about { grid-template-columns: 1fr; gap: 40px; }
-  .voor-pro { grid-template-columns: 1fr; gap: 40px; }
+  .voor-pro { grid-template-columns: 1fr; gap: 0; }
+  .voor-pro__left { order: 1; }
+  .voor-pro__body { order: 2; margin-top: 32px; }
+  .voor-pro__cta { order: 3; margin-top: 32px; }
   .cta { grid-template-columns: 1fr; gap: 32px; }
   .footer__inner { grid-template-columns: 1fr 1fr; gap: 32px; }
   .footer__brand { grid-column: 1 / -1; }
@@ -1020,67 +1001,21 @@ button { font-family: inherit; }
   .hero { padding: 110px 0 80px; }
   .hero__meta { gap: 28px; }
   .locatie { grid-template-columns: 1fr; gap: 40px; }
-  .steps-5 { grid-template-columns: 1fr 1fr; row-gap: 48px; }
+  .steps-5 { grid-template-columns: 1fr 1fr; gap: 40px 24px; }
   .steps-5::before { display: none; }
   .v3-rolegrid { grid-template-columns: 1fr 1fr; }
+  .step { padding: 0 16px 0 0; }
 }
 @media (max-width: 640px) {
   .logos-grid { grid-template-columns: repeat(2, 1fr); }
   .logo-cell:nth-child(4n) { border-right: 1px solid var(--wg-line); }
   .logo-cell:nth-child(2n) { border-right: none; }
-  .steps-5 { grid-template-columns: 1fr; row-gap: 40px; }
+  .steps-5 { grid-template-columns: 1fr; gap: 40px; }
+  .step { padding: 0; }
+  .step__dot { margin-bottom: 20px; }
   .v3-rolegrid { grid-template-columns: 1fr; }
   .footer__inner { grid-template-columns: 1fr; }
-  .footer__brand { text-align: center; }
-  .footer__brand img { margin: 0 auto 28px; }
-  .footer__col { text-align: center; }
-  .footer__col ul { align-items: center; }
 }
-
-/* =========================================================
-   Cookie banner
-   ========================================================= */
-#cookie-banner {
-  position: fixed;
-  bottom: 0; left: 0; right: 0;
-  z-index: 50;
-  background: rgba(9,21,44,0.97);
-  border-top: 1px solid rgba(201,162,91,0.2);
-  padding: 16px 40px;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 24px;
-  flex-wrap: wrap;
-  backdrop-filter: blur(10px);
-  transform: translateY(0);
-  transition: transform 400ms var(--ease-out);
-}
-#cookie-banner.is-hidden { transform: translateY(110%); }
-#cookie-banner p {
-  font-size: 13px;
-  color: rgba(250,248,244,0.7);
-  margin: 0;
-  line-height: 1.5;
-  max-width: 680px;
-}
-#cookie-banner a { color: var(--wg-gold-400); text-decoration: underline; }
-#cookie-accept {
-  flex-shrink: 0;
-  padding: 9px 22px;
-  background: var(--wg-gold-gradient);
-  background-size: 200% 200%;
-  background-position: 0% 50%;
-  color: var(--wg-navy-900);
-  border: none;
-  border-radius: 8px;
-  font-size: 13px;
-  font-weight: 600;
-  cursor: pointer;
-  font-family: var(--font-sans);
-  transition: background-position 400ms var(--ease-out), transform 200ms var(--ease-out);
-}
-#cookie-accept:hover { background-position: 100% 50%; transform: translateY(-1px); }
 
 /* =========================================================
    Scroll progress bar
@@ -1095,6 +1030,7 @@ button { font-family: inherit; }
   transition: width 60ms linear;
   pointer-events: none;
 }
+@media (max-height: 480px) { #progress-bar { display: none; } }
 
 /* =========================================================
    Logo marquee (carrousel)
@@ -1147,7 +1083,7 @@ button { font-family: inherit; }
     "@context": "https://schema.org",
     "@type": "LocalBusiness",
     "name": "WerkGeluk Recruitment",
-    "description": "Persoonlijke recruitment voor commerciële en technische sales professionals. Persoonlijk. Selectief. Gericht op duurzame matches.",
+    "description": "Boutique recruitment voor commerciële en technische sales professionals. Persoonlijk. Selectief. Gericht op duurzame matches.",
     "url": "https://nickyanthony.github.io/WerkGeluk/",
     "telephone": "+31618236993",
     "email": "Nicky@werkgeluk-recruitment.nl",
@@ -1168,13 +1104,8 @@ button { font-family: inherit; }
 </head>
 <body>
 
+<a href="#main-content" class="skip-link">Ga naar inhoud</a>
 <div id="progress-bar"></div>
-
-<!-- Cookie banner -->
-<div id="cookie-banner" role="dialog" aria-label="Cookiemelding">
-  <p>Deze website gebruikt Google Fonts, een externe dienst van Google. Hierbij wordt je IP-adres kort verwerkt. Meer informatie vind je in onze <a href="assets/privacyverklaring.pdf" target="_blank" rel="noreferrer">privacyverklaring</a>.</p>
-  <button id="cookie-accept" onclick="document.getElementById('cookie-banner').style.display='none';localStorage.setItem('cookie-accepted','1')">Begrepen</button>
-</div>
 
 <!-- Nav -->
 <nav class="nav">
@@ -1187,53 +1118,59 @@ button { font-family: inherit; }
       <a href="#expertise">Expertise</a>
       <a href="#voor-professionals">Voor professionals</a>
       <a href="#waarom">Waarom WerkGeluk</a>
-      <a href="#contact">Kennismaken</a>
+      <a href="#contact">Contact</a>
       <a href="#locatie">Locatie</a>
     </div>
     <div class="nav__cta">
-      <a href="#contact" class="btn btn--gold btn--sm">Kennismaken <span class="arrow">→</span></a>
+      <a href="#contact" class="btn btn--gold btn--sm">Plan een gesprek <span class="arrow">→</span></a>
     </div>
-    <button class="nav__hamburger" aria-label="Open menu" aria-expanded="false" onclick="var o=this.classList.toggle('is-open');var m=document.querySelector('.nav__mobile');m.classList.toggle('is-open',o);this.setAttribute('aria-expanded',o);m.setAttribute('aria-hidden',!o);document.body.style.overflow=o?'hidden':'';">
+    <button class="nav__hamburger" aria-label="Open menu" aria-expanded="false">
       <span></span><span></span><span></span>
     </button>
   </div>
 </nav>
 
 <!-- Mobile menu -->
-<div class="nav__mobile" aria-hidden="true" onclick="if(event.target.tagName==='A'){this.classList.remove('is-open');this.setAttribute('aria-hidden','true');var h=document.querySelector('.nav__hamburger');h.classList.remove('is-open');h.setAttribute('aria-expanded','false');document.body.style.overflow='';}">
+<div class="nav__mobile" aria-hidden="true">
   <a href="#about">Over</a>
   <a href="#expertise">Expertise</a>
   <a href="#voor-professionals">Voor professionals</a>
   <a href="#waarom">Waarom WerkGeluk</a>
-  <a href="#contact">Kennismaken</a>
+  <a href="#contact">Contact</a>
   <a href="#locatie">Locatie</a>
-  <a href="#contact" class="nav__mobile-cta">Kennismaken →</a>
+  <a href="#contact" class="nav__mobile-cta">Plan een gesprek →</a>
 </div>
 
 <!-- Hero -->
 <header class="hero" id="top">
   <div class="container hero__inner">
     <h1 class="hero__headline">WerkGeluk begint <em>bij de juiste match.</em></h1>
-    <p class="hero__sub">WerkGeluk Recruitment helpt organisaties bij het vinden van commerciële en technische sales professionals die niet alleen passen op papier, maar ook binnen cultuur, team en visie.</p>
+    <p class="hero__sub">WerkGeluk Recruitment helpt organisaties bij het vinden van commerciële en technische sales professionals die niet alleen passen op papier, maar ook binnen cultuur, ambitie en visie.</p>
     <div class="hero__ctas">
       <a href="#contact" class="btn btn--gold">Plan een kennismaking <span class="arrow">→</span></a>
-      <a href="#voor-professionals" class="btn btn--ghost">Ik zoek een nieuwe functie <span class="arrow">→</span></a>
+      <a href="#voor-professionals" class="btn btn--ghost">Jouw volgende stap <span class="arrow">→</span></a>
     </div>
   </div>
+  <a href="#about" class="hero__scroll" aria-label="Scroll naar beneden">
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
+  </a>
 </header>
+
+<main id="main-content">
 
 <!-- About -->
 <section class="section section--cream" id="about">
   <div class="container">
     <div class="about">
       <div class="reveal about__portrait">
-        <img src="assets/nicky-portrait.jpeg" alt="Nicky Roggeveen, oprichter WerkGeluk Recruitment" class="about__portrait-photo" width="800" height="1000" />
+        <img src="assets/nicky-portrait.jpeg" alt="Nicky Roggeveen, oprichter WerkGeluk Recruitment" class="about__portrait-photo" loading="lazy" />
+        <div class="about__portrait-overlay"><span>Rotterdam</span></div>
       </div>
       <div class="reveal about__copy" style="transition-delay:100ms">
         <span class="eyebrow">Over</span>
         <h2>Persoonlijke recruitment, met aandacht voor de mens <em>achter het cv.</em></h2>
-        <p>WerkGeluk Recruitment is een klein recruitmentbureau, opgericht door Nicky Roggeveen. Ik ben gespecialiseerd in commerciële en technische sales profielen, en help organisaties bij het vinden van mensen die niet alleen passen op papier, maar ook in de cultuur, het team en de visie.</p>
-        <p>In plaats van snelle plaatsingen of volume recruitment draait het bij mij om oprechte aandacht, kwaliteit en langetermijnrelaties. Een grondig gesprek, een eerlijk advies en een match die blijft.</p>
+        <p>WerkGeluk Recruitment is een klein boutique recruitmentbureau, opgericht door Nicky Roggeveen. Ik ben gespecialiseerd in commerciële en technische sales profielen, en help organisaties bij het vinden van mensen die niet alleen passen op papier, maar ook in de cultuur, het team en de visie.</p>
+        <p>In plaats van snelle plaatsingen of volume recruitment draait het bij mij om oprechte aandacht, kwaliteit en lange termijn relaties. Een grondig gesprek, een eerlijk advies en een match die blijft.</p>
         <div class="about__signature">
           <div>
             <div class="about__signature-name">Nicky Roggeveen</div>
@@ -1253,11 +1190,11 @@ button { font-family: inherit; }
         <div class="section__head">
           <div>
             <span class="eyebrow" style="color:var(--wg-gold-400)">Expertise</span>
-            <h2 class="section__title">Het vinden van sterke commerciële professionals vraagt <em>meer dan alleen recruitment.</em></h2>
+            <h2 class="section__title">Sterke commerciële professionals vinden vraagt <em>meer dan alleen recruitment.</em></h2>
           </div>
           <div class="section__lede">
-            <p>De markt is veranderd. Goede sales professionals kiezen bewust voor organisaties die aansluiten bij hun ambities, persoonlijkheid en manier van werken.</p>
-            <p>WerkGeluk Recruitment helpt organisaties bij het aantrekken van professionals die inhoudelijk én persoonlijk passen. Geen massa-aanpak, maar een zorgvuldig proces met focus op kwaliteit, positionering en duurzame groei.</p>
+            <p style="margin:0">De markt is veranderd. Goede sales professionals kiezen bewust voor organisaties die aansluiten bij hun ambities, persoonlijkheid en manier van werken.</p>
+            <p style="margin-top:18px;margin-bottom:0">WerkGeluk Recruitment helpt organisaties bij het aantrekken van professionals die inhoudelijk én persoonlijk passen. Geen massa-aanpak, maar een zorgvuldig proces met focus op kwaliteit, positionering en duurzame groei.</p>
           </div>
         </div>
       </div>
@@ -1282,6 +1219,30 @@ button { font-family: inherit; }
   </div>
 </section>
 
+<!-- Voor professionals -->
+<section class="section section--cream" id="voor-professionals">
+  <div class="container">
+    <div class="voor-pro">
+
+      <!-- Links: tag + headline -->
+      <div class="reveal voor-pro__left">
+        <span class="voor-pro__tag">Voor professionals</span>
+        <h2 class="voor-pro__headline">Een nieuwe stap moet niet alleen interessant zijn.</h2>
+        <p class="voor-pro__em">Het moet ook écht bij je passen.</p>
+        <a href="mailto:Nicky@werkgeluk-recruitment.nl" class="btn btn--gold voor-pro__cta">Plan een vrijblijvend kennismakingsgesprek <span class="arrow">→</span></a>
+      </div>
+
+      <!-- Rechts: body tekst -->
+      <div class="reveal voor-pro__body" style="transition-delay:100ms">
+        <p>Veel professionals maken op een gegeven moment een volgende stap in hun salesfunctie of commerciële carrière. Maar die stap gaat niet alleen over een hogere functietitel of een beter salaris. Het gaat over de omgeving. De cultuur. Het type leiderschap dat je uitdaagt en de ruimte die je krijgt om jezelf te ontwikkelen.</p>
+        <p>WerkGeluk Recruitment begeleidt commerciële en technische sales professionals bij het vinden van een positie die inhoudelijk én persoonlijk aansluit. Geen standaard vacaturelijstjes, maar oprechte aandacht voor wie je bent en wat je zoekt.</p>
+        <p class="voor-pro__tagline">Persoonlijk. Eerlijk. Meer dan standaard recruitment.</p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
 <!-- Waarom -->
 <section class="section section--paper" id="waarom">
   <div class="container">
@@ -1289,9 +1250,9 @@ button { font-family: inherit; }
       <div class="section__head">
         <div>
           <span class="eyebrow">Waarom WerkGeluk</span>
-          <h2 class="section__title">Wat WerkGeluk Recruitment <em>onderscheidt.</em></h2>
+          <h2 class="section__title">Waarom organisaties kiezen <em>voor WerkGeluk Recruitment.</em></h2>
         </div>
-        <p class="section__lede">WerkGeluk Recruitment onderscheidt zich door een persoonlijke aanpak, diepgaande kennis van commerciële en technische sales, en een oprechte focus op duurzame matches voor zowel organisaties als professionals.</p>
+        <p class="section__lede">Niet elk recruitmentbureau werkt hetzelfde. Bij WerkGeluk draait het om persoonlijk contact, een gerichte aanpak en matches die ook op de langere termijn standhouden.</p>
       </div>
     </div>
     <div class="steps-5">
@@ -1305,25 +1266,25 @@ button { font-family: inherit; }
         <div class="step__dot"></div>
         <span class="step__num">02</span>
         <h4 class="step__title">Kwaliteit boven kwantiteit</h4>
-        <p class="step__body">Geen stapels cv’s, maar zorgvuldig geselecteerde professionals.</p>
+        <p class="step__body">Geen stapels cv's, maar zorgvuldig geselecteerde professionals.</p>
       </div>
       <div class="reveal step" style="transition-delay:160ms">
         <div class="step__dot"></div>
         <span class="step__num">03</span>
         <h4 class="step__title">Gespecialiseerde focus</h4>
-        <p class="step__body">Sterk netwerk binnen commerciële en technische salesfuncties.</p>
+        <p class="step__body">Sterk netwerk binnen commerciële en technische sales functies.</p>
       </div>
       <div class="reveal step" style="transition-delay:240ms">
         <div class="step__dot"></div>
         <span class="step__num">04</span>
-        <h4 class="step__title">Selectieve aanpak</h4>
-        <p class="step__body">Kleinschalig, persoonlijk en gericht op langetermijnrelaties.</p>
+        <h4 class="step__title">Boutique aanpak</h4>
+        <p class="step__body">Kleinschalig, selectief en gericht op lange termijn relaties.</p>
       </div>
       <div class="reveal step" style="transition-delay:320ms">
         <div class="step__dot"></div>
         <span class="step__num">05</span>
-        <h4 class="step__title">Moderne recruitmentvisie</h4>
-        <p class="step__body">Menselijk, transparant en gericht op duurzame groei.</p>
+        <h4 class="step__title">Eerlijk en toekomstgericht</h4>
+        <p class="step__body">Transparant over verwachtingen, eerlijk in advies en gericht op een match die blijft.</p>
       </div>
     </div>
   </div>
@@ -1367,30 +1328,6 @@ button { font-family: inherit; }
   </div>
 </section>
 
-<!-- Voor professionals -->
-<section class="section section--paper" id="voor-professionals">
-  <div class="container">
-    <div class="voor-pro">
-
-      <!-- Links: tag + headline + CTA -->
-      <div class="reveal">
-        <span class="voor-pro__tag">Voor professionals</span>
-        <h2 class="voor-pro__headline">Een nieuwe stap moet niet alleen interessant zijn.</h2>
-        <p class="voor-pro__em">Het moet ook écht bij je passen.</p>
-        <a href="#contact" class="btn btn--gold">Plan een kennismaking <span class="arrow">→</span></a>
-      </div>
-
-      <!-- Rechts: body tekst -->
-      <div class="reveal voor-pro__body" style="transition-delay:100ms">
-        <p>Veel professionals maken op een gegeven moment een volgende stap in hun salesfunctie of commerciële carrière. Maar die stap gaat niet alleen over een hogere functietitel of een beter salaris. Het gaat over de omgeving. De cultuur. Het type leiderschap dat je uitdaagt en de ruimte die je krijgt om jezelf te ontwikkelen.</p>
-        <p>WerkGeluk Recruitment begeleidt commerciële en technische sales professionals bij het vinden van een positie die inhoudelijk én persoonlijk aansluit. Geen standaard vacaturelijstjes, maar oprechte aandacht voor wie je bent en wat je zoekt.</p>
-        <p class="voor-pro__tagline">Persoonlijk. Eerlijk. Meer dan recruitment alleen.</p>
-      </div>
-
-    </div>
-  </div>
-</section>
-
 <!-- Contact -->
 <section class="section section--navy-deep" id="contact">
   <div class="container">
@@ -1399,40 +1336,43 @@ button { font-family: inherit; }
         <span class="eyebrow" style="color:var(--wg-gold-300)">Kennismaken</span>
         <h2>Een gesprek begint <em>met een goede vraag.</em></h2>
         <p>Heb je een opdracht, een vacature of gewoon een vraag? Bel of mail vrijblijvend. Vaak is een eerste gesprek genoeg om te zien of er iets te bouwen valt.</p>
-        <div class="cta__contacts">
-          <a href="tel:+31618236993" class="cta__contact-link">
-            <span class="cta__contact-label">Telefoon</span>
-            <span class="cta__contact-value">+31 6 18 23 69 93</span>
+        <div style="display:flex;flex-direction:column;gap:12px;margin-top:28px;">
+          <a href="tel:+31618236993" style="display:inline-flex;align-items:center;gap:12px;font-size:16px;font-weight:500;color:var(--wg-paper);opacity:0.85;transition:opacity 200ms ease;" onmouseover="this.style.opacity='1'" onmouseout="this.style.opacity='0.85'">
+            <span style="width:36px;height:36px;background:rgba(250,248,244,0.1);border-radius:50%;display:inline-flex;align-items:center;justify-content:center;flex-shrink:0;">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 13.5a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.6 2.69h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 10.2a16 16 0 0 0 5.89 5.89l.94-.94a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 21.92 17z"/></svg>
+            </span>
+            +31 6 18 23 69 93
           </a>
-          <a href="mailto:Nicky@werkgeluk-recruitment.nl" class="cta__contact-link">
-            <span class="cta__contact-label">E-mail</span>
-            <span class="cta__contact-value">Nicky@werkgeluk-recruitment.nl</span>
+          <a href="mailto:Nicky@werkgeluk-recruitment.nl" style="display:inline-flex;align-items:center;gap:12px;font-size:16px;font-weight:500;color:var(--wg-paper);opacity:0.85;transition:opacity 200ms ease;" onmouseover="this.style.opacity='1'" onmouseout="this.style.opacity='0.85'">
+            <span style="width:36px;height:36px;background:rgba(250,248,244,0.1);border-radius:50%;display:inline-flex;align-items:center;justify-content:center;flex-shrink:0;">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
+            </span>
+            Nicky@werkgeluk-recruitment.nl
+          </a>
+          <a href="https://www.linkedin.com/in/nicky-roggeveen/" target="_blank" rel="noreferrer" style="display:inline-flex;align-items:center;gap:12px;font-size:16px;font-weight:500;color:var(--wg-paper);opacity:0.85;transition:opacity 200ms ease;" onmouseover="this.style.opacity='1'" onmouseout="this.style.opacity='0.85'">
+            <span style="width:36px;height:36px;background:rgba(250,248,244,0.1);border-radius:50%;display:inline-flex;align-items:center;justify-content:center;flex-shrink:0;">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+            </span>
+            LinkedIn — Nicky Roggeveen
           </a>
         </div>
       </div>
+      <!-- Contactformulier via Formspree -->
       <div class="reveal contact-form" style="transition-delay:120ms">
         <form id="contact-form" action="https://formspree.io/f/mwvyjzpo" method="POST" novalidate>
           <div class="contact-form__row">
             <div class="contact-form__field">
               <label for="cf-name">Naam</label>
               <input type="text" id="cf-name" name="naam" placeholder="Jouw naam" required />
-              <span class="contact-form__error">Vul je naam in.</span>
             </div>
             <div class="contact-form__field">
               <label for="cf-company">Bedrijf</label>
               <input type="text" id="cf-company" name="bedrijf" placeholder="Optioneel" />
             </div>
           </div>
-          <div class="contact-form__row">
-            <div class="contact-form__field">
-              <label for="cf-email">E-mailadres</label>
-              <input type="email" id="cf-email" name="email" placeholder="jouw@emailadres.nl" required />
-              <span class="contact-form__error">Vul een geldig e-mailadres in.</span>
-            </div>
-            <div class="contact-form__field">
-              <label for="cf-phone">Telefoonnummer <span style="font-weight:400;text-transform:none;letter-spacing:0;font-size:10px;color:var(--fg-3)">(optioneel)</span></label>
-              <input type="tel" id="cf-phone" name="telefoon" placeholder="+31 6 ..." />
-            </div>
+          <div class="contact-form__field">
+            <label for="cf-email">E-mailadres</label>
+            <input type="email" id="cf-email" name="email" placeholder="jouw@emailadres.nl" required />
           </div>
           <div class="contact-form__field">
             <label for="cf-subject">Onderwerp</label>
@@ -1446,8 +1386,7 @@ button { font-family: inherit; }
           </div>
           <div class="contact-form__field">
             <label for="cf-message">Bericht</label>
-            <textarea id="cf-message" name="bericht" placeholder="Vertel kort waar het over gaat…" required></textarea>
-            <span class="contact-form__error">Schrijf een kort bericht.</span>
+            <textarea id="cf-message" name="bericht" placeholder="Vertel kort waar je mee kunt helpen…" required></textarea>
           </div>
           <button type="submit" class="contact-form__submit">
             Verstuur bericht <span class="arrow">→</span>
@@ -1496,6 +1435,8 @@ button { font-family: inherit; }
   </div>
 </section>
 
+</main>
+
 <!-- Footer -->
 <footer class="footer">
   <div class="container">
@@ -1503,7 +1444,31 @@ button { font-family: inherit; }
 
       <!-- Brand -->
       <div class="footer__brand">
-        <img src="assets/6-2.png" alt="WerkGeluk Recruitment" />
+        <img src="assets/logo-horizontal-light.png" alt="WerkGeluk Recruitment" />
+        <p>Boutique recruitment voor commerciële en technische sales professionals. Persoonlijk. Eerlijk. Duurzaam.</p>
+        <div class="footer__brand-meta">
+          <span>KvK: 70841640</span>
+          <span>BTW: NL001178713B61</span>
+          <span>Otto Reuchlinweg 1146 · 3072 MD Rotterdam</span>
+        </div>
+        <div class="footer__social">
+          <a href="https://www.linkedin.com/in/nicky-roggeveen/" target="_blank" rel="noreferrer" aria-label="LinkedIn">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+              <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/>
+              <rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/>
+            </svg>
+          </a>
+          <a href="mailto:Nicky@werkgeluk-recruitment.nl" aria-label="E-mail">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/>
+            </svg>
+          </a>
+          <a href="tel:+31618236993" aria-label="Telefoon">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 13.5a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.6 2.69h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 10.2a16 16 0 0 0 5.89 5.89l.94-.94a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 21.92 17z"/>
+            </svg>
+          </a>
+        </div>
       </div>
 
       <!-- Navigatie -->
@@ -1514,7 +1479,7 @@ button { font-family: inherit; }
           <li><a href="#expertise">Expertise</a></li>
           <li><a href="#voor-professionals">Voor professionals</a></li>
           <li><a href="#waarom">Waarom WerkGeluk</a></li>
-          <li><a href="#contact">Kennismaken</a></li>
+          <li><a href="#contact">Contact</a></li>
           <li><a href="#locatie">Locatie</a></li>
         </ul>
       </div>
@@ -1542,7 +1507,6 @@ button { font-family: inherit; }
     </div>
     <div class="footer__base">
       <span>© 2026 WerkGeluk Recruitment · Rotterdam · Nederland</span>
-      <span>KvK: 70841640 · BTW: NL001178713B61</span>
     </div>
   </div>
 </footer>
@@ -1550,20 +1514,6 @@ button { font-family: inherit; }
 <script>
 /* Enable reveal animations now that JS is running */
 document.documentElement.classList.add('js-ready');
-
-/* ── Cookie banner ── */
-const cookieBanner = document.getElementById('cookie-banner');
-if (cookieBanner && localStorage.getItem('cookie-accepted')) {
-  cookieBanner.style.display = 'none';
-}
-
-/* ── Nav scroll glassmorphism ── */
-const nav = document.querySelector('.nav');
-function updateNavState() {
-  nav.classList.toggle('is-scrolled', window.scrollY > 50);
-}
-window.addEventListener('scroll', updateNavState, { passive: true });
-updateNavState();
 
 /* ── Mobile menu ── */
 const hamburger = document.querySelector('.nav__hamburger');
@@ -1624,28 +1574,12 @@ function updateProgress() {
 }
 window.addEventListener('scroll', updateProgress, { passive: true });
 
-/* ── 2. Contactformulier via Formspree ── */
+/* ── 2. Contactformulier ── */
 const contactForm = document.getElementById('contact-form');
 const formSuccess = document.getElementById('form-success');
 if (contactForm) {
   contactForm.addEventListener('submit', async (e) => {
     e.preventDefault();
-
-    /* Client-side validatie */
-    let valid = true;
-    contactForm.querySelectorAll('[required]').forEach(field => {
-      const wrapper = field.closest('.contact-form__field');
-      const empty = field.value.trim() === '';
-      const emailInvalid = field.type === 'email' && !empty && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(field.value.trim());
-      if (empty || emailInvalid) {
-        wrapper.classList.add('has-error');
-        valid = false;
-      } else {
-        wrapper.classList.remove('has-error');
-      }
-    });
-    if (!valid) return;
-
     const btn = contactForm.querySelector('.contact-form__submit');
     btn.textContent = 'Wordt verstuurd…';
     btn.disabled = true;
@@ -1669,14 +1603,7 @@ if (contactForm) {
   });
 }
 
-/* ── 3. Formulier: fout wissen bij invoer ── */
-contactForm && contactForm.querySelectorAll('[required]').forEach(field => {
-  field.addEventListener('input', () => {
-    field.closest('.contact-form__field').classList.remove('has-error');
-  });
-});
-
-/* ── 5. Parallax hero ── */
+/* ── 3. Parallax hero ── */
 const hero = document.querySelector('.hero');
 function updateParallax() {
   const y = window.scrollY;
