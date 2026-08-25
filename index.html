@@ -868,8 +868,8 @@ button { font-family: inherit; }
 }
 .footer__inner {
   display: grid;
-  grid-template-columns: 2fr 1fr 1fr 1fr;
-  gap: 56px;
+  grid-template-columns: 1.4fr 1fr 1fr 1fr;
+  gap: 48px;
   padding-bottom: 64px;
   border-bottom: 1px solid rgba(250,248,244,0.1);
   align-items: start;
@@ -986,7 +986,10 @@ button { font-family: inherit; }
   .section { padding: 80px 0; }
   .section__head { grid-template-columns: 1fr; gap: 24px; margin-bottom: 48px; }
   .about { grid-template-columns: 1fr; gap: 40px; }
-  .voor-pro { grid-template-columns: 1fr; gap: 40px; }
+  .voor-pro { grid-template-columns: 1fr; gap: 0; }
+  .voor-pro__left { order: 1; }
+  .voor-pro__body { order: 2; margin-top: 32px; }
+  .voor-pro__cta { order: 3; margin-top: 32px; }
   .cta { grid-template-columns: 1fr; gap: 32px; }
   .footer__inner { grid-template-columns: 1fr 1fr; gap: 32px; }
   .footer__brand { grid-column: 1 / -1; }
@@ -998,15 +1001,18 @@ button { font-family: inherit; }
   .hero { padding: 110px 0 80px; }
   .hero__meta { gap: 28px; }
   .locatie { grid-template-columns: 1fr; gap: 40px; }
-  .steps-5 { grid-template-columns: 1fr 1fr; }
+  .steps-5 { grid-template-columns: 1fr 1fr; gap: 40px 24px; }
   .steps-5::before { display: none; }
   .v3-rolegrid { grid-template-columns: 1fr 1fr; }
+  .step { padding: 0 16px 0 0; }
 }
 @media (max-width: 640px) {
   .logos-grid { grid-template-columns: repeat(2, 1fr); }
   .logo-cell:nth-child(4n) { border-right: 1px solid var(--wg-line); }
   .logo-cell:nth-child(2n) { border-right: none; }
-  .steps-5 { grid-template-columns: 1fr; }
+  .steps-5 { grid-template-columns: 1fr; gap: 40px; }
+  .step { padding: 0; }
+  .step__dot { margin-bottom: 20px; }
   .v3-rolegrid { grid-template-columns: 1fr; }
   .footer__inner { grid-template-columns: 1fr; }
 }
@@ -1218,12 +1224,12 @@ button { font-family: inherit; }
   <div class="container">
     <div class="voor-pro">
 
-      <!-- Links: tag + headline + CTA -->
-      <div class="reveal">
+      <!-- Links: tag + headline -->
+      <div class="reveal voor-pro__left">
         <span class="voor-pro__tag">Voor professionals</span>
         <h2 class="voor-pro__headline">Een nieuwe stap moet niet alleen interessant zijn.</h2>
         <p class="voor-pro__em">Het moet ook écht bij je passen.</p>
-        <a href="mailto:Nicky@werkgeluk-recruitment.nl" class="btn btn--gold">Plan een vrijblijvend kennismakingsgesprek <span class="arrow">→</span></a>
+        <a href="mailto:Nicky@werkgeluk-recruitment.nl" class="btn btn--gold voor-pro__cta">Plan een vrijblijvend kennismakingsgesprek <span class="arrow">→</span></a>
       </div>
 
       <!-- Rechts: body tekst -->
@@ -1260,7 +1266,7 @@ button { font-family: inherit; }
         <div class="step__dot"></div>
         <span class="step__num">02</span>
         <h4 class="step__title">Kwaliteit boven kwantiteit</h4>
-        <p class="step__body">Geen stapels cv’s, maar zorgvuldig geselecteerde professionals.</p>
+        <p class="step__body">Geen stapels cv's, maar zorgvuldig geselecteerde professionals.</p>
       </div>
       <div class="reveal step" style="transition-delay:160ms">
         <div class="step__dot"></div>
@@ -1608,6 +1614,6 @@ function updateParallax() {
 if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
   window.addEventListener('scroll', updateParallax, { passive: true });
 }
-<\/script>
+</script>
 </body>
 </html>
