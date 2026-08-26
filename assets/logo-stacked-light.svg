@@ -1,0 +1,50 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 260 320" fill="none">
+  <defs>
+    <radialGradient id="gold" cx="62%" cy="38%" r="55%">
+      <stop offset="0%" stop-color="#F0D89A"/>
+      <stop offset="40%" stop-color="#C9A25B"/>
+      <stop offset="100%" stop-color="#8B6A2E"/>
+    </radialGradient>
+    <radialGradient id="grey" cx="38%" cy="62%" r="55%">
+      <stop offset="0%" stop-color="#FFFFFF" stop-opacity="0.95"/>
+      <stop offset="100%" stop-color="#CCCCCC" stop-opacity="0.7"/>
+    </radialGradient>
+    <clipPath id="circleClip">
+      <circle cx="130" cy="110" r="90"/>
+    </clipPath>
+  </defs>
+
+  <!-- Yin-yang icon -->
+  <!-- Grey (left/bottom) half -->
+  <path d="M130,20 A90,90 0 0,0 130,200 A45,45 0 0,1 130,110 A45,45 0 0,0 130,20 Z" fill="url(#grey)" clip-path="url(#circleClip)"/>
+  <!-- Gold (right/top) half -->
+  <path d="M130,20 A90,90 0 0,1 130,200 A45,45 0 0,0 130,110 A45,45 0 0,1 130,20 Z" fill="url(#gold)" clip-path="url(#circleClip)"/>
+  <!-- Gold small dot (in grey half) -->
+  <circle cx="130" cy="155" r="14" fill="url(#gold)"/>
+  <!-- Grey small dot (in gold half) -->
+  <circle cx="130" cy="65" r="14" fill="url(#grey)"/>
+
+  <!-- "WerkGeluk" text -->
+  <text
+    x="130"
+    y="240"
+    font-family="'Arimo', -apple-system, BlinkMacSystemFont, 'Segoe UI', Arial, sans-serif"
+    font-size="46"
+    font-weight="400"
+    letter-spacing="-0.5"
+    fill="rgba(250,248,244,0.88)"
+    text-anchor="middle"
+    dominant-baseline="auto">WerkGeluk</text>
+
+  <!-- "RECRUITMENT" text -->
+  <text
+    x="130"
+    y="272"
+    font-family="'Arimo', -apple-system, BlinkMacSystemFont, 'Segoe UI', Arial, sans-serif"
+    font-size="13"
+    font-weight="400"
+    letter-spacing="5"
+    fill="rgba(250,248,244,0.5)"
+    text-anchor="middle"
+    dominant-baseline="auto">RECRUITMENT</text>
+</svg>
