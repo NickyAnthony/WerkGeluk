@@ -1019,6 +1019,13 @@ button { font-family: inherit; }
   .voor-pro__left,
   .voor-pro__body,
   .voor-pro__cta { grid-column: 1; grid-row: auto; }
+  /* Lange knoptekst mag afbreken, anders loopt hij buiten beeld */
+  .voor-pro__cta {
+    white-space: normal;
+    text-align: center;
+    max-width: 100%;
+    justify-self: stretch;
+  }
   .cta { grid-template-columns: 1fr; gap: 32px; }
   .footer__inner { grid-template-columns: 1fr 1fr; gap: 32px; }
   .footer__brand { grid-column: 1 / -1; }
@@ -1201,7 +1208,7 @@ button { font-family: inherit; }
       <a href="#locatie">Locatie</a>
     </div>
     <div class="nav__cta">
-      <a href="#contact" class="btn btn--gold btn--sm">Kennismaken <span class="arrow">→</span></a>
+      <a href="#contact" class="btn btn--gold btn--sm">Plan een gesprek <span class="arrow">→</span></a>
     </div>
     <button class="nav__hamburger" aria-label="Open menu" aria-expanded="false" onclick="var o=this.classList.toggle('is-open');var m=document.querySelector('.nav__mobile');m.classList.toggle('is-open',o);this.setAttribute('aria-expanded',o);m.setAttribute('aria-hidden',!o);document.body.style.overflow=o?'hidden':'';">
       <span></span><span></span><span></span>
@@ -1217,7 +1224,7 @@ button { font-family: inherit; }
   <a href="#waarom">Waarom WerkGeluk</a>
   <a href="#contact">Kennismaken</a>
   <a href="#locatie">Locatie</a>
-  <a href="#contact" class="nav__mobile-cta">Kennismaken →</a>
+  <a href="#contact" class="nav__mobile-cta">Plan een gesprek →</a>
 </div>
 
 <!-- Hero -->
@@ -1227,7 +1234,7 @@ button { font-family: inherit; }
     <p class="hero__sub">WerkGeluk Recruitment helpt organisaties bij het vinden van commerciële en technische sales professionals die niet alleen passen op papier, maar ook binnen cultuur, team en visie.</p>
     <div class="hero__ctas">
       <a href="#contact" class="btn btn--gold">Plan een kennismaking <span class="arrow">→</span></a>
-      <a href="#voor-professionals" class="btn btn--ghost">Ik zoek een nieuwe functie <span class="arrow">→</span></a>
+      <a href="#voor-professionals" class="btn btn--ghost">Jouw volgende stap <span class="arrow">→</span></a>
     </div>
   </div>
 </header>
@@ -1396,7 +1403,7 @@ button { font-family: inherit; }
         <p class="voor-pro__tagline">Persoonlijk. Eerlijk. Meer dan recruitment alleen.</p>
       </div>
 
-      <a href="#contact" class="btn btn--gold voor-pro__cta">Plan een kennismaking <span class="arrow">→</span></a>
+      <a href="#contact" class="btn btn--gold voor-pro__cta">Plan een vrijblijvend kennismakingsgesprek <span class="arrow">→</span></a>
 
     </div>
   </div>
